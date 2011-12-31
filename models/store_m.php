@@ -118,7 +118,7 @@ class Store_m extends MY_Model {
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
 			'telefone'			=>	'0',
-			'status'			=>	'0',
+			'status'			=>	'1',
 			'comments'			=>	'0',
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
@@ -128,6 +128,7 @@ class Store_m extends MY_Model {
 			'shipping_method'	=>	'0',
 			'tax'				=>	'0',
 			'shipping_cost'		=>	'0',
+			'amount'			=> $this->cart->format_number($this->cart->total())
 		);
 		
 		$this->db->insert('store_orders',$this->data);

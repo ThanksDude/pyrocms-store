@@ -19,6 +19,29 @@ class Checkout_m extends MY_Model {
 		
 		if($order_id != NULL && $status != NULL):
 		
+			$this->data = array('status' => $status);
+			$this->db->where('orders_id', $order_id);
+			$this->db->update('store_orders',$this->data);
+			
+			return TRUE;
+		
+		else:
+		
+			return FALSE;
+		
+		endif;
+		
+	}
+
+	public function ipn_update($order_id = NULL,$status = NULL)
+	{
+		
+		if($order_id != NULL && $status != NULL):
+		
+			$this->data = array('status' => $status);
+			$this->db->where('orders_id', $order_id);
+			$this->db->update('store_orders',$this->data);
+			
 			return TRUE;
 		
 		else:

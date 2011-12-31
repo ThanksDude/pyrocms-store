@@ -64,15 +64,13 @@ class Checkout extends Public_Controller
 				{
 					$this->merchant->process(array(
 						'currency_code'		=> $this->store_settings->currency(),
-						'return'			=> site_url('/store/checkout/status/paypal/success/' . $this->order->orders_id . '/'),
-						'cancel_return'		=> site_url('/store/checkout/status/paypal/failure/' . $this->order->orders_id . '/'),
+						'return_url'		=> site_url('/store/checkout/status/paypal/success/' . $this->order->orders_id . '/'),
+						'cancel_url'		=> site_url('/store/checkout/status/paypal/failure/' . $this->order->orders_id . '/'),
 						'notify_url'		=> site_url('/store/checkout/ipn/paypal/' . $this->order->orders_id . '/'),
 						'amount'			=> $this->order->amount,
 						'reference'			=> $this->order->orders_id
 					));
 				}
-
-				$this->merchant->process_return();
 
 			break;
 		
@@ -85,7 +83,14 @@ class Checkout extends Public_Controller
 		
 			case 'paypal':
 			
-				
+				$action = $this->CI->input->get('action', TRUE);
+				if($action === FALSE):
+					$this->checkout_m->ipn_update($orders_id,'2');
+				elseif($action === 'success'):
+					$this->checkout_m->ipn_update($orders_id,'4');
+				elseif($action === 'cancel'):
+					$this->checkout_m->ipn_update($orders_id,'2');
+				endif;
 				
 			break;
 		
@@ -97,20 +102,20 @@ class Checkout extends Public_Controller
 		switch($gateway):
 		
 			case 'paypal':
+			
+				$this->merchant->load('paypal');
 				
 				switch($status):
 				
 					case 'success':
 					
-						$this->merchant->process_return();
-						$this->checkout_m->status_update($order_id,TRUE);
+						$this->checkout_m->status_update($order_id, '3');
 					
 					break;
 					
 					case 'failure':
 						
-						$this->merchant->process_return();
-						$this->checkout_m->status_update($order_id,FALSE);
+						$this->checkout_m->status_update($order_id, '2');
 						
 					break;
 				
