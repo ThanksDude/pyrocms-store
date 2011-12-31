@@ -114,7 +114,7 @@ class Store_m extends MY_Model {
 	public function build_order()
 	{
 		$this->data = array(
-			'users_id'			=>	$this->user->id,
+			'users_id'			=>	'1',
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
 			'telefone'			=>	'0',
@@ -137,7 +137,7 @@ class Store_m extends MY_Model {
 		{
 			$this->data = array(
 				'orders_id'		=>	$this->order_id,
-				'users_id'		=>	$this->user->id,
+				'users_id'		=>	'1',
 				'products_id'	=>	$items['id'],
 				'number'		=>	$items['qty']
 			);
@@ -147,77 +147,10 @@ class Store_m extends MY_Model {
 		redirect('/store/checkout/process/' . $this->input->post('gateway') . '/' . $this->order_id . '/');
 	}
 	
-	public function ipn_paypal_success($orders_id)
-	{
-	}
-	
-	public function ipn_paypal_failure($orders_id,$ipn_data)
-	{
-	}
-	
-	public function ipn_authorize_success($orders_id)
-	{
-	}
-	
-	public function ipn_authorize_failure($orders_id,$ipn_data)
-	{
-	}
-	
-	public function ipn_twoco_success($orders_id)
-	{
-	}
-	
-	public function ipn_twoco_failure($orders_id,$ipn_data)
-	{
-	}
-	
 	public function get_order($orders_id)
 	{
 		$this->db->where('orders_id',$orders_id);
-		$this->query = $this->db->get('store_orders_has_store_products');
+		$this->query = $this->db->get('store_orders');
 		return $this->query;
-	}
-	
-	public function get_orders_product_name($orders_id)
-	{
-		$this->db->where('orders_id',$orders_id);
-		$this->db->limit(1);
-		$this->orders = $this->db->get('store_orders_has_store_products');
-		foreach($this->orders->result() as $this->order)
-		{
-			$this->db->where('products_id',$this->order->products_id);
-			$this->products = $this->db->get('store_products');
-			foreach($this->products->result() as $this->product)
-			{
-				return $this->product->name;
-			}
-		}
-	}
-	
-	public function get_orders_product_price($orders_id)
-	{
-		$this->db->where('orders_id',$orders_id);
-		$this->db->limit(1);
-		$this->orders = $this->db->get('store_orders_has_store_products');
-		foreach($this->orders->result() as $this->order)
-		{
-			$this->db->where('products_id',$this->order->products_id);
-			$this->products = $this->db->get('store_products');
-			foreach($this->products->result() as $this->product)
-			{
-				return $this->product->price;
-			}
-		}
-	}
-	
-	public function get_orders_users($users_id)
-	{
-		$this->db->where('id',$users_id);
-		$this->db->limit(1);
-		$this->query = $this->db->get('users');
-		foreach($this->query->result() as $this->item)
-		{
-			return $this->item->username;
-		}
 	}
 }

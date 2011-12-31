@@ -73,6 +73,23 @@ class Store_settings {
 		}
 		return $this->dropdown;
 	}
+	
+	public function currency()
+	{
+		$this->ci->db->where('slug', 'currency');
+		$this->settings = $this->ci->db->get('store_settings');
+		foreach($this->settings->result() as $this->setting):
+		
+			$this->ci->db->where('currency_id', $this->setting->value);
+			$this->currencies = $this->ci->db->get('store_currency');
+			foreach($this->currencies->result() as $this->currency):
+			
+				return $this->currency->currency_name;
+			
+			endforeach;
+		
+		endforeach;
+	}
 }
 
 /* End of file Someclass.php */
