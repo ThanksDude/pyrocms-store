@@ -12,3 +12,11 @@
 /* =========================================== STORE =========================================== */
 
 // LABELS ----------------------------------------------------------------------------------------
+
+$lang['store_label_store_name']				= 'Naam';
+$lang['store_label_active']					= 'Actief';
+$lang['store_label_allow_comments']			= 'Commentaar Toestaan';
+$lang['store_label_currency']				= 'Valuta';
+$lang['store_label_item_per_page']			= 'Artikelen per Pagina';
+$lang['store_label_display_tax']			= 'Toon BTW';
+$lang['store_label_display_stock']			= 'Toon voorraad';

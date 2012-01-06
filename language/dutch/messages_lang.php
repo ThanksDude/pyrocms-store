@@ -14,23 +14,23 @@
 // MESSAGES --------------------------------------------------------------------------------------
 
 //** SETTINGS **//
-$lang['store_messages_edit_success']				= 'Settings sucessfully edited';
-$lang['store_messages_edit_error']					= 'Settings editing failed';
+$lang['store_messages_edit_success']				= 'Instellingen successvol bewerkt';
+$lang['store_messages_edit_error']					= 'Instellingen bewerken mislukt';
 
 //** CATEGORIES **//
-$lang['store_messages_category_no_items']			= 'No Categories created';
-$lang['store_messages_category_success_create']		= 'Category sucessfully created';
-$lang['store_messages_category_success_edit']		= 'Category sucessfully edited';
-$lang['store_messages_category_success_delete']		= 'Category sucessfully deleted';
-$lang['store_messages_category_error_create']		= 'Category creation failed';
-$lang['store_messages_category_error_edit']			= 'Category editing failed';
-$lang['store_messages_category_error_delete']		= 'Category deletion failed';
+$lang['store_messages_category_no_items']			= 'Geen Categorieën Aangemaakt';
+$lang['store_messages_category_success_create']		= 'Categorie successvol aangemaakt';
+$lang['store_messages_category_success_edit']		= 'Categorie successvol bewerkt';
+$lang['store_messages_category_success_delete']		= 'Categorie successvol verwijderd';
+$lang['store_messages_category_error_create']		= 'Categorie aanmaken mislukt';
+$lang['store_messages_category_error_edit']			= 'Categorie bewerken mislukt';
+$lang['store_messages_category_error_delete']		= 'Categorie verwijderen mislukt';
 
 //** PRODUCTS **//
-$lang['store_messages_product_no_items']			= 'No Products created';
-$lang['store_messages_product_success_create']		= 'Product sucessfully created';
-$lang['store_messages_product_success_edit']		= 'Product sucessfully edited';
-$lang['store_messages_product_success_delete']		= 'Product sucessfully deleted';
-$lang['store_messages_product_error_create']		= 'Product creation failed';
-$lang['store_messages_product_error_edit']			= 'Product editing failed';
-$lang['store_messages_product_error_delete']		= 'Product deletion failed';
+$lang['store_messages_product_no_items']			= 'Geen Producten Aangemaakt';
+$lang['store_messages_product_success_create']		= 'Product successvol aangemaakt';
+$lang['store_messages_product_success_edit']		= 'Product successvol bewerkt';
+$lang['store_messages_product_success_delete']		= 'Product successvol verwijderd';
+$lang['store_messages_product_error_create']		= 'Product aanmaken mislukt';
+$lang['store_messages_product_error_edit']			= 'Product bewerken mislukt';
+$lang['store_messages_product_error_delete']		= 'Product verwijderen mislukt';

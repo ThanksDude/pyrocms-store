@@ -12,3 +12,11 @@
 /* =========================================== STORE =========================================== */
 
 // LABELS ----------------------------------------------------------------------------------------
+
+$lang['store_label_store_name']				= 'Store Name';
+$lang['store_label_active']					= 'Active';
+$lang['store_label_allow_comments']			= 'Allow comments';
+$lang['store_label_currency']				= 'Currency';
+$lang['store_label_item_per_page']			= 'Items per Page';
+$lang['store_label_display_tax']			= 'Display TAX';
+$lang['store_label_display_stock']			= 'Display stock';

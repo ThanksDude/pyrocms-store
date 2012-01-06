@@ -58,4 +58,3 @@ $lang['store_button_view']							= 'View';
 $lang['store_button_delete']						= 'Delete';
 $lang['store_button_backup_data']					= 'Backup Data';
 $lang['store_button_restore_data']					= 'Restore Data';
-$lang['store_button_set_default']					= 'Set Default';

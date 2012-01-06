@@ -13,20 +13,20 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_product_store_id']					= 'Store ID';
+$lang['store_product_store_id']					= 'Winkel ID';
 $lang['store_product_product_id']				= 'Product ID';
-$lang['store_product_category']					= 'Category';
-$lang['store_product_name']						= 'Name';
-$lang['store_product_html']						= 'Description';
-$lang['store_product_meta_description']			= 'Meta Description';
-$lang['store_product_meta_keywords']			= 'Meta Keywords';
-$lang['store_product_attributes']				= 'Attributes';
-$lang['store_product_price']					= 'Price';
-$lang['store_product_discount']					= 'Discount';
-$lang['store_product_stock']					= 'Stock';
-$lang['store_product_limited']					= 'Limited Quantity';
-$lang['store_product_limited_used']				= 'Limited Used';
-$lang['store_product_images']					= 'Images';
+$lang['store_product_category']					= 'Categorie';
+$lang['store_product_name']						= 'Naam';
+$lang['store_product_html']						= 'Omschrijving';
+$lang['store_product_meta_description']			= 'Meta Omschrijving';
+$lang['store_product_meta_keywords']			= 'Meta Sleutelwoorden';
+$lang['store_product_attributes']				= 'Attributen';
+$lang['store_product_price']					= 'Prijs';
+$lang['store_product_discount']					= 'Korting';
+$lang['store_product_stock']					= 'Voorraad';
+$lang['store_product_limited']					= 'Gelimiteerde hoeveelheid';
+$lang['store_product_limited_used']				= 'Gelimiteerde hoeveelheid gebruikt';
+$lang['store_product_images']					= 'Afbeeldingen';
 $lang['store_product_thumbnail']				= 'Thumbnail';
-$lang['store_product_allow_comments']			= 'Allow Comments';
-$lang['store_product_actions']					= 'Actions';
+$lang['store_product_allow_comments']			= 'Commentaar Toestaan';
+$lang['store_product_actions']					= 'Acties';
