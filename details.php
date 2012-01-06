@@ -45,6 +45,11 @@ class Module_Store extends Module {
 						   'class'	=> 'dashboard'
 						),
 						array(
+					 	   'name'	=> 'store_shortcut_store_statistics',
+						   'uri'	=> 'admin/store/statistics',
+						   'class'	=> 'statistics'
+						),
+						array(
 					 	   'name'	=> 'store_shortcut_store_settings',
 						   'uri'	=> 'admin/store/settings',
 						   'class'	=> 'settings'

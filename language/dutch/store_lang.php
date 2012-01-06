@@ -16,6 +16,7 @@ $lang['store_menu_products']						= 'Producten';
 
 // Shortcuts
 $lang['store_shortcut_store_dashboard']				= 'Dashboard';
+$lang['store_shortcut_store_statistics']			= 'Statistieken';
 $lang['store_shortcut_store_settings']				= 'Instellingen';
 $lang['store_shortcut_categories_list']				= 'Toon Categorieën';
 $lang['store_shortcut_category_add']				= 'Categorie Toevoegen';
@@ -24,8 +25,8 @@ $lang['store_shortcut_product_add']					= 'Product Toevoegen';
 
 // Titles
 $lang['store_title_store_dashboard']         		= 'Dashboard';
-$lang['store_title_store_Settings']         		= 'Instellingen';
-$lang['store_title_store_stats']         			= 'Statistics';
+$lang['store_title_store_statistics']         		= 'Statistieken';
+$lang['store_title_store_settings']         		= 'Instellingen';
 $lang['store_title_category_list']       			= 'Toon Categorieën';
 $lang['store_title_category_add']        	 		= 'Categorie Toevoegen';
 $lang['store_title_category_edit'] 					= 'Categorie Bewerken';

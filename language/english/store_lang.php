@@ -16,6 +16,7 @@ $lang['store_menu_products']						= 'Products';
 
 // Shortcuts
 $lang['store_shortcut_store_dashboard']				= 'Dashboard';
+$lang['store_shortcut_store_statistics']			= 'statistics';
 $lang['store_shortcut_store_settings']				= 'Settings';
 $lang['store_shortcut_categories_list']				= 'List Categories';
 $lang['store_shortcut_category_add']				= 'Add Category';
@@ -24,8 +25,8 @@ $lang['store_shortcut_product_add']					= 'Add Product';
 
 // Titles
 $lang['store_title_store_dashboard']         		= 'Dashboard';
-$lang['store_title_store_Settings']         		= 'Settings';
-$lang['store_title_store_stats']         			= 'Statistics';
+$lang['store_title_store_statistics']         		= 'Statistics';
+$lang['store_title_store_settings']         		= 'Settings';
 $lang['store_title_category_list']       			= 'List Categories';
 $lang['store_title_category_add']        	 		= 'Add Category';
 $lang['store_title_category_edit'] 					= 'Edit Category';

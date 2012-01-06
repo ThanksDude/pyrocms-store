@@ -32,36 +32,50 @@ class Admin extends Admin_Controller
 	public function index()
 	{
 		$this->data = array();
+		
+		$this->template
+			->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+			->title($this->module_details['name'], lang('store_title_store_dashboard'))
+			->build('admin/store/dashboard',$this->data);
+	}
+	
+	public function statistics()
+	{
+		$this->data = array();
+		
+		$this->template
+			->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+			->title($this->module_details['name'], lang('store_title_store_statistics'))
+			->build('admin/store/statistics',$this->data);
+	}
+	
+	public function settings()
+	{
+		$this->data = array();
 
-		if ( ! $this->form_validation->run('store_index') ){
-			
-			$this->data = array( 
-				'general_settings' => $this->store_settings->settings_manager_retrieve('general')->result(),
-				'payment_gateways_settings' => $this->store_settings->settings_manager_retrieve('payment-gateways')->result(),
-				'extra_settings' => $this->store_settings->settings_manager_retrieve('extra')->result()
-			);
+		if(!$this->form_validation->run('store_index')):
+
+			$this->data['general_settings']				= $this->store_settings->settings_manager_retrieve('general')->result();
+			$this->data['payment_gateways_settings']	= $this->store_settings->settings_manager_retrieve('payment-gateways')->result();
+			$this->data['extra_settings']				= $this->store_settings->settings_manager_retrieve('extra')->result();
 			
 			$this->template
 				->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				->title($this->module_details['name'], lang('store_title_edit_store'))
-				->build('admin/store/index',$this->data);
-		}
-		else{
+				->title($this->module_details['name'], lang('store_title_store_settings'))
+				->build('admin/store/settings',$this->data);
+
+		else:
 			
-			if ( ! $this->store_settings->settings_manager_store() ){
+			if ( ! $this->store_settings->settings_manager_store() ):
 				$this->session->set_flashdata('success', sprintf(lang('store_messages_edit_success'), $this->input->post('name')));
-				redirect('admin/store');
-			}
-			else
-			{
-				$this->session->set_flashdata(array('error'=> lang('store_cat_add_error')));
-			}		
-		}
-	}
+				redirect('admin/store/settings');
 
+			else:
 
-
-	
-
-	
+				$this->session->set_flashdata(array('error'=> lang('store_messages_edit_error')));
+		
+			endif;
+			
+		endif;
+	}	
 }
