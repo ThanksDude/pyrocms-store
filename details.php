@@ -110,10 +110,6 @@ class Module_Store extends Module {
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'authorize_secret', 'text', '', '', 'payment-gateways', '1', '1', '17');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'authorize_developer_mode', 'radio', '1', '', 'payment-gateways', '1', '1', '18');");
 		
-		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'twoco_enabled', 'radio', '0', '', 'payment-gateways', '1', '1', '19');");
-		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'twoco_account', 'text', '', '', 'payment-gateways', '1', '1', '20');");
-		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'twoco_developer_mode', 'radio', '1', '', 'payment-gateways', '1', '1', '21');");
-		
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'terms_and_conditions', 'wysiwyg|simple', '', '', 'extra', '1', '1', '22');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'privacy_policy', 'textarea', '', '', 'extra', '1', '1', '23');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'delivery_information', 'textarea', '', '', 'extra', '1', '1', '24');");
