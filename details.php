@@ -37,31 +37,53 @@ class Module_Store extends Module {
 			'sections' => array(
 			    'store' => array(
 				    'name'		=> 'store_menu_store',
-				    'uri'		=> 'admin/store'
+				    'uri'		=> 'admin/store',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store_shortcut_store_dashboard',
+						   'uri'	=> 'admin/store',
+						   'class'	=> 'dashboard'
+						),
+						array(
+					 	   'name'	=> 'store_shortcut_store_settings',
+						   'uri'	=> 'admin/store/settings',
+						   'class'	=> 'settings'
+						)
+					)
 				),
 			    'categories' => array(
 				    'name'		=> 'store_menu_categories',
 				    'uri'		=> 'admin/store/categories',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_add_category',
-						    'uri'	=> 'admin/store/categories/add',
-						    'class'	=> 'add'
+					 	   'name'	=> 'store_shortcut_categories_list',
+						   'uri'	=> 'admin/store/categories',
+						   'class'	=> 'list'
 						),
-					),
+						array(
+					 	   'name'	=> 'store_shortcut_category_add',
+						   'uri'	=> 'admin/store/categories/add',
+						   'class'	=> 'add'
+						)
+					)
 				),
 			    'products' => array(
 				    'name'		=> 'store_menu_products',
 				    'uri'		=> 'admin/store/products',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_add_product',
-						    'uri'	=> 'admin/store/products/add',
-						    'class'	=> 'add'
+					 	   'name'	=> 'store_shortcut_products_list',
+						   'uri'	=> 'admin/store/products',
+						   'class'	=> 'list'
 						),
-					),
-				),
-			),
+						array(
+					 	   'name'	=> 'store_shortcut_product_add',
+						   'uri'	=> 'admin/store/products/add',
+						   'class'	=> 'add'
+						)
+					)
+				)
+			)
 		);
 	}
 

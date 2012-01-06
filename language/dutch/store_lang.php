@@ -15,25 +15,23 @@ $lang['store_menu_categories']						= 'Categorieën';
 $lang['store_menu_products']						= 'Producten';
 
 // Shortcuts
-$lang['store_shortcut_list_store']					= 'Winkel Overzicht';
-$lang['store_shortcut_add_category']				= 'Categorie Toevoegen';
-$lang['store_shortcut_add_product']					= 'Product Toevoegen';
-$lang['store_shortcut_list_products']				= 'Toon Producten';
-$lang['store_shortcut_list_categories']				= 'Toon Categorieën';
+$lang['store_shortcut_store_dashboard']				= 'Dashboard';
+$lang['store_shortcut_store_settings']				= 'Instellingen';
+$lang['store_shortcut_categories_list']				= 'Toon Categorieën';
+$lang['store_shortcut_category_add']				= 'Categorie Toevoegen';
+$lang['store_shortcut_products_list']				= 'Toon Producten';
+$lang['store_shortcut_product_add']					= 'Product Toevoegen';
 
 // Titles
-$lang['store_title_store_config']         			= 'Winkel';
-$lang['store_title_store_index']         			= 'Winkel Overzicht';
-$lang['store_title_add_store']         				= 'Winkel Toevoegen';
-$lang['store_title_edit_store']         			= 'Winkel Bewerken';
-$lang['store_title_stats_store']         			= 'Winkel Statistieken';
-$lang['store_title_add_category']         			= 'Categorie Toevoegen';
-$lang['store_title_add_product']					= 'Product Toevoegen';
-$lang['store_title_edit_product']					= 'Product Bewerken';
-$lang['store_title_edit_category'] 					= 'Category Bewerken';
-$lang['store_title_list_categories']        		= 'Toon Categorieën';
-$lang['store_title_list_products']        			= 'Toon Producten';
-
+$lang['store_title_store_dashboard']         		= 'Dashboard';
+$lang['store_title_store_Settings']         		= 'Instellingen';
+$lang['store_title_store_stats']         			= 'Statistics';
+$lang['store_title_category_list']       			= 'Toon Categorieën';
+$lang['store_title_category_add']        	 		= 'Categorie Toevoegen';
+$lang['store_title_category_edit'] 					= 'Categorie Bewerken';
+$lang['store_title_product_list']        			= 'Toon Producten';
+$lang['store_title_product_add']					= 'Product Toevoegen';
+$lang['store_title_product_edit']					= 'Product Bewerken';
 
 // Tabs
 $lang['store_tab_config']							= 'Winkel Instellingen';
