@@ -26,3 +26,5 @@ $lang['store_label_cart_empty']				= 'Empty';
 $lang['store_button_cart_details']			= 'Details';
 $lang['store_button_cart_update_long']		= 'Update your Cart';
 $lang['store_button_cart_update_short']		= 'Update';
+$lang['store_button_cart_checkout_long']  = 'Proceed to Checkout';
+$lang['store_button_cart_checkout_short']	= 'Checkout';
