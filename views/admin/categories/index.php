@@ -22,12 +22,12 @@
             <thead>
                 <tr>
                     <th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-                    <th><?php echo lang('store_categories_list_thumbnail'); ?></th>
-                    <th><?php echo lang('store_categories_list_name'); ?></th>
-                    <th><?php echo lang('store_categories_list_items'); ?></th>
-                    <th><?php echo lang('store_categories_list_category_id'); ?></th>
-                    <th><?php echo lang('store_categories_list_parent'); ?></th>
-                    <th width="320" class="align-center"><span><?php echo lang('store_categories_list_actions'); ?></span></th>
+                    <th><?php echo lang('store_category_thumbnail'); ?></th>
+                    <th><?php echo lang('store_category_name'); ?></th>
+                    <th><?php echo lang('store_category_items'); ?></th>
+                    <th><?php echo lang('store_category_category_id'); ?></th>
+                    <th><?php echo lang('store_category_parent'); ?></th>
+                    <th width="320" class="align-center"><span><?php echo lang('store_category_actions'); ?></span></th>
                 </tr>
             </thead>
             <tfoot>
@@ -74,6 +74,6 @@
 		<?php echo form_close(); ?>
 
 	<?php else: ?>
-		<div class="no_data"><?php echo lang('store_currently_no_categories'); ?></div>
+		<div class="no_data"><?php echo lang('store_messages_category_no_items'); ?></div>
 	<?php endif; ?>
 </section>

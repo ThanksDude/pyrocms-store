@@ -9,9 +9,9 @@
 **/
 class Admin_categories extends Admin_Controller
 {
-	protected $section = 'categories';
+	protected $section			= 'categories';
 	protected $upload_config;
-	protected $upload_path = 'uploads/store/categories/';
+	protected $upload_path		= 'uploads/store/categories/';
 
 	public function __construct()
 	{
@@ -22,8 +22,12 @@ class Admin_categories extends Admin_Controller
 		$this->load->model('images_m');
 		$this->load->library('form_validation');
 		$this->load->library('store_settings');
-		$this->load->language('store');
 		$this->load->helper('date');
+		
+		$this->load->language('general');
+		$this->load->language('messages');
+		$this->load->language('categories');
+		$this->load->language('settings');
 
 		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
 
@@ -35,10 +39,10 @@ class Admin_categories extends Admin_Controller
 
 		endif;
 
-		$this->upload_config['allowed_types'] = 'gif|jpg|png';
-		$this->upload_config['max_size']	= '1024';
-		$this->upload_config['max_width'] = '1024';
-		$this->upload_config['max_height'] = '768';
+		$this->upload_config['allowed_types']	= 'gif|jpg|png';
+		$this->upload_config['max_size']		= '1024';
+		$this->upload_config['max_width']		= '1024';
+		$this->upload_config['max_height']		= '768';
 
 		$this->template->set_partial('shortcuts', 'admin/partials/shortcuts')
 						->append_metadata(js('admin.js', 'store'))
@@ -64,13 +68,11 @@ class Admin_categories extends Admin_Controller
 
 		$this->data->categories	= $categories;
 		$this->template->build('admin/categories/index', $this->data);
-
 	}
 
 	public function add()
 	{
 		$id = $this->store_settings->item('store_id');
-
 		$this->load->library('upload', $this->upload_config);		
 
 		if($this->form_validation->run('add_category')):
@@ -92,12 +94,12 @@ class Admin_categories extends Admin_Controller
 
 			if($this->categories_m->add_category($new_image_id)):
 
-				$this->session->set_flashdata('success', sprintf(lang('store_category_add_success'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store_messages_category_success_create'), $this->input->post('name')));
 				redirect('admin/store/categories');
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_category_add_error')));
+				$this->session->set_flashdata(array('error'=> lang('store_messages_category_error_create')));
 
 			endif;
 
@@ -122,7 +124,7 @@ class Admin_categories extends Admin_Controller
 		$id = $this->store_settings->item('store_id');
 		$this->load->library('upload', $this->upload_config);	
 
-		if($this->form_validation->run('add_category')):
+		if($this->form_validation->run('edit_category')):
 
 			if($this->upload->do_upload('userfile')):
 
@@ -141,12 +143,12 @@ class Admin_categories extends Admin_Controller
 	
 			if($this->categories_m->update_category($categories_id, $new_image_id)):
 
-				$this->session->set_flashdata('success', sprintf(lang('store_category_edit_success'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store_messages_category_success_edit'), $this->input->post('name')));
 				redirect('admin/store/categories');
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_category_edit_error')));
+				$this->session->set_flashdata(array('error'=> lang('store_messages_category_error_edit')));
 
 			endif;
 

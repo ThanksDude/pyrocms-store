@@ -24,12 +24,12 @@
 		<thead>
 			<tr>
 				<th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-				<th><?php echo lang('store_product_list_thumbnail'); ?></th>
-				<th><?php echo lang('store_product_list_name'); ?></th>
-				<th><?php echo lang('store_product_list_price'); ?></th>
-				<th>Stock</th>				
-				<th><?php echo lang('store_product_list_discount'); ?></th>
-				<th width="320" class="align-center"><span><?php echo lang('store_product_list_actions'); ?></span></th>
+				<th><?php echo lang('store_product_thumbnail'); ?></th>
+				<th><?php echo lang('store_product_name'); ?></th>
+				<th><?php echo lang('store_product_price'); ?></th>
+				<th><?php echo lang('store_product_stock'); ?></th>				
+				<th><?php echo lang('store_product_discount'); ?></th>
+				<th width="320" class="align-center"><span><?php echo lang('store_product_actions'); ?></span></th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -68,7 +68,7 @@
 
 <?php else: ?>
 	<div class="blank-slate">
-		<h2><?php echo lang('store_currently_no_products'); ?></h2>
+		<h2><?php echo lang('store_messages_product_no_items'); ?></h2>
 	</div>
 <?php endif; ?>
 </section>
