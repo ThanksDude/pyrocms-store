@@ -20,6 +20,7 @@ class Checkout extends Public_Controller
 		$this->load->library('merchant');
 		
 		$this->load->model('store_m');
+		$this->load->model('products_m');
 		$this->load->model('checkout_m');
 		
 		$this->load->language('store');
@@ -37,7 +38,7 @@ class Checkout extends Public_Controller
 	
 	public function process($gateway,$orders_id)
 	{
-		$this->orders = $this->store_m->get_order($orders_id);
+		$this->orders = $this->products_m->get_order($orders_id);
 		switch($gateway):
 		
 			case 'paypal':
