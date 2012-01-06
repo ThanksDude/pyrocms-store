@@ -19,23 +19,23 @@
 	<div>
 		<ol>
 			<li class="<?php echo alternator('even', ''); ?>">
-				<?php echo lang('store_cat_add_name','name'); ?>
+				<?php echo lang('store_category_add_name','name'); ?>
 				<?php echo form_input('name',set_value('name',$category->name),'class="text" maxlength="50"'); ?>
 				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
             </li>
             <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_cat_add_html','html'); ?>
+                <?php echo lang('store_category_add_html','html'); ?>
                 <span class="required-icon tooltip"><?php echo lang('required_label');?></span>                
                 <?php echo form_textarea('html',set_value('html',$category->html),'class="wysiwyg-simple" maxlength="1000"'); ?>
             </li>
             
             <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_cat_add_parent_id','parent_id'); ?>
+                <?php echo lang('store_category_add_parent_id','parent_id'); ?>
                 <?php echo form_dropdown('parent_id',$dropdown,'class="text" maxlength="10"'); ?>
                 
             </li>
             <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_cat_add_images_id','images_id'); ?>
+                <?php echo lang('store_category_add_images_id','images_id'); ?>
 					<?php 
 						if(isset($category->image)){ echo $category->image; }
 					?>

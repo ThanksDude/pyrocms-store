@@ -23,16 +23,16 @@ $lang['store_shortcut_list_categories']				= 'List Categories';
 
 // Titles
 $lang['store_title_store_config']         			= 'Store';
-$lang['store_title_store_index']         	= 'Store Index';
-$lang['store_title_add_store']         	= 'Add Store';
-$lang['store_title_edit_store']         	= 'Edit Store';
-$lang['store_title_stats_store']         	= 'Store Statistics';
-$lang['store_title_add_category']         = 'Add Category';
-$lang['store_title_add_product']				= 'Add Product';
-$lang['store_title_edit_product']			= 'Edit Product';
-$lang['store_title_edit_category'] 			= 'Edit Category';
-$lang['store_title_list_categories']        = 'List Categories';
-$lang['store_title_list_products']        = 'List Products';
+$lang['store_title_store_index']         			= 'Store Index';
+$lang['store_title_add_store']         				= 'Add Store';
+$lang['store_title_edit_store']         			= 'Edit Store';
+$lang['store_title_stats_store']         			= 'Store Statistics';
+$lang['store_title_add_category']        	 		= 'Add Category';
+$lang['store_title_add_product']					= 'Add Product';
+$lang['store_title_edit_product']					= 'Edit Product';
+$lang['store_title_edit_category'] 					= 'Edit Category';
+$lang['store_title_list_categories']       			= 'List Categories';
+$lang['store_title_list_products']        			= 'List Products';
 
 
 // Tabs
@@ -51,20 +51,15 @@ $lang['store_settings_display_stock']				= 'Display Stock';
 $lang['store_settings_allow_comments']				= 'Allow Comments';
 $lang['store_settings_new_order_mail_alert']		= 'Mail Alert on new Order';
 $lang['store_settings_active']						= 'Is active';
-$lang['store_settings_is_default']					= 'Is default';
 
-$lang['store_settings_paypal_enabled']				= 'Paypal enabled';
+$lang['store_settings_paypal_enabled']				= 'Paypal Enabled';
 $lang['store_settings_paypal_account']				= 'Paypal Account';
 $lang['store_settings_paypal_developer_mode']		= 'Developer mode';
 
-$lang['store_settings_authorize_enabled']			= 'Authorize.net enabled';
-$lang['store_settings_authorize_account']			= 'Authorize.net login';
-$lang['store_settings_authorize_secret']			= 'Authorize.net secret';
+$lang['store_settings_authorize_enabled']			= 'Authorize.net Enabled';
+$lang['store_settings_authorize_account']			= 'Authorize.net Token';
+$lang['store_settings_authorize_secret']			= 'Authorize.net Secret';
 $lang['store_settings_authorize_developer_mode']	= 'Developer mode';
-
-$lang['store_settings_twoco_enabled']				= '2Checkout enabled';
-$lang['store_settings_twoco_account']				= '2Checkout Vender ID';
-$lang['store_settings_twoco_developer_mode']		= 'Developer mode';
 
 $lang['store_settings_terms_and_conditions']		= 'Store AGB';
 $lang['store_settings_privacy_policy']				= 'Store Privacy Policy';
@@ -75,11 +70,7 @@ $lang['store_radio_yes']							= ' Yes ';
 $lang['store_radio_no']								= ' No ';
 
 // Labels
-//$lang['store_label_categories']					= 'Categories';
-//$lang['store_label_upload']						= 'Upload';
-//$lang['store_label_manage']						= 'Manage';
 $lang['store_label_store_name']						= 'Store Name';
-$lang['store_label_is_default']						= 'Default';
 $lang['store_label_general_options']				= 'General Options';
 $lang['store_label_email']							= 'Email';
 $lang['store_label_email_additional']				= 'Additional Emails';
@@ -111,7 +102,6 @@ $lang['store_button_add_product']					= 'Add product';
 $lang['store_button_edit']							= 'Edit';
 $lang['store_button_view']							= 'View';
 $lang['store_button_delete']						= 'Delete';
-//$lang['store_button_preview']						= 'Preview';
 $lang['store_button_backup_data']					= 'Backup Data';
 $lang['store_button_restore_data']					= 'Restore Data';
 $lang['store_button_set_default']					= 'Set Default';
@@ -130,21 +120,23 @@ $lang['store_messages_edit_success']				= 'Store sucessfully edited';
 $lang['store_messages_edit_error']					= 'Store editing failed';
 $lang['store_messages_delete_success']				= 'Store sucessfully deleted';
 $lang['store_messages_delete_error']				= 'Store deletetion failed';
-$lang['store_messages_cat_create_success']			= 'Category sucessfully created';
-$lang['store_messages_cat_create_error']			= 'Category creation failed';
+$lang['store_messages_category_create_success']		= 'Category sucessfully created';
+$lang['store_messages_category_create_error']		= 'Category creation failed';
+$lang['store_messages_product_create_success']		= 'Product sucessfully created';
+$lang['store_messages_product_create_error']		= 'Product creation failed';
 
 // Choices
 $lang['store_choice_yes']							= 'Yes';
 $lang['store_choice_no']							= 'No';
 
 // Add Category
-$lang['store_cat_add_label']						= 'Add Category';
-$lang['store_cat_add_name']							= 'Name';
-$lang['store_cat_add_html']							= 'Description';
-$lang['store_cat_add_parent_id']					= 'Parent';
-$lang['store_cat_add_images_id']					= 'Images';
-$lang['store_cat_add_thumbnail']					= 'Thumbnail';
-$lang['store_cat_add_store_id']						= 'Store ID';
+$lang['store_category_add_label']					= 'Add Category';
+$lang['store_category_add_name']					= 'Name';
+$lang['store_category_add_html']					= 'Description';
+$lang['store_category_add_parent_id']				= 'Parent';
+$lang['store_category_add_images_id']				= 'Images';
+$lang['store_category_add_thumbnail']				= 'Thumbnail';
+$lang['store_category_add_store_id']				= 'Store ID';
 
 // Add Product
 $lang['store_product_add_label']					= 'Add Product';
@@ -166,8 +158,8 @@ $lang['store_product_add_store_id']					= 'Store ID';
 $lang['store_product_add_allow_comments']			= 'Allow Comments';
 
 
-$lang['store_product_edit_label']			= 'Edit Product';// Edit Product
-$lang['store_cat_edit_label'] 				= 'Edit Category';// Edit Category
+$lang['store_product_edit_label']					= 'Edit Product';// Edit Product
+$lang['store_category_edit_label'] 					= 'Edit Category';// Edit Category
 
 
 // List Products
@@ -181,10 +173,10 @@ $lang['store_currently_no_products']				= 'Currently no products created';
 
 // List Categories
 $lang['store_categories_list_name']					= 'Name';
-$lang['store_categories_list_items']					= 'Items';
+$lang['store_categories_list_items']				= 'Items';
 $lang['store_categories_list_category_id']			= 'Category';
 $lang['store_categories_list_price']				= 'Price';
 $lang['store_categories_list_parent']				= 'Parent';
 $lang['store_categories_list_thumbnail']			= 'Thumbnail';
 $lang['store_categories_list_actions']				= 'Actions';
-$lang['store_currently_no_categories']				= 'Currently no products created';
+$lang['store_currently_no_categories']				= 'Currently no categories created';

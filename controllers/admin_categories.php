@@ -85,12 +85,12 @@ class Admin_categories extends Admin_Controller
 			
 			if ( $this->categories_m->add_category($new_image_id) )
 			{
-				$this->session->set_flashdata('success', sprintf(lang('store_cat_add_success'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store_category_add_success'), $this->input->post('name')));
 				redirect('admin/store/categories');
 			}
 			else
 			{
-				$this->session->set_flashdata(array('error'=> lang('store_cat_add_error')));
+				$this->session->set_flashdata(array('error'=> lang('store_category_add_error')));
 			}
 		}
 		else
@@ -129,12 +129,12 @@ class Admin_categories extends Admin_Controller
 						
 			if ( $this->categories_m->update_category($categories_id, $new_image_id) )
 			{
-				$this->session->set_flashdata('success', sprintf(lang('store_cat_add_success'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store_category_edit_success'), $this->input->post('name')));
 				redirect('admin/store/categories');
 			}
 			else
 			{
-				$this->session->set_flashdata(array('error'=> lang('store_cat_add_error')));
+				$this->session->set_flashdata(array('error'=> lang('store_category_edit_error')));
 			}			
 		}
 		else

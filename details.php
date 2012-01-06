@@ -100,7 +100,6 @@ class Module_Store extends Module {
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'allow_comments', 'radio', '', '', 'general', '1', '1', '8');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'new_order_mail_alert', 'radio', '', '', 'general', '1', '1', '9');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'active', 'radio', '', '', 'general', '1', '1', '10');");
-		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'is_default', 'radio', '', '', 'general', '1', '1', '11');");
 		
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'paypal_enabled', 'radio', '0', '', 'payment-gateways', '1', '1', '12');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'paypal_account', 'text', '', '', 'payment-gateways', '1', '1', '13');");
