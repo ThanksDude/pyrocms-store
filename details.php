@@ -124,6 +124,19 @@ class Module_Store extends Module {
 
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_currency') . "` (currency_id, currency_symbol, currency_name) VALUES (null, '&euro;', 'EUR') ");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_currency') . "` (currency_id, currency_symbol, currency_name) VALUES (null, '&dollar;', 'USD') ");
+		
+		$this->db->query("
+			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_status') . "` (
+				`status_id` INT NOT NULL AUTO_INCREMENT ,
+				`status_name` VARCHAR(255) NULL ,
+				PRIMARY KEY (`status_id`) )
+			ENGINE = InnoDB;");
+
+		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_status') . "` (status_id, status_name) VALUES (null, 'store_status_new') ");
+		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_status') . "` (status_id, status_name) VALUES (null, 'store_status_cancel') ");
+		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_status') . "` (status_id, status_name) VALUES (null, 'store_status_awaiting_payment') ");
+		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_status') . "` (status_id, status_name) VALUES (null, 'store_status_payment_recieved') ");
+		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_status') . "` (status_id, status_name) VALUES (null, 'store_status_order_complete') ");
 
 		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_users_addresses') . "` (
@@ -270,6 +283,7 @@ class Module_Store extends Module {
 		$this->db->query("DELETE FROM `core_stores` WHERE store_id=(SELECT `value` FROM `" . $this->db->dbprefix('store_settings') . "` WHERE slug='store_id');");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_settings') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_currency') . "`;");
+		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_status') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_users_addresses') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_categories') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_attributes') . "`;");
