@@ -16,10 +16,17 @@ class Admin extends Admin_Controller
 		parent::__construct();
 
 		// Load all the required classes
-		$this->load->model('store_m');
 		$this->load->library('form_validation');
 		$this->load->library('store_settings');
-		$this->load->language('store');
+		
+		$this->load->language('general');
+		$this->load->language('messages');
+		$this->load->language('dashboard');
+		$this->load->language('statistics');
+		$this->load->language('settings');
+
+		$this->load->model('store_m');
+
 		$this->load->helper('date');
 		
 		// We'll set the partials and metadata here since they're used everywhere
