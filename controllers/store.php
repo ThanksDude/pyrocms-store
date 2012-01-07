@@ -10,20 +10,22 @@
 class Store extends Public_Controller
 {
 
-	public function __construct(){
-
+	public function __construct()
+	{
 		parent::__construct();
 
-		// Load the required classes
 		$this->load->library('cart');
-		
-		// load required models
+		$this->load->library('store_settings');
+
+		$this->load->language('general');
+		$this->load->language('messages');
+		$this->load->language('cart');
+		$this->load->language('settings');
+
 		$this->load->model('store_m');
-		$this->load->model('categories_m');		
+		$this->load->model('categories_m');
 		$this->load->model('products_m');
 
-		$this->load->language('store');
-		$this->load->library('store_settings');
 		$this->load->helper('date');
 		
 		$this->template->append_metadata(css('store.css', 'store'))
