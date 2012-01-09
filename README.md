@@ -10,6 +10,11 @@ if you have any questions don't hesitate to ask them.
 
 greetings the pyrocms-store team
 
+## Website
+
+[website](http://www.odin-addons.com/)
+[forums](http://www.odin-addons.com/forums)
+
 ##The Team
 
 * [Jaap Jolman](https://github.com/jaapjolman)
