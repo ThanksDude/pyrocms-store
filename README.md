@@ -12,8 +12,8 @@ greetings the pyrocms-store team
 
 ## Website
 
-[website](http://www.odin-addons.com/)
-[forums](http://www.odin-addons.com/forums)
+* [website](http://www.odin-addons.com/)
+* [forums](http://www.odin-addons.com/forums)
 
 ##The Team
 
