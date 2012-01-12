@@ -30,7 +30,7 @@
             
             <li class="<?php echo alternator('even', ''); ?>">
                 <?php echo lang('store_category_parent','parent_id'); ?>
-                <?php echo form_dropdown('parent_id', set_value('name',$categories,$category->dropdown), 'class="text" maxlength="10"'); ?>
+                <?php echo form_dropdown('parent_id', set_value('name',$categories,$dropdown), 'class="text" maxlength="10"'); ?>
                 
             </li>
             <li class="<?php echo alternator('even', ''); ?>">

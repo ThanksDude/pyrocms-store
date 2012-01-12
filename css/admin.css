@@ -120,7 +120,7 @@ background: url('./images/support.png') no-repeat center center;
 }
 
 #vtab fieldset li { margin: 40px 0px 40px 0px; }
-#vtab fieldset li label { width: 250px; display: inline-block; margin-bottom: 0px; }
+#vtab fieldset li label { display: inline-block; margin-right: 50px; margin-bottom: 0px; text-align: center; }
 
 
 #vtab fieldset { padding: 0px 40px 20px 40px; margin-bottom: 0px; border-radius: 0.5em;

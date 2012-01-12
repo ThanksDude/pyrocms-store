@@ -126,6 +126,8 @@ class Admin_categories extends Admin_Controller
 
 		if($this->form_validation->run('edit_category')):
 
+			$new_image_id = 0;
+
 			if($this->upload->do_upload('userfile')):
 
 				$image_file = $this->upload->data();
@@ -134,10 +136,6 @@ class Admin_categories extends Admin_Controller
 					$new_image_id = $this->images_m->add_image($image_file, 'category');
 
 				endif;
-
-			else:
-
-				$new_image_id = 0;
 
 			endif;
 	
