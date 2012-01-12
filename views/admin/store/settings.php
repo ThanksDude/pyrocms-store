@@ -56,7 +56,7 @@ $(document).ready(function() {
 	</ul>
 		<!-- index tab -->
 	<div>
-		<h4><?php echo lang('store_tab_config');?></h4>	
+<!--		<h4><?php echo lang('store_tab_config');?></h4>	 -->
 		<div class="" id="general">
 		<fieldset>
 		<ul>
@@ -78,7 +78,7 @@ $(document).ready(function() {
                      
                 <li class="<?php echo alternator('even', ''); ?>">
                     <?php echo lang('store_settings_'.$this->setting->slug,$this->setting->slug); ?> 
-                    <?php if($this->setting->value == 1) { echo form_radio($this->setting->slug,'1',TRUE).$this->lang->line('store_radio_yes'); echo form_radio($this->setting->slug,'0',FALSE).$this->lang->line('store_radio_no'); } else { echo form_radio($this->setting->slug,'1',FALSE).$this->lang->line('store_radio_yes'); echo form_radio($this->setting->slug,'0',TRUE).$this->lang->line('store_radio_no'); } ?>			
+                    <?php if($this->setting->value == 1) { echo form_radio($this->setting->slug,'1',TRUE).$this->lang->line('store_choice_yes'); echo form_radio($this->setting->slug,'0',FALSE).$this->lang->line('store_choice_no'); } else { echo form_radio($this->setting->slug,'1',FALSE).$this->lang->line('store_choice_yes'); echo form_radio($this->setting->slug,'0',TRUE).$this->lang->line('store_choice_no'); } ?>			
 				</li>
 			<?php break; case 'checkbox': ?>
                      
@@ -115,7 +115,7 @@ $(document).ready(function() {
 	
    <!-- Payment Gateways tab -->	
 	<div>
-	   <h4><?php echo lang('store_tab_payment_gateways');?></h4> 
+	   <!--<h4><?php echo lang('store_tab_payment_gateways');?></h4>--> 
 		<div class="" id="payment-gateways">
 		<fieldset>
 		<ul>
@@ -138,7 +138,7 @@ $(document).ready(function() {
                      
                 <li class="<?php echo alternator('even', ''); ?>">
                     <?php echo lang('store_settings_'.$this->setting->slug,$this->setting->slug); ?> 
-                    <?php if($this->setting->value == 1) { echo form_radio($this->setting->slug,'1',TRUE).$this->lang->line('store_radio_yes'); echo form_radio($this->setting->slug,'0',FALSE).$this->lang->line('store_radio_no'); } else { echo form_radio($this->setting->slug,'1',FALSE).$this->lang->line('store_radio_yes'); echo form_radio($this->setting->slug,'0',TRUE).$this->lang->line('store_radio_no'); } ?>				
+                    <?php if($this->setting->value == 1) { echo form_radio($this->setting->slug,'1',TRUE).$this->lang->line('store_choice_yes'); echo form_radio($this->setting->slug,'0',FALSE).$this->lang->line('store_choice_no'); } else { echo form_radio($this->setting->slug,'1',FALSE).$this->lang->line('store_choice_yes'); echo form_radio($this->setting->slug,'0',TRUE).$this->lang->line('store_choice_no'); } ?>				
 				</li><?php if($this->setting->slug == "paypal_developer_mode" || $this->setting->slug == "authorize_developer_mode" ) { echo "<hr />"; } ?>
 			<?php break; case 'checkbox': ?>
                      
@@ -175,7 +175,7 @@ $(document).ready(function() {
 	
 	    <!-- Extra tab -->
 	<div>
-		<h4><?php echo lang('store_tab_additional_info');?></h4>
+		<!--<h4><?php echo lang('store_tab_additional_info');?></h4>-->
 		<div class="" id="extra">
 		<fieldset>
 		<ul>
@@ -197,7 +197,7 @@ $(document).ready(function() {
                      
                 <li class="<?php echo alternator('even', ''); ?>">
                     <?php echo lang('store_settings_'.$this->setting->slug,$this->setting->slug); ?> 
-                    <?php if($this->setting->value == 1) { echo form_radio($this->setting->slug,'1',TRUE).$this->lang->line('store_radio_yes'); echo form_radio($this->setting->slug,'0',FALSE).$this->lang->line('store_radio_no'); } else { echo form_radio($this->setting->slug,'1',FALSE).$this->lang->line('store_radio_yes'); echo form_radio($this->setting->slug,'0',TRUE).$this->lang->line('store_radio_no'); } ?>			
+                    <?php if($this->setting->value == 1) { echo form_radio($this->setting->slug,'1',TRUE).$this->lang->line('store_choice_yes'); echo form_radio($this->setting->slug,'0',FALSE).$this->lang->line('store_choice_no'); } else { echo form_radio($this->setting->slug,'1',FALSE).$this->lang->line('store_choice_yes'); echo form_radio($this->setting->slug,'0',TRUE).$this->lang->line('store_choice_no'); } ?>			
 				</li>
 			<?php break; case 'checkbox': ?>
                      

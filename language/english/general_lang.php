@@ -20,7 +20,7 @@ $lang['store_menu_categories']						= 'Categories';
 // SHORTCUTS -------------------------------------------------------------------------------------
 
 $lang['store_shortcut_store_dashboard']				= 'Dashboard';
-$lang['store_shortcut_store_statistics']			= 'statistics';
+$lang['store_shortcut_store_statistics']			= 'Statistics';
 $lang['store_shortcut_store_settings']				= 'Settings';
 
 $lang['store_shortcut_categories_list']				= 'List Categories';

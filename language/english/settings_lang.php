@@ -13,8 +13,8 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 $lang['store_settings_name']						= 'Name';
-$lang['store_settings_email']						= 'Default Emailaddress';
-$lang['store_settings_additional_emails']			= 'Additional Emailaddresses (comma-separated)';
+$lang['store_settings_email']						= 'Default Email address';
+$lang['store_settings_additional_emails']			= 'Additional Email addresses (comma-separated)';
 $lang['store_settings_currency']					= 'Default Currency';
 $lang['store_settings_item_per_page']				= 'Items per Page';
 $lang['store_settings_show_with_tax']				= 'Show Tax';
