@@ -105,7 +105,7 @@ class Admin_categories extends Admin_Controller
 
 		else:
 
-			$this->data->categories			= $this->categories_m->make_categories_dropdown(0);
+			$this->data->dropdown			= $this->categories_m->make_categories_dropdown(0);
 			$this->data->action				= 'add';
 			$this->data->category->name		= NULL;
 			$this->data->category->html		= NULL;
@@ -152,7 +152,6 @@ class Admin_categories extends Admin_Controller
 
 		else:
 
-			$this->data->dropdown = $this->categories_m->make_categories_dropdown($categories_id);
 			$category = $this->categories_m->get_category($categories_id);	
 
 			$image = $this->images_m->get_image($category->images_id); 				
@@ -162,7 +161,7 @@ class Admin_categories extends Admin_Controller
 
 			endif;
 
-			$this->data->categories	= $this->categories_m->make_categories_dropdown(0);
+			$this->data->dropdown = $this->categories_m->make_categories_dropdown($categories_id);
 			$this->data->action		= 'edit';
 			$this->data->category	= $category;
 

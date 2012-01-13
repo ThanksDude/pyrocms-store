@@ -9,7 +9,7 @@
 
 $(document).ready(function(){
 
-	$('a.edit_product').colorbox({ 
+/*	$('a.edit_product').colorbox({ 
 		transition: 'none', 
 		//rel: 'edit', 
 		//width:'70%', 
@@ -19,7 +19,7 @@ $(document).ready(function(){
 		scrolling: false
 		//fastIframe: false
 	 	
-	 });
+	 });*/
 
 	$('a.product_images').colorbox({
 		transition: 'none',

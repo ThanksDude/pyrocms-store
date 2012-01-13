@@ -9,10 +9,10 @@
 **/
 ?>
 
-<?php echo js('ckeditor/ckeditor.js'); ?>
-<?php echo js('ckeditor/adapters/jquery.js'); ?>
+<?php //echo js('ckeditor/ckeditor.js'); ?>
+<?php //echo js('ckeditor/adapters/jquery.js'); ?>
 <section class="title">
-	<h4><?=$section_title;?></h4>
+	<h4><?php echo $section_title; ?></h4>
 </section>
 
 <section class="item">

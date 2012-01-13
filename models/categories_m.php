@@ -24,22 +24,17 @@ class Categories_m extends MY_Model
 	public function make_categories_dropdown($categories_id=0)
 	{
 		$categories = $this->db->get('store_categories');
-		$selected_cat;
-		$parent_cat;
-
-		if($categories_id):
-
-			$selected_cat = $this->categories_m->get($categories_id);
+		$selected_cat = $this->categories_m->get_category($categories_id);
+		if($selected_cat){
 			$parent_cat = $this->categories_m->get($selected_cat->parent_id);
-
-		endif;
+		}
 
 		if($categories->num_rows() == 0):
 
 			return array();
 
 		else:
-
+			// if this category has a parent
 			if(isset($parent_cat) && $parent_cat ):
 
 				$this->data = array( $parent_cat->categories_id => $parent_cat->name);
@@ -61,9 +56,9 @@ class Categories_m extends MY_Model
 				$this->data  = array('0'=>'Select');
 				foreach($categories->result() as $category):
 
-					if(isset($selected_cat)):
+					if($selected_cat):
 
-						if(!($category->name == $selected_cat->name)):
+						if( !($category->name == $selected_cat->name) ):
 
 							$this->data[$category->categories_id] = $category->name;
 
@@ -104,9 +99,11 @@ class Categories_m extends MY_Model
 
 	public function update_category($categories_id, $new_image_id=0)
 	{
-		$this->data = $this->input->post();
+		$this->data = $this->input->post();// get all submitted data
 		array_pop($this->data);
 		unset($this->data['userfile']);
+
+		if($this->data['parent_id'] == 0) { unset($this->data['parent_id']); }
 
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
 

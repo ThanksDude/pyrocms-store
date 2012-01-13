@@ -71,7 +71,7 @@
 			<?php echo lang('store_product_images','images_id'); ?>
 <!-- 			<?php echo form_input('images_id',set_value('images_id',$product->images_id),'class="text" maxlength="10"'); ?> -->
 			<?php 
-				if($product_image){
+				if( isset($product_image) && $product_image){
 					$output = '<a href="uploads/store/products/' . $product_image->filename . '"';
 					$output .= ' rel="cbox_images" class="product_images"  >';
 					$output .= '<img src="uploads/store/products/' . $product_image->name . '_thumb'. $product_image->extension;
