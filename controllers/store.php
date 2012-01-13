@@ -35,6 +35,6 @@ class Store extends Public_Controller
 
 	public function index()
 	{
-		redirect('/store/categories/browse/top/tiles');
+		redirect('store/categories/browse/top/tiles');
 	}
 }

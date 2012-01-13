@@ -49,19 +49,20 @@ class Categories extends Public_Controller
 					case 'tiles':
 						
 						$categories = $this->categories_m->get_all();
-						foreach ($categories as $category){
+						foreach ($categories as $category):
 				
 							$image = $this->images_m->get_image($category->images_id);
 							
-							if($image){ 
+							if($image):
+							 
 								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
 								$category->image = $image;
-							}	
-						}
+							
+							endif;
+								
+						endforeach;
 				
-						$this->data = array(
-							'categories'	=>	$categories
-						);		
+						$this->data->categories =	$categories;
 				
 						$this->template
 							 ->build('categories/index/tiles', $this->data);
@@ -71,15 +72,18 @@ class Categories extends Public_Controller
 					case 'list':
 						
 						$categories = $this->categories_m->get_all();
-						foreach ($categories as $category){
+						foreach ($categories as $category):
 				
 							$image = $this->images_m->get_image($category->images_id);
 							
-							if($image){ 
+							if($image):
+
 								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
 								$category->image = $image;
-							}	
-						}
+							
+							endif;
+						
+						endforeach;
 				
 						$this->data->categories = $categories;	
 				
