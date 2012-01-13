@@ -10,9 +10,9 @@
 class Widget_Store_categories extends Widgets {
 
 	public $title = array(
-		'en' => 'Store Categories Widget',
+		'en' => 'Store Categories',
 		'nl' => 'Winkel Categorieen',
-		'de' => 'Store Categories Widget'
+		'de' => 'Store Categories'
 	);
 	public $description	= array(
 		'en' => 'Display the Store Categories',
@@ -23,21 +23,12 @@ class Widget_Store_categories extends Widgets {
 	public $website		= 'http://www.odin-ict.nl/';
 	public $version		= '1.0';
 	
-	public $fields = array(
-	);
-	
-	public function __construct()
-	{
-		parent::__construct();
-	}
-	
-	public function form($options)
-	{		
-		return array(
-		);
-	}
 	public function run($options)
 	{
-		return	$options;
+		$this->load->model('store/categories_m');
+		
+		$categories = $this->categories_m->order_by('name')->get_all();
+		
+		return array('categories' => $categories);
 	}
 }

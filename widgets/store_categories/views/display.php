@@ -7,9 +7,13 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-	$html='<link href="/'.SHARED_ADDONPATH.'modules/store/css/widget_store_categories.css" type="text/css" rel="stylesheet" />';
-	$html.='<script type="text/javascript" src="/'.SHARED_ADDONPATH.'modules/store/js/widget_store_categories.js"></script>';
-	$html.='<div id="widget_store_categories">';
-	$html .= '</div>';
-	print $html;
 ?>
+<?php if(is_array($categories)): ?>
+<ul>
+	<?php foreach($categories as $category): ?>
+	<li>
+		<?php echo anchor("store/items/{$category->slug}", $category->name); ?>
+	</li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
