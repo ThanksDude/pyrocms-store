@@ -28,8 +28,9 @@ class Store extends Public_Controller
 
 		$this->load->helper('date');
 		
-		$this->template->append_metadata(css('store.css', 'store'))
-						->append_metadata(js('store.js', 'store'));
+		$this->template
+			 ->append_metadata(css('store.css', 'store'))
+			 ->append_metadata(js('store.js', 'store'));
 	}
 
 	public function index()

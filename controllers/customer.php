@@ -28,12 +28,39 @@ class Customer extends Public_Controller
 
 		$this->load->helper('date');
 		
-		$this->template->append_metadata(css('store.css', 'store'))
-						->append_metadata(js('store.js', 'store'));
+		$this->template
+			 ->append_metadata(css('store.css', 'store'))
+			 ->append_metadata(js('store.js', 'store'));
 	}
 
 	public function index()
 	{
+		$this->template
+			 ->build('customer/index', $this->data);
+	}
+
+	public function purchase_history()
+	{
+		$this->template
+			 ->build('customer/purchase_history', $this->data);
+	}
+
+	public function order_status()
+	{
+		$this->template
+			 ->build('customer/order_status', $this->data);
+	}
+
+	public function my_downloads()
+	{
+		$this->template
+			 ->build('customer/my_downloads', $this->data);
+	}
+
+	public function profile()
+	{
+		$this->template
+			 ->build('customer/profile', $this->data);
 	}
 }
 /* End of file customer.php */

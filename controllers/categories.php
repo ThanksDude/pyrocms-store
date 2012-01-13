@@ -28,8 +28,9 @@ class Categories extends Public_Controller
 
 		$this->load->helper('date');
 		
-		$this->template->append_metadata(css('store.css', 'store'))
-						->append_metadata(js('store.js', 'store'));
+		$this->template
+			 ->append_metadata(css('store.css', 'store'))
+			 ->append_metadata(js('store.js', 'store'));
 	}
 
 	public function index()
@@ -62,7 +63,8 @@ class Categories extends Public_Controller
 							'categories'	=>	$categories
 						);		
 				
-						$this->template->build('categories/index/tiles', $this->data);
+						$this->template
+							 ->build('categories/index/tiles', $this->data);
 						
 					break;
 				
@@ -79,11 +81,10 @@ class Categories extends Public_Controller
 							}	
 						}
 				
-						$this->data = array(
-							'categories'	=>	$categories
-						);		
+						$this->data->categories = $categories;	
 				
-						$this->template->build('categories/index/list', $this->data);
+						$this->template
+							 ->build('categories/index/list', $this->data);
 						
 					break;
 				
@@ -127,7 +128,8 @@ class Categories extends Public_Controller
 									$this->data->products		= $products;
 									$this->data->category_name	= $category->name;
 						
-									$this->template->build('categories/tiles', $this->data);
+									$this->template
+										 ->build('categories/tiles', $this->data);
 						
 									else:
 									
@@ -169,7 +171,8 @@ class Categories extends Public_Controller
 									$this->data->products		= $products;
 									$this->data->category_name	= $category->name;
 						
-									$this->template->build('categories/list', $this->data);
+									$this->template
+										 ->build('categories/list', $this->data);
 						
 									else:
 									

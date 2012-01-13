@@ -28,8 +28,9 @@ class product extends Public_Controller
 
 		$this->load->helper('date');
 		
-		$this->template->append_metadata(css('store.css', 'store'))
-						->append_metadata(js('store.js', 'store'));
+		$this->template
+			 ->append_metadata(css('store.css', 'store'))
+			 ->append_metadata(js('store.js', 'store'));
 	}
 
 	public function index()
@@ -49,10 +50,12 @@ class product extends Public_Controller
 				
 					$this->images_m->front_image_resize('uploads/store/products/', $image, "_large", 400, 300);
 					$product->image = $image;
+					
 				endif;
 				
 				$this->data->product = $product;
-				$this->template->build('product/product', $this->data);
+				$this->template
+					 ->build('product/product', $this->data);
 				
 			endif;
 			

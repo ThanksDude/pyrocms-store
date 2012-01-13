@@ -28,12 +28,26 @@ class Search extends Public_Controller
 
 		$this->load->helper('date');
 		
-		$this->template->append_metadata(css('store.css', 'store'))
-						->append_metadata(js('store.js', 'store'));
+		$this->template
+			 ->append_metadata(css('store.css', 'store'))
+			 ->append_metadata(js('store.js', 'store'));
 	}
 
 	public function index()
 	{
+		redirect('store/categories/browse/top/tiles');
+	}
+
+	public function query()
+	{
+		$this->template
+			 ->build('search/query', $this->data);
+	}
+
+	public function results()
+	{
+		$this->template
+			 ->build('search/results', $this->data);
 	}
 }
 /* End of file search.php */
