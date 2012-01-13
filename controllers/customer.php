@@ -7,7 +7,7 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Store extends Public_Controller
+class Customer extends Public_Controller
 {
 
 	public function __construct()
@@ -18,7 +18,6 @@ class Store extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('products');
 		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
@@ -36,6 +35,33 @@ class Store extends Public_Controller
 
 	public function index()
 	{
-		redirect('store/categories/browse/top/tiles');
+		$this->template
+			 ->build('customer/index', $this->data);
+	}
+
+	public function purchase_history()
+	{
+		$this->template
+			 ->build('customer/purchase_history', $this->data);
+	}
+
+	public function order_status()
+	{
+		$this->template
+			 ->build('customer/order_status', $this->data);
+	}
+
+	public function my_downloads()
+	{
+		$this->template
+			 ->build('customer/my_downloads', $this->data);
+	}
+
+	public function profile()
+	{
+		$this->template
+			 ->build('customer/profile', $this->data);
 	}
 }
+/* End of file customer.php */
+/* Location: ./store/controllers/customer.php */

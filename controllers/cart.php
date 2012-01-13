@@ -7,7 +7,7 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Store extends Public_Controller
+class Cart extends Public_Controller
 {
 
 	public function __construct()
@@ -18,7 +18,6 @@ class Store extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('products');
 		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
@@ -36,6 +35,37 @@ class Store extends Public_Controller
 
 	public function index()
 	{
-		redirect('store/categories/browse/top/tiles');
+		redirect('store/cart/show_cart');
+	}
+	
+	public function show_cart()
+	{
+		$this->data;
+		$this->template
+			 ->build('cart', $this->data);
+	}
+	
+	public function checkout_cart(){
+		$this->store_m->build_order();
+	}
+	
+	public function update_cart()
+	{
+		$this->redirect		= $this->input->post('redirect');
+		$this->data			= $this->input->post();
+		$this->cart->update($this->data);
+		
+		redirect($this->redirect);
+	}
+	
+	public function insert_cart($product)
+	{
+		$this->redirect	= $this->input->post('redirect');
+		$this->data		= $this->store_m->get_product_in_cart($product);
+		$this->cart->insert($this->data);
+		
+		redirect($this->redirect);
 	}
 }
+/* End of file cart.php */
+/* Location: ./store/controllers/cart.php */

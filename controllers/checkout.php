@@ -29,11 +29,27 @@ class Checkout extends Public_Controller
 
 		$this->load->helper('date');
 
-		$this->template->append_metadata(css('store.css', 'store'))
-						->append_metadata(js('store.js', 'store'));
+		$this->template
+			 ->append_metadata(css('store.css', 'store'))
+			 ->append_metadata(js('store.js', 'store'));
 	}
 
 	public function index()
+	{
+		
+	}
+
+	public function purchase()
+	{
+		
+	}
+
+	public function review()
+	{
+		
+	}
+
+	public function confirmation()
 	{
 		
 	}
@@ -88,11 +104,17 @@ class Checkout extends Public_Controller
 			
 				$action = $this->CI->input->get('action', TRUE);
 				if($action === FALSE):
+				
 					$this->checkout_m->ipn_update($orders_id,'2');
+					
 				elseif($action === 'success'):
+				
 					$this->checkout_m->ipn_update($orders_id,'4');
+					
 				elseif($action === 'cancel'):
+				
 					$this->checkout_m->ipn_update($orders_id,'2');
+					
 				endif;
 				
 			break;

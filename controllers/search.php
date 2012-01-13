@@ -7,7 +7,7 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Store extends Public_Controller
+class Search extends Public_Controller
 {
 
 	public function __construct()
@@ -18,7 +18,6 @@ class Store extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('products');
 		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
@@ -38,4 +37,18 @@ class Store extends Public_Controller
 	{
 		redirect('store/categories/browse/top/tiles');
 	}
+
+	public function query()
+	{
+		$this->template
+			 ->build('search/query', $this->data);
+	}
+
+	public function results()
+	{
+		$this->template
+			 ->build('search/results', $this->data);
+	}
 }
+/* End of file search.php */
+/* Location: ./store/controllers/search.php */

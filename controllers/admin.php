@@ -30,10 +30,11 @@ class Admin extends Admin_Controller
 		$this->load->helper('date');
 		
 		// We'll set the partials and metadata here since they're used everywhere
-		$this->template->set_partial('shortcuts', 'admin/partials/shortcuts')
-						->append_metadata(js('admin.js', 'store'))
-						->append_metadata(js('stickyfloat.js', 'store'))
-						->append_metadata(css('admin.css', 'store'));
+		$this->template
+			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
+			 ->append_metadata(js('admin.js', 'store'))
+			 ->append_metadata(js('stickyfloat.js', 'store'))
+			 ->append_metadata(css('admin.css', 'store'));
 	}
 	
 	public function index()
@@ -41,9 +42,9 @@ class Admin extends Admin_Controller
 		$this->data = array();
 		
 		$this->template
-			->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-			->title($this->module_details['name'], lang('store_title_store_dashboard'))
-			->build('admin/store/dashboard',$this->data);
+			 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+			 ->title($this->module_details['name'], lang('store_title_store_dashboard'))
+			 ->build('admin/store/dashboard',$this->data);
 	}
 	
 	public function statistics()
@@ -51,9 +52,9 @@ class Admin extends Admin_Controller
 		$this->data = array();
 		
 		$this->template
-			->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-			->title($this->module_details['name'], lang('store_title_store_statistics'))
-			->build('admin/store/statistics',$this->data);
+			 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+			 ->title($this->module_details['name'], lang('store_title_store_statistics'))
+			 ->build('admin/store/statistics',$this->data);
 	}
 	
 	public function settings()
@@ -67,9 +68,9 @@ class Admin extends Admin_Controller
 			$this->data['extra_settings']				= $this->store_settings->settings_manager_retrieve('extra')->result();
 			
 			$this->template
-				->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				->title($this->module_details['name'], lang('store_title_store_settings'))
-				->build('admin/store/settings',$this->data);
+				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+				 ->title($this->module_details['name'], lang('store_title_store_settings'))
+				 ->build('admin/store/settings',$this->data);
 
 		else:
 			

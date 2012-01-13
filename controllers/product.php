@@ -7,7 +7,7 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Store extends Public_Controller
+class product extends Public_Controller
 {
 
 	public function __construct()
@@ -18,7 +18,6 @@ class Store extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('products');
 		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
@@ -38,4 +37,34 @@ class Store extends Public_Controller
 	{
 		redirect('store/categories/browse/top/tiles');
 	}
+	
+	public function view($product_slug = NULL)
+	{
+		if($product_slug != NULL):
+	
+			$product = $this->products_m->get_by('slug', $product_slug);
+			if($product):
+			
+				$image = $this->images_m->get_image($product->images_id);
+				if($image):
+				
+					$this->images_m->front_image_resize('uploads/store/products/', $image, "_large", 400, 300);
+					$product->image = $image;
+					
+				endif;
+				
+				$this->data->product = $product;
+				$this->template
+					 ->build('product/product', $this->data);
+				
+			endif;
+			
+		else:
+		
+			redirect('store/categories/browse/top/tiles');
+		
+		endif;
+	}
 }
+/* End of file product.php */
+/* Location: ./store/controllers/product.php */

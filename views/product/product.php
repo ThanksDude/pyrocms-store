@@ -38,14 +38,3 @@
 		<?php echo form_close(); ?>
 	</ul>
 </div>
-
-
-
-
-
-
-
-
-
-
-

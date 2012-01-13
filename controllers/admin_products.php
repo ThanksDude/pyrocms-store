@@ -46,9 +46,10 @@ class Admin_products extends Admin_Controller
 		$this->upload_config['max_width']		= '1024';
 		$this->upload_config['max_height']		= '768';
 
-		$this->template->set_partial('shortcuts', 'admin/partials/shortcuts')
-						->append_metadata(js('admin.js', 'store'))
-						->append_metadata(css('admin.css', 'store'));
+		$this->template
+			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
+			 ->append_metadata(js('admin.js', 'store'))
+			 ->append_metadata(css('admin.css', 'store'));
 	}
 
 	public function index()
@@ -85,7 +86,8 @@ class Admin_products extends Admin_Controller
 
 		$this->data->products	= $products;
 
-		$this->template->build('admin/products/index', $this->data);
+		$this->template
+			 ->build('admin/products/index', $this->data);
 	}
 
 	public function add()
@@ -140,8 +142,8 @@ class Admin_products extends Admin_Controller
 			$this->data->product->thumbnail_id		= NULL;
 
 			$this->template
-				->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				->build('admin/products/form', $this->data);
+				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+				 ->build('admin/products/form', $this->data);
 
 	}
 
@@ -199,8 +201,8 @@ class Admin_products extends Admin_Controller
 			if(!$ajax):
 
 				$this->template
-					->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-					->build('admin/products/form', $this->data);
+					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+					 ->build('admin/products/form', $this->data);
 
 			else:
 
@@ -246,7 +248,7 @@ class Admin_products extends Admin_Controller
 			$this->data->products		= $products;
 			
 			$this->template
-				->build('admin/products/index_category', $this->data);
+				 ->build('admin/products/index_category', $this->data);
 
 		else:
 
