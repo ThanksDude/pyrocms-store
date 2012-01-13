@@ -20,19 +20,20 @@
 			<?php if(isset($product->image)) : ?>
 				<?php $name = $product->image->name; $id = $product->image->id; 
 						$extension = $product->image->extension; ?>			
-				<img src="<?=base_url();?>uploads/store/products/<?=$name . $id. '_large' . $extension;?>" alt="<?php echo $product->name; ?>" />
+				<img src="<?php echo base_url();?>uploads/store/products/<?php echo $name . $id. '_large' . $extension;?>" alt="<?php echo $product->name; ?>" />
 			<?php endif; ?>				
 			</div>
-			<div><p><?php echo lang('store_product_add_html'). " : ";?></p>
+			<div><p><?php echo lang('store_product_html'). " : ";?></p>
 						<?php echo $product->html; ?>
 			</div>
 			<div><p>
-				<span>Price : <?php echo $this->cart->format_number($product->price); ?></span>
+				<span><?php echo lang('store_product_price'). " : ";?>
+						<?php echo $this->cart->format_number($product->price); ?>
+                </span>
 				<?php echo form_input('qty','1') . form_submit('','Add to Cart'); ?>
 			</p></div>
-			<div><p>
-				<?php echo "Stock : " . $product->stock; ?>			
-			</p></div>
+			<div><p><?php echo lang('store_product_stock'). " : " . $product->stock ;?></p></div>
+
 		</li>
 		<?php echo form_close(); ?>
 	</ul>

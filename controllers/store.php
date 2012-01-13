@@ -18,6 +18,7 @@ class Store extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
+		$this->load->language('products');
 		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
