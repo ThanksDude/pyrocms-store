@@ -51,6 +51,51 @@ class Categories extends Public_Controller
 
 		$this->template->build('index', $this->data);
 	}
+	
+	public function browse($type = 'top', $view = 'tiles',$name = NULL)
+	{
+		if( ! $name ) { redirect('store'); }
+		$name = str_replace('-', ' ', $name);
+		$category = $this->categories_m->get_category_by_name($name);
+		
+		if($category){
+			if ( ! $product_slug ) {
+				$products = $this->products_m->get_products($category->categories_id);
+				if($products){
+					foreach ($products as $product){
+						
+						$image = $this->images_m->get_image($product->images_id);
+						if($image){ 
+							$this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
+							$product->image = $image;
+						}		
+					}
+					$this->data = array( 
+							'products'	=>	$products, 'category_name' => $category->name );
+				}
+				$this->template->build('category', $this->data);
+			}
+			else {  	// display specific product given by $products_id
+
+				$product = $this->products_m->get_by('slug', $product_slug);
+				if($product){
+					$image = $this->images_m->get_image($product->images_id);
+					if($image){ 
+						$this->images_m->front_image_resize('uploads/store/products/', $image, "_large", 400, 300);	
+						$product->image = $image;
+					}						
+					$this->data = array( 'product' =>	$product );
+					$this->template->build('product', $this->data);
+				}
+				else { redirect('store/items/'.$category->name); }
+				
+				
+			}
+		}
+		else {
+			redirect('store');
+		}
+	}
 }
 /* End of file categories.php */
 /* Location: ./store/controllers/categories.php */

@@ -7,7 +7,7 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Store extends Public_Controller
+class product extends Public_Controller
 {
 
 	public function __construct()
@@ -34,6 +34,19 @@ class Store extends Public_Controller
 
 	public function index()
 	{
-		redirect('/store/categories/browse/tiles');
+		redirect('store/categories/browse/top/tiles');
+	}
+	
+	public function view($product_slug = NULL)
+	{
+		if($product_slug != NULL):
+		
+		else:
+		
+			redirect('store/categories/browse/top/tiles');
+		
+		endif;
 	}
 }
+/* End of file product.php */
+/* Location: ./store/controllers/product.php */

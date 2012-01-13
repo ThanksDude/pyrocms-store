@@ -7,7 +7,7 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Products extends Public_Controller
+class Cart extends Public_Controller
 {
 
 	public function __construct()
@@ -34,7 +34,35 @@ class Products extends Public_Controller
 
 	public function index()
 	{
+		redirect('store/cart/show_cart');
+	}
+	
+	public function show_cart(){
+
+		$this->data = array(
+			''	=>	''
+		);
+		
+		$this->template->build('cart', $this->data);
+	}
+	
+	public function checkout_cart(){
+		$this->store_m->build_order();
+	}
+	
+	public function update_cart(){
+		$this->redirect = $this->input->post('redirect');
+		$this->data = $this->input->post();
+		$this->cart->update($this->data);
+		redirect($this->redirect);
+	}
+	
+	public function insert_cart($product){
+		$this->redirect = $this->input->post('redirect');
+		$this->data = $this->store_m->get_product_in_cart($product);
+		$this->cart->insert($this->data);
+		redirect($this->redirect);
 	}
 }
-/* End of file products.php */
-/* Location: ./store/controllers/products.php */
+/* End of file cart.php */
+/* Location: ./store/controllers/cart.php */
