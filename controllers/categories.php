@@ -125,10 +125,10 @@ class Categories extends Public_Controller
 											$this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
 											$product->image = $image;
 										
-										endif;		
-									
+										endif;
+
 									endforeach;
-									
+
 									$this->data->products		= $products;
 									$this->data->category_name	= $category->name;
 						
