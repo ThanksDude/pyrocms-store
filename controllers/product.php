@@ -40,7 +40,22 @@ class product extends Public_Controller
 	public function view($product_slug = NULL)
 	{
 		if($product_slug != NULL):
-		
+	
+			$product = $this->products_m->get_by('slug', $product_slug);
+			if($product):
+			
+				$image = $this->images_m->get_image($product->images_id);
+				if($image):
+				
+					$this->images_m->front_image_resize('uploads/store/products/', $image, "_large", 400, 300);
+					$product->image = $image;
+				endif;
+				
+				$this->data->product = $product;
+				$this->template->build('product/product', $this->data);
+				
+			endif;
+			
 		else:
 		
 			redirect('store/categories/browse/top/tiles');
