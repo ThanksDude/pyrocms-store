@@ -11,6 +11,7 @@ class Admin_attributes extends Admin_Controller
 {
 	protected $section			= 'attributes';
 	protected $upload_config;
+	protected $upload_path		= 'uploads/store/categories/';
 
 	public function __construct()
 	{
@@ -28,81 +29,161 @@ class Admin_attributes extends Admin_Controller
 		$this->load->language('attributes');
 		$this->load->language('settings');
 
+		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
+
+			$this->upload_config['upload_path'] = './'. $this->upload_path;
+
+		else:
+
+			$this->upload_config['upload_path'] = './uploads/store/';
+
+		endif;
+
+		$this->upload_config['allowed_types']	= 'gif|jpg|png';
+		$this->upload_config['max_size']		= '1024';
+		$this->upload_config['max_width']		= '1024';
+		$this->upload_config['max_height']		= '768';
+
+		$this->item_validation_rules = array(
+			array(
+				'field' => 'name',
+				'label' => 'name',
+				'rules' => 'trim|max_length[255]|required'
+			),
+			array(
+				'field' => 'html',
+				'label' => 'html',
+				'rules' => 'trim|max_length[1000]|required'
+			)
+		);
+
 		$this->template
 			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
 			 ->append_metadata(js('admin.js', 'store'))
 			 ->append_metadata(css('admin.css', 'store'));
 	}
 
-	public function index()
+	public function index($ajax = FALSE)
 	{
 		$attributes = $this->attributes_m->get_all();
 
-		$this->data->attributes	= $attributes;
-		$this->template
-			 ->build('admin/attributes/index', $this->data);
+		$this->data->attributes =& $attributes;
+		if($ajax):
+
+			$list = $this->load->view('admin/attributes/index', $this->data, TRUE);
+			echo $list;
+			
+		else:
+			
+			$this->template
+				 ->title($this->module_details['name'], lang(''))
+				 ->build('admin/attributes/index', $this->data);
+				 
+		endif;
 	}
 
-	public function add()
+	public function add($ajax = FALSE)
 	{
-		if($this->form_validation->run('add_attribute')):
+		$this->form_validation->set_rules($this->item_validation_rules);
+		
+		if($this->form_validation->run()):
 
-			if($this->attributes_m->create($new_image_id)):
-
+			if($this->attributes_m->create($this->input->post())):
+				
+				// ON SUCCESS
 				$this->session->set_flashdata('success', sprintf(lang('store_messages_attributes_success_create'), $this->input->post('name')));
 				redirect('admin/store/attributes');
 
 			else:
 
+				// ON ERROR
 				$this->session->set_flashdata(array('error'=> lang('store_messages_attributes_error_create')));
-
+				redirect('admin/store/attributes/add');
+				
 			endif;
 
 		else:
+		
+			foreach ($this->item_validation_rules AS $rule):
+			
+				$this->data->{$rule['field']} = $this->input->post($rule['field']);
+			
+			endforeach;
 
-			$this->data->action				= 'add';
-			$this->data->attribute->name	= NULL;
-			$this->data->attribute->html	= NULL;
-
-			$this->template
-				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				 ->build('admin/attributes/form', $this->data);
+			if($ajax):
 	
+				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
+				$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
+
+				echo $wysiwyg . $form;
+				
+			else:
+				
+				$this->template
+				 	 ->title($this->module_details['name'], lang(''))
+					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+					 ->build('admin/attributes/form', $this->data);
+	
+			endif;
+
 		endif;
 	}
 
-	public function edit($attributes_id)
+	public function edit($attributes_id = 0, $ajax = FALSE)
 	{
-		if($this->form_validation->run('edit_attribute')):
-	
-			if($this->attributes_m->update($attributes_id)):
+		$this->data = $this->attributes_m->get($attributes_id);
 
+		$this->form_validation->set_rules($this->item_validation_rules);
+
+		if($this->form_validation->run()):
+	
+			unset($_POST['btnAction']);
+			if($this->attributes_m->update($attributes_id, $this->input->post())):
+
+				// ON SUCCESS
 				$this->session->set_flashdata('success', sprintf(lang('store_messages_attributes_success_edit'), $this->input->post('name')));
 				redirect('admin/store/attributes');
 
 			else:
 
+				// ON ERROR
 				$this->session->set_flashdata(array('error'=> lang('store_messages_attributes_error_edit')));
-
+				redirect('admin/store/attributes/edit/'.$attributes_id);
+				
 			endif;
 
 		else:
 
-			$attribute = $this->attributes_m->get_attribute($attributes_id);
+			if($ajax):
+	
+				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
+				$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
+			
+				echo $wysiwyg . $form;
+				
+			else:
+			
+				$this->template
+				 	 ->title($this->module_details['name'], lang(''))
+					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+					 ->build('admin/attributes/form', $this->data);
 
-			$this->data->action		= 'edit';
-			$this->data->attribute	= $attribute;
-
-			$this->template
-				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				 ->build('admin/attributes/form', $this->data);
-
+			endif;
+		
 		endif;
 	}
 
 	public function delete($attributes_id)
 	{
-		$this->attributes_m->delete($attributes_id);
+		if(isset($_POST['btnAction']) AND is_array($_POST['action_to'])):
+
+			$this->attributes_m->delete_many($this->input->post('action_to'));
+
+		elseif(is_numeric($attributes_id)):
+
+			$this->attributes_m->delete($attributes_id);
+
+		endif;
 		redirect('admin/store/attributes');
 	}
 }

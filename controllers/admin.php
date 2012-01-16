@@ -9,13 +9,14 @@
 **/
 class Admin extends Admin_Controller
 {
-	protected $section = 'store';
+	protected $section			= 'store';
+	protected $upload_config;
+	protected $upload_path		= 'uploads/store/products/';
 
 	public function __construct()
 	{
 		parent::__construct();
 
-		// Load all the required classes
 		$this->load->library('form_validation');
 		$this->load->library('store_settings');
 		
@@ -26,10 +27,40 @@ class Admin extends Admin_Controller
 		$this->load->language('settings');
 
 		$this->load->model('store_m');
+		$this->load->model('categories_m');
+		$this->load->model('products_m');
+		$this->load->model('images_m');
 
 		$this->load->helper('date');
-		
-		// We'll set the partials and metadata here since they're used everywhere
+
+		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
+
+			$this->upload_config['upload_path'] = './'. $this->upload_path;
+
+		else:
+
+			$this->upload_config['upload_path'] = './uploads/store/';
+
+		endif;
+
+		$this->upload_config['allowed_types']	= 'gif|jpg|png';
+		$this->upload_config['max_size']		= '1024';
+		$this->upload_config['max_width']		= '1024';
+		$this->upload_config['max_height']		= '768';
+
+		$this->item_validation_rules = array(
+			array(
+				'field' => 'name',
+				'label' => 'name',
+				'rules' => 'trim|max_length[255]|required'
+			),
+			array(
+				'field' => 'html',
+				'label' => 'html',
+				'rules' => 'trim|max_length[1000]|required'
+			)
+		);
+
 		$this->template
 			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
 			 ->append_metadata(js('admin.js', 'store'))
