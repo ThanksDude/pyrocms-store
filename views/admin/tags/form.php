@@ -10,7 +10,7 @@
 ?>
 
 <section class="title">
-    <h4><?php echo lang('store_title_tags_'.$action);?></h4>
+    <h4><?php echo lang('store_title_tag_'.$action);?></h4>
 </section>
 
 <section class="item">
@@ -18,7 +18,7 @@
 	<div>
 		<ol>
 			<li class="<?php echo alternator('even', ''); ?>">
-				<?php echo lang('store_tags_name','name'); ?>
+				<?php echo lang('store_tag_name','name'); ?>
 				<?php echo form_input('name', set_value('name',$tag->name), 'class="text" maxlength="50"'); ?>
 				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
             </li>

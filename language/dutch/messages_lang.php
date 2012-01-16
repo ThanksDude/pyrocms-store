@@ -34,3 +34,21 @@ $lang['store_messages_product_success_delete']		= 'Product successvol verwijderd
 $lang['store_messages_product_error_create']		= 'Product aanmaken mislukt';
 $lang['store_messages_product_error_edit']			= 'Product bewerken mislukt';
 $lang['store_messages_product_error_delete']		= 'Product verwijderen mislukt';
+
+//** ATTRIBUTES **//
+$lang['store_messages_attributes_no_items']			= 'Geen Attributen Aangemaakt';
+$lang['store_messages_attributes_success_create']	= 'Attribuut successvol aangemaakt';
+$lang['store_messages_attributes_success_edit']		= 'Attribuut successvol bewerkt';
+$lang['store_messages_attributes_success_delete']	= 'Attribuut successvol verwijderd';
+$lang['store_messages_attributes_error_create']		= 'Attribuut aanmaken mislukt';
+$lang['store_messages_attributes_error_edit']		= 'Attribuut bewerken mislukt';
+$lang['store_messages_attributes_error_delete']		= 'Attribuut verwijderen mislukt';
+
+//** TAGS **//
+$lang['store_messages_tags_no_items']				= 'Geen Tags Aangemaakt';
+$lang['store_messages_tags_success_create']			= 'Tag successvol aangemaakt';
+$lang['store_messages_tags_success_edit']			= 'Tag successvol bewerkt';
+$lang['store_messages_tags_success_delete']			= 'Tag successvol verwijderd';
+$lang['store_messages_tags_error_create']			= 'Tag aanmaken mislukt';
+$lang['store_messages_tags_error_edit']				= 'Tag bewerken mislukt';
+$lang['store_messages_tags_error_delete']			= 'Tag verwijderen mislukt';

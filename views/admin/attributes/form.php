@@ -10,7 +10,7 @@
 ?>
 
 <section class="title">
-    <h4><?php echo lang('store_title_attributes_'.$action);?></h4>
+    <h4><?php echo lang('store_title_attribute_'.$action);?></h4>
 </section>
 
 <section class="item">
@@ -18,12 +18,12 @@
 	<div>
 		<ol>
 			<li class="<?php echo alternator('even', ''); ?>">
-				<?php echo lang('store_attributes_name','name'); ?>
+				<?php echo lang('store_attribute_name','name'); ?>
 				<?php echo form_input('name', set_value('name',$attribute->name), 'class="text" maxlength="50"'); ?>
 				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
             </li>
             <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_attributes_html','html'); ?>
+                <?php echo lang('store_attribute_html','html'); ?>
                 <span class="required-icon tooltip"><?php echo lang('required_label');?></span>                
                 <?php echo form_textarea('html', set_value('html',$attribute->html), 'class="wysiwyg-simple" maxlength="1000"'); ?>
             </li>

@@ -98,7 +98,7 @@ class Module_Store extends Module {
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_tags_add',
+					 	   'name'	=> 'store_shortcut_tag_add',
 						   'uri'	=> 'admin/store/tags/add',
 						   'class'	=> 'add'
 						)
@@ -114,7 +114,7 @@ class Module_Store extends Module {
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_attributes_add',
+					 	   'name'	=> 'store_shortcut_attribute_add',
 						   'uri'	=> 'admin/store/attributes/add',
 						   'class'	=> 'add'
 						)

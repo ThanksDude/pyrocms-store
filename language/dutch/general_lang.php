@@ -16,6 +16,8 @@
 $lang['store_menu_store']							= 'Winkel';
 $lang['store_menu_products']						= 'Producten';
 $lang['store_menu_categories']						= 'Categorieën';
+$lang['store_menu_attributes']						= 'Attributes';
+$lang['store_menu_tags']							= 'Tags';
 
 // SHORTCUTS -------------------------------------------------------------------------------------
 
@@ -28,6 +30,12 @@ $lang['store_shortcut_category_add']				= 'Categorie Toevoegen';
 
 $lang['store_shortcut_products_list']				= 'Toon Producten';
 $lang['store_shortcut_product_add']					= 'Product Toevoegen';
+
+$lang['store_shortcut_attributes_list']				= 'Toon Attributen';
+$lang['store_shortcut_attribute_add']				= 'Attribuut Toevoegen';
+
+$lang['store_shortcut_tags_list']					= 'Toon Tags';
+$lang['store_shortcut_tag_add']						= 'Tag Toevoegen';
 
 // TITLES ----------------------------------------------------------------------------------------
 
@@ -42,6 +50,14 @@ $lang['store_title_category_edit'] 					= 'Categorie Bewerken';
 $lang['store_title_product_list']        			= 'Toon Producten';
 $lang['store_title_product_add']					= 'Product Toevoegen';
 $lang['store_title_product_edit']					= 'Product Bewerken';
+
+$lang['store_title_attribute_list']					= 'Toon Attributes';
+$lang['store_title_attribute_add']					= 'Attribuut Toevoegen';
+$lang['store_title_attribute_edit']					= 'Attribuut Bewerken';
+
+$lang['store_title_tag_list']						= 'Toon Tags';
+$lang['store_title_tag_add']						= 'Tag Toevoegen';
+$lang['store_title_tag_edit']						= 'Tag Bewerken';
 
 /* ========================================= FORM TYPES ======================================== */
 
