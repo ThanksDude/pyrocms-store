@@ -15,13 +15,13 @@
 		<li><a href="<?php echo site_url(); ?>store/product/view/<?=$product->slug; ?>/" 
 				 title="<?php echo $product->name; ?>">
 			<div>
-				<h4><?=ucfirst($product->name);?></h4>
+				<h4><?php echo ucfirst($product->name);?></h4>
 			</div>
 			<div>
 			<?php if(isset($product->image)) : ?>
 				<?php $name = $product->image->name; $id = $product->image->id; 
 						$extension = $product->image->extension; ?>
-				<img src="<?=base_url();?>uploads/store/products/<?=$name . $id . $extension;?>" alt="<?php echo $product->name; ?>" />
+				<img src="<?php echo base_url();?>uploads/store/products/<?php echo $name . $id . $extension;?>" alt="<?php echo $product->name; ?>" />
 			<?php else : ?>
 				<?php echo "no image"; ?>		
 			<?php endif; ?>
