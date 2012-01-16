@@ -12,7 +12,7 @@
 	<ul>
 	<?php if(isset($products)): ?>
 	<?php foreach($products as $product): ?>
-		<li><a href="<?php echo site_url(); ?>store/product/view/<?=$product->slug; ?>/" 
+		<li><a href="<?php echo site_url(); ?>store/product/view/<?php echo $product->slug; ?>/" 
 				 title="<?php echo $product->name; ?>">
 			<div>
 				<h4><?php echo ucfirst($product->name);?></h4>
