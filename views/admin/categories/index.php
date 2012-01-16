@@ -57,8 +57,8 @@
                         <td><?php echo $category->categories_id; ?></td>
                         <td><?php echo $category->parent_id; ?></td>
                         <td class="align-center buttons buttons-small">
-                            <?php echo anchor('admin/store/categories/edit/' . $category->categories_id, lang('store_button_edit'), 'class="button edit"'); ?>
-                            <?php echo anchor('admin/store/categories/delete/' . $category->categories_id, lang('store_button_delete'), array('class'=>'confirm button delete')); ?>
+                            <?php echo anchor('admin/store/categories/edit/' . $category->categories_id, lang('store_button_edit'), 'class="btn orange edit"'); ?>
+                            <?php echo anchor('admin/store/categories/delete/' . $category->categories_id, lang('store_button_delete'), array('class'=>'confirm btn red delete')); ?>
                         </td>
                     </tr>
                 <?php } ?>
