@@ -17,12 +17,15 @@ class Module_Store extends Module {
 			'name' => array(
 				'en' => 'Online Store',
 				'nl' => 'Online Webwinkel',
-				'de' => 'Online Store'
+				'de' => 'Online Store',
+				'zh' => '線上商店'
 			),
 			'description' => array(
 				'en' => 'This is a PyroCMS Store module.',
 				'nl' => 'Dit is een webwinkel module voor PyroCMS',
-				'de' => 'Dies ist ein Online-Shop fur PyroCMS'
+				'de' => 'Dies ist ein Online-Shop fur PyroCMS',
+				'zh' => '這是一個 PyroCMS 商店模組'
+
 			),
 			'frontend'	=> TRUE,
 			'backend'	=> TRUE,
