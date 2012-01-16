@@ -10,7 +10,7 @@
 ?>
 <div id="product">
 	<ul>
-		<?php echo form_open('/store/insert_cart/' . $product->products_id . '/'); ?>
+		<?php echo form_open('/store/cart/insert_cart/' . $product->products_id . '/'); ?>
 		<?php echo form_hidden('redirect', current_url()); ?>
 		<li>
 			<div>
@@ -20,8 +20,8 @@
 			<?php if(isset($product->image)) : ?>
 				<?php $name = $product->image->name; $id = $product->image->id; 
 						$extension = $product->image->extension; ?>			
-				<img src="<?php echo base_url();?>uploads/store/products/<?php echo $name . $id. '_large' . $extension;?>" alt="<?php echo $product->name; ?>" />
-			<?php endif; ?>				
+				<img src="<?php echo site_url('uploads/store/products/' . $name . $id. '_large' . $extension);?>" alt="<?php echo $product->name; ?>" />
+			<?php endif; ?>
 			</div>
 			<div><p><?php echo lang('store_product_html'). " : ";?></p>
 						<?php echo $product->html; ?>

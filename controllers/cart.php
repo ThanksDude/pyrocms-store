@@ -42,7 +42,7 @@ class Cart extends Public_Controller
 	{
 		$this->data;
 		$this->template
-			 ->build('cart', $this->data);
+			 ->build('cart/show_cart', $this->data);
 	}
 	
 	public function checkout_cart(){
@@ -61,7 +61,7 @@ class Cart extends Public_Controller
 	public function insert_cart($product)
 	{
 		$this->redirect	= $this->input->post('redirect');
-		$this->data		= $this->store_m->get_product_in_cart($product);
+		$this->data		= $this->products_m->get_product_in_cart($product);
 		$this->cart->insert($this->data);
 		
 		redirect($this->redirect);

@@ -258,3 +258,5 @@ class Admin_products extends Admin_Controller
 
 	}
 }
+/* End of file admin_products.php */
+/* Location: ./store/controllers/admin_products.php */

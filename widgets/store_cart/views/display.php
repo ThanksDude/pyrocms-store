@@ -15,7 +15,7 @@
 	$html.='<div id="widget_store_cart">';
 	if($this->cart->contents())
 	{
-		$html .= form_open('/store/update_cart/')."\n";
+		$html .= form_open('/store/cart/update_cart/')."\n";
 		$html .= form_hidden('redirect', current_url());
 		$html .= '	<div id="widget_contents">'."\n";
 		$html .= '		<div id="widget_header_qty">'.$this->lang->line('store_label_widget_cart_qty').'</div>'."\n";
@@ -42,7 +42,7 @@
 	
 		$html .= '	</div>'."\n";
 		$html .= '	<div id="widget_cart_controls">'."\n";
-		$html .= '		'.anchor('/store/show_cart/','&nbsp;','class="" id="widget_button_details"')."\n";
+		$html .= '		'.anchor('/store/cart/show_cart/','&nbsp;','class="" id="widget_button_details"')."\n";
 		$html .= '		'.form_submit('','','id="widget_button_update"')."\n";
 		$html .= '	</div>'."\n";
 		$html .= '	'.form_close()."\n";

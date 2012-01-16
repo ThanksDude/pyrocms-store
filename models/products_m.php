@@ -181,16 +181,12 @@ class Products_m extends MY_Model
 			'users_id'			=>	$this->user->id,
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
-			'telefone'			=>	'0',
 			'status'			=>	'0',
 			'comments'			=>	'0',
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
-			'payment_address'	=>	'0',
-			'shipping_address'	=>	'0',
 			'payment_method'	=>	'0',
 			'shipping_method'	=>	'0',
-			'tax'				=>	'0',
 			'shipping_cost'		=>	'0',
 		);
 
@@ -206,7 +202,7 @@ class Products_m extends MY_Model
 				'number'		=>	$items['qty']
 			);
 
-			$this->db->insert('store_orders_has_store_products',$this->data);
+			$this->db->insert('store_orders_has_products',$this->data);
 
 		endforeach;
 

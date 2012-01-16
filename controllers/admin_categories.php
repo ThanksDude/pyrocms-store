@@ -180,3 +180,5 @@ class Admin_categories extends Admin_Controller
 		redirect('admin/store/categories');
 	}
 }
+/* End of file admin_categories.php */
+/* Location: ./store/controllers/admin_categories.php */
