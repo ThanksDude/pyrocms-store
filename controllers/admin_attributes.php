@@ -28,21 +28,6 @@ class Admin_attributes extends Admin_Controller
 		$this->load->language('attributes');
 		$this->load->language('settings');
 
-		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
-
-			$this->upload_config['upload_path'] = './'. $this->upload_path;
-
-		else:
-
-			$this->upload_config['upload_path'] = './uploads/store/';
-
-		endif;
-
-		$this->upload_config['allowed_types']	= 'gif|jpg|png';
-		$this->upload_config['max_size']		= '1024';
-		$this->upload_config['max_width']		= '1024';
-		$this->upload_config['max_height']		= '768';
-
 		$this->template
 			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
 			 ->append_metadata(js('admin.js', 'store'))
@@ -51,20 +36,7 @@ class Admin_attributes extends Admin_Controller
 
 	public function index()
 	{
-		$id = $this->store_settings->item('store_id');
-
 		$attributes = $this->attributes_m->get_all();
-
-		foreach($attributes as $attribute):
-
-			$image = $this->images_m->get_image($attribute->images_id);
-			if($image):
-
-				$attribute->image = $this->images_m->get_thumb_anchor($image, $this->upload_path);
-
-			endif;
-
-		endforeach;
 
 		$this->data->attributes	= $attributes;
 		$this->template

@@ -19,7 +19,7 @@
 		<ol>
 			<li class="<?php echo alternator('even', ''); ?>">
 				<?php echo lang('store_tags_name','name'); ?>
-				<?php echo form_input('name', set_value('name',$category->name), 'class="text" maxlength="50"'); ?>
+				<?php echo form_input('name', set_value('name',$tag->name), 'class="text" maxlength="50"'); ?>
 				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
             </li>
         </ol>
