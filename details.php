@@ -87,6 +87,38 @@ class Module_Store extends Module {
 						   'class'	=> 'add'
 						)
 					)
+				),
+			    'tags' => array(
+				    'name'		=> 'store_menu_tags',
+				    'uri'		=> 'admin/store/tags',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store_shortcut_tags_list',
+						   'uri'	=> 'admin/store/tags',
+						   'class'	=> 'list'
+						),
+						array(
+					 	   'name'	=> 'store_shortcut_tags_add',
+						   'uri'	=> 'admin/store/tags/add',
+						   'class'	=> 'add'
+						)
+					)
+				),
+			    'attributes' => array(
+				    'name'		=> 'store_menu_attributes',
+				    'uri'		=> 'admin/store/attributes',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store_shortcut_attributes_list',
+						   'uri'	=> 'admin/store/attributes',
+						   'class'	=> 'list'
+						),
+						array(
+					 	   'name'	=> 'store_shortcut_attributes_add',
+						   'uri'	=> 'admin/store/attributes/add',
+						   'class'	=> 'add'
+						)
+					)
 				)
 			)
 		);
