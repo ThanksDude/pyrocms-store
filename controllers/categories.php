@@ -66,59 +66,59 @@ class Categories extends Public_Controller
 				
 						$this->template
 							 ->build('categories/index/tiles', $this->data);
-						
+
 					break;
-				
+
 					case 'list':
-						
+
 						$categories = $this->categories_m->get_all();
 						foreach ($categories as $category):
-				
+
 							$image = $this->images_m->get_image($category->images_id);
-							
+
 							if($image):
 
 								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
 								$category->image = $image;
-							
+
 							endif;
-						
+
 						endforeach;
-				
+
 						$this->data->categories = $categories;	
-				
+
 						$this->template
 							 ->build('categories/index/list', $this->data);
-						
+
 					break;
-				
+
 				endswitch;
-				
+
 			break;
-		
+
 			case 'sub':
-			
+
 				if(!$name):
-				
+
 					redirect('store/categories/browse/top/tiles');
-				
+
 				else:
-					
+
 					switch($views):
-					
+
 						case 'tiles':
-							
+
 							$name = str_replace('-', ' ', $name);
 							$category = $this->categories_m->get_category_by_name($name);
-							
+
 							if($category):
-								
+
 								$products = $this->products_m->get_products($category->categories_id);
-								
+
 								if($products):
-								
+
 									foreach ($products as $product):
-										
+
 										$image = $this->images_m->get_image($product->images_id);
 										if($image):
 										 
