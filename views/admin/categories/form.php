@@ -15,37 +15,30 @@
 
 <section class="item">
 	<?php echo form_open_multipart($this->uri->uri_string(), 'class="crud"'); ?>
-	<div>
-		<ol>
-			<li class="<?php echo alternator('even', ''); ?>">
-				<?php echo lang('store_category_name','name'); ?>
-				<?php echo form_input('name', set_value('name',$category->name), 'class="text" maxlength="50"'); ?>
-				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
+	<div class="form_inputs">
+		<ul>
+			<li>
+				<label for="name"><?php echo lang('store_category_name','name'); ?><span>*</span></label>
+				<div class="input"><?php echo form_input('name', set_value('name',$category->name), 'maxlength="100" id="name"'); ?></div>
             </li>
-            <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_category_html','html'); ?>
-                <span class="required-icon tooltip"><?php echo lang('required_label');?></span>                
-                <?php echo form_textarea('html', set_value('html',$category->html), 'class="wysiwyg-simple" maxlength="1000"'); ?>
+            <li class="even editor">
+                <label for="name"><?php echo lang('store_category_html','html'); ?><span>*</span></label>
+                <div class="input"><?php echo form_textarea(array('id' => 'html', 'name' => 'html', 'value' => $category->html, 'rows' => 3, 'class' => 'wysiwyg-simple')); ?></div>
             </li>
             
-            <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_category_parent','parent_id'); ?>
-                <?php echo form_dropdown('parent_id', set_value('name',$dropdown, '0'), 'class="text" maxlength="10"'); ?>
-                
+            <li>
+				<label for="parent_id"><?php echo lang('store_category_parent','parent_id'); ?></label>
+				<div class="input"><?php echo form_dropdown('parent_id', $dropdown , '0') ?></div>
             </li>
-            <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_category_images_id','images_id'); ?>
-					<?php 
-						if(isset($category->image)){ echo $category->image; }
-					?>
-					<?php echo form_upload('userfile'); ?>
-
+            <li>
+                <label for="images_id"><?php echo lang('store_category_images_id','images_id'); ?></label>
+				 <div class="input"><?php if(isset($category->image)){ echo $category->image . '&nbsp;';} ?><?php echo form_upload('userfile'); ?></div>
+				
             </li>
-
-        </ol>
-        <div class="buttons float-right padding-top">
-            <?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
-        </div>
+		</ul>
     </div>
+    <div class="buttons float-right padding-top">
+        <?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
+    </div>    
 	<?php echo form_close(); ?>
 </section>

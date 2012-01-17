@@ -10,7 +10,7 @@
 ?>
 <div id="show_cart">
 	<?php if($this->cart->contents()) { ?>
-	<?php echo form_open('/store/update_cart/'); ?>
+	<?php echo form_open('/store/cart/update_cart/'); ?>
 	<?php echo form_hidden('redirect', current_url()); ?>
 	<div id="cart_header">
 		<div id="cart_header_qty"><?php echo $this->lang->line('store_label_cart_qty'); ?></div>
@@ -52,7 +52,7 @@
 		</div>
 	<?php echo form_close(); ?>
 		<div id="cart_controls_checkout">
-			<?php echo form_open('/store/checkout_cart/'); ?>
+			<?php echo form_open('/store/checkout/purchase/'); ?>
 				<?php echo form_submit('checkout', $this->lang->line('store_button_cart_checkout'),'id="cart_control_checkout"'); ?>
 			<?php echo form_close(); ?>
 		</div>

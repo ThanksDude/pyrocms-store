@@ -44,13 +44,26 @@ class Admin_categories extends Admin_Controller
 		$this->upload_config['max_width']		= '1024';
 		$this->upload_config['max_height']		= '768';
 
+		$this->item_validation_rules = array(
+			array(
+				'field' => 'name',
+				'label' => 'name',
+				'rules' => 'trim|max_length[255]|required'
+			),
+			array(
+				'field' => 'html',
+				'label' => 'html',
+				'rules' => 'trim|max_length[1000]|required'
+			)
+		);
+
 		$this->template
 			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
 			 ->append_metadata(js('admin.js', 'store'))
 			 ->append_metadata(css('admin.css', 'store'));
 	}
 
-	public function index()
+	public function index($ajax = FALSE)
 	{
 		$id = $this->store_settings->item('store_id');
 
@@ -72,7 +85,7 @@ class Admin_categories extends Admin_Controller
 			 ->build('admin/categories/index', $this->data);
 	}
 
-	public function add()
+	public function add($ajax = FALSE)
 	{
 		$id = $this->store_settings->item('store_id');
 		$this->load->library('upload', $this->upload_config);		
@@ -121,7 +134,7 @@ class Admin_categories extends Admin_Controller
 		endif;
 	}
 
-	public function edit($categories_id)
+	public function edit($categories_id, $ajax = FALSE)
 	{
 		$id = $this->store_settings->item('store_id');
 		$this->load->library('upload', $this->upload_config);	
@@ -176,7 +189,17 @@ class Admin_categories extends Admin_Controller
 
 	public function delete($categories_id)
 	{
-		$this->categories_m->delete_category($categories_id);
+		if(isset($_POST['btnAction']) AND is_array($_POST['action_to'])):
+
+			$this->categories_m->delete_many($this->input->post('action_to'));
+
+		elseif(is_numeric($categories_id)):
+
+			$this->categories_m->delete($categories_id);
+
+		endif;
 		redirect('admin/store/categories');
 	}
 }
+/* End of file admin_categories.php */
+/* Location: ./store/controllers/admin_categories.php */

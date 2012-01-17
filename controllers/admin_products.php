@@ -46,6 +46,19 @@ class Admin_products extends Admin_Controller
 		$this->upload_config['max_width']		= '1024';
 		$this->upload_config['max_height']		= '768';
 
+		$this->item_validation_rules = array(
+			array(
+				'field' => 'name',
+				'label' => 'name',
+				'rules' => 'trim|max_length[255]|required'
+			),
+			array(
+				'field' => 'html',
+				'label' => 'html',
+				'rules' => 'trim|max_length[1000]|required'
+			)
+		);
+
 		$this->template
 			 ->set_partial('shortcuts', 'admin/partials/shortcuts')
 			 ->append_metadata(js('admin.js', 'store'))
@@ -258,3 +271,5 @@ class Admin_products extends Admin_Controller
 
 	}
 }
+/* End of file admin_products.php */
+/* Location: ./store/controllers/admin_products.php */

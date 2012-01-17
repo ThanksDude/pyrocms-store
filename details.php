@@ -17,12 +17,15 @@ class Module_Store extends Module {
 			'name' => array(
 				'en' => 'Online Store',
 				'nl' => 'Online Webwinkel',
-				'de' => 'Online Store'
+				'de' => 'Online Store',
+				'zh' => '線上商店'
 			),
 			'description' => array(
 				'en' => 'This is a PyroCMS Store module.',
 				'nl' => 'Dit is een webwinkel module voor PyroCMS',
-				'de' => 'Dies ist ein Online-Shop fur PyroCMS'
+				'de' => 'Dies ist ein Online-Shop fur PyroCMS',
+				'zh' => '這是一個 PyroCMS 商店模組'
+
 			),
 			'frontend'	=> TRUE,
 			'backend'	=> TRUE,
@@ -84,6 +87,38 @@ class Module_Store extends Module {
 						array(
 					 	   'name'	=> 'store_shortcut_product_add',
 						   'uri'	=> 'admin/store/products/add',
+						   'class'	=> 'add'
+						)
+					)
+				),
+			    'tags' => array(
+				    'name'		=> 'store_menu_tags',
+				    'uri'		=> 'admin/store/tags',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store_shortcut_tags_list',
+						   'uri'	=> 'admin/store/tags',
+						   'class'	=> 'list'
+						),
+						array(
+					 	   'name'	=> 'store_shortcut_tag_add',
+						   'uri'	=> 'admin/store/tags/add',
+						   'class'	=> 'add'
+						)
+					)
+				),
+			    'attributes' => array(
+				    'name'		=> 'store_menu_attributes',
+				    'uri'		=> 'admin/store/attributes',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store_shortcut_attributes_list',
+						   'uri'	=> 'admin/store/attributes',
+						   'class'	=> 'list'
+						),
+						array(
+					 	   'name'	=> 'store_shortcut_attribute_add',
+						   'uri'	=> 'admin/store/attributes/add',
 						   'class'	=> 'add'
 						)
 					)
