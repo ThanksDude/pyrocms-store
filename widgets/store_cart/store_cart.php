@@ -12,12 +12,14 @@ class Widget_Store_cart extends Widgets {
 	public $title = array(
 		'en' => 'Shopping Cart',
 		'nl' => 'Winkel mand',
-		'de' => 'Shopping Cart'
+		'de' => 'Shopping Cart',
+		'zh' => '購物車'
 	);
 	public $description	= array(
 		'en' => 'Display the Shopping Cart',
 		'nl' => 'Toon de Winkel mand',
-		'de' => 'Zeigen Sie die Shopping Cart'
+		'de' => 'Zeigen Sie die Shopping Cart',
+		'zh' => '顯示購物車'
 	);
 	public $author		= 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey';
 	public $website		= 'http://www.odin-ict.nl/';
