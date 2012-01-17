@@ -21,6 +21,7 @@ class product extends Public_Controller
 		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
+		$this->load->language('products');
 
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
