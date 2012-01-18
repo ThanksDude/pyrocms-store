@@ -243,6 +243,28 @@ class Module_Store extends Module {
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 
+$this->db->query("
+			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_auctions') . "` (
+				`auctions_id` INT NOT NULL AUTO_INCREMENT ,
+				`categories_id` INT NOT NULL ,
+				`attributes_id` INT NOT NULL ,
+				`name` VARCHAR(100) NOT NULL ,
+				`slug` VARCHAR(100) NOT NULL ,
+				`meta_description` TEXT NULL ,
+				`meta_keywords` TEXT NULL ,
+				`html` LONGTEXT NULL ,
+				`price` FLOAT NULL ,
+				`stock` INT NULL ,
+				`limited` INT NULL ,
+				`limited_used` INT NULL ,
+				`images_id` VARCHAR(50) NULL ,
+				`thumbnail_id` VARCHAR(50) NULL ,
+				`allow_comments` ENUM('1','0') NULL ,
+				PRIMARY KEY (`auctions_id`, `categories_id`) ,
+				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
+			ENGINE = InnoDB;");
+
+
 		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_categories') . "` (
 				`categories_id` INT NOT NULL AUTO_INCREMENT ,
@@ -334,7 +356,7 @@ class Module_Store extends Module {
 		{
 			// make upload folders for admin images and stuff
 			if ( (is_dir('uploads/store/products') OR @mkdir('uploads/store/products',0777,TRUE) ) &&
-				(is_dir('uploads/store/categories') OR @mkdir('uploads/store/categories',0777,TRUE) )) {
+				(is_dir('uploads/store/categories') OR @mkdir('uploads/store/categories',0777,TRUE)) && (is_dir('uploads/store/auctions') OR @mkdir('uploads/store/auctions',0777,TRUE)) ) {
 				return TRUE;
 			}
 		}
@@ -342,6 +364,7 @@ class Module_Store extends Module {
 
 	public function uninstall()
 	{
+return true;
 		$this->db->query("DELETE FROM `core_stores` WHERE store_id=(SELECT `value` FROM `" . $this->db->dbprefix('store_settings') . "` WHERE slug='store_id');");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_settings') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_currency') . "`;");
@@ -366,6 +389,32 @@ class Module_Store extends Module {
 	public function upgrade($old_version)
 	{
 		// Your Upgrade Logic
+		switch($old_version)
+		{
+		case '0.1':
+			{
+			$this->db->query("
+			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_auctions') . "` (
+				`auctions_id` INT NOT NULL AUTO_INCREMENT ,
+				`categories_id` INT NOT NULL ,
+				`attributes_id` INT NOT NULL ,
+				`name` VARCHAR(100) NOT NULL ,
+				`slug` VARCHAR(100) NOT NULL ,
+				`meta_description` TEXT NULL ,
+				`meta_keywords` TEXT NULL ,
+				`html` LONGTEXT NULL ,
+				`price` FLOAT NULL ,
+				`stock` INT NULL ,
+				`limited` INT NULL ,
+				`limited_used` INT NULL ,
+				`images_id` VARCHAR(50) NULL ,
+				`thumbnail_id` VARCHAR(50) NULL ,
+				`allow_comments` ENUM('1','0') NULL ,
+				PRIMARY KEY (`auctions_id`, `categories_id`) ,
+				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
+			ENGINE = InnoDB;");
+			}
+		}
 		return TRUE;
 	}
 
