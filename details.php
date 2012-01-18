@@ -364,7 +364,6 @@ $this->db->query("
 
 	public function uninstall()
 	{
-return true;
 		$this->db->query("DELETE FROM `core_stores` WHERE store_id=(SELECT `value` FROM `" . $this->db->dbprefix('store_settings') . "` WHERE slug='store_id');");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_settings') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_currency') . "`;");
@@ -373,6 +372,7 @@ return true;
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_categories') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_attributes') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_products') . "`;");
+		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_auctions') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_tags') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_products_has_tags') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders') . "`;");
