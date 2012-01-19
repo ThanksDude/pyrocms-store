@@ -8,24 +8,29 @@
  * @subpackage 	Store Module
 **/
 ?>
-
 <section class="title">
-    <h4><?php echo lang('store_title_tag_'.$action);?></h4>
+    <h4><?php echo lang('store_title_tag_'.$this->method);?></h4>
 </section>
 
 <section class="item">
+
 	<?php echo form_open_multipart($this->uri->uri_string(), 'class="crud"'); ?>
-	<div>
-		<ol>
+		
+		<div class="form_inputs">
+	
+		<ul>
 			<li class="<?php echo alternator('even', ''); ?>">
-				<?php echo lang('store_tag_name','name'); ?>
-				<?php echo form_input('name', set_value('name',$tag->name), 'class="text" maxlength="50"'); ?>
-				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
+				<label for="name"><?php echo lang('store_tag_name','name'); ?> <span><?php echo lang('required_label');?></span></label>
+				<div class="input"><?php echo form_input('name', set_value('name',$tag->name), 'class="width-15 text" maxlength="50"'); ?></div>
             </li>
-        </ol>
-        <div class="buttons float-right padding-top">
-            <?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
-        </div>
-    </div>
+        </ul>
+		
+		</div>
+		
+		<div class="buttons">
+			<?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
+		</div>
+		
 	<?php echo form_close(); ?>
+
 </section>
