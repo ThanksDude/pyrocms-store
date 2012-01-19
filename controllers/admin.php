@@ -48,17 +48,17 @@ class Admin extends Admin_Controller
 		$this->upload_config['max_width']		= '1024';
 		$this->upload_config['max_height']		= '768';
 
-		$this->item_validation_rules = array(
+		$this->validation_rules = array(
 			array(
 				'field' => 'name',
 				'label' => 'name',
 				'rules' => 'trim|max_length[255]|required'
-			),
+			)/*,
 			array(
 				'field' => 'html',
 				'label' => 'html',
 				'rules' => 'trim|max_length[1000]|required'
-			)
+			)*/
 		);
 
 		$this->template
@@ -92,7 +92,10 @@ class Admin extends Admin_Controller
 	{
 		$this->data = array();
 
-		if(!$this->form_validation->run('store_index')):
+		$this->form_validation->set_rules($this->validation_rules);
+
+		//if(!$this->form_validation->run('store_index')):
+		if(!$this->form_validation->run()):			
 
 			$this->data['general_settings']				= $this->store_settings->settings_manager_retrieve('general')->result();
 			$this->data['payment_gateways_settings']	= $this->store_settings->settings_manager_retrieve('payment-gateways')->result();
