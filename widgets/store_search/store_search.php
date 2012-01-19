@@ -12,12 +12,14 @@ class Widget_Store_search extends Widgets {
 	public $title = array(
 		'en' => 'Store Search Engine Widget',
 		'nl' => 'Winkel Zoekmachine Widget',
-		'de' => 'Store Search Engine Widget'
+		'de' => 'Store Search Engine Widget',
+		'zh' => '商店產品搜索小組件'
 	);
 	public $description	= array(
 		'en' => 'Display the Store Search Engine',
 		'nl' => 'Toon de Zoekmachine',
-		'de' => 'Zeigen Sie die Store Search Engine'
+		'de' => 'Zeigen Sie die Store Search Engine',
+		'zh' => '商店產品搜索小組件'
 	);
 	public $author		= 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey';
 	public $website		= 'http://www.odin-ict.nl/';
