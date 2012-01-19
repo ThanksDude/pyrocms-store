@@ -16,6 +16,9 @@
 $lang['store_menu_store']							= 'Store';
 $lang['store_menu_products']						= 'Products';
 $lang['store_menu_categories']						= 'Categories';
+$lang['store_menu_tags']  						= 'Tags';
+$lang['store_menu_attributes']						= 'Attributes';
+
 
 // SHORTCUTS -------------------------------------------------------------------------------------
 
@@ -28,6 +31,13 @@ $lang['store_shortcut_category_add']				= 'Add Category';
 
 $lang['store_shortcut_products_list']				= 'List Products';
 $lang['store_shortcut_product_add']					= 'Add Product';
+
+$lang['store_shortcut_tags_list']  				= 'List Tags';
+$lang['store_shortcut_tag_add']						= 'Add Tag';
+
+$lang['store_shortcut_attributes_list']				= 'List Attributes';
+$lang['store_shortcut_attribute_add']				= 'Add Attributes';
+
 
 // TITLES ----------------------------------------------------------------------------------------
 
