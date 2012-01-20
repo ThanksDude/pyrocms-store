@@ -119,17 +119,27 @@ class Admin_categories extends Admin_Controller
 			endif;
 
 		else:
+		
+			foreach ($this->item_validation_rules AS $rule):
+			
+				$this->data->{$rule['field']} = $this->input->post($rule['field']);
+			
+			endforeach;
 
-			$this->data->dropdown			= $this->categories_m->make_categories_dropdown(0);
-			$this->data->action				= 'add';
-			$this->data->category->name		= NULL;
-			$this->data->category->html		= NULL;
-			$this->data->category->dropdown	= NULL;
-			$this->data->category->image	= NULL;
+			if($ajax):
+	
+				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
+				$form		= $this->load->view('admin/categories/form', $this->data, TRUE);
 
-			$this->template
-				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				 ->build('admin/categories/form', $this->data);
+				echo $wysiwyg . $form;
+				
+			else:
+				
+				$this->template
+				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->build('admin/categories/form', $this->data);
+				 	 
+			endif;
 	
 		endif;
 	}
@@ -177,12 +187,23 @@ class Admin_categories extends Admin_Controller
 			endif;
 
 			$this->data->dropdown = $this->categories_m->make_categories_dropdown($categories_id);
-			$this->data->action		= 'edit';
-			$this->data->category	= $category;
+			$this->data	= $category;
 
-			$this->template
-				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				 ->build('admin/categories/form', $this->data);
+
+			if($ajax):
+	
+				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
+				$form		= $this->load->view('admin/categories/form', $this->data, TRUE);
+			
+				echo $wysiwyg . $form;
+				
+			else:
+			
+				$this->template
+				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->build('admin/categories/form', $this->data);
+
+			endif;
 
 		endif;
 	}

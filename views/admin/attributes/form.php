@@ -8,29 +8,35 @@
  * @subpackage 	Store Module
 **/
 ?>
-
 <section class="title">
-    <h4><?php echo lang('store_title_attribute_'.$action);?></h4>
+    <h4><?php echo lang('store_title_attribute_'.$this->method);?></h4>
 </section>
 
 <section class="item">
+
 	<?php echo form_open_multipart($this->uri->uri_string(), 'class="crud"'); ?>
-	<div>
-		<ol>
-			<li class="<?php echo alternator('even', ''); ?>">
-				<?php echo lang('store_attribute_name','name'); ?>
-				<?php echo form_input('name', set_value('name',$attribute->name), 'class="text" maxlength="50"'); ?>
-				<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
+		
+		<div class="form_inputs">
+	
+		<ul>
+			<li class="<?php echo alternator('', 'even'); ?>">
+				<label for="name"><?php echo lang('store_attribute_name','name'); ?> <span><?php echo lang('required_label');?></span></label>
+				<div class="input"><?php echo form_input('name', set_value('name',$attribute->name), 'class="width-15 text" maxlength="50"'); ?></div>
             </li>
-            <li class="<?php echo alternator('even', ''); ?>">
-                <?php echo lang('store_attribute_html','html'); ?>
-                <span class="required-icon tooltip"><?php echo lang('required_label');?></span>                
-                <?php echo form_textarea('html', set_value('html',$attribute->html), 'class="wysiwyg-simple" maxlength="1000"'); ?>
+            
+			<li class="<?php echo alternator('', 'even'); ?>">
+                <label for="name"><?php echo lang('store_attribute_html','html'); ?> <span><?php echo lang('required_label');?></span></label>
+                <div class="input"><?php echo form_textarea('html', set_value('html',$attribute->html), 'class="wysiwyg-simple" maxlength="1000"'); ?></div>
             </li>
-        </ol>
-        <div class="buttons float-right padding-top">
-            <?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
-        </div>
-    </div>
+        </ul>
+		
+		</div>
+		
+		<div class="buttons">
+			<?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
+		</div>
+		
 	<?php echo form_close(); ?>
+
 </section>
+<!-- <?php $this->load->view('fragments/wysiwyg', ''); ?> -->

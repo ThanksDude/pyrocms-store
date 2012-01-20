@@ -108,7 +108,7 @@ class Admin_tags extends Admin_Controller
 			if($ajax):
 	
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/tags/form', $this->data, TRUE);
 
 				echo $wysiwyg . $form;
 				
@@ -151,7 +151,7 @@ class Admin_tags extends Admin_Controller
 			if($ajax):
 	
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/tags/form', $this->data, TRUE);
 			
 				echo $wysiwyg . $form;
 				
