@@ -20,7 +20,7 @@
 			<?php if(isset($category->image)) : ?>
 				<?php $name = $category->image->name; $id = $category->image->id; 
 						$extension = $category->image->extension; ?>					
-				<img src="<?php echo site_url('/uploads/store/categories/' . $name . $extension);?>" alt="<?php echo $category->name; ?>" />			
+				<img src="<?php echo site_url('/uploads/store/categories/' . $name . $id . $extension);?>" alt="<?php echo $category->name; ?>" />
 			<?php else : ?>
 				<?php echo ucfirst($category->name); ?>			
 			<?php endif; ?>

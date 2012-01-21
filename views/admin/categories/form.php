@@ -22,17 +22,17 @@
 		<ul>
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="name"><?php echo lang('store_category_name','name'); ?><span>*</span></label>
-				<div class="input"><?php echo form_input('name', set_value('name',$category->name), 'maxlength="100" id="name"'); ?></div>
+				<div class="input"><?php echo form_input('name', set_value('name',(isset($category)) ? $category->name : ''), 'maxlength="100" id="name"'); ?></div>
             </li>
             
             <li class="<?php echo alternator('', 'even'); ?> editor">
                 <label for="name"><?php echo lang('store_category_html','html'); ?><span>*</span></label>
-                <div class="input"><?php echo form_textarea(array('id' => 'html', 'name' => 'html', 'value' => $category->html, 'rows' => 3, 'class' => 'wysiwyg-simple')); ?></div>
+                <div class="input"><?php echo form_textarea(array('id' => 'html', 'name' => 'html', 'value' => (isset($category)) ? $category->html : '', 'rows' => 3, 'class' => 'wysiwyg-simple')); ?></div>
             </li>
             
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="parent_id"><?php echo lang('store_category_parent','parent_id'); ?></label>
-				<div class="input"><?php echo form_dropdown('parent_id', $dropdown , '0') ?></div>
+				<div class="input"><?php echo form_dropdown('parent_id', isset($dropdown) ? $dropdown : array( '0' => 'None') , '0') ?></div>
             </li>
             
 			<li class="<?php echo alternator('', 'even'); ?>">

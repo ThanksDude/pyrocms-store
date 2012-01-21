@@ -16,9 +16,8 @@
 $lang['store_menu_store']							= 'Store';
 $lang['store_menu_products']						= 'Products';
 $lang['store_menu_categories']						= 'Categories';
-$lang['store_menu_tags']  						= 'Tags';
+$lang['store_menu_tags']						= 'Tags';
 $lang['store_menu_attributes']						= 'Attributes';
-
 
 // SHORTCUTS -------------------------------------------------------------------------------------
 

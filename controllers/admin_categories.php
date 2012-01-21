@@ -187,7 +187,7 @@ class Admin_categories extends Admin_Controller
 			endif;
 
 			$this->data->dropdown = $this->categories_m->make_categories_dropdown($categories_id);
-			$this->data	= $category;
+			$this->data->category	= $category;
 
 
 			if($ajax):
