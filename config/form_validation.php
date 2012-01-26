@@ -241,7 +241,135 @@ $config = array(
 					'label' => 'store_product_allow_comments',
 					'rules' => 'trim|max_length[10]|required')
 					
+				),
+
+
+	'add_auction' => array(
+			array('field' => 'name', 
+					'label' => 'store_auction_name', 
+					'rules' => 'trim|max_length[50]|required'),
+					
+			array('field' => 'html', 
+					'label' => 'store_auction_html', 
+					'rules' => 'trim|max_length[1000]|required'),
+					
+			array('field' => 'categories_id', 
+					'label' => 'store_auction_category', 
+					'rules' => 'trim|max_length[10]|required'),
+					
+			array('field' => 'config_id',
+					'label' => 'store_auction_store_id',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'auctions_id',
+					'label' => 'store_auction_auction_id',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'attributes_id',
+					'label' => 'store_auction_attributes',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'meta_description',
+					'label' => 'store_auction_meta_description',
+					'rules' => 'trim|max_length[1000]|'),
+					
+			array('field' => 'meta_keywords',
+					'label' => 'store_auction_meta_keywords',
+					'rules' => 'trim|max_length[1000]|'),
+					
+			array('field' => 'price',
+					'label' => 'store_auction_price',
+					'rules' => 'trim|max_length[10]|required'),
+					
+			array('field' => 'stock',
+					'label' => 'store_auction_stock',
+					'rules' => 'trim|max_length[10]|'),
+			
+			array('field' => 'limited',
+					'label' => 'store_auction_limited',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'limited_used',
+					'label' => 'store_auction_limited_used',
+					'rules' => 'trim|max_length[10]|'),
+
+			array('field' => 'images_id',
+					'label' => 'store_auction_images',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'thumbnail_id',
+					'label' => 'store_auction_thumbnail',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'allow_comments',
+					'label' => 'store_auction_allow_comments',
+					'rules' => 'trim|max_length[10]|required')
+					
+		),
+
+	'edit_auction' => array(
+			array('field' => 'name', 
+					'label' => 'store_auction_name', 
+					'rules' => 'trim|max_length[50]|required'),
+					
+			array('field' => 'html', 
+					'label' => 'store_auction_html', 
+					'rules' => 'trim|max_length[1000]|required'),
+					
+			array('field' => 'categories_id', 
+					'label' => 'store_auction_category', 
+					'rules' => 'trim|max_length[10]|required'),
+					
+			array('field' => 'config_id',
+					'label' => 'store_auction_store_id',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'auctions_id',
+					'label' => 'store_auction_auction_id',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'attributes_id',
+					'label' => 'store_auction_attributes',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'meta_description',
+					'label' => 'store_auction_meta_description',
+					'rules' => 'trim|max_length[1000]|'),
+					
+			array('field' => 'meta_keywords',
+					'label' => 'store_auction_meta_keywords',
+					'rules' => 'trim|max_length[1000]|'),
+					
+			array('field' => 'price',
+					'label' => 'store_auction_price',
+					'rules' => 'trim|max_length[10]|required'),
+					
+			array('field' => 'stock',
+					'label' => 'store_auction_stock',
+					'rules' => 'trim|max_length[10]|'),
+			
+			array('field' => 'limited',
+					'label' => 'store_auction_limited',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'limited_used',
+					'label' => 'store_auction_limited_used',
+					'rules' => 'trim|max_length[10]|'),
+
+			array('field' => 'images_id',
+					'label' => 'store_auction_images',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'thumbnail_id',
+					'label' => 'store_auction_thumbnail',
+					'rules' => 'trim|max_length[10]|'),
+					
+			array('field' => 'allow_comments',
+					'label' => 'store_auction_allow_comments',
+					'rules' => 'trim|max_length[10]|required')
+					
 		)
+
 );
 
 ?>
