@@ -13,7 +13,7 @@
     <?php echo form_open('/store/insert_cart/' . $auction->auctions_id . '/'); ?>
     <?php echo form_hidden('redirect', current_url()); ?>
     <li>
-      <div>
+   <div>
 	<h2><?php echo $auction->name; ?></h2>
       </div>
       <div>

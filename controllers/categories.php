@@ -200,6 +200,164 @@ class Categories extends Public_Controller
 		
 		endswitch;
 	}
+
+
+	public function explore($types = 'top', $views = 'tiles', $name = NULL)
+	{
+	  switch($types)
+	    {
+	    case 'top':
+	      {
+		switch($views)
+		  {
+		    
+		  case 'tiles':
+		    {
+		      $categories = $this->categories_m->get_all();
+		      foreach ( $categories as $category )
+			{
+			  $image = $this->images_m->get_image($category->images_id);
+			  
+			  if ( $image )
+			    {
+			      $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
+			    }
+			}
+		      $this->data->categories =	$categories;
+		      
+		      $this->template
+			->build('categories/auction/tiles', $this->data);
+		      break;
+		    } /* top.$views.tiles */
+		    
+		  case 'list':
+		    {
+		      $categories = $this->categories_m->get_all();
+		      foreach ( $categories as $category )
+			{
+			  $image = $this->images_m->get_image($category->images_id);
+			  
+			  if ( $image )
+			    {
+			      $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
+			      $category->image = $image;
+			  }
+			}	  
+		      $this->data->categories = $categories;	
+		      
+		      $this->template
+			->build('categories/auction/list', $this->data);
+		      break;
+		    } /* top.$views.list */
+		    
+		    break;
+		     /* top.$views */
+		  }
+
+		break;
+	      } /* top */
+
+	    case 'sub':
+	      {  
+		if ( !$name )
+		  {
+		    redirect('store/categories/explore/top/tiles');
+		  }
+		else
+		  {
+		    switch ( $views )
+		      {
+			
+		      case 'tiles':
+			{
+			  $name = str_replace('-', ' ', $name);
+			  $category = $this->categories_m->get_category_by_name($name);
+			  
+			  if ( $category )
+			    {
+			      
+			      $products = $this->products_m->get_products($category->categories_id);
+			      
+			      if ( $products )
+				{	    
+				  foreach ( $products as $product )
+				    {
+				      $image = $this->images_m->get_image($product->images_id);
+				      
+				      if ( $image )
+					{
+					  $this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
+					  $product->image = $image;
+					}
+				    }
+				  
+				  $this->data->products		= $products;
+				  $this->data->category_name	= $category->name;
+				  
+				  $this->template
+				    ->build('categories/tiles', $this->data);
+				}
+			      else
+				{
+				  redirect('store/categories/explore/top/tiles/'.$category->name);
+				}
+			    }	  
+			  else
+			    {
+			      redirect('store/categories/explore/top/tiles');
+			    }	  
+			  break;
+			} /* sub.$views.tiles */
+
+		      case 'list':
+			{
+			  $name = str_replace('-', ' ', $name);
+			  $category = $this->categories_m->get_category_by_name($name);
+			  
+			  if ( $category )
+			    {
+			      $products = $this->products_m->get_products($category->categories_id);
+			      
+			      if ( $products )
+				{
+				  foreach ( $products as $product )
+				    {
+				      $image = $this->images_m->get_image($product->images_id);
+				      
+				      if ( $image )
+					{
+					  $this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
+					  $product->image = $image;
+					}		
+				    }
+				  
+				  $this->data->products      	= $products;
+				  $this->data->category_name	= $category->name;
+				  
+				  $this->template
+				    ->build('categories/list', $this->data);
+				}
+			      else
+				{
+				  redirect('store/categories/explore/top/list/'.$category->name);
+				}
+			    }
+			  else
+			    {
+			      redirect('store/categories/explore/top/list');
+			    }
+			  break;
+			} /* sub.$views.list */
+
+			break;
+		      } /* sub.$views */
+
+		  }
+		break;
+	      } /* sub */
+
+	    }
+	}
 }
 /* End of file categories.php */
 /* Location: ./store/controllers/categories.php */

@@ -29,6 +29,7 @@ class Admin_auctions extends Admin_Controller
     $this->load->language('settings');
 
     $this->load->model('categories_m');
+    $this->load->model('products_m');
     $this->load->model('auctions_m');
     $this->load->model('images_m');
 
@@ -143,7 +144,7 @@ class Admin_auctions extends Admin_Controller
 	}	
       }
 
-    $this->data->categories	       		= $this->auctions_m->make_categories_dropdown(0);
+    $this->data->categories	       		= $this->products_m->make_categories_dropdown(0);
     $this->data->action				= 'add';
     $this->data->auction->categories_id		= NULL;
     $this->data->auction->name	       		= NULL;
@@ -213,8 +214,8 @@ class Admin_auctions extends Admin_Controller
 
       }
 
-      $this->data->categories		= $this->auctions_m->make_categories_dropdown($auction->categories_id);
-      $this->data->action			= 'edit';
+      $this->data->categories		= $this->products_m->make_categories_dropdown($auction->categories_id);
+      $this->data->action		= 'edit';
       $this->data->auction		= $auction;
       $this->data->auction_image	= $auction_image;
 

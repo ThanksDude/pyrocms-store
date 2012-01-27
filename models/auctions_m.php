@@ -2,14 +2,14 @@
 /**
  * This is a store module for PyroCMS
  *
- * @author 		pyrocms-store Team - Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey
- * @website		http://www.odin-ict.nl/
+ * @author     	Antoine Benevaut
+ * @website	www.oursITshow.org
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
 class Auctions_m extends MY_Model
 {
-	protected $_table		= 'store_auctions';
+	protected $_table	= 'store_auctions';
 	protected $images_path	= 'uploads/store/auctions/';
 
 	public function __construct()
@@ -65,55 +65,6 @@ class Auctions_m extends MY_Model
 					->delete($this->_table);
 	}
 
-	public function make_categories_dropdown($selected_id=0)
-	{
-		$this->load->model('categories_m');
-		$categories = $this->db->get('store_categories');
-		if($selected_id):
-
-			$selected_cat = $this->categories_m->get($selected_id);
-
-		endif;
-
-		if($categories->num_rows() == 0):
-
-		  	return array();
-
-		else:
-
-			if(isset($selected_cat)):
-
-				$data  = array( $selected_cat->categories_id => $selected_cat->name);
-
-			else:
-
-				$data  = array('0'=>'Select');
-
-			endif;
-
-			foreach($categories->result() as $category):
-
-				if(isset($selected_cat)):
-
-					if(!($selected_cat->name == $category->name)):
-
-						$data[$category->categories_id] = $category->name;
-
-					endif;
-
-				else:
-
-					$data[$category->categories_id] = $category->name;
-
-				endif;
-
-			endforeach;
-
-		endif;
-
-		return $data;
-	}
-
 	public function count_auctions($categories_id)
 	{
 		return $this->count_by('categories_id', $categories_id);
@@ -135,24 +86,6 @@ class Auctions_m extends MY_Model
 					->row();
 	}
 
-	public function get_auction_in_cart($auctions_id)
-	{
-		$auction = $this->db
-						->where('auctions_id', $auctions_id)
-						->limit(1)
-						->get('store_auctions')->row();
-
-		$this->items = array(
-				'id'      => $auction->auctions_id,
-				'qty'     => $this->input->post('qty'),
-				'price'   => $auction->price,
-				'name'    => $auction->name,
-				'options' => $this->get_auction_attributes($auction->attributes_id)
-		);
-
-		return $this->items;
-	}
-	
 	public function get_auction_attributes($attributes)
 	{
 		$this->db->where('attributes_id',$attributes);
