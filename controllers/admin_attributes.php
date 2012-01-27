@@ -88,7 +88,7 @@ class Admin_attributes extends Admin_Controller
 		
 		if($this->form_validation->run()):
 
-			if($this->attributes_m->create($this->input->post())):
+			if($this->attributes_m->add_attribute($this->input->post())):
 				
 				// ON SUCCESS
 				$this->session->set_flashdata('success', sprintf(lang('store_messages_attributes_success_create'), $this->input->post('name')));
