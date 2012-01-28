@@ -1,0 +1,1950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="C:\Users\JAAP\projects\store\store.clpprj">
+	<settings><PM_URL><![CDATA[http://localhost/store/]]></PM_URL><PM_HOME_URL><![CDATA[http://localhost/store/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\Users\JAAP\projects\store\application;C:\Users\JAAP\projects\store\application\.htaccess;C:\Users\JAAP\projects\store\application\cache;C:\Users\JAAP\projects\store\application\cache\.htaccess;C:\Users\JAAP\projects\store\application\cache\index.html;C:\Users\JAAP\projects\store\application\config;C:\Users\JAAP\projects\store\application\config\autoload.php;C:\Users\JAAP\projects\store\application\config\config.php;C:\Users\JAAP\projects\store\application\config\constants.php;C:\Users\JAAP\projects\store\application\config\database.php;C:\Users\JAAP\projects\store\application\config\doctypes.php;C:\Users\JAAP\projects\store\application\config\foreign_chars.php;C:\Users\JAAP\projects\store\application\config\hooks.php;C:\Users\JAAP\projects\store\application\config\index.html;C:\Users\JAAP\projects\store\application\config\migration.php;C:\Users\JAAP\projects\store\application\config\mimes.php;C:\Users\JAAP\projects\store\application\config\profiler.php;C:\Users\JAAP\projects\store\application\config\routes.php;C:\Users\JAAP\projects\store\application\config\smileys.php;C:\Users\JAAP\projects\store\application\config\user_agents.php;C:\Users\JAAP\projects\store\application\controllers;C:\Users\JAAP\projects\store\application\controllers\index.html;C:\Users\JAAP\projects\store\application\controllers\welcome.php;C:\Users\JAAP\projects\store\application\core;C:\Users\JAAP\projects\store\application\core\index.html;C:\Users\JAAP\projects\store\application\errors;C:\Users\JAAP\projects\store\application\errors\error_404.php;C:\Users\JAAP\projects\store\application\errors\error_db.php;C:\Users\JAAP\projects\store\application\errors\error_general.php;C:\Users\JAAP\projects\store\application\errors\error_php.php;C:\Users\JAAP\projects\store\application\errors\index.html;C:\Users\JAAP\projects\store\application\helpers;C:\Users\JAAP\projects\store\application\helpers\index.html;C:\Users\JAAP\projects\store\application\hooks;C:\Users\JAAP\projects\store\application\hooks\index.html;C:\Users\JAAP\projects\store\application\index.html;C:\Users\JAAP\projects\store\application\language;C:\Users\JAAP\projects\store\application\language\english;C:\Users\JAAP\projects\store\application\language\english\index.html;C:\Users\JAAP\projects\store\application\libraries;C:\Users\JAAP\projects\store\application\libraries\index.html;C:\Users\JAAP\projects\store\application\logs;C:\Users\JAAP\projects\store\application\logs\index.html;C:\Users\JAAP\projects\store\application\models;C:\Users\JAAP\projects\store\application\models\index.html;C:\Users\JAAP\projects\store\application\third_party;C:\Users\JAAP\projects\store\application\third_party\index.html;C:\Users\JAAP\projects\store\application\views;C:\Users\JAAP\projects\store\application\views\index.html;C:\Users\JAAP\projects\store\application\views\welcome_message.php;C:\Users\JAAP\projects\store\desktop.ini;C:\Users\JAAP\projects\store\index.php;C:\Users\JAAP\projects\store\license.txt;C:\Users\JAAP\projects\store\system;C:\Users\JAAP\projects\store\system\.htaccess;C:\Users\JAAP\projects\store\system\core;C:\Users\JAAP\projects\store\system\core\Benchmark.php;C:\Users\JAAP\projects\store\system\core\CodeIgniter.php;C:\Users\JAAP\projects\store\system\core\Common.php;C:\Users\JAAP\projects\store\system\core\Config.php;C:\Users\JAAP\projects\store\system\core\Controller.php;C:\Users\JAAP\projects\store\system\core\Exceptions.php;C:\Users\JAAP\projects\store\system\core\Hooks.php;C:\Users\JAAP\projects\store\system\core\Input.php;C:\Users\JAAP\projects\store\system\core\Lang.php;C:\Users\JAAP\projects\store\system\core\Loader.php;C:\Users\JAAP\projects\store\system\core\Model.php;C:\Users\JAAP\projects\store\system\core\Output.php;C:\Users\JAAP\projects\store\system\core\Router.php;C:\Users\JAAP\projects\store\system\core\Security.php;C:\Users\JAAP\projects\store\system\core\URI.php;C:\Users\JAAP\projects\store\system\core\Utf8.php;C:\Users\JAAP\projects\store\system\core\index.html;C:\Users\JAAP\projects\store\system\database;C:\Users\JAAP\projects\store\system\database\DB.php;C:\Users\JAAP\projects\store\system\database\DB_active_rec.php;C:\Users\JAAP\projects\store\system\database\DB_cache.php;C:\Users\JAAP\projects\store\system\database\DB_driver.php;C:\Users\JAAP\projects\store\system\database\DB_forge.php;C:\Users\JAAP\projects\store\system\database\DB_result.php;C:\Users\JAAP\projects\store\system\database\DB_utility.php;C:\Users\JAAP\projects\store\system\database\drivers;C:\Users\JAAP\projects\store\system\database\drivers\cubrid;C:\Users\JAAP\projects\store\system\database\drivers\cubrid\cubrid_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\cubrid\cubrid_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\cubrid\cubrid_result.php;C:\Users\JAAP\projects\store\system\database\drivers\cubrid\cubrid_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\cubrid\index.html;C:\Users\JAAP\projects\store\system\database\drivers\index.html;C:\Users\JAAP\projects\store\system\database\drivers\mssql;C:\Users\JAAP\projects\store\system\database\drivers\mssql\index.html;C:\Users\JAAP\projects\store\system\database\drivers\mssql\mssql_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\mssql\mssql_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\mssql\mssql_result.php;C:\Users\JAAP\projects\store\system\database\drivers\mssql\mssql_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\mysql;C:\Users\JAAP\projects\store\system\database\drivers\mysql\index.html;C:\Users\JAAP\projects\store\system\database\drivers\mysql\mysql_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\mysql\mysql_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\mysql\mysql_result.php;C:\Users\JAAP\projects\store\system\database\drivers\mysql\mysql_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\mysqli;C:\Users\JAAP\projects\store\system\database\drivers\mysqli\index.html;C:\Users\JAAP\projects\store\system\database\drivers\mysqli\mysqli_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\mysqli\mysqli_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\mysqli\mysqli_result.php;C:\Users\JAAP\projects\store\system\database\drivers\mysqli\mysqli_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\oci8;C:\Users\JAAP\projects\store\system\database\drivers\oci8\index.html;C:\Users\JAAP\projects\store\system\database\drivers\oci8\oci8_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\oci8\oci8_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\oci8\oci8_result.php;C:\Users\JAAP\projects\store\system\database\drivers\oci8\oci8_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\odbc;C:\Users\JAAP\projects\store\system\database\drivers\odbc\index.html;C:\Users\JAAP\projects\store\system\database\drivers\odbc\odbc_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\odbc\odbc_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\odbc\odbc_result.php;C:\Users\JAAP\projects\store\system\database\drivers\odbc\odbc_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\pdo;C:\Users\JAAP\projects\store\system\database\drivers\pdo\index.html;C:\Users\JAAP\projects\store\system\database\drivers\pdo\pdo_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\pdo\pdo_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\pdo\pdo_result.php;C:\Users\JAAP\projects\store\system\database\drivers\pdo\pdo_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\postgre;C:\Users\JAAP\projects\store\system\database\drivers\postgre\index.html;C:\Users\JAAP\projects\store\system\database\drivers\postgre\postgre_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\postgre\postgre_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\postgre\postgre_result.php;C:\Users\JAAP\projects\store\system\database\drivers\postgre\postgre_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlite;C:\Users\JAAP\projects\store\system\database\drivers\sqlite\index.html;C:\Users\JAAP\projects\store\system\database\drivers\sqlite\sqlite_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlite\sqlite_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlite\sqlite_result.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlite\sqlite_utility.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlsrv;C:\Users\JAAP\projects\store\system\database\drivers\sqlsrv\index.html;C:\Users\JAAP\projects\store\system\database\drivers\sqlsrv\sqlsrv_driver.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlsrv\sqlsrv_forge.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlsrv\sqlsrv_result.php;C:\Users\JAAP\projects\store\system\database\drivers\sqlsrv\sqlsrv_utility.php;C:\Users\JAAP\projects\store\system\database\index.html;C:\Users\JAAP\projects\store\system\fonts;C:\Users\JAAP\projects\store\system\fonts\index.html;C:\Users\JAAP\projects\store\system\helpers;C:\Users\JAAP\projects\store\system\helpers\array_helper.php;C:\Users\JAAP\projects\store\system\helpers\captcha_helper.php;C:\Users\JAAP\projects\store\system\helpers\cookie_helper.php;C:\Users\JAAP\projects\store\system\helpers\date_helper.php;C:\Users\JAAP\projects\store\system\helpers\directory_helper.php;C:\Users\JAAP\projects\store\system\helpers\download_helper.php;C:\Users\JAAP\projects\store\system\helpers\email_helper.php;C:\Users\JAAP\projects\store\system\helpers\file_helper.php;C:\Users\JAAP\projects\store\system\helpers\form_helper.php;C:\Users\JAAP\projects\store\system\helpers\html_helper.php;C:\Users\JAAP\projects\store\system\helpers\index.html;C:\Users\JAAP\projects\store\system\helpers\inflector_helper.php;C:\Users\JAAP\projects\store\system\helpers\language_helper.php;C:\Users\JAAP\projects\store\system\helpers\number_helper.php;C:\Users\JAAP\projects\store\system\helpers\path_helper.php;C:\Users\JAAP\projects\store\system\helpers\security_helper.php;C:\Users\JAAP\projects\store\system\helpers\smiley_helper.php;C:\Users\JAAP\projects\store\system\helpers\string_helper.php;C:\Users\JAAP\projects\store\system\helpers\text_helper.php;C:\Users\JAAP\projects\store\system\helpers\typography_helper.php;C:\Users\JAAP\projects\store\system\helpers\url_helper.php;C:\Users\JAAP\projects\store\system\helpers\xml_helper.php;C:\Users\JAAP\projects\store\system\index.html;C:\Users\JAAP\projects\store\system\language;C:\Users\JAAP\projects\store\system\language\english;C:\Users\JAAP\projects\store\system\language\english\calendar_lang.php;C:\Users\JAAP\projects\store\system\language\english\date_lang.php;C:\Users\JAAP\projects\store\system\language\english\db_lang.php;C:\Users\JAAP\projects\store\system\language\english\email_lang.php;C:\Users\JAAP\projects\store\system\language\english\form_validation_lang.php;C:\Users\JAAP\projects\store\system\language\english\ftp_lang.php;C:\Users\JAAP\projects\store\system\language\english\imglib_lang.php;C:\Users\JAAP\projects\store\system\language\english\index.html;C:\Users\JAAP\projects\store\system\language\english\migration_lang.php;C:\Users\JAAP\projects\store\system\language\english\number_lang.php;C:\Users\JAAP\projects\store\system\language\english\profiler_lang.php;C:\Users\JAAP\projects\store\system\language\english\unit_test_lang.php;C:\Users\JAAP\projects\store\system\language\english\upload_lang.php;C:\Users\JAAP\projects\store\system\language\index.html;C:\Users\JAAP\projects\store\system\libraries;C:\Users\JAAP\projects\store\system\libraries\Cache;C:\Users\JAAP\projects\store\system\libraries\Cache\Cache.php;C:\Users\JAAP\projects\store\system\libraries\Cache\drivers;C:\Users\JAAP\projects\store\system\libraries\Cache\drivers\Cache_apc.php;C:\Users\JAAP\projects\store\system\libraries\Cache\drivers\Cache_dummy.php;C:\Users\JAAP\projects\store\system\libraries\Cache\drivers\Cache_file.php;C:\Users\JAAP\projects\store\system\libraries\Cache\drivers\Cache_memcached.php;C:\Users\JAAP\projects\store\system\libraries\Calendar.php;C:\Users\JAAP\projects\store\system\libraries\Cart.php;C:\Users\JAAP\projects\store\system\libraries\Driver.php;C:\Users\JAAP\projects\store\system\libraries\Email.php;C:\Users\JAAP\projects\store\system\libraries\Encrypt.php;C:\Users\JAAP\projects\store\system\libraries\Form_validation.php;C:\Users\JAAP\projects\store\system\libraries\Ftp.php;C:\Users\JAAP\projects\store\system\libraries\Image_lib.php;C:\Users\JAAP\projects\store\system\libraries\Javascript.php;C:\Users\JAAP\projects\store\system\libraries\Log.php;C:\Users\JAAP\projects\store\system\libraries\Migration.php;C:\Users\JAAP\projects\store\system\libraries\Pagination.php;C:\Users\JAAP\projects\store\system\libraries\Parser.php;C:\Users\JAAP\projects\store\system\libraries\Profiler.php;C:\Users\JAAP\projects\store\system\libraries\Session.php;C:\Users\JAAP\projects\store\system\libraries\Sha1.php;C:\Users\JAAP\projects\store\system\libraries\Table.php;C:\Users\JAAP\projects\store\system\libraries\Trackback.php;C:\Users\JAAP\projects\store\system\libraries\Typography.php;C:\Users\JAAP\projects\store\system\libraries\Unit_test.php;C:\Users\JAAP\projects\store\system\libraries\Upload.php;C:\Users\JAAP\projects\store\system\libraries\User_agent.php;C:\Users\JAAP\projects\store\system\libraries\Xmlrpc.php;C:\Users\JAAP\projects\store\system\libraries\Xmlrpcs.php;C:\Users\JAAP\projects\store\system\libraries\Zip.php;C:\Users\JAAP\projects\store\system\libraries\index.html;C:\Users\JAAP\projects\store\system\libraries\javascript;C:\Users\JAAP\projects\store\system\libraries\javascript\Jquery.php;C:\Users\JAAP\projects\store\user_guide;C:\Users\JAAP\projects\store\user_guide\changelog.html;C:\Users\JAAP\projects\store\user_guide\database;C:\Users\JAAP\projects\store\user_guide\database\active_record.html;C:\Users\JAAP\projects\store\user_guide\database\caching.html;C:\Users\JAAP\projects\store\user_guide\database\call_function.html;C:\Users\JAAP\projects\store\user_guide\database\configuration.html;C:\Users\JAAP\projects\store\user_guide\database\connecting.html;C:\Users\JAAP\projects\store\user_guide\database\examples.html;C:\Users\JAAP\projects\store\user_guide\database\fields.html;C:\Users\JAAP\projects\store\user_guide\database\forge.html;C:\Users\JAAP\projects\store\user_guide\database\helpers.html;C:\Users\JAAP\projects\store\user_guide\database\index.html;C:\Users\JAAP\projects\store\user_guide\database\queries.html;C:\Users\JAAP\projects\store\user_guide\database\results.html;C:\Users\JAAP\projects\store\user_guide\database\table_data.html;C:\Users\JAAP\projects\store\user_guide\database\transactions.html;C:\Users\JAAP\projects\store\user_guide\database\utilities.html;C:\Users\JAAP\projects\store\user_guide\doc_style;C:\Users\JAAP\projects\store\user_guide\doc_style\index.html;C:\Users\JAAP\projects\store\user_guide\doc_style\template.html;C:\Users\JAAP\projects\store\user_guide\general;C:\Users\JAAP\projects\store\user_guide\general\alternative_php.html;C:\Users\JAAP\projects\store\user_guide\general\ancillary_classes.html;C:\Users\JAAP\projects\store\user_guide\general\autoloader.html;C:\Users\JAAP\projects\store\user_guide\general\caching.html;C:\Users\JAAP\projects\store\user_guide\general\cli.html;C:\Users\JAAP\projects\store\user_guide\general\common_functions.html;C:\Users\JAAP\projects\store\user_guide\general\controllers.html;C:\Users\JAAP\projects\store\user_guide\general\core_classes.html;C:\Users\JAAP\projects\store\user_guide\general\creating_drivers.html;C:\Users\JAAP\projects\store\user_guide\general\creating_libraries.html;C:\Users\JAAP\projects\store\user_guide\general\credits.html;C:\Users\JAAP\projects\store\user_guide\general\drivers.html;C:\Users\JAAP\projects\store\user_guide\general\environments.html;C:\Users\JAAP\projects\store\user_guide\general\errors.html;C:\Users\JAAP\projects\store\user_guide\general\helpers.html;C:\Users\JAAP\projects\store\user_guide\general\hooks.html;C:\Users\JAAP\projects\store\user_guide\general\libraries.html;C:\Users\JAAP\projects\store\user_guide\general\managing_apps.html;C:\Users\JAAP\projects\store\user_guide\general\models.html;C:\Users\JAAP\projects\store\user_guide\general\profiling.html;C:\Users\JAAP\projects\store\user_guide\general\quick_reference.html;C:\Users\JAAP\projects\store\user_guide\general\requirements.html;C:\Users\JAAP\projects\store\user_guide\general\reserved_names.html;C:\Users\JAAP\projects\store\user_guide\general\routing.html;C:\Users\JAAP\projects\store\user_guide\general\security.html;C:\Users\JAAP\projects\store\user_guide\general\styleguide.html;C:\Users\JAAP\projects\store\user_guide\general\urls.html;C:\Users\JAAP\projects\store\user_guide\general\views.html;C:\Users\JAAP\projects\store\user_guide\helpers;C:\Users\JAAP\projects\store\user_guide\helpers\array_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\captcha_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\cookie_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\date_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\directory_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\download_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\email_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\file_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\form_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\html_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\inflector_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\language_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\number_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\path_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\security_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\smiley_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\string_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\text_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\typography_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\url_helper.html;C:\Users\JAAP\projects\store\user_guide\helpers\xml_helper.html;C:\Users\JAAP\projects\store\user_guide\images;C:\Users\JAAP\projects\store\user_guide\index.html;C:\Users\JAAP\projects\store\user_guide\installation;C:\Users\JAAP\projects\store\user_guide\installation\downloads.html;C:\Users\JAAP\projects\store\user_guide\installation\index.html;C:\Users\JAAP\projects\store\user_guide\installation\troubleshooting.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_120.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_130.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_131.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_132.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_133.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_140.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_141.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_150.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_152.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_153.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_154.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_160.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_161.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_162.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_163.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_170.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_171.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_172.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_200.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_201.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_202.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_203.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_210.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrade_b11.html;C:\Users\JAAP\projects\store\user_guide\installation\upgrading.html;C:\Users\JAAP\projects\store\user_guide\libraries;C:\Users\JAAP\projects\store\user_guide\libraries\benchmark.html;C:\Users\JAAP\projects\store\user_guide\libraries\caching.html;C:\Users\JAAP\projects\store\user_guide\libraries\calendar.html;C:\Users\JAAP\projects\store\user_guide\libraries\cart.html;C:\Users\JAAP\projects\store\user_guide\libraries\config.html;C:\Users\JAAP\projects\store\user_guide\libraries\email.html;C:\Users\JAAP\projects\store\user_guide\libraries\encryption.html;C:\Users\JAAP\projects\store\user_guide\libraries\file_uploading.html;C:\Users\JAAP\projects\store\user_guide\libraries\form_validation.html;C:\Users\JAAP\projects\store\user_guide\libraries\ftp.html;C:\Users\JAAP\projects\store\user_guide\libraries\image_lib.html;C:\Users\JAAP\projects\store\user_guide\libraries\input.html;C:\Users\JAAP\projects\store\user_guide\libraries\javascript.html;C:\Users\JAAP\projects\store\user_guide\libraries\language.html;C:\Users\JAAP\projects\store\user_guide\libraries\loader.html;C:\Users\JAAP\projects\store\user_guide\libraries\migration.html;C:\Users\JAAP\projects\store\user_guide\libraries\output.html;C:\Users\JAAP\projects\store\user_guide\libraries\pagination.html;C:\Users\JAAP\projects\store\user_guide\libraries\parser.html;C:\Users\JAAP\projects\store\user_guide\libraries\security.html;C:\Users\JAAP\projects\store\user_guide\libraries\sessions.html;C:\Users\JAAP\projects\store\user_guide\libraries\table.html;C:\Users\JAAP\projects\store\user_guide\libraries\trackback.html;C:\Users\JAAP\projects\store\user_guide\libraries\typography.html;C:\Users\JAAP\projects\store\user_guide\libraries\unit_testing.html;C:\Users\JAAP\projects\store\user_guide\libraries\uri.html;C:\Users\JAAP\projects\store\user_guide\libraries\user_agent.html;C:\Users\JAAP\projects\store\user_guide\libraries\xmlrpc.html;C:\Users\JAAP\projects\store\user_guide\libraries\zip.html;C:\Users\JAAP\projects\store\user_guide\license.html;C:\Users\JAAP\projects\store\user_guide\nav;C:\Users\JAAP\projects\store\user_guide\nav\hacks.txt;C:\Users\JAAP\projects\store\user_guide\nav\moo.fx.js;C:\Users\JAAP\projects\store\user_guide\nav\nav.js;C:\Users\JAAP\projects\store\user_guide\nav\prototype.lite.js;C:\Users\JAAP\projects\store\user_guide\nav\user_guide_menu.js;C:\Users\JAAP\projects\store\user_guide\overview;C:\Users\JAAP\projects\store\user_guide\overview\appflow.html;C:\Users\JAAP\projects\store\user_guide\overview\at_a_glance.html;C:\Users\JAAP\projects\store\user_guide\overview\cheatsheets.html;C:\Users\JAAP\projects\store\user_guide\overview\features.html;C:\Users\JAAP\projects\store\user_guide\overview\getting_started.html;C:\Users\JAAP\projects\store\user_guide\overview\goals.html;C:\Users\JAAP\projects\store\user_guide\overview\index.html;C:\Users\JAAP\projects\store\user_guide\overview\mvc.html;C:\Users\JAAP\projects\store\user_guide\toc.html;C:\Users\JAAP\projects\store\user_guide\tutorial;C:\Users\JAAP\projects\store\user_guide\tutorial\conclusion.html;C:\Users\JAAP\projects\store\user_guide\tutorial\create_news_items.html;C:\Users\JAAP\projects\store\user_guide\tutorial\hard_coded_pages.html;C:\Users\JAAP\projects\store\user_guide\tutorial\index.html;C:\Users\JAAP\projects\store\user_guide\tutorial\news_section.html;C:\Users\JAAP\projects\store\user_guide\tutorial\static_pages.html;C:\Users\JAAP\projects\store\user_guide\userguide.css;"/><added value=""/><dplmenupath>
+	</dplmenupath><smartyassings>
+	</smartyassings><codestructure>
+		<csfile name="C:\Users\JAAP\projects\store\store.clpprj" crc="-760715291">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_search\views\form.php" crc="-728758759">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_search\views\display.php" crc="1769483456">
+			<phptree>
+				<treenode node="html;Php:Var Name;1;9;6;9;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_search\store_search.php" crc="1768908354">
+			<phptree>
+				<treenode node="Widget_Store_search;Php:Class Name;0;9;1;44;34;;;vWidgets;;c;;r;;d42,9;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;30;2;33;34;;;v;;r;;d1,31;;b1,0;;m">
+					</treenode>
+					<treenode node="form;Php:Function Name;8;35;2;39;34;;;v;;r;;d1,36;;b1,0;;moptions;;p">
+					</treenode>
+					<treenode node="run;Php:Function Name;8;40;2;43;34;;;v;;r;;d1,41;;b1,0;;moptions;;p">
+					</treenode>
+					<treenode node="author;Php:Var Name;8;23;15;23;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="description;Php:Var Name;8;17;20;17;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="fields;Php:Var Name;8;27;15;27;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;8;11;14;11;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="version;Php:Var Name;8;25;16;25;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="website;Php:Var Name;8;24;16;24;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_categories\views\display.php" crc="679006462">
+			<phptree>
+				<treenode node="categories;Php:Var Name;18;10;29;10;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="category;Php:Var Name;30;12;39;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_categories\store_categories.php" crc="-365974556">
+			<phptree>
+				<treenode node="Widget_Store_categories;Php:Class Name;0;9;1;35;34;;;vWidgets;;c;;r;;d46,9;;b0,0;;m">
+					<treenode node="run;Php:Function Name;8;27;2;34;34;;;v;;r;;d1,28;;b1,0;;moptions;;p">
+					</treenode>
+					<treenode node="author;Php:Var Name;8;23;15;23;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="description;Php:Var Name;8;17;20;17;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;8;11;14;11;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="version;Php:Var Name;8;25;16;25;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="website;Php:Var Name;8;24;16;24;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_cart\views\form.php" crc="-728758759">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_cart\views\display.php" crc="-1680617559">
+			<phptree>
+				<treenode node="html;Php:Var Name;1;12;6;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="i;Php:Var Name;2;24;4;24;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="items;Php:Var Name;37;25;43;25;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;1;10;6;10;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\store_cart\store_cart.php" crc="315361186">
+			<phptree>
+				<treenode node="Widget_Store_cart;Php:Class Name;0;9;1;44;34;;;vWidgets;;c;;r;;d40,9;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;30;2;33;34;;;v;;r;;d1,31;;b1,0;;m">
+					</treenode>
+					<treenode node="form;Php:Function Name;8;35;2;39;34;;;v;;r;;d1,36;;b1,0;;moptions;;p">
+					</treenode>
+					<treenode node="run;Php:Function Name;8;40;2;43;34;;;v;;r;;d1,41;;b1,0;;moptions;;p">
+					</treenode>
+					<treenode node="author;Php:Var Name;8;23;15;23;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="description;Php:Var Name;8;17;20;17;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="fields;Php:Var Name;8;27;15;27;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;8;11;14;11;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="version;Php:Var Name;8;25;16;25;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="website;Php:Var Name;8;24;16;24;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\widgets\index.html" crc="0">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\search\result.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\search\query.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\product\product.php" crc="195882008">
+			<phptree>
+				<treenode node="extension;Php:Var Name;6;21;16;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="id;Php:Var Name;41;20;44;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="name;Php:Var Name;10;20;15;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product;Php:Var Name;52;12;60;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;17;30;22;30;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\customer\profile\index.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\customer\profile\form.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\customer\purchase_history.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\customer\order_status.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\customer\my_downloads.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\customer\index.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\checkout\review.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\checkout\purchase.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\checkout\process.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\checkout\confirmation.php" crc="-1221859030">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\categories\index\tiles.php" crc="-669814686">
+			<phptree>
+				<treenode node="categories;Php:Var Name;16;12;27;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="category;Php:Var Name;31;12;40;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="extension;Php:Var Name;6;21;16;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="id;Php:Var Name;42;20;45;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="name;Php:Var Name;10;20;15;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="num_products;Php:Var Name;14;29;27;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="output;Php:Var Name;32;30;39;30;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;30;29;35;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\categories\index\list.php" crc="1881599459">
+			<phptree>
+				<treenode node="categories;Php:Var Name;16;12;27;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="category;Php:Var Name;31;12;40;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="extension;Php:Var Name;6;21;16;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="id;Php:Var Name;42;20;45;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="name;Php:Var Name;10;20;15;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="num_products;Php:Var Name;14;29;27;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="output;Php:Var Name;32;30;39;30;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;30;29;35;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\categories\tiles.php" crc="-1555870796">
+			<phptree>
+				<treenode node="extension;Php:Var Name;6;22;16;22;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="id;Php:Var Name;41;21;44;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="name;Php:Var Name;10;21;15;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product;Php:Var Name;28;13;36;13;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="products;Php:Var Name;16;12;25;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\categories\list.php" crc="323944201">
+			<phptree>
+				<treenode node="category_name;Php:Var Name;84;14;98;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="extension;Php:Var Name;6;22;16;22;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="id;Php:Var Name;41;21;44;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="name;Php:Var Name;10;21;15;21;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product;Php:Var Name;28;13;36;13;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="products;Php:Var Name;17;12;26;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\cart\show_cart.php" crc="1856351199">
+			<phptree>
+				<treenode node="i;Php:Var Name;7;20;9;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="items;Php:Var Name;48;20;54;20;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="option_name;Php:Var Name;70;28;82;28;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="option_value;Php:Var Name;86;28;99;28;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;10;11;15;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\tags\index.php" crc="-513409463">
+			<phptree>
+				<treenode node="tag;Php:Var Name;39;36;43;36;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="tags;Php:Var Name;11;16;16;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;49;31;54;31;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\tags\form.php" crc="773542439">
+			<phptree>
+				<treenode node="tag;Php:Var Name;70;23;74;23;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;43;11;48;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\store\statistics.php" crc="-1749687103">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\store\settings.php" crc="-1361185505">
+			<phptree>
+				<treenode node="this;Php:Var Name;26;62;31;62;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\store\dashboard.php" crc="140319788">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\products\preview.php" crc="-1574984589">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\products\index_category.php" crc="2026668868">
+			<phptree>
+				<treenode node="product;Php:Var Name;30;42;38;42;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="products;Php:Var Name;10;18;19;18;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="section_title;Php:Var Name;16;14;30;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;30;37;35;37;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="title;Php:Var Name;12;52;18;52;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\products\index.php" crc="-1085106261">
+			<phptree>
+				<treenode node="output;Php:Var Name;8;47;15;47;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product;Php:Var Name;30;39;38;39;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="products;Php:Var Name;10;15;19;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;30;34;35;34;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="title;Php:Var Name;14;59;20;59;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\products\form.php" crc="780602763">
+			<phptree>
+				<treenode node="categories;Php:Var Name;65;23;76;23;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="output;Php:Var Name;6;81;13;81;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product;Php:Var Name;106;23;114;23;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product_image;Php:Var Name;15;80;29;80;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;44;11;49;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\categories\index.php" crc="-256768218">
+			<phptree>
+				<treenode node="categories;Php:Var Name;11;16;22;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="category;Php:Var Name;45;40;54;40;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="output;Php:Var Name;11;47;18;47;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;49;35;54;35;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\categories\form.php" crc="-308940150">
+			<phptree>
+				<treenode node="category;Php:Var Name;70;24;79;24;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="dropdown;Php:Var Name;61;34;70;34;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;48;12;53;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\attributes\index.php" crc="-1182044865">
+			<phptree>
+				<treenode node="attribute;Php:Var Name;45;36;55;36;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="attributes;Php:Var Name;11;16;22;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;49;31;54;31;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\views\admin\attributes\form.php" crc="2118643843">
+			<phptree>
+				<treenode node="attribute;Php:Var Name;70;23;80;23;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;49;11;54;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\shared\AuthorizeNetXMLResponse.php" crc="-318693272">
+			<phptree>
+				<treenode node="AuthorizeNetXMLResponse;Php:Class Name;0;14;1;127;34;;;v;;r;;d0,15;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;24;5;33;34;;;v;;r;;d4,25;;b1,0;;mresponse;;p">
+					</treenode>
+					<treenode node="_getElementContents;Php:Function Name;14;114;5;125;34;;;v;;r;;d4,115;;b2,0;;melementName;;p">
+					</treenode>
+					<treenode node="getErrorMessage;Php:Function Name;11;69;5;74;34;;;v;;r;;d4,70;;b1,0;;m">
+					</treenode>
+					<treenode node="getMessageCode;Php:Function Name;11;95;5;98;34;;;v;;r;;d4,96;;b1,0;;m">
+					</treenode>
+					<treenode node="getMessageText;Php:Function Name;11;103;5;106;34;;;v;;r;;d4,104;;b1,0;;m">
+					</treenode>
+					<treenode node="getRefID;Php:Function Name;11;79;5;82;34;;;v;;r;;d4,80;;b1,0;;m">
+					</treenode>
+					<treenode node="getResultCode;Php:Function Name;11;87;5;90;34;;;v;;r;;d4,88;;b1,0;;m">
+					</treenode>
+					<treenode node="isError;Php:Function Name;11;61;5;64;34;;;v;;r;;d4,62;;b1,0;;m">
+					</treenode>
+					<treenode node="isOk;Php:Function Name;11;40;5;43;34;;;v;;r;;d4,41;;b1,0;;m">
+					</treenode>
+					<treenode node="xpath;Php:Function Name;11;51;5;54;34;;;v;;r;;d4,52;;b1,0;;mpath;;p">
+					</treenode>
+					<treenode node="xml;Php:Var Name;11;17;15;17;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\shared\AuthorizeNetTypes.php" crc="-1125085654">
+			<phptree>
+				<treenode node="AuthorizeNet_Subscription;Php:Class Name;0;193;1;321;34;;;v;;r;;d0,194;;b0,0;;m">
+					<treenode node="getXml;Php:Function Name;11;236;5;320;34;;;v;;r;;d4,237;;b1,0;;m">
+					</treenode>
+					<treenode node="amount;Php:Var Name;11;202;18;202;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountAccountNumber;Php:Var Name;11;209;36;209;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountAccountType;Php:Var Name;11;207;34;207;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountBankName;Php:Var Name;11;212;31;212;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountEcheckType;Php:Var Name;11;211;33;211;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountNameOnAccount;Php:Var Name;11;210;36;210;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountRoutingNumber;Php:Var Name;11;208;36;208;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToAddress;Php:Var Name;11;222;25;222;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToCity;Php:Var Name;11;223;22;223;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToCompany;Php:Var Name;11;221;25;221;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToCountry;Php:Var Name;11;226;25;226;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToFirstName;Php:Var Name;11;219;27;219;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToLastName;Php:Var Name;11;220;26;220;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToState;Php:Var Name;11;224;23;224;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="billToZip;Php:Var Name;11;225;21;225;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="creditCardCardCode;Php:Var Name;11;206;30;206;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="creditCardCardNumber;Php:Var Name;11;204;32;204;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="creditCardExpirationDate;Php:Var Name;11;205;36;205;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerEmail;Php:Var Name;11;216;25;216;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerFaxNumber;Php:Var Name;11;218;29;218;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerId;Php:Var Name;11;215;22;215;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerPhoneNumber;Php:Var Name;11;217;31;217;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="intervalLength;Php:Var Name;11;197;26;197;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="intervalUnit;Php:Var Name;11;198;24;198;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;11;196;16;196;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="orderDescription;Php:Var Name;11;214;28;214;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="orderInvoiceNumber;Php:Var Name;11;213;30;213;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToAddress;Php:Var Name;11;230;25;230;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToCity;Php:Var Name;11;231;22;231;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToCompany;Php:Var Name;11;229;25;229;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToCountry;Php:Var Name;11;234;25;234;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToFirstName;Php:Var Name;11;227;27;227;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToLastName;Php:Var Name;11;228;26;228;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToState;Php:Var Name;11;232;23;232;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToZip;Php:Var Name;11;233;21;233;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="startDate;Php:Var Name;11;199;21;199;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="totalOccurrences;Php:Var Name;11;200;28;200;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="trialAmount;Php:Var Name;11;203;23;203;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="trialOccurrences;Php:Var Name;11;201;28;201;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetAddress;Php:Class Name;0;32;1;45;34;;;v;;r;;d0,33;;b0,0;;m">
+					<treenode node="address;Php:Var Name;11;37;19;37;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="city;Php:Var Name;11;38;16;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="company;Php:Var Name;11;36;19;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="country;Php:Var Name;11;41;19;41;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerAddressId;Php:Var Name;11;44;29;44;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="faxNumber;Php:Var Name;11;43;21;43;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="firstName;Php:Var Name;11;34;21;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="lastName;Php:Var Name;11;35;20;35;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="phoneNumber;Php:Var Name;11;42;23;42;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="state;Php:Var Name;11;39;17;39;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="zip;Php:Var Name;11;40;15;40;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetBankAccount;Php:Class Name;0;177;1;185;34;;;v;;r;;d0,178;;b0,0;;m">
+					<treenode node="accountNumber;Php:Var Name;11;181;25;181;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="accountType;Php:Var Name;11;179;23;179;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankName;Php:Var Name;11;184;20;184;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="echeckType;Php:Var Name;11;183;22;183;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="nameOnAccount;Php:Var Name;11;182;25;182;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="routingNumber;Php:Var Name;11;180;25;180;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetCreditCard;Php:Class Name;0;164;1;169;34;;;v;;r;;d0,165;;b0,0;;m">
+					<treenode node="cardCode;Php:Var Name;11;168;20;168;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="cardNumber;Php:Var Name;11;166;22;166;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="expirationDate;Php:Var Name;11;167;26;167;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetCustomer;Php:Class Name;0;15;1;24;34;;;v;;r;;d0,16;;b0,0;;m">
+					<treenode node="customerProfileId;Php:Var Name;11;22;29;22;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="description;Php:Var Name;11;18;23;18;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="email;Php:Var Name;11;19;17;19;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="merchantCustomerId;Php:Var Name;11;17;30;17;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="paymentProfiles;Php:Var Name;11;20;27;20;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipToList;Php:Var Name;11;21;22;21;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetLineItem;Php:Class Name;0;147;1;156;34;;;v;;r;;d0,148;;b0,0;;m">
+					<treenode node="description;Php:Var Name;11;151;23;151;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="itemId;Php:Var Name;11;149;18;149;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;11;150;16;150;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="quantity;Php:Var Name;11;152;20;152;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="taxable;Php:Var Name;11;154;19;154;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="unitPrice;Php:Var Name;11;153;21;153;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetPayment;Php:Class Name;0;75;1;85;34;;;v;;r;;d0,76;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;80;5;84;34;;;v;;r;;d4,81;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccount;Php:Var Name;11;78;23;78;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="creditCard;Php:Var Name;11;77;22;77;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetPaymentProfile;Php:Class Name;0;53;1;67;34;;;v;;r;;d0,54;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;61;5;65;34;;;v;;r;;d4,62;;b1,0;;m">
+					</treenode>
+					<treenode node="billTo;Php:Var Name;11;57;18;57;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerPaymentProfileId;Php:Var Name;11;59;36;59;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerType;Php:Var Name;11;56;24;56;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="payment;Php:Var Name;11;58;19;58;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetTransaction;Php:Class Name;0;93;1;139;34;;;v;;r;;d0,94;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;114;5;137;34;;;v;;r;;d4,115;;b1,0;;m">
+					</treenode>
+					<treenode node="amount;Php:Var Name;11;95;18;95;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="approvalCode;Php:Var Name;11;111;24;111;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankAccountNumberMasked;Php:Var Name;11;105;35;105;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="bankRoutingNumberMasked;Php:Var Name;11;104;35;104;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="cardCode;Php:Var Name;11;109;20;109;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="creditCardNumberMasked;Php:Var Name;11;103;34;103;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerPaymentProfileId;Php:Var Name;11;101;36;101;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerProfileId;Php:Var Name;11;100;29;100;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customerShippingAddressId;Php:Var Name;11;102;37;102;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="duty;Php:Var Name;11;98;16;98;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="lineItems;Php:Var Name;11;99;21;99;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="order;Php:Var Name;11;106;17;106;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="recurringBilling;Php:Var Name;11;108;28;108;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="shipping;Php:Var Name;11;97;20;97;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="splitTenderId;Php:Var Name;11;110;25;110;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="tax;Php:Var Name;11;96;15;96;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="taxExempt;Php:Var Name;11;107;21;107;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="transId;Php:Var Name;11;112;19;112;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\shared\AuthorizeNetResponse.php" crc="22577787">
+			<phptree>
+				<treenode node="AuthorizeNetResponse;Php:Class Name;0;15;1;74;34;;;v;;r;;d0,16;;b0,0;;m">
+					<treenode node="account_number;Php:Var Name;11;67;26;67;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="address;Php:Var Name;11;43;19;43;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="amount;Php:Var Name;11;36;18;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="approved;Php:Var Name;11;23;20;23;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="authorization_code;Php:Var Name;11;31;30;31;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="avs_response;Php:Var Name;11;32;24;32;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="balance_on_card;Php:Var Name;11;71;27;71;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="card_code_response;Php:Var Name;11;65;30;65;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="card_type;Php:Var Name;11;68;21;68;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="cavv_response;Php:Var Name;11;66;25;66;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="city;Php:Var Name;11;44;16;44;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="company;Php:Var Name;11;42;19;42;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="country;Php:Var Name;11;47;19;47;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="customer_id;Php:Var Name;11;39;23;39;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="declined;Php:Var Name;11;24;20;24;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="description;Php:Var Name;11;35;23;35;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="duty;Php:Var Name;11;60;16;60;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="email_address;Php:Var Name;11;50;25;50;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="error;Php:Var Name;11;25;17;25;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="fax;Php:Var Name;11;49;15;49;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="first_name;Php:Var Name;11;40;22;40;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="freight;Php:Var Name;11;61;19;61;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="held;Php:Var Name;11;26;16;26;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="invoice_number;Php:Var Name;11;34;26;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="last_name;Php:Var Name;11;41;21;41;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="md5_hash;Php:Var Name;11;64;20;64;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="method;Php:Var Name;11;37;18;37;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="phone;Php:Var Name;11;48;17;48;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="purchase_order_number;Php:Var Name;11;63;33;63;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="requested_amount;Php:Var Name;11;70;28;70;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="response;Php:Var Name;11;72;20;72;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="response_code;Php:Var Name;11;27;25;27;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="response_reason_code;Php:Var Name;11;29;32;29;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="response_reason_text;Php:Var Name;11;30;32;30;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="response_subcode;Php:Var Name;11;28;28;28;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_address;Php:Var Name;11;54;27;54;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_city;Php:Var Name;11;55;24;55;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_company;Php:Var Name;11;53;27;53;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_country;Php:Var Name;11;58;27;58;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_first_name;Php:Var Name;11;51;30;51;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_last_name;Php:Var Name;11;52;29;52;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_state;Php:Var Name;11;56;25;56;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="ship_to_zip_code;Php:Var Name;11;57;28;57;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="split_tender_id;Php:Var Name;11;69;27;69;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="state;Php:Var Name;11;45;17;45;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="tax;Php:Var Name;11;59;15;59;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="tax_exempt;Php:Var Name;11;62;22;62;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="transaction_id;Php:Var Name;11;33;26;33;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="transaction_type;Php:Var Name;11;38;28;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="zip_code;Php:Var Name;11;46;20;46;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\shared\AuthorizeNetRequest.php" crc="1389158163">
+			<phptree>
+				<treenode node="AuthorizeNetRequest;Php:Class Name;9;7;1;119;34;;;v;;r;;d0,8;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;39;5;45;34;;;v;;r;;d4,40;;b1,0;;mapi_login_id;;ptransaction_key;;p">
+					</treenode>
+					<treenode node="_getPostUrl;Php:Function Name;23;31;45;31;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_handleResponse;Php:Function Name;23;25;56;25;34;;;v;;r;;d-1,-1;;b2,0;;mstring;;p">
+					</treenode>
+					<treenode node="_sendRequest;Php:Function Name;14;82;5;117;34;;;v;;r;;d4,83;;b2,0;;m">
+					</treenode>
+					<treenode node="_setPostString;Php:Function Name;23;20;48;20;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="getPostString;Php:Function Name;11;72;5;75;34;;;v;;r;;d4,73;;b1,0;;m">
+					</treenode>
+					<treenode node="setLogFile;Php:Function Name;11;62;5;65;34;;;v;;r;;d4,63;;b1,0;;mfilepath;;p">
+					</treenode>
+					<treenode node="setSandbox;Php:Function Name;11;52;5;55;34;;;v;;r;;d4,53;;b1,0;;mbool;;p">
+					</treenode>
+					<treenode node="_api_login;Php:Var Name;14;10;25;10;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_log_file;Php:Var Name;14;15;24;15;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_post_string;Php:Var Name;14;12;27;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_sandbox;Php:Var Name;14;14;23;14;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_transaction_key;Php:Var Name;14;11;31;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="VERIFY_PEER;Php:Var Name;11;13;23;13;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetTD.php" crc="1028764115">
+			<phptree>
+				<treenode node="AuthorizeNetTD;Php:Class Name;0;16;1;170;34;;;vAuthorizeNetRequest;;c;;r;;d0,17;;b0,0;;m">
+					<treenode node="_constructXml;Php:Function Name;12;161;5;168;34;;;v;;r;;d4,162;;b3,0;;mrequest_type;;p">
+					</treenode>
+					<treenode node="_getPostUrl;Php:Function Name;14;130;5;133;34;;;v;;r;;d4,131;;b2,0;;m">
+					</treenode>
+					<treenode node="_handleResponse;Php:Function Name;14;142;5;145;34;;;v;;r;;d4,143;;b2,0;;mresponse;;p">
+					</treenode>
+					<treenode node="_setPostString;Php:Function Name;14;150;5;154;34;;;v;;r;;d4,151;;b2,0;;m">
+					</treenode>
+					<treenode node="getSettledBatchList;Php:Function Name;11;41;5;52;34;;;v;;r;;d4,42;;b1,0;;mincludeStatistics;;pfirstSettlementDate;;plastSettlementDate;;putc;;p">
+					</treenode>
+					<treenode node="getSettledBatchListForMonth;Php:Function Name;11;62;5;69;34;;;v;;r;;d4,63;;b1,0;;mmonth;;pyear;;p">
+					</treenode>
+					<treenode node="getTransactionDetails;Php:Function Name;11;120;5;125;34;;;v;;r;;d4,121;;b1,0;;mtransId;;p">
+					</treenode>
+					<treenode node="getTransactionList;Php:Function Name;11;78;5;83;34;;;v;;r;;d4,79;;b1,0;;mbatchId;;p">
+					</treenode>
+					<treenode node="getTransactionsForDay;Php:Function Name;11;94;5;111;34;;;v;;r;;d4,95;;b1,0;;mmonth;;pday;;pyear;;p">
+					</treenode>
+					<treenode node="_xml;Php:Var Name;12;22;17;22;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetTD_Response;Php:Class Name;0;178;1;182;34;;;vAuthorizeNetXMLResponse;;c;;r;;d0,179;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetSOAP.php" crc="1254756893">
+			<phptree>
+				<treenode node="AuthorizeNetSOAP;Php:Class Name;0;17;1;98;34;;;vSoapClient;;c;;r;;d0,18;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;28;5;32;34;;;v;;r;;d4,29;;b1,0;;m">
+					</treenode>
+					<treenode node="getSoapMethods;Php:Function Name;11;66;5;79;34;;;v;;r;;d4,67;;b1,0;;m">
+					</treenode>
+					<treenode node="getSoapTypes;Php:Function Name;11;48;5;60;34;;;v;;r;;d4,49;;b1,0;;m">
+					</treenode>
+					<treenode node="saveSoapDocumentation;Php:Function Name;11;84;5;94;34;;;v;;r;;d4,85;;b1,0;;mpath;;p">
+					</treenode>
+					<treenode node="setSandbox;Php:Function Name;11;39;5;42;34;;;v;;r;;d4,40;;b1,0;;mbool;;p">
+					</treenode>
+					<treenode node="sandbox;Php:Var Name;11;23;19;23;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetSIM.php" crc="103495044">
+			<phptree>
+				<treenode node="AuthorizeNetSIM;Php:Class Name;0;14;1;80;34;;;vAuthorizeNetResponse;;c;;r;;d0,15;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;27;5;57;34;;;v;;r;;d4,28;;b1,0;;mapi_login_id;;pmd5_setting;;p">
+					</treenode>
+					<treenode node="generateHash;Php:Function Name;11;74;5;78;34;;;v;;r;;d4,75;;b1,0;;m">
+					</treenode>
+					<treenode node="isAuthorizeNet;Php:Function Name;11;64;5;67;34;;;v;;r;;d4,65;;b1,0;;m">
+					</treenode>
+					<treenode node="subscription_id;Php:Var Name;11;18;27;18;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="subscription_paynum;Php:Var Name;11;19;31;19;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetSIM_Form;Php:Class Name;0;88;1;211;34;;;v;;r;;d0,89;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;158;5;171;34;;;v;;r;;d4,159;;b1,0;;mfields;;p">
+					</treenode>
+					<treenode node="getFingerprint;Php:Function Name;18;201;5;209;34;;;v;;r;;d4,202;;b1,5;;mapi_login_id;;ptransaction_key;;pamount;;pfp_sequence;;pfp_timestamp;;p">
+					</treenode>
+					<treenode node="getHiddenFieldString;Php:Function Name;11;178;5;188;34;;;v;;r;;d4,179;;b1,0;;m">
+					</treenode>
+					<treenode node="x_address;Php:Var Name;11;90;21;90;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_amount;Php:Var Name;11;91;20;91;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_background_url;Php:Var Name;11;92;28;92;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_card_num;Php:Var Name;11;93;22;93;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_city;Php:Var Name;11;94;18;94;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_color_background;Php:Var Name;11;95;30;95;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_color_link;Php:Var Name;11;96;24;96;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_color_text;Php:Var Name;11;97;24;97;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_company;Php:Var Name;11;98;21;98;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_country;Php:Var Name;11;99;21;99;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_cust_id;Php:Var Name;11;100;21;100;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_customer_ip;Php:Var Name;11;101;25;101;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_delim_data;Php:Var Name;11;103;24;103;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_description;Php:Var Name;11;102;25;102;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_duplicate_window;Php:Var Name;11;104;30;104;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_duty;Php:Var Name;11;105;18;105;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_email;Php:Var Name;11;106;19;106;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_email_customer;Php:Var Name;11;107;28;107;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_fax;Php:Var Name;11;108;17;108;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_first_name;Php:Var Name;11;109;24;109;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_footer_email_receipt;Php:Var Name;11;110;34;110;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_footer_html_payment_form;Php:Var Name;11;111;38;111;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_footer_html_receipt;Php:Var Name;11;112;33;112;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_fp_hash;Php:Var Name;11;113;21;113;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_fp_sequence;Php:Var Name;11;114;25;114;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_fp_timestamp;Php:Var Name;11;115;26;115;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_freight;Php:Var Name;11;116;21;116;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_header_email_receipt;Php:Var Name;11;117;34;117;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_header_html_payment_form;Php:Var Name;11;118;38;118;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_header_html_receipt;Php:Var Name;11;119;33;119;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_invoice_num;Php:Var Name;11;120;25;120;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_last_name;Php:Var Name;11;121;23;121;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_line_item;Php:Var Name;11;122;23;122;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_login;Php:Var Name;11;123;19;123;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_logo_url;Php:Var Name;11;124;22;124;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_method;Php:Var Name;11;125;20;125;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_phone;Php:Var Name;11;126;19;126;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_po_num;Php:Var Name;11;127;20;127;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_receipt_link_method;Php:Var Name;11;128;33;128;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_receipt_link_text;Php:Var Name;11;129;31;129;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_receipt_link_url;Php:Var Name;11;130;30;130;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_recurring_billing;Php:Var Name;11;131;31;131;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_relay_response;Php:Var Name;11;132;28;132;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_relay_url;Php:Var Name;11;133;23;133;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_rename;Php:Var Name;11;134;20;134;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_address;Php:Var Name;11;135;29;135;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_city;Php:Var Name;11;138;26;138;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_company;Php:Var Name;11;136;29;136;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_country;Php:Var Name;11;137;29;137;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_first_name;Php:Var Name;11;139;32;139;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_last_name;Php:Var Name;11;140;31;140;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_state;Php:Var Name;11;141;27;141;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_ship_to_zip;Php:Var Name;11;142;25;142;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_show_form;Php:Var Name;11;143;23;143;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_state;Php:Var Name;11;144;19;144;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_tax;Php:Var Name;11;145;17;145;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_tax_exempt;Php:Var Name;11;146;24;146;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_test_request;Php:Var Name;11;147;26;147;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_trans_id;Php:Var Name;11;148;22;148;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_type;Php:Var Name;11;149;18;149;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_version;Php:Var Name;11;150;21;150;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="x_zip;Php:Var Name;11;151;17;151;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetDPM.php" crc="606251652">
+			<phptree>
+				<treenode node="AuthorizeNetDPM;Php:Class Name;0;26;1;236;34;;;vAuthorizeNetSIM_Form;;c;;r;;d0,27;;b0,0;;m">
+					<treenode node="directPostDemo;Php:Function Name;18;36;5;81;34;;;v;;r;;d4,37;;b1,5;;murl;;papi_login_id;;ptransaction_key;;pamount;;pmd5_setting;;p">
+					</treenode>
+					<treenode node="getCreditCardForm;Php:Function Name;18;114;5;234;34;;;v;;r;;d4,115;;b1,5;;mamount;;pfp_sequence;;prelay_response_url;;papi_login_id;;ptransaction_key;;ptest_mode;;pprefill;;p">
+					</treenode>
+					<treenode node="getRelayResponseSnippet;Php:Function Name;18;91;5;99;34;;;v;;r;;d4,92;;b1,5;;mredirect_url;;p">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetCP.php" crc="-683069014">
+			<phptree>
+				<treenode node="AuthorizeNetCP;Php:Class Name;0;17;1;88;34;;;vAuthorizeNetAIM;;c;;r;;d0,18;;b0,0;;m">
+					<treenode node="_handleResponse;Php:Function Name;14;83;5;86;34;;;v;;r;;d4,84;;b2,0;;mresponse;;p">
+					</treenode>
+					<treenode node="setTrack1Data;Php:Function Name;11;55;5;61;34;;;v;;r;;d47,55;;b1,0;;mtrack1data;;p">
+					</treenode>
+					<treenode node="setTrack2Data;Php:Function Name;11;68;5;74;34;;;v;;r;;d47,68;;b1,0;;mtrack2data;;p">
+					</treenode>
+					<treenode node="_x_post_fields;Php:Var Name;14;28;29;28;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="verify_x_fields;Php:Var Name;11;22;27;22;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetCP_Response;Php:Class Name;0;97;1;220;34;;;vAuthorizeNetResponse;;c;;r;;d0,98;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;109;5;203;34;;;v;;r;;d4,110;;b1,0;;mresponse;;pdelimiter;;pencap_char;;pcustom_fields;;p">
+					</treenode>
+					<treenode node="isAuthorizeNet;Php:Function Name;11;212;5;218;34;;;v;;r;;d4,213;;b1,0;;mapi_login_id;;pmd5_setting;;p">
+					</treenode>
+					<treenode node="_response_array;Php:Var Name;12;99;28;99;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetCIM.php" crc="1775969036">
+			<phptree>
+				<treenode node="AuthorizeNetCIM;Php:Class Name;0;17;1;418;34;;;vAuthorizeNetRequest;;c;;r;;d0,18;;b0,0;;m">
+					<treenode node="_addObject;Php:Function Name;12;376;5;394;34;;;v;;r;;d4,377;;b3,0;;mdestination;;pobject;;p">
+					</treenode>
+					<treenode node="_constructXml;Php:Function Name;12;360;5;368;34;;;v;;r;;d4,361;;b3,0;;mrequest_type;;p">
+					</treenode>
+					<treenode node="_getPostUrl;Php:Function Name;14;323;5;326;34;;;v;;r;;d4,324;;b2,0;;m">
+					</treenode>
+					<treenode node="_handleResponse;Php:Function Name;14;335;5;338;34;;;v;;r;;d4,336;;b2,0;;mresponse;;p">
+					</treenode>
+					<treenode node="_notEmpty;Php:Function Name;19;403;5;416;34;;;v;;r;;d4,404;;b3,5;;mobject;;p">
+					</treenode>
+					<treenode node="_setPostString;Php:Function Name;14;343;5;353;34;;;v;;r;;d4,344;;b2,0;;m">
+					</treenode>
+					<treenode node="createCustomerPaymentProfile;Php:Function Name;11;73;5;81;34;;;v;;r;;d4,74;;b1,0;;mcustomerProfileId;;ppaymentProfile;;pvalidationMode;;p">
+					</treenode>
+					<treenode node="createCustomerProfile;Php:Function Name;11;55;5;62;34;;;v;;r;;d4,56;;b1,0;;mcustomerProfile;;pvalidationMode;;p">
+					</treenode>
+					<treenode node="createCustomerProfileTransaction;Php:Function Name;11;109;5;117;34;;;v;;r;;d4,110;;b1,0;;mtransactionType;;ptransaction;;pextraOptionsString;;p">
+					</treenode>
+					<treenode node="createCustomerShippingAddress;Php:Function Name;11;91;5;98;34;;;v;;r;;d4,92;;b1,0;;mcustomerProfileId;;pshippingAddress;;p">
+					</treenode>
+					<treenode node="deleteCustomerPaymentProfile;Php:Function Name;11;141;5;147;34;;;v;;r;;d4,142;;b1,0;;mcustomerProfileId;;pcustomerPaymentProfileId;;p">
+					</treenode>
+					<treenode node="deleteCustomerProfile;Php:Function Name;11;126;5;131;34;;;v;;r;;d4,127;;b1,0;;mcustomerProfileId;;p">
+					</treenode>
+					<treenode node="deleteCustomerShippingAddress;Php:Function Name;11;157;5;163;34;;;v;;r;;d4,158;;b1,0;;mcustomerProfileId;;pcustomerAddressId;;p">
+					</treenode>
+					<treenode node="getCustomerPaymentProfile;Php:Function Name;11;198;5;204;34;;;v;;r;;d4,199;;b1,0;;mcustomerProfileId;;pcustomerPaymentProfileId;;p">
+					</treenode>
+					<treenode node="getCustomerProfile;Php:Function Name;11;183;5;188;34;;;v;;r;;d4,184;;b1,0;;mcustomerProfileId;;p">
+					</treenode>
+					<treenode node="getCustomerProfileIds;Php:Function Name;11;170;5;174;34;;;v;;r;;d4,171;;b1,0;;m">
+					</treenode>
+					<treenode node="getCustomerShippingAddress;Php:Function Name;11;214;5;220;34;;;v;;r;;d4,215;;b1,0;;mcustomerProfileId;;pcustomerAddressId;;p">
+					</treenode>
+					<treenode node="setRefId;Php:Function Name;11;42;5;45;34;;;v;;r;;d4,43;;b1,0;;mrefId;;p">
+					</treenode>
+					<treenode node="updateCustomerPaymentProfile;Php:Function Name;11;251;5;260;34;;;v;;r;;d4,252;;b1,0;;mcustomerProfileId;;pcustomerPaymentProfileId;;ppaymentProfile;;pvalidationMode;;p">
+					</treenode>
+					<treenode node="updateCustomerProfile;Php:Function Name;11;231;5;239;34;;;v;;r;;d4,232;;b1,0;;mcustomerProfileId;;pcustomerProfile;;pvalidationMode;;p">
+					</treenode>
+					<treenode node="updateCustomerShippingAddress;Php:Function Name;11;271;5;280;34;;;v;;r;;d4,272;;b1,0;;mcustomerProfileId;;pcustomerShippingAddressId;;pshippingAddress;;p">
+					</treenode>
+					<treenode node="updateSplitTenderGroup;Php:Function Name;11;290;5;296;34;;;v;;r;;d4,291;;b1,0;;msplitTenderId;;psplitTenderStatus;;p">
+					</treenode>
+					<treenode node="validateCustomerPaymentProfile;Php:Function Name;11;309;5;318;34;;;v;;r;;d4,310;;b1,0;;mcustomerProfileId;;pcustomerPaymentProfileId;;pcustomerShippingAddressId;;pcardCode;;pvalidationMode;;p">
+					</treenode>
+					<treenode node="_extraOptions;Php:Var Name;12;27;26;27;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_refId;Php:Var Name;12;25;19;25;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_transactionTypes;Php:Var Name;12;28;30;28;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_validationMode;Php:Var Name;12;26;28;26;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_xml;Php:Var Name;12;24;17;24;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetCIM_Response;Php:Class Name;0;426;1;508;34;;;vAuthorizeNetXMLResponse;;c;;r;;d0,427;;b0,0;;m">
+					<treenode node="getCustomerAddressId;Php:Function Name;11;487;5;490;34;;;v;;r;;d4,488;;b1,0;;m">
+					</treenode>
+					<treenode node="getCustomerPaymentProfileIds;Php:Function Name;11;469;5;473;34;;;v;;r;;d4,470;;b1,0;;m">
+					</treenode>
+					<treenode node="getCustomerProfileId;Php:Function Name;11;495;5;498;34;;;v;;r;;d4,496;;b1,0;;m">
+					</treenode>
+					<treenode node="getCustomerProfileIds;Php:Function Name;11;460;5;464;34;;;v;;r;;d4,461;;b1,0;;m">
+					</treenode>
+					<treenode node="getCustomerShippingAddressIds;Php:Function Name;11;478;5;482;34;;;v;;r;;d4,479;;b1,0;;m">
+					</treenode>
+					<treenode node="getPaymentProfileId;Php:Function Name;11;503;5;506;34;;;v;;r;;d4,504;;b1,0;;m">
+					</treenode>
+					<treenode node="getTransactionResponse;Php:Function Name;11;431;5;434;34;;;v;;r;;d4,432;;b1,0;;m">
+					</treenode>
+					<treenode node="getValidationResponse;Php:Function Name;11;452;5;455;34;;;v;;r;;d4,453;;b1,0;;m">
+					</treenode>
+					<treenode node="getValidationResponses;Php:Function Name;11;439;5;447;34;;;v;;r;;d4,440;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetARB.php" crc="477092475">
+			<phptree>
+				<treenode node="AuthorizeNetARB;Php:Class Name;0;16;1;130;34;;;vAuthorizeNetRequest;;c;;r;;d0,17;;b0,0;;m">
+					<treenode node="_getPostUrl;Php:Function Name;14;108;5;111;34;;;v;;r;;d4,109;;b2,0;;m">
+					</treenode>
+					<treenode node="_handleResponse;Php:Function Name;14;100;5;103;34;;;v;;r;;d4,101;;b2,0;;mresponse;;p">
+					</treenode>
+					<treenode node="_setPostString;Php:Function Name;14;116;5;128;34;;;v;;r;;d4,117;;b2,0;;m">
+					</treenode>
+					<treenode node="cancelSubscription;Php:Function Name;11;86;5;91;34;;;v;;r;;d4,87;;b1,0;;msubscriptionId;;p">
+					</treenode>
+					<treenode node="createSubscription;Php:Function Name;11;42;5;47;34;;;v;;r;;d4,43;;b1,0;;msubscription;;p">
+					</treenode>
+					<treenode node="getSubscriptionStatus;Php:Function Name;11;72;5;77;34;;;v;;r;;d4,73;;b1,0;;msubscriptionId;;p">
+					</treenode>
+					<treenode node="setRefId;Php:Function Name;11;30;5;33;34;;;v;;r;;d4,31;;b1,0;;mrefId;;p">
+					</treenode>
+					<treenode node="updateSubscription;Php:Function Name;11;57;5;63;34;;;v;;r;;d4,58;;b1,0;;msubscriptionId;;psubscription;;p">
+					</treenode>
+					<treenode node="_request_payload;Php:Var Name;12;23;29;23;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_request_type;Php:Var Name;12;22;26;22;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetARB_Response;Php:Class Name;0;139;1;158;34;;;vAuthorizeNetXMLResponse;;c;;r;;d0,140;;b0,0;;m">
+					<treenode node="getSubscriptionId;Php:Function Name;11;145;5;148;34;;;v;;r;;d4,146;;b1,0;;m">
+					</treenode>
+					<treenode node="getSubscriptionStatus;Php:Function Name;11;153;5;156;34;;;v;;r;;d4,154;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\lib\AuthorizeNetAIM.php" crc="-1183121351">
+			<phptree>
+				<treenode node="AuthorizeNetAIM;Php:Class Name;0;41;1;378;34;;;vAuthorizeNetRequest;;c;;r;;d0,42;;b0,0;;m">
+					<treenode node="__set;Php:Function Name;11;221;5;224;34;;;v;;r;;d4,222;;b1,0;;mname;;pvalue;;p">
+					</treenode>
+					<treenode node="_getPostUrl;Php:Function Name;14;352;5;355;34;;;v;;r;;d4,353;;b2,0;;m">
+					</treenode>
+					<treenode node="_handleResponse;Php:Function Name;14;344;5;347;34;;;v;;r;;d4,345;;b2,0;;mresponse;;p">
+					</treenode>
+					<treenode node="_setPostString;Php:Function Name;14;360;5;377;34;;;v;;r;;d4,361;;b2,0;;m">
+					</treenode>
+					<treenode node="addLineItem;Php:Function Name;11;265;5;274;34;;;v;;r;;d4,266;;b1,0;;mitem_id;;pitem_name;;pitem_description;;pitem_quantity;;pitem_unit_price;;pitem_taxable;;p">
+					</treenode>
+					<treenode node="authorizeAndCapture;Php:Function Name;11;105;5;112;34;;;v;;r;;d4,106;;b1,0;;mamount;;pcard_num;;pexp_date;;p">
+					</treenode>
+					<treenode node="authorizeOnly;Php:Function Name;11;145;5;152;34;;;v;;r;;d4,146;;b1,0;;mamount;;pcard_num;;pexp_date;;p">
+					</treenode>
+					<treenode node="captureOnly;Php:Function Name;11;183;5;191;34;;;v;;r;;d4,184;;b1,0;;mauth_code;;pamount;;pcard_num;;pexp_date;;p">
+					</treenode>
+					<treenode node="credit;Php:Function Name;11;204;5;211;34;;;v;;r;;d4,205;;b1,0;;mtrans_id;;pamount;;pcard_num;;p">
+					</treenode>
+					<treenode node="priorAuthCapture;Php:Function Name;11;126;5;132;34;;;v;;r;;d4,127;;b1,0;;mtrans_id;;pamount;;p">
+					</treenode>
+					<treenode node="setCustomField;Php:Function Name;11;322;5;325;34;;;v;;r;;d4,323;;b1,0;;mname;;pvalue;;p">
+					</treenode>
+					<treenode node="setCustomFields;Php:Function Name;11;247;5;253;34;;;v;;r;;d4,248;;b1,0;;mfields;;p">
+					</treenode>
+					<treenode node="setECheck;Php:Function Name;11;279;5;292;34;;;v;;r;;d4,280;;b1,0;;mbank_aba_code;;pbank_acct_num;;pbank_acct_type;;pbank_name;;pbank_acct_name;;pecheck_type;;p">
+					</treenode>
+					<treenode node="setField;Php:Function Name;11;301;5;313;34;;;v;;r;;d4,302;;b1,0;;mname;;pvalue;;p">
+					</treenode>
+					<treenode node="setFields;Php:Function Name;11;234;5;240;34;;;v;;r;;d4,235;;b1,0;;mfields;;p">
+					</treenode>
+					<treenode node="unsetField;Php:Function Name;11;332;5;335;34;;;v;;r;;d4,333;;b1,0;;mname;;p">
+					</treenode>
+					<treenode node="_additional_line_items;Php:Var Name;12;62;35;62;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_all_aim_fields;Php:Var Name;12;79;28;79;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_custom_fields;Php:Var Name;12;67;27;67;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+					<treenode node="_x_post_fields;Php:Var Name;14;51;29;51;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="this;Php:Var Name;21;166;26;166;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="trans_id;Php:Var Name;25;164;34;164;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="verify_x_fields;Php:Var Name;11;73;27;73;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="AuthorizeNetAIM_Response;Php:Class Name;0;386;1;499;34;;;vAuthorizeNetResponse;;c;;r;;d0,387;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;398;5;497;34;;;v;;r;;d4,399;;b1,0;;mresponse;;pdelimiter;;pencap_char;;pcustom_fields;;p">
+					</treenode>
+					<treenode node="_response_array;Php:Var Name;12;388;28;388;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\vendor\AuthorizeNet\AuthorizeNet.php" crc="1862558090">
+			<phptree>
+				<treenode node="AuthorizeNetException;Php:Class Name;0;26;1;28;34;;;vException;;c;;r;;d0,27;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\tags_m.php" crc="568439865">
+			<phptree>
+				<treenode node="Tags_m;Php:Class Name;0;9;1;21;34;;;vMY_Model;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;20;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="_store;Php:Var Name;11;13;18;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_table;Php:Var Name;11;11;18;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="primary_key;Php:Var Name;11;12;23;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\store_m.php" crc="-1846658745">
+			<phptree>
+				<treenode node="Store_m;Php:Class Name;0;9;1;75;34;;;vMY_Model;;c;;r;;d31,9;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;11;2;28;34;;;v;;r;;d1,12;;b1,0;;m">
+					</treenode>
+					<treenode node="count_pending_orders;Php:Function Name;8;54;2;57;34;;;v;;r;;d39,54;;b1,0;;m">
+					</treenode>
+					<treenode node="get_core_site_id;Php:Function Name;9;67;2;74;34;;;v;;r;;d1,68;;b3,0;;msite_ref;;p">
+					</treenode>
+					<treenode node="get_store;Php:Function Name;8;35;2;37;34;;;v;;r;;d29,35;;b1,0;;m">
+					</treenode>
+					<treenode node="get_store_all;Php:Function Name;8;43;5;45;34;;;v;;r;;d33,43;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\products_m.php" crc="325168571">
+			<phptree>
+				<treenode node="Products_m;Php:Class Name;0;9;1;252;34;;;vMY_Model;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;14;2;23;34;;;v;;r;;d1,15;;b1,0;;m">
+					</treenode>
+					<treenode node="add_product;Php:Function Name;8;45;2;54;34;;;v;;r;;d1,46;;b1,0;;mnew_image_id;;p">
+					</treenode>
+					<treenode node="build_order;Php:Function Name;8;177;2;209;34;;;v;;r;;d1,178;;b1,0;;m">
+					</treenode>
+					<treenode node="count_products;Php:Function Name;8;116;2;119;34;;;v;;r;;d1,117;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="delete_product;Php:Function Name;8;56;2;65;34;;;v;;r;;d1,57;;b1,0;;mproducts_id;;p">
+					</treenode>
+					<treenode node="get_order;Php:Function Name;8;211;2;216;34;;;v;;r;;d1,212;;b1,0;;morders_id;;p">
+					</treenode>
+					<treenode node="get_orders_product_name;Php:Function Name;8;218;2;229;34;;;v;;r;;d1,219;;b1,0;;morders_id;;p">
+					</treenode>
+					<treenode node="get_orders_product_price;Php:Function Name;8;231;2;242;34;;;v;;r;;d1,232;;b1,0;;morders_id;;p">
+					</treenode>
+					<treenode node="get_orders_users;Php:Function Name;8;244;2;251;34;;;v;;r;;d1,245;;b1,0;;musers_id;;p">
+					</treenode>
+					<treenode node="get_product;Php:Function Name;8;128;2;135;34;;;v;;r;;d1,129;;b1,0;;mproducts_id;;p">
+					</treenode>
+					<treenode node="get_product_attributes;Php:Function Name;8;155;2;175;34;;;v;;r;;d1,156;;b1,0;;mattributes;;p">
+					</treenode>
+					<treenode node="get_product_in_cart;Php:Function Name;8;137;2;153;34;;;v;;r;;d1,138;;b1,0;;mproducts_id;;p">
+					</treenode>
+					<treenode node="get_products;Php:Function Name;8;121;2;126;34;;;v;;r;;d1,122;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="make_categories_dropdown;Php:Function Name;8;67;2;114;34;;;v;;r;;d1,68;;b1,0;;mselected_id;;p">
+					</treenode>
+					<treenode node="update_product;Php:Function Name;8;25;2;43;34;;;v;;r;;d1,26;;b1,0;;mproducts_id;;pnew_image_id;;p">
+					</treenode>
+					<treenode node="_table;Php:Var Name;11;11;18;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="images_path;Php:Var Name;11;12;23;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\images_m.php" crc="-20693196">
+			<phptree>
+				<treenode node="Images_m;Php:Class Name;0;9;1;187;34;;;vMY_Model;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;19;2;29;34;;;v;;r;;d1,20;;b1,0;;m">
+					</treenode>
+					<treenode node="add_image;Php:Function Name;8;31;2;65;34;;;v;;r;;d1,32;;b1,0;;mfile;;ptype;;p">
+					</treenode>
+					<treenode node="create_thumb;Php:Function Name;8;124;2;135;34;;;v;;r;;d1,125;;b1,0;;msource_image_path;;pwidth;;pheight;;p">
+					</treenode>
+					<treenode node="delete_image;Php:Function Name;8;77;2;108;34;;;v;;r;;d1,78;;b1,0;;mimages_id;;pimage_path;;p">
+					</treenode>
+					<treenode node="folder_exists_create;Php:Function Name;8;159;2;181;34;;;v;;r;;d1,160;;b1,0;;mimage_folder_name;;p">
+					</treenode>
+					<treenode node="front_image_resize;Php:Function Name;8;110;2;122;34;;;v;;r;;d1,111;;b1,0;;msource_image_path;;pimage;;psuffix;;pwidth;;pheight;;p">
+					</treenode>
+					<treenode node="get_image;Php:Function Name;8;67;2;75;34;;;v;;r;;d1,68;;b1,0;;mimages_id;;p">
+					</treenode>
+					<treenode node="get_thumb_anchor;Php:Function Name;8;137;2;157;34;;;v;;r;;d1,138;;b1,0;;mimage;;pimage_path;;p">
+					</treenode>
+					<treenode node="no_image;Php:Function Name;8;183;2;186;34;;;v;;r;;d1,184;;b1,0;;m">
+					</treenode>
+					<treenode node="_table;Php:Var Name;11;11;18;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="category_images;Php:Var Name;11;17;27;17;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="folder_id;Php:Var Name;11;15;21;15;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="product_images;Php:Var Name;11;16;26;16;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\checkout_m.php" crc="-333309550">
+			<phptree>
+				<treenode node="Checkout_m;Php:Class Name;0;9;1;53;34;;;vMY_Model;;c;;r;;d34,9;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;11;2;14;34;;;v;;r;;d1,12;;b1,0;;m">
+					</treenode>
+					<treenode node="ipn_update;Php:Function Name;8;35;2;52;34;;;v;;r;;d1,36;;b1,0;;morder_id;;pstatus;;p">
+					</treenode>
+					<treenode node="status_update;Php:Function Name;8;16;2;33;34;;;v;;r;;d1,17;;b1,0;;morder_id;;pstatus;;p">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\categories_m.php" crc="-1041174009">
+			<phptree>
+				<treenode node="Categories_m;Php:Class Name;0;9;1;161;34;;;vMY_Model;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;16;2;21;34;;;v;;r;;d1,17;;b1,0;;m">
+					</treenode>
+					<treenode node="add_category;Php:Function Name;8;82;2;97;34;;;v;;r;;d1,83;;b1,0;;mnew_image_id;;p">
+					</treenode>
+					<treenode node="delete_category;Php:Function Name;8;142;2;151;34;;;v;;r;;d1,143;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="get_category;Php:Function Name;8;124;2;131;34;;;v;;r;;d1,125;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="get_category_by_name;Php:Function Name;8;133;2;140;34;;;v;;r;;d1,134;;b1,0;;mcategory_name;;p">
+					</treenode>
+					<treenode node="get_category_name;Php:Function Name;8;153;2;160;34;;;v;;r;;d1,154;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="make_categories_dropdown;Php:Function Name;8;23;2;80;34;;;v;;r;;d1,24;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="update_category;Php:Function Name;8;99;2;122;34;;;v;;r;;d1,100;;b1,0;;mcategories_id;;pnew_image_id;;p">
+					</treenode>
+					<treenode node="_store;Php:Var Name;11;13;18;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_table;Php:Var Name;11;11;18;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="images_path;Php:Var Name;11;14;23;14;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="primary_key;Php:Var Name;11;12;23;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\models\attributes_m.php" crc="1208269763">
+			<phptree>
+				<treenode node="Attributes_m;Php:Class Name;0;9;1;21;34;;;vMY_Model;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;20;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="_store;Php:Var Name;11;13;18;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="_table;Php:Var Name;11;11;18;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="primary_key;Php:Var Name;11;12;23;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_sagepay_direct.php" crc="1508946385">
+			<phptree>
+				<treenode node="Merchant_sagepay_direct;Php:Class Name;0;32;1;102;34;;;vCI_Driver;;c;;r;;d48,32;;b0,0;;m">
+					<treenode node="_process;Php:Function Name;8;50;2;101;34;;;v;;r;;d1,51;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;42;24;42;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;45;17;45;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_paypal_pro.php" crc="1781588053">
+			<phptree>
+				<treenode node="Merchant_paypal_pro;Php:Class Name;0;32;1;124;34;;;vCI_Driver;;c;;r;;d44,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;51;2;59;34;;;v;;r;;d1,52;;b1,0;;msettings;;p">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;61;2;123;34;;;v;;r;;d1,62;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;49;11;49;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;36;24;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;39;17;39;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_paypal.php" crc="-1507178812">
+			<phptree>
+				<treenode node="Merchant_paypal;Php:Class Name;0;32;1;108;34;;;vCI_Driver;;c;;r;;d40,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;48;2;55;34;;;v;;r;;d1,49;;b1,0;;msettings;;p">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;57;2;75;34;;;v;;r;;d1,58;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="_process_return;Php:Function Name;8;77;2;107;34;;;v;;r;;d1,78;;b1,0;;m">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;46;11;46;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;36;24;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;38;17;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_eway_shared.php" crc="770957120">
+			<phptree>
+				<treenode node="Merchant_eway_shared;Php:Class Name;0;32;1;131;34;;;vCI_Driver;;c;;r;;d45,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;54;2;57;34;;;v;;r;;d1,55;;b1,0;;m">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;59;2;98;34;;;v;;r;;d1,60;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="_process_return;Php:Function Name;8;100;2;130;34;;;v;;r;;d1,101;;b1,0;;m">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;52;11;52;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;37;13;37;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;39;24;39;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;41;17;41;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_eway.php" crc="1774948021">
+			<phptree>
+				<treenode node="Merchant_eway;Php:Class Name;0;32;1;90;34;;;vCI_Driver;;c;;r;;d38,32;;b0,0;;m">
+					<treenode node="_process;Php:Function Name;8;46;2;89;34;;;v;;r;;d1,47;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;39;24;39;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;41;17;41;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_dummy.php" crc="1266442564">
+			<phptree>
+				<treenode node="Merchant_dummy;Php:Class Name;0;32;1;57;34;;;vCI_Driver;;c;;r;;d39,32;;b0,0;;m">
+					<treenode node="_process;Php:Function Name;8;42;2;56;34;;;v;;r;;d1,43;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;36;13;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;38;24;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;40;17;40;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_dps_pxpost.php" crc="-1263844425">
+			<phptree>
+				<treenode node="Merchant_dps_pxpost;Php:Class Name;0;32;1;84;34;;;vCI_Driver;;c;;r;;d44,32;;b0,0;;m">
+					<treenode node="_process;Php:Function Name;8;46;2;83;34;;;v;;r;;d1,47;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;36;13;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;38;24;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;40;17;40;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_dps_pxpay.php" crc="1858891245">
+			<phptree>
+				<treenode node="Merchant_dps_pxpay;Php:Class Name;0;32;1;119;34;;;vCI_Driver;;c;;r;;d43,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;48;2;51;34;;;v;;r;;d1,49;;b1,0;;m">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;53;2;89;34;;;v;;r;;d1,54;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="_process_return;Php:Function Name;8;91;2;118;34;;;v;;r;;d1,92;;b1,0;;m">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;46;11;46;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;36;13;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;38;24;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;40;17;40;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_authorize_net_sim.php" crc="-442997497">
+			<phptree>
+				<treenode node="Merchant_authorize_net_sim;Php:Class Name;0;32;1;134;34;;;vCI_Driver;;c;;r;;d51,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;49;2;53;34;;;v;;r;;d1,50;;b1,0;;m">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;55;2;115;34;;;v;;r;;d1,56;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="_process_return;Php:Function Name;8;117;2;133;34;;;v;;r;;d1,118;;b1,0;;m">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;47;11;47;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;42;24;42;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;36;17;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_authorize_net.php" crc="-1787323588">
+			<phptree>
+				<treenode node="Merchant_authorize_net;Php:Class Name;0;32;1;107;34;;;vCI_Driver;;c;;r;;d47,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;46;2;50;34;;;v;;r;;d1,47;;b1,0;;m">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;52;2;106;34;;;v;;r;;d1,53;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;44;11;44;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;42;24;42;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;36;17;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant\merchant_2checkout.php" crc="-973917144">
+			<phptree>
+				<treenode node="Merchant_2checkout;Php:Class Name;0;32;1;115;34;;;vCI_Driver;;c;;r;;d43,32;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;48;2;55;34;;;v;;r;;d1,49;;b1,0;;msettings;;p">
+					</treenode>
+					<treenode node="_process;Php:Function Name;8;57;2;92;34;;;v;;r;;d1,58;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="_process_return;Php:Function Name;8;94;2;114;34;;;v;;r;;d1,95;;b1,0;;m">
+					</treenode>
+					<treenode node="CI;Php:Var Name;8;46;11;46;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="name;Php:Var Name;8;34;13;34;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="required_fields;Php:Var Name;8;36;24;36;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Var Name;8;38;17;38;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\store_settings.php" crc="1999611742">
+			<phptree>
+				<treenode node="Store_settings;Php:Class Name;0;9;1;92;34;;;v;;r;;d21,9;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;13;5;16;34;;;v;;r;;d4,14;;b1,0;;m">
+					</treenode>
+					<treenode node="currency;Php:Function Name;8;76;2;91;34;;;v;;r;;d1,77;;b1,0;;m">
+					</treenode>
+					<treenode node="generate_dropdown;Php:Function Name;8;59;2;74;34;;;v;;r;;d1,60;;b1,0;;mslug;;p">
+					</treenode>
+					<treenode node="item;Php:Function Name;8;18;2;26;34;;;v;;r;;d1,19;;b1,0;;mslug;;p">
+					</treenode>
+					<treenode node="set_item;Php:Function Name;8;28;2;36;34;;;v;;r;;d1,29;;b1,0;;mslug;;pvalue;;p">
+					</treenode>
+					<treenode node="settings_manager_retrieve;Php:Function Name;8;38;2;44;34;;;v;;r;;d1,39;;b1,0;;mtab;;p">
+					</treenode>
+					<treenode node="settings_manager_store;Php:Function Name;8;46;2;57;34;;;v;;r;;d1,47;;b1,0;;m">
+					</treenode>
+					<treenode node="ci;Php:Var Name;9;11;12;11;34;;;v;;r;;d-1,-1;;b3,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\merchant.php" crc="595065691">
+			<phptree>
+				<treenode node="Merchant;Php:Class Name;0;40;1;212;34;;;vCI_Driver_Library;;c;;r;;d41,40;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;58;2;61;34;;;v;;r;;d1,59;;b1,0;;mdriver;;p">
+					</treenode>
+					<treenode node="__get;Php:Function Name;8;66;2;71;34;;;v;;r;;d1,67;;b1,0;;mchild;;p">
+					</treenode>
+					<treenode node="curl_helper;Php:Function Name;15;156;2;180;34;;;v;;r;;d1,157;;b1,5;;murl;;ppost_data;;p">
+					</treenode>
+					<treenode node="initialize;Php:Function Name;8;99;2;110;34;;;v;;r;;d1,100;;b1,0;;msettings;;p">
+					</treenode>
+					<treenode node="load;Php:Function Name;8;76;2;82;34;;;v;;r;;d1,77;;b1,0;;mdriver;;p">
+					</treenode>
+					<treenode node="name;Php:Function Name;8;87;2;97;34;;;v;;r;;d1,88;;b1,0;;m">
+					</treenode>
+					<treenode node="process;Php:Function Name;8;112;2;142;34;;;v;;r;;d1,113;;b1,0;;mparams;;p">
+					</treenode>
+					<treenode node="process_return;Php:Function Name;8;144;2;149;34;;;v;;r;;d1,145;;b1,0;;m">
+					</treenode>
+					<treenode node="redirect_post;Php:Function Name;15;187;2;211;34;;;v;;r;;d1,188;;b1,5;;mpost_url;;pdata;;p">
+					</treenode>
+					<treenode node="_adapter;Php:Var Name;11;42;20;42;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="valid_drivers;Php:Var Name;8;44;22;44;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="Merchant_response;Php:Class Name;0;214;1;229;34;;;v;;r;;d0,215;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;222;2;228;34;;;v;;r;;d1,223;;b1,0;;mstatus;;pmessage;;ptxn_id;;pamount;;p">
+					</treenode>
+					<treenode node="amount;Php:Var Name;8;219;15;219;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="error_field;Php:Var Name;8;220;20;220;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="message;Php:Var Name;8;217;16;217;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="status;Php:Var Name;8;216;15;216;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+					<treenode node="txn_id;Php:Var Name;8;218;15;218;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\libraries\index.html" crc="0">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\tags_lang.php" crc="-802429484">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\status_lang.php" crc="1263595442">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\statistics_lang.php" crc="565433204">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\settings_lang.php" crc="-1883048733">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\products_lang.php" crc="1571847283">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\messages_lang.php" crc="-818137386">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;16;5;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\general_lang.php" crc="1791077531">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\dashboard_lang.php" crc="1000095778">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\categories_lang.php" crc="192718750">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\cart_lang.php" crc="-1252718289">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\german\attributes_lang.php" crc="-802429484">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\tags_lang.php" crc="-802429484">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\status_lang.php" crc="1263595442">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\statistics_lang.php" crc="565433204">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\settings_lang.php" crc="-1408605229">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\products_lang.php" crc="1571847283">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\messages_lang.php" crc="-818137386">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;16;5;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\general_lang.php" crc="30737863">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\dashboard_lang.php" crc="1932624800">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\categories_lang.php" crc="192718750">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\cart_lang.php" crc="-18451283">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\english\attributes_lang.php" crc="-802429484">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\tags_lang.php" crc="-1069369797">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\status_lang.php" crc="68837496">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\statistics_lang.php" crc="565433204">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\settings_lang.php" crc="-883547199">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\products_lang.php" crc="648539738">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\messages_lang.php" crc="-357949965">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;16;5;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\general_lang.php" crc="335633619">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\dashboard_lang.php" crc="-632798982">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\categories_lang.php" crc="1116547541">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\cart_lang.php" crc="-1904401998">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\dutch\attributes_lang.php" crc="-1403377995">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\tags_lang.php" crc="-802429484">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\status_lang.php" crc="1509949191">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\statistics_lang.php" crc="565433204">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\settings_lang.php" crc="-1309259615">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;14;5;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\products_lang.php" crc="572593616">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\messages_lang.php" crc="188562237">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;16;5;16;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\general_lang.php" crc="1602813157">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\dashboard_lang.php" crc="1510075558">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\categories_lang.php" crc="-1033386570">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\cart_lang.php" crc="-1018794944">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\language\chinese_traditional\attributes_lang.php" crc="-802429484">
+			<phptree>
+				<treenode node="lang;Php:Var Name;0;15;5;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\js\widget_store_search.js" crc="1429765649">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\js\widget_store_categories.js" crc="1429765649">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\js\widget_store_cart.js" crc="1429765649">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\js\store.js" crc="1429765649">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\js\stickyfloat.js" crc="-971911374">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\js\admin.js" crc="-1968656074">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\helpers\index.html" crc="0">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\store.php" crc="170490669">
+			<phptree>
+				<treenode node="Store;Php:Class Name;0;9;1;40;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;34;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;36;2;39;34;;;v;;r;;d1,37;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\search.php" crc="-88015934">
+			<phptree>
+				<treenode node="Search;Php:Class Name;0;9;1;51;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;33;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;35;2;38;34;;;v;;r;;d1,36;;b1,0;;m">
+					</treenode>
+					<treenode node="query;Php:Function Name;8;40;2;44;34;;;v;;r;;d1,41;;b1,0;;m">
+					</treenode>
+					<treenode node="results;Php:Function Name;8;46;2;50;34;;;v;;r;;d1,47;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\product.php" crc="110385467">
+			<phptree>
+				<treenode node="product;Php:Class Name;0;9;1;68;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;34;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;36;2;39;34;;;v;;r;;d1,37;;b1,0;;m">
+					</treenode>
+					<treenode node="view;Php:Function Name;8;41;2;67;34;;;v;;r;;d1,42;;b1,0;;mproduct_slug;;p">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\customer.php" crc="-1777142999">
+			<phptree>
+				<treenode node="Customer;Php:Class Name;0;9;1;64;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;33;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;35;2;39;34;;;v;;r;;d1,36;;b1,0;;m">
+					</treenode>
+					<treenode node="my_downloads;Php:Function Name;8;53;2;57;34;;;v;;r;;d1,54;;b1,0;;m">
+					</treenode>
+					<treenode node="order_status;Php:Function Name;8;47;2;51;34;;;v;;r;;d1,48;;b1,0;;m">
+					</treenode>
+					<treenode node="profile;Php:Function Name;8;59;2;63;34;;;v;;r;;d1,60;;b1,0;;m">
+					</treenode>
+					<treenode node="purchase_history;Php:Function Name;8;41;2;45;34;;;v;;r;;d1,42;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\checkout.php" crc="-1699591314">
+			<phptree>
+				<treenode node="Checkout;Php:Class Name;0;9;1;152;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;34;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="confirmation;Php:Function Name;8;51;2;54;34;;;v;;r;;d1,52;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;36;2;39;34;;;v;;r;;d1,37;;b1,0;;m">
+					</treenode>
+					<treenode node="ipn;Php:Function Name;8;98;2;122;34;;;v;;r;;d41,98;;b1,0;;mgateway;;porders_id;;p">
+					</treenode>
+					<treenode node="process;Php:Function Name;8;56;2;96;34;;;v;;r;;d1,57;;b1,0;;mgateway;;porders_id;;p">
+					</treenode>
+					<treenode node="purchase;Php:Function Name;8;41;2;44;34;;;v;;r;;d1,42;;b1,0;;m">
+					</treenode>
+					<treenode node="review;Php:Function Name;8;46;2;49;34;;;v;;r;;d1,47;;b1,0;;m">
+					</treenode>
+					<treenode node="status;Php:Function Name;8;124;2;151;34;;;v;;r;;d1,125;;b1,0;;mgateway;;pstatus;;porder_id;;p">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\categories.php" crc="1651245544">
+			<phptree>
+				<treenode node="Categories;Php:Class Name;0;9;1;202;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;33;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="browse;Php:Function Name;8;40;2;201;34;;;v;;r;;d1,41;;b1,0;;mtypes;;pviews;;pname;;p">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;35;2;38;34;;;v;;r;;d1,36;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\cart.php" crc="-1465171507">
+			<phptree>
+				<treenode node="Cart;Php:Class Name;0;9;1;68;34;;;vPublic_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;12;2;33;34;;;v;;r;;d1,13;;b1,0;;m">
+					</treenode>
+					<treenode node="checkout_cart;Php:Function Name;8;47;2;49;34;;;v;;r;;d32,47;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;35;2;38;34;;;v;;r;;d1,36;;b1,0;;m">
+					</treenode>
+					<treenode node="insert_cart;Php:Function Name;8;60;2;67;34;;;v;;r;;d1,61;;b1,0;;mproduct;;p">
+					</treenode>
+					<treenode node="show_cart;Php:Function Name;8;40;2;45;34;;;v;;r;;d1,41;;b1,0;;m">
+					</treenode>
+					<treenode node="update_cart;Php:Function Name;8;51;2;58;34;;;v;;r;;d1,52;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\admin_tags.php" crc="-1112604418">
+			<phptree>
+				<treenode node="Admin_tags;Php:Class Name;0;9;1;181;34;;;vAdmin_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;58;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="add;Php:Function Name;8;79;2;123;34;;;v;;r;;d1,80;;b1,0;;majax;;p">
+					</treenode>
+					<treenode node="delete;Php:Function Name;8;168;2;180;34;;;v;;r;;d1,169;;b1,0;;mtags_id;;p">
+					</treenode>
+					<treenode node="edit;Php:Function Name;8;125;2;166;34;;;v;;r;;d1,126;;b1,0;;mtags_id;;pajax;;p">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;60;2;77;34;;;v;;r;;d1,61;;b1,0;;majax;;p">
+					</treenode>
+					<treenode node="section;Php:Var Name;11;11;19;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_config;Php:Var Name;11;12;25;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_path;Php:Var Name;11;13;23;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\admin_products.php" crc="-1486384443">
+			<phptree>
+				<treenode node="Admin_products;Php:Class Name;0;9;1;272;34;;;vAdmin_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;65;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="add;Php:Function Name;8;105;2;160;34;;;v;;r;;d1,106;;b1,0;;m">
+					</treenode>
+					<treenode node="category_products;Php:Function Name;8;237;2;271;34;;;v;;r;;d1,238;;b1,0;;mcategory_name;;p">
+					</treenode>
+					<treenode node="delete;Php:Function Name;8;231;2;235;34;;;v;;r;;d1,232;;b1,0;;mproducts_id;;p">
+					</treenode>
+					<treenode node="edit;Php:Function Name;8;162;2;229;34;;;v;;r;;d1,163;;b1,0;;mproducts_id;;pajax;;p">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;67;2;103;34;;;v;;r;;d1,68;;b1,0;;m">
+					</treenode>
+					<treenode node="section;Php:Var Name;11;11;19;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_config;Php:Var Name;11;12;25;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_path;Php:Var Name;11;13;23;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\admin_categories.php" crc="1346227172">
+			<phptree>
+				<treenode node="Admin_categories;Php:Class Name;0;9;1;223;34;;;vAdmin_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;63;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="add;Php:Function Name;8;87;2;144;34;;;v;;r;;d1,88;;b1,0;;majax;;p">
+					</treenode>
+					<treenode node="delete;Php:Function Name;8;210;2;222;34;;;v;;r;;d1,211;;b1,0;;mcategories_id;;p">
+					</treenode>
+					<treenode node="edit;Php:Function Name;8;146;2;208;34;;;v;;r;;d1,147;;b1,0;;mcategories_id;;pajax;;p">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;65;2;85;34;;;v;;r;;d1,66;;b1,0;;majax;;p">
+					</treenode>
+					<treenode node="section;Php:Var Name;11;11;19;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_config;Php:Var Name;11;12;25;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_path;Php:Var Name;11;13;23;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\admin_attributes.php" crc="-2045974555">
+			<phptree>
+				<treenode node="Admin_attributes;Php:Class Name;0;9;1;188;34;;;vAdmin_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;63;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="add;Php:Function Name;8;84;2;129;34;;;v;;r;;d1,85;;b1,0;;majax;;p">
+					</treenode>
+					<treenode node="delete;Php:Function Name;8;175;2;187;34;;;v;;r;;d1,176;;b1,0;;mattributes_id;;p">
+					</treenode>
+					<treenode node="edit;Php:Function Name;8;131;2;173;34;;;v;;r;;d1,132;;b1,0;;mattributes_id;;pajax;;p">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;65;2;82;34;;;v;;r;;d1,66;;b1,0;;majax;;p">
+					</treenode>
+					<treenode node="section;Php:Var Name;11;11;19;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_config;Php:Var Name;11;12;25;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_path;Php:Var Name;11;13;23;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\controllers\admin.php" crc="-1179627286">
+			<phptree>
+				<treenode node="Admin;Php:Class Name;0;9;1;119;34;;;vAdmin_Controller;;c;;r;;d0,10;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;8;15;2;68;34;;;v;;r;;d1,16;;b1,0;;m">
+					</treenode>
+					<treenode node="index;Php:Function Name;8;70;2;78;34;;;v;;r;;d1,71;;b1,0;;m">
+					</treenode>
+					<treenode node="settings;Php:Function Name;8;90;2;118;34;;;v;;r;;d1,91;;b1,0;;m">
+					</treenode>
+					<treenode node="statistics;Php:Function Name;8;80;2;88;34;;;v;;r;;d1,81;;b1,0;;m">
+					</treenode>
+					<treenode node="section;Php:Var Name;11;11;19;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_config;Php:Var Name;11;12;25;12;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+					<treenode node="upload_path;Php:Var Name;11;13;23;13;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\config\routes.php" crc="454854854">
+			<phptree>
+				<treenode node="route;Php:Var Name;0;11;6;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\config\index.html" crc="0">
+		</csfile><csfile name="C:\Users\JAAP\projects\store\config\form_validation.php" crc="1902858685">
+			<phptree>
+				<treenode node="config;Php:Var Name;0;10;7;10;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\plugin.php" crc="-35531088">
+			<phptree>
+				<treenode node="Plugin_Store;Php:Class Name;0;9;1;11;34;;;vPlugin;;c;;r;;d0,10;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\events.php" crc="-1633588594">
+			<phptree>
+				<treenode node="Events_Store;Php:Class Name;0;9;1;22;34;;;v;;r;;d19,9;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;11;13;5;16;34;;;v;;r;;d4,14;;b1,0;;m">
+					</treenode>
+					<treenode node="run;Php:Function Name;11;18;5;20;34;;;v;;r;;d4,19;;b1,0;;m">
+					</treenode>
+					<treenode node="ci;Php:Var Name;14;11;17;11;34;;;v;;r;;d-1,-1;;b2,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="C:\Users\JAAP\projects\store\details.php" crc="-472234658">
+			<phptree>
+				<treenode node="Module_Store;Php:Class Name;0;9;1;377;34;;;vModule;;c;;r;;d34,9;;b0,0;;m">
+					<treenode node="help;Php:Function Name;8;371;2;376;34;;;v;;r;;d1,372;;b1,0;;m">
+					</treenode>
+					<treenode node="info;Php:Function Name;8;13;2;127;34;;;v;;r;;d1,14;;b1,0;;m">
+					</treenode>
+					<treenode node="install;Php:Function Name;8;129;2;340;34;;;v;;r;;d1,130;;b1,0;;m">
+					</treenode>
+					<treenode node="uninstall;Php:Function Name;8;342;2;362;34;;;v;;r;;d1,343;;b1,0;;m">
+					</treenode>
+					<treenode node="upgrade;Php:Function Name;8;365;2;369;34;;;v;;r;;d1,366;;b1,0;;mold_version;;p">
+					</treenode>
+					<treenode node="version;Php:Var Name;8;11;16;11;34;;;v;;r;;d-1,-1;;b1,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile></codestructure><dbgurls>
+	</dbgurls>
+</project>
