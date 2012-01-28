@@ -25,6 +25,7 @@ class Categories extends Public_Controller
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
 		$this->load->model('products_m');
+		$this->load->model('auctions_m');
 
 		$this->load->helper('date');
 		
@@ -35,7 +36,11 @@ class Categories extends Public_Controller
 
 	public function index()
 	{
-		redirect('store/categories/browse/top/tiles');
+	  if (false):
+	    redirect('store/categories/browse/top/tiles');
+	  else:
+	    redirect('store/categories/explore/top/tiles');
+	  endif;
 	}
 	
 	public function browse($types = 'top', $views = 'tiles', $name = NULL)
@@ -276,26 +281,26 @@ class Categories extends Public_Controller
 			  if ( $category )
 			    {
 			      
-			      $products = $this->products_m->get_products($category->categories_id);
+			      $auctions = $this->auctions_m->get_auctions($category->categories_id);
 			      
-			      if ( $products )
+			      if ( $auctions )
 				{	    
-				  foreach ( $products as $product )
+				  foreach ( $auctions as $auction )
 				    {
-				      $image = $this->images_m->get_image($product->images_id);
+				      $image = $this->images_m->get_image($auction->images_id);
 				      
 				      if ( $image )
 					{
-					  $this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
-					  $product->image = $image;
+					  $this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);	
+					  $auction->image = $image;
 					}
 				    }
 				  
-				  $this->data->products		= $products;
+				  $this->data->auctions		= $auctions;
 				  $this->data->category_name	= $category->name;
 				  
 				  $this->template
-				    ->build('categories/tiles', $this->data);
+				    ->build('categories/auction_tiles', $this->data);
 				}
 			      else
 				{
@@ -316,26 +321,26 @@ class Categories extends Public_Controller
 			  
 			  if ( $category )
 			    {
-			      $products = $this->products_m->get_products($category->categories_id);
+			      $auctions = $this->auctions_m->get_auctions($category->categories_id);
 			      
-			      if ( $products )
+			      if ( $auctions )
 				{
-				  foreach ( $products as $product )
+				  foreach ( $auctions as $auction )
 				    {
-				      $image = $this->images_m->get_image($product->images_id);
+				      $image = $this->images_m->get_image($auction->images_id);
 				      
 				      if ( $image )
 					{
-					  $this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
-					  $product->image = $image;
+					  $this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);	
+					  $auction->image = $image;
 					}		
 				    }
 				  
-				  $this->data->products      	= $products;
+				  $this->data->auctions      	= $auctions;
 				  $this->data->category_name	= $category->name;
 				  
 				  $this->template
-				    ->build('categories/list', $this->data);
+				    ->build('categories/auction_list', $this->data);
 				}
 			      else
 				{

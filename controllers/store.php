@@ -36,6 +36,10 @@ class Store extends Public_Controller
 
 	public function index()
 	{
-		redirect('store/categories/browse/top/tiles');
+	  if (false):
+	    redirect('store/categories/browse/top/tiles');
+	  else:
+	    redirect('store/categories/explore/top/tiles');
+	  endif;
 	}
 }

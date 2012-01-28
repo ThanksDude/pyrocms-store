@@ -136,10 +136,12 @@ class Admin_auctions extends Admin_Controller
 
 	if ( $this->auctions_m->add_auction($new_image_id) )
 	  {
-	    $this->session->set_flashdata('success', sprintf(lang('store_messages_auction_success_create'), $this->input->post('name')));
+	    $this->session->set_flashdata('success', sprintf(lang('store_messages_auction_success_create'),
+							     $this->input->post('name')));
 	    redirect('admin/store/auctions');
 	  }
-	else {
+	else
+	  {
 	  $this->session->set_flashdata(array('error'=> lang('store_messages_auction_error_create'))); 
 	}	
       }
@@ -153,6 +155,8 @@ class Admin_auctions extends Admin_Controller
     $this->data->auction->meta_keywords		= NULL;
     $this->data->auction->attributes_id		= 0;
     $this->data->auction->price	       		= 0;
+    $this->data->auction->start_at     		= now();
+    $this->data->auction->end_at       		= now();
     $this->data->auction->discount	       	= 0;
     $this->data->auction->stock	       		= 0;
     $this->data->auction->limited	       	= 0;
@@ -172,68 +176,63 @@ class Admin_auctions extends Admin_Controller
   {
     $this->load->library('upload', $this->upload_config);
 
-    if($this->form_validation->run('edit_auction')) {
+    if ( $this->form_validation->run('edit_auction') )
+      {
+      if ( $this->upload->do_upload('userfile') )
+	{
+	  $image_file = $this->upload->data();
 
-      if($this->upload->do_upload('userfile')) {
+	  if ( $image_file )
+	    {
+	      $new_image_id = $this->images_m->add_image($image_file, 'auction');
+	    }
+	}
+      else
+	{
+	  $new_image_id = 0;
+	}
 
-	$image_file = $this->upload->data();
-	if($image_file) {
-
-	  $new_image_id = $this->images_m->add_image($image_file, 'auction');
-
+      if ( $this->auctions_m->update_auction($auctions_id, $new_image_id) )
+	{
+	  $this->session->set_flashdata('success', sprintf(lang('store_messages_auction_success_edit'), $this->input->post('name')));
+	  $auction		= $this->auctions_m->get_auction($auctions_id);
+	  $category_name	= $this->categories_m->get_category($auction->categories_id)->name;
+	  $route			= 'admin/store/category/' . str_replace(' ', '-', $category_name);
+	  redirect($route);
+	}
+      else
+	{
+	  $this->session->set_flashdata(array('error'=> lang('store_messages_auction_error_edit')));
 	}
       }
-      else {
-
-	$new_image_id = 0;
-
-      }
-
-      if($this->auctions_m->update_auction($auctions_id, $new_image_id)) {
-
-	$this->session->set_flashdata('success', sprintf(lang('store_messages_auction_success_edit'), $this->input->post('name')));
+    else
+      {
 	$auction		= $this->auctions_m->get_auction($auctions_id);
-	$category_name	= $this->categories_m->get_category($auction->categories_id)->name;
-	$route			= 'admin/store/category/' . str_replace(' ', '-', $category_name);
-	redirect($route);
+	$auction_image	= $this->images_m->get_image($auction->images_id);
+	if ( $auction_image )
+	  {
+	    $source_image_path = $this->upload_config['upload_path'] . $auction_image->filename;
+	    $this->images_m->create_thumb($source_image_path);
+	  }
+
+	$this->data->categories		= $this->products_m->make_categories_dropdown($auction->categories_id);
+	$this->data->action		= 'edit';
+	$this->data->auction		= $auction;
+	$this->data->auction_image	= $auction_image;
+
+	if ( !$ajax )
+	  {
+	    $this->template
+	      ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+	      ->build('admin/auctions/form', $this->data);
+	  }
+	else
+	  {
+	    $wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
+	    $output		= $this->load->view('admin/auctions/form', $this->data, TRUE);
+	    echo $wysiwyg . $output;
+	  }
       }
-      else {
-
-	$this->session->set_flashdata(array('error'=> lang('store_messages_auction_error_edit')));
-
-      }
-    }
-    else {
-
-      $auction		= $this->auctions_m->get_auction($auctions_id);
-      $auction_image	= $this->images_m->get_image($auction->images_id);
-      if($auction_image) {
-
-	$source_image_path = $this->upload_config['upload_path'] . $auction_image->filename;
-	$this->images_m->create_thumb($source_image_path);
-
-      }
-
-      $this->data->categories		= $this->products_m->make_categories_dropdown($auction->categories_id);
-      $this->data->action		= 'edit';
-      $this->data->auction		= $auction;
-      $this->data->auction_image	= $auction_image;
-
-      if(!$ajax) {
-
-	$this->template
-	  ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-	  ->build('admin/auctions/form', $this->data);
-      }
-      else {
-
-	$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-	$output		= $this->load->view('admin/auctions/form', $this->data, TRUE);
-	echo $wysiwyg . $output;
-
-      }
-    }
-
   }
 
   public function delete($auctions_id)

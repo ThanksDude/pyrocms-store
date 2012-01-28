@@ -59,6 +59,18 @@
       </li>
 
       <li class="<?php echo alternator('even', ''); ?>">
+	<?php echo lang('store_auction_start_at','start_at'); ?>
+	<?php echo form_input('start_at',set_value('start_at',$auction->start_at),'class="text" maxlength="10"'); ?>
+	<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
+      </li>
+
+      <li class="<?php echo alternator('even', ''); ?>">
+	<?php echo lang('store_auction_end_at','end_at'); ?>
+	<?php echo form_input('end_at',set_value('end_at',$auction->end_at),'class="text" maxlength="10"'); ?>
+	<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
+      </li>
+
+      <li class="<?php echo alternator('even', ''); ?>">
 	<?php echo lang('store_auction_stock','stock'); ?>
 	<?php echo form_input('stock',set_value('stock',$auction->stock),'class="text" maxlength="10"'); ?>
       </li>

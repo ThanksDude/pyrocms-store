@@ -280,6 +280,14 @@ $config = array(
 			array('field' => 'price',
 					'label' => 'store_auction_price',
 					'rules' => 'trim|max_length[10]|required'),
+
+			array('field' => 'start_at',
+					'label' => 'store_auction_start_at',
+					'rules' => 'required'),
+
+			array('field' => 'end_at',
+					'label' => 'store_auction_end_at',
+					'rules' => 'required'),
 					
 			array('field' => 'stock',
 					'label' => 'store_auction_stock',
@@ -344,6 +352,14 @@ $config = array(
 					'label' => 'store_auction_price',
 					'rules' => 'trim|max_length[10]|required'),
 					
+			array('field' => 'start_at',
+					'label' => 'store_auction_start_at',
+					'rules' => 'required'),
+
+			array('field' => 'end_at',
+					'label' => 'store_auction_end_at',
+					'rules' => 'required'),
+
 			array('field' => 'stock',
 					'label' => 'store_auction_stock',
 					'rules' => 'trim|max_length[10]|'),
