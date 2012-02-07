@@ -107,7 +107,7 @@ class Admin_attributes extends Admin_Controller
 			foreach ($this->item_validation_rules AS $rule):
 			
 				//$this->data->{$rule['field']} = $this->input->post($rule['field']);
-				$this->data->attributes->{$rule['field']} = $this->input->post($rule['field']);
+				$this->data->attribute->{$rule['field']} = $this->input->post($rule['field']);
 			
 			endforeach;
 
