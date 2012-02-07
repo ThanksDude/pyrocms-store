@@ -30,3 +30,10 @@ $lang['store_product_images']					= 'Images';
 $lang['store_product_thumbnail']				= 'Thumbnail';
 $lang['store_product_allow_comments']			= 'Allow Comments';
 $lang['store_product_actions']					= 'Actions';
+
+// TABS   ----------------------------------------------------------------------------------------
+$lang['store_product_general_tab']				= 'General';
+$lang['store_product_attributes_tab']			= 'Attributes';
+$lang['store_product_images_tab']				= 'Images';
+$lang['store_product_categories_tab']			= 'Category';
+$lang['store_product_tags_tab']					= 'Tags';
