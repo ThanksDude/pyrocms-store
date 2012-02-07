@@ -107,7 +107,7 @@ class Admin_attributes extends Admin_Controller
 			foreach ($this->item_validation_rules AS $rule):
 			
 				//$this->data->{$rule['field']} = $this->input->post($rule['field']);
-				$this->data->attributes->{$rule['field']} = $this->input->post($rule['field']);
+				$this->data->attribute->{$rule['field']} = $this->input->post($rule['field']);
 			
 			endforeach;
 
@@ -132,7 +132,7 @@ class Admin_attributes extends Admin_Controller
 
 	public function edit($attributes_id = 0, $ajax = FALSE)
 	{
-		$this->data = $this->attributes_m->get($attributes_id);
+		$this->data->attribute = $this->attributes_m->get($attributes_id);
 
 		$this->form_validation->set_rules($this->item_validation_rules);
 
