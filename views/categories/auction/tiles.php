@@ -17,13 +17,8 @@
 	  <h4 class="category_title"><?php echo ucfirst($category->name); ?></h4>
 	</div>
 	<div>		
-	  <?php if (isset($category->images_id)) : ?>
-	  <?php
-	     $name = $category->image->name;
-	  $id = $category->images_id; 
-	  $extension = $category->image->extension;
-	  ?>
-	  <img src="<?php echo base_url('/uploads/store/categories/' . $category->image->filename);?>" alt="<?php echo $category->name; ?>" />			
+	  <?php if (isset($category->image)) : ?>
+	  <img src="<?php echo base_url('/uploads/store/categories/' . $category->image->filename);?>" alt="<?php echo $category->name; ?>" width="175" height="140"/>
 	  <?php else : ?>
 	  <?php echo ucfirst($category->name); ?>			
 	  <?php endif; ?>
