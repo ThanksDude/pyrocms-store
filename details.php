@@ -91,6 +91,22 @@ class Module_Store extends Module {
 						)
 					)
 				),
+			    'auctions' => array(
+						'name'		=> 'store_menu_auctions',
+						'uri'		=> 'admin/store/auctions',
+						'shortcuts'	=> array(
+									 array(
+									       'name'	=> 'store_shortcut_auctions_list',
+									       'uri'	=> 'admin/store/auctions',
+									       'class'	=> 'list'
+									       ),
+									 array(
+									       'name'	=> 'store_shortcut_auction_add',
+									       'uri'	=> 'admin/store/auctions/add',
+									       'class'	=> 'add'
+									       )
+									 )
+						),
 			    'tags' => array(
 				    'name'		=> 'store_menu_tags',
 				    'uri'		=> 'admin/store/tags',

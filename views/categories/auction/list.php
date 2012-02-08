@@ -2,12 +2,14 @@
 /**
  * This is a store module for PyroCMS
  *
- * @author 		pyrocms-store Team - Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey
- * @website		http://www.odin-ict.nl/
+ * @author 	Antoine Benevaut
+ * @website	www.oursITshow.org
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
 ?>
+
+
 <div id="categories">
 	<ul>
 		<?php foreach($categories as $category) { ?>
@@ -20,7 +22,7 @@
 			<?php if(isset($category->image)) : ?>
 				<?php $name = $category->image->name; $id = $category->image->id; 
 						$extension = $category->image->extension; ?>					
-				<img src="<?php echo site_url('/uploads/store/categories/' . $name . $extension);?>" alt="<?php echo $category->name; ?>" />			
+				<img src="<?php echo site_url('/uploads/store/categories/' . $filename . $extension);?>" alt="<?php echo $category->name; ?>" />
 			<?php else : ?>
 				<?php echo ucfirst($category->name); ?>			
 			<?php endif; ?>
