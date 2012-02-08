@@ -15,6 +15,7 @@
 
 $lang['store_menu_store']							= 'Store';
 $lang['store_menu_products']						= 'Products';
+$lang['store_menu_auctions']						= 'Auctions';
 $lang['store_menu_categories']						= 'Categories';
 $lang['store_menu_tags']						= 'Tags';
 $lang['store_menu_attributes']						= 'Attributes';
@@ -30,6 +31,9 @@ $lang['store_shortcut_category_add']				= 'Add Category';
 
 $lang['store_shortcut_products_list']				= 'List Products';
 $lang['store_shortcut_product_add']					= 'Add Product';
+
+$lang['store_shortcut_auctions_list']				= 'List Auctions';
+$lang['store_shortcut_auction_add']					= 'Add Auction';
 
 $lang['store_shortcut_tags_list']  				= 'List Tags';
 $lang['store_shortcut_tag_add']						= 'Add Tag';
