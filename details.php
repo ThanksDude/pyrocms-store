@@ -271,6 +271,8 @@ $this->db->query("
 				`html` LONGTEXT NULL ,
 				`price` FLOAT NULL ,
 				`stock` INT NULL ,
+				`end_at` INT NULL ,
+				`start_at` INT NULL ,
 				`limited` INT NULL ,
 				`limited_used` INT NULL ,
 				`images_id` VARCHAR(50) NULL ,
