@@ -9,6 +9,19 @@
  */
 class Comments_m extends MY_Model
 {
+  protected $_table	= 'store_bids';
+
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->library('store_settings');
+		$this->_store = $this->store_settings->item('store_id');
+		
+		$this->load->model('images_m');
+		$this->load->model('files/file_m');
+	}
+
     /**
      * Get a comment based on the ID
 	 * @access public

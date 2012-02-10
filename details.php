@@ -282,6 +282,17 @@ $this->db->query("
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 
+$this->db->query("
+			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_bids') . "` (
+				`bid_id` INT NOT NULL AUTO_INCREMENT ,
+				`auction_id` INT NOT NULL ,
+				`user_id` INT NOT NULL ,
+				`price` VARCHAR(255) NULL ,
+				`devise` VARCHAR(255) NULL ,
+				`date` VARCHAR(255) NULL ,
+				PRIMARY KEY (`bid_id`) )
+		       	ENGINE = InnoDB;");
+
 
 		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_categories') . "` (
@@ -391,6 +402,7 @@ $this->db->query("
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_attributes') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_products') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_auctions') . "`;");
+		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_bids') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_tags') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_products_has_tags') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders') . "`;");

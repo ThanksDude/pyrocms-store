@@ -21,7 +21,7 @@ class Admin_auctions extends Admin_Controller
     $this->load->library('store_settings');
     $this->load->library('unit_test');
 
-    $this->unit->active(TRUE);
+    $this->unit->active(FALSE);
 
     $this->load->language('general');
     $this->load->language('messages');
@@ -53,6 +53,7 @@ class Admin_auctions extends Admin_Controller
     $this->template
       ->set_partial('shortcuts', 'admin/partials/shortcuts')
       ->append_metadata(js('admin.js', 'store'))
+      ->append_metadata(js('datepicker.js', 'store'))
       ->append_metadata(css('admin.css', 'store'));
   }
 
