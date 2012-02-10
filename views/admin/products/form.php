@@ -54,8 +54,6 @@
 				<div class="input"><?php echo form_input('meta_keywords',set_value('meta_keywords',$product->meta_keywords), 'class="width-15 text" maxlength="50"'); ?></div>
 			</li>
 			
-			
-			
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="name"><?php echo lang('store_product_price','price'); ?> <span><?php echo lang('required_label');?></span></label>
 				<div class="input"><?php echo form_input('price',set_value('price',$product->price),'class="width-15 text" maxlength="10"'); ?></div>
@@ -79,13 +77,6 @@
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="name"><?php echo lang('store_product_limited_used','limited_used'); ?> <span><?php echo lang('required_label');?></span></label>
 				<div class="input"><?php echo form_input('limited_used',set_value('limited_used',$product->limited_used),'class="width-15 text" maxlength="10"'); ?></div>
-			</li>
-			
-			
-			
-			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_product_thumbnail','thumbnail_id'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_input('thumbnail_id',set_value('thumbnail_id',$product->thumbnail_id),'class="width-15 text" maxlength="10"'); ?></div>
 			</li>
 			
 			<li class="<?php echo alternator('', 'even'); ?>">
