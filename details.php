@@ -34,7 +34,7 @@ class Module_Store extends Module {
 			'author'	=> 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey',
 		
 			'roles'		=> array(
-				'admin_module'
+				'admin_store'
 			),
 			
 			'sections' => array(
