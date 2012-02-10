@@ -30,4 +30,6 @@ class Attributes_m extends MY_Model
 	   $insert_data['html'] =  $input['html'];
 	   return $this->db->insert($this->_table, $insert_data) ? $this->db->insert_id() : FALSE;
 	}
+	
+	
 }

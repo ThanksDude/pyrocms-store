@@ -270,6 +270,21 @@ class Admin_products extends Admin_Controller
 		endif;
 
 	}
+
+	/**
+	 * Ajax get autocomplete values for attributes
+	 * @access public
+	 * @return void
+	 */
+	public function ajax_attribute_autocomplete()
+	{
+		$this->load->model('attributes_m');
+		echo json_encode(
+				$this->attributes_m->select('name,id')
+				->like('name', $this->input->get('term'))
+				->get_all()
+		);
+	}
 }
 /* End of file admin_products.php */
 /* Location: ./store/controllers/admin_products.php */

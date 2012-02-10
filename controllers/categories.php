@@ -225,7 +225,8 @@ class Categories extends Public_Controller
 			  
 			  if ( $image )
 			    {
-			      $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
+			      $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);
+			      $category->image = $image;
 			    }
 			}
 		      $this->data->categories =	$categories;

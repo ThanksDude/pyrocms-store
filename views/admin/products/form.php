@@ -14,15 +14,25 @@
 
 <section class="item">
 
+
 	<?php echo form_open_multipart($this->uri->uri_string(), 'class="crud"'); ?>
-		
-		<div class="form_inputs">
+
+	<!-- Start store tabs -->
+	<div class="tabs">
+
+		<ul class="tab-menu">
+			<li><a href="#store-general-tab"><span><?php echo lang('store_product_general_tab'); ?></span></a></li>
+			<li><a href="#store-categories-tab"><span><?php echo lang('store_product_categories_tab'); ?></span></a></li>
+			<li><a href="#store-attribute-tab"><span><?php echo lang('store_product_attributes_tab'); ?></span></a></li>
+			<li><a href="#store-image-tab"><span><?php echo lang('store_product_images_tab'); ?></span></a></li>
+			<li><a href="#store-tag-tab"><span><?php echo lang('store_product_tags_tab'); ?></span></a></li>
+		</ul>
 	
+		<!-- General tab -->
+		<div class="form_inputs" id="store-general-tab">
+	    <fieldset>   
 		<ul>
-			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_product_category','categories_id'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_dropdown('categories_id', $categories , set_value('categories_id', $product->categories_id), 'class="width-15 text" maxlength="50"'); ?></div>
-			</li>
+			
 			
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="name"><?php echo lang('store_product_name','name'); ?> <span><?php echo lang('required_label');?></span></label>
@@ -44,10 +54,7 @@
 				<div class="input"><?php echo form_input('meta_keywords',set_value('meta_keywords',$product->meta_keywords), 'class="width-15 text" maxlength="50"'); ?></div>
 			</li>
 			
-			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_product_attributes','attributes_id'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_input('attributes_id',set_value('attributes_id',$product->attributes_id),'class="width-15 text" maxlength="50"'); ?></div>
-			</li>
+			
 			
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="name"><?php echo lang('store_product_price','price'); ?> <span><?php echo lang('required_label');?></span></label>
@@ -74,9 +81,54 @@
 				<div class="input"><?php echo form_input('limited_used',set_value('limited_used',$product->limited_used),'class="width-15 text" maxlength="10"'); ?></div>
 			</li>
 			
+			
+			
 			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_product_images','images_id'); ?>
-				<div class="input"><!-- 			<?php echo form_input('images_id',set_value('images_id',$product->images_id),'class="width-15 text" maxlength="10"'); ?> -->
+				<label for="name"><?php echo lang('store_product_thumbnail','thumbnail_id'); ?> <span><?php echo lang('required_label');?></span></label>
+				<div class="input"><?php echo form_input('thumbnail_id',set_value('thumbnail_id',$product->thumbnail_id),'class="width-15 text" maxlength="10"'); ?></div>
+			</li>
+			
+			<li class="<?php echo alternator('', 'even'); ?>">
+				<label for="name"><?php echo lang('store_product_allow_comments','allow_comments'); ?> <span><?php echo lang('required_label');?></span></label>
+				<div class="input"><?php echo form_radio('allow_comments','1',TRUE).$this->lang->line('store_choice_yes'); ?></div>
+				<div class="input"><?php echo form_radio('allow_comments','0',FALSE).$this->lang->line('store_choice_no'); ?></div>
+			</li>
+		</ul>
+		</fieldset>
+		</div>
+		<!-- Category tab -->
+		<div class="form_inputs" id="store-categories-tab">
+	    <fieldset>
+	       <ul>
+	       	<li class="<?php echo alternator('', 'even'); ?>">
+				One product can be in more then one category!	
+			</li>
+			<li class="<?php echo alternator('', 'even'); ?>">
+				<label for="name"><?php echo lang('store_product_category','categories_id'); ?> <span><?php echo lang('required_label');?></span></label>
+				<div class="input"><?php echo form_dropdown('categories_id', $categories , set_value('categories_id', $product->categories_id), 'class="width-15 text" maxlength="50"'); ?></div>
+			</li>
+	       </ul>
+	    </fieldset>
+	    </div> 
+		<!-- Attribute tab -->
+		<div class="form_inputs" id="store-attribute-tab">
+		<fieldset>
+	       <ul>
+	       	<li class="<?php echo alternator('', 'even'); ?>">
+				<label for="name"><?php echo lang('store_product_attributes','attributes_id'); ?> <span><?php echo lang('required_label');?></span></label>
+				<div class="input"><?php echo form_input('attributes_id',set_value('attributes_id',$product->attributes_id),'class="width-15 text" maxlength="50"'); ?></div>
+			</li>
+	       </ul>
+	    </fieldset>
+		</div>
+		<!-- Image tab -->
+		<div class="form_inputs" id="store-image-tab">
+	    <fieldset>
+	       <ul>
+	       <li class="<?php echo alternator('', 'even'); ?>">
+				<label for="name"><?php echo lang('store_product_images','images_id'); ?></label>
+				<div class="input">
+				<!-- 			<?php echo form_input('images_id',set_value('images_id',$product->images_id),'class="width-15 text" maxlength="10"'); ?> -->
 				<?php 
 					if( isset($product_image) && $product_image){
 						$output = '<a href="uploads/store/products/' . $product_image->filename . '"';
@@ -93,15 +145,22 @@
 				<label for="name"><?php echo lang('store_product_thumbnail','thumbnail_id'); ?> <span><?php echo lang('required_label');?></span></label>
 				<div class="input"><?php echo form_input('thumbnail_id',set_value('thumbnail_id',$product->thumbnail_id),'class="width-15 text" maxlength="10"'); ?></div>
 			</li>
-			
-			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_product_allow_comments','allow_comments'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_radio('allow_comments','1',TRUE).$this->lang->line('store_choice_yes'); ?></div>
-				<div class="input"><?php echo form_radio('allow_comments','0',FALSE).$this->lang->line('store_choice_no'); ?></div>
+	       </ul>
+	    </fieldset>
+	    </div> 
+	    <!-- Tags tab -->
+		<div class="form_inputs" id="store-tag-tab">
+	    <fieldset>
+	       <ul>
+	       	<li class="<?php echo alternator('', 'even'); ?>">
+				Tab for product tags
 			</li>
-		</ul>
-		
-		</div>
+			
+	       </ul>
+	    </fieldset>
+	    </div> 
+	</div><!-- End of store tabs -->	
+	   
 		
 		<div class="buttons">
 			<?php $this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>

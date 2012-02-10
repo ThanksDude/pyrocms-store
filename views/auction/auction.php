@@ -10,11 +10,12 @@
 ?>
 <div id="auction">
   <ul>
-    <?php echo form_open('/store/insert_cart/' . $auction->auctions_id . '/'); ?>
-    <?php echo form_hidden('redirect', current_url()); ?>
     <li>
-   <div>
+      <div>
 	<h2><?php echo $auction->name; ?></h2>
+	{{ ratings:vote steps="5" module="store_auction" item-id="<?php echo $auction->auctions_id; ?>" }}
+	<a href="{{ url }}">{{ theme:image file="<?php echo base_url(); ?>uploads/default/{{ status }}.gif" alt="vote {{item}}" }}</a>
+	{{ /ratings:vote }}
       </div>
       <div>
 	<?php if(isset($auction->image)) : ?>
@@ -30,11 +31,10 @@
 	  <span><?php echo lang('store_auction_price'). " : ";?>
 	    <?php echo $this->cart->format_number($auction->price); ?>
           </span>
-	  <?php echo form_input('qty','1') . form_submit('','Add to Cart'); ?>
       </p></div>
       <div><p><?php echo lang('store_auction_stock'). " : " . $auction->stock ;?></p></div>
       
     </li>
-    <?php echo form_close(); ?>
   </ul>
+	<?php echo display_comments($auction->auctions_id, 'store_auction'); ?>
 </div>

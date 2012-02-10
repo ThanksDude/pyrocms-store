@@ -18,13 +18,13 @@ class Module_Store extends Module {
 				'en' => 'Online Store',
 				'nl' => 'Online Webwinkel',
 				'de' => 'Online Store',
-				'zh' => '線上商店'
+				'zh' => 'ç·šä¸Šĺ•†ĺş—'
 			),
 			'description' => array(
 				'en' => 'This is a PyroCMS Store module.',
 				'nl' => 'Dit is een webwinkel module voor PyroCMS',
 				'de' => 'Dies ist ein Online-Shop fur PyroCMS',
-				'zh' => '這是一個 PyroCMS 商店模組'
+				'zh' => 'é€™ć�Żä¸€ĺ€‹ PyroCMS ĺ•†ĺş—ć¨ˇçµ„'
 
 			),
 			'frontend'	=> TRUE,
@@ -91,6 +91,22 @@ class Module_Store extends Module {
 						)
 					)
 				),
+			    'auctions' => array(
+						'name'		=> 'store_menu_auctions',
+						'uri'		=> 'admin/store/auctions',
+						'shortcuts'	=> array(
+									 array(
+									       'name'	=> 'store_shortcut_auctions_list',
+									       'uri'	=> 'admin/store/auctions',
+									       'class'	=> 'list'
+									       ),
+									 array(
+									       'name'	=> 'store_shortcut_auction_add',
+									       'uri'	=> 'admin/store/auctions/add',
+									       'class'	=> 'add'
+									       )
+									 )
+						),
 			    'tags' => array(
 				    'name'		=> 'store_menu_tags',
 				    'uri'		=> 'admin/store/tags',
@@ -255,6 +271,8 @@ $this->db->query("
 				`html` LONGTEXT NULL ,
 				`price` FLOAT NULL ,
 				`stock` INT NULL ,
+				`end_at` INT NULL ,
+				`start_at` INT NULL ,
 				`limited` INT NULL ,
 				`limited_used` INT NULL ,
 				`images_id` VARCHAR(50) NULL ,
@@ -351,6 +369,19 @@ $this->db->query("
 				`number` INT NULL ,
 				PRIMARY KEY (`orders_id`, `users_id`, `products_id`, `categories_id`) )
 			ENGINE = InnoDB;");
+		
+		$this->db->query("
+		CREATE TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_product_attributes'). "` (
+				`id` int(11) NOT NULL AUTO_INCREMENT,
+				`product_id` int(11) NOT NULL,
+				`value` varchar(200) NOT NULL,
+				PRIMARY KEY (`id`,`product_id`)
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1") ;
+		$this->db->query("
+				ALTER TABLE  `" . $this->db->dbprefix('store_product_attributes'). "` 
+				ADD FOREIGN KEY (  `product_id` ) REFERENCES `".$this->db->dbprefix('store_products')."`  (
+				`products_id`
+		) ON DELETE CASCADE ON UPDATE RESTRICT ");
 
 		if(is_dir('uploads/store') OR @mkdir('uploads/store',0777,TRUE))
 		{
@@ -378,7 +409,7 @@ $this->db->query("
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_order_addresses') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders_has_store_products') . "`;");
-
+		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_product_attributes') . "`;");
 		$this->db->delete('settings', array('module' => 'store'));
 		{
 			return TRUE;
