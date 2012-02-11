@@ -36,5 +36,6 @@
       
     </li>
   </ul>
+	<?php echo display_bids($auction); ?>
 	<?php echo display_comments($auction->auctions_id, 'store_auction'); ?>
 </div>

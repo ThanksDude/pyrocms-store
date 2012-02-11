@@ -36,7 +36,13 @@ class product extends Public_Controller
 
 	public function index()
 	{
-		redirect('store/categories/browse/top/tiles');
+	  $i = $this->store_settings->item('sell_method');
+
+	  if ( isset($i) && (strcmp($i, "1") == 0) ):
+	    redirect('store/categories/explore/top/tiles');
+	  else:
+	    redirect('store/categories/browse/top/tiles');
+	  endif;
 	}
 	
 	public function view($product_slug = NULL)

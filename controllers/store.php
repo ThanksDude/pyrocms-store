@@ -36,10 +36,12 @@ class Store extends Public_Controller
 
 	public function index()
 	{
-	  if (false):
-	    redirect('store/categories/browse/top/tiles');
-	  else:
+	  $i = $this->store_settings->item('sell_method');
+
+	  if ( isset($i) && (strcmp($i, "1") == 0) ):
 	    redirect('store/categories/explore/top/tiles');
+	  else:
+	    redirect('store/categories/browse/top/tiles');
 	  endif;
 	}
 }

@@ -191,6 +191,7 @@ class Module_Store extends Module {
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'terms_and_conditions', 'wysiwyg|simple', '', '', 'extra', '1', '1', '22');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'privacy_policy', 'textarea', '', '', 'extra', '1', '1', '23');");
 		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'delivery_information', 'textarea', '', '', 'extra', '1', '1', '24');");
+		$this->db->query("INSERT INTO `" . $this->db->dbprefix('store_settings') . "` (`settings_id`, `slug`, `type`, `value`, `options`, `tab`, `is_required`, `gui`, `order`) VALUES (null, 'sell_method', 'radio', '', '', 'general', '1', '1', '26');");
 
 		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_currency') . "` (

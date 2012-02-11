@@ -26,6 +26,7 @@ class auction extends Public_Controller
     $this->load->model('auctions_m');
 
     $this->load->helper('date');
+    $this->load->helper('bids');
 		
     $this->template
       ->append_metadata(css('store.css', 'store'))

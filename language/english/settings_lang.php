@@ -35,3 +35,4 @@ $lang['store_settings_authorize_developer_mode']	= 'Developer mode';
 $lang['store_settings_terms_and_conditions']		= 'Terms and Conditions';
 $lang['store_settings_privacy_policy']				= 'Privacy Policy';
 $lang['store_settings_delivery_information']		= 'Delivery Information';
+$lang['store_settings_sell_method']		= 'Would you use the store auction mode?';
