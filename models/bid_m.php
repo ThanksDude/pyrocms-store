@@ -22,19 +22,21 @@ class Bid_m extends MY_Model
   }
 
   /**
-   * Get a bid based on the ID
+   * Get a bid based on the auction ID
    * @access public
    * @param int $id The ID of the auction
    * @return array
    */
-  public function get($id)
+  public function get_by_auction_id($id, $limit = 3)
   {
-    $this->db->select('bid.*, prf.*')
+    $this->db->select('bid.*, prf.username')
       ->from($this->_table.' bid')
       ->join('users prf', 'bid.user_id = prf.id', 'left')
-      ->where('auction_id', $id);
+      ->where('auction_id', $id)
+      ->limit($limit)
+      ->order_by('bid.bid_id DESC');
     
-    return $this->db->get()->row();
+    return $this->db->get()->result();
   }
 
   /**

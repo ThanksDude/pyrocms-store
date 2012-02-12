@@ -30,7 +30,7 @@ class Customer_Place_bid extends Public_Controller
 
   public function create()
   {
-    var_dump($_POST['email']); exit();
+    var_dump($_POST); exit();
 
     redirect('store/auction/view/'.$auction_slug);
   }
