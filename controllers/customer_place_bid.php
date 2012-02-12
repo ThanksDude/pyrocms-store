@@ -16,23 +16,57 @@ class Customer_Place_bid extends Public_Controller
 
     $this->load->model('bid_m');
     $this->load->library('form_validation');
+    $this->load->library('unit_test');
+
+    $this->load->model('auctions_m');
+
+    $this->unit->active(FALSE);
 
     $this->template
       ->append_metadata(css('store.css', 'store'))
       ->append_metadata(js('store.js', 'store'));
   }
 
-  public function index()
-  {
-    $this->template
-      ->build('customer/index', $this->data);
-  }
-
   public function create()
   {
-    var_dump($_POST); exit();
+    if (!isset($this->current_user)) { redirect('register'); }
+    $post	= array(
+			'user_id' => $this->current_user->id,
+			'auction_id' => $this->input->post('id'),
+			'price' => $this->input->post('price'),
+			'slug' => $this->input->post('slug'),
+			'date' => now()
+			);
 
-    redirect('store/auction/view/'.$auction_slug);
+    $validation = array(
+			array(
+			      'field' => 'id',
+			      'label' => 'id',
+			      'rules' => 'required',
+			      ),
+			array(
+			      'field' => 'price',
+			      'label' => 'price',
+			      'rules' => 'required|numeric',
+			      ),
+			array(
+			      'field' => 'slug',
+			      'label' => 'slug',
+			      'rules' => 'required',
+			      )
+			);
+
+    $this->form_validation->set_rules($validation);
+    $valid     	= $this->form_validation->run();
+
+    if ( $valid ) {
+      echo true;
+    }
+    else {
+      echo false;
+    }
+
+    redirect('store/auction/view/'.$post['slug']);
   }
 }
 /* End of file customer_place_bid.php */
