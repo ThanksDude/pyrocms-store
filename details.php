@@ -9,7 +9,7 @@
 **/
 class Module_Store extends Module {
 
-	public $version = '0.1';
+	public $version = '0.2';
 
 	public function info()
 	{
