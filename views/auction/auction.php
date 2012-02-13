@@ -37,7 +37,7 @@
       <div>
 <p>
 	  <span>Time
-	<?php echo standard_date('DATE_RSS', round(abs($auction->end_at - $auction->start_at))); ?>
+	<?php echo time_diff_conv($auction->start_at, $auction->end_at); ?>
           </span>
       </p></div>
 
