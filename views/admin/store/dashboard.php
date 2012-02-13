@@ -10,7 +10,7 @@
 ?>
 
 <section class="title">
-	<h4><?php echo lang('store_title_store_dashboard')?></h4>
+	<h4><?php echo lang('store:dashboard:title')?></h4>
 </section>
 
 <section class="item">

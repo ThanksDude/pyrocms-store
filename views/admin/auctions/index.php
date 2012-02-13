@@ -9,7 +9,7 @@
 **/
 ?>
 <section class="title">
-   <h4><?php echo lang('store_title_auction_list')?></h4>
+   <h4><?php echo lang('store:auctions:title')?></h4>
 </section>
 
 <section class="item">
@@ -21,11 +21,11 @@
 		<thead>
 			<tr>
 				<th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-				<th><?php echo lang('store_auction_thumbnail'); ?></th>
-				<th><?php echo lang('store_auction_name'); ?></th>
-				<th><?php echo lang('store_auction_category'); ?></th>
-				<th><?php echo lang('store_auction_price'); ?></th>
-				<th width="320" class="align-center"><span><?php echo lang('store_auction_actions'); ?></span></th>
+				<th><?php echo lang('store:auctions:label:thumbnail'); ?></th>
+				<th><?php echo lang('store:auctions:label:name'); ?></th>
+				<th><?php echo lang('store:auctions:label:category'); ?></th>
+				<th><?php echo lang('store:auctions:label:price'); ?></th>
+				<th width="320" class="align-center"><span><?php echo lang('store:auctions:label:actions'); ?></span></th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -57,8 +57,8 @@
 					<td class="align-center buttons buttons-small">
 					   <?php $title = 'title="'. ucfirst($auction->category->name) . ' - ' . ucfirst($auction->name) . '" '; ?>
 						<?php echo anchor('admin/store/preview/' . $auction->category->slug . '/' . $auction->slug, lang('store_button_view'), $title . 'rel="preview" class="button preview" target="_blank"'); ?>
-						<?php echo anchor('admin/store/edit_auction/' . $auction->auctions_id, lang('store_button_edit'), 'class="edit_auction button"'); ?>
-						<?php echo anchor('admin/store/delete_auction/' . $auction->auctions_id, lang('store_button_delete'), array('class'=>'confirm button delete')); ?>
+						<?php echo anchor('admin/store/edit_auction/' . $auction->auctions_id, lang('store:auctions:buttons:edit'), 'class="edit_auction button"'); ?>
+						<?php echo anchor('admin/store/delete_auction/' . $auction->auctions_id, lang('store:auctions:buttons:delete'), array('class'=>'confirm button delete')); ?>
 					</td>
 				</tr>
 			<?php } ?>
@@ -72,6 +72,6 @@
 	<?php echo form_close(); ?>
 
 	<?php else: ?>
-        <div class="no_data"><?php echo lang('store_messages_auction_no_items'); ?></div>
+        <div class="no_data"><?php echo lang('store:auctions:messages:information:no_items'); ?></div>
     <?php endif; ?>
 </section>

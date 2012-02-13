@@ -22,7 +22,9 @@ $lang['store:category:shortcut:add']					= 'Add Category';
 
 // TITLES ----------------------------------------------------------------------------------------
 
-
+$lang['store:category:title']							= 'Categories';
+$lang['store:category:title:add']						= 'Add';
+$lang['store:category:title:edit']						= 'Edit';
 
 // LABELS ----------------------------------------------------------------------------------------
 
@@ -49,6 +51,7 @@ $lang['store:category:messages:error:delete']			= 'Category deletion failed';
 
 // BUTTONS --------------------------------------------------------------------------------------
 
-$lang['store:category:button:add']						= 'Add category';
+$lang['store:category:buttons:edit']					= 'Edit';
+$lang['store:category:buttons:delete']					= 'Delete';
 
 /* End of file categories_lang.php */

@@ -39,101 +39,101 @@ class Module_Store extends Module {
 			
 			'sections' => array(
 			    'store' => array(
-				    'name'		=> 'store_menu_store',
+				    'name'		=> 'store:menu',
 				    'uri'		=> 'admin/store',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_store_dashboard',
+					 	   'name'	=> 'store:dashboard:shortcut',
 						   'uri'	=> 'admin/store',
 						   'class'	=> 'dashboard'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_store_statistics',
+					 	   'name'	=> 'store:statistics:shortcut',
 						   'uri'	=> 'admin/store/statistics',
 						   'class'	=> 'statistics'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_store_settings',
+					 	   'name'	=> 'store:settings:shortcut',
 						   'uri'	=> 'admin/store/settings',
 						   'class'	=> 'settings'
 						)
 					)
 				),
 			    'categories' => array(
-				    'name'		=> 'store_menu_categories',
+				    'name'		=> 'store:category:menu',
 				    'uri'		=> 'admin/store/categories',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_categories_list',
+					 	   'name'	=> 'store:category:shortcut:list',
 						   'uri'	=> 'admin/store/categories',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_category_add',
+					 	   'name'	=> 'store:category:shortcut:add',
 						   'uri'	=> 'admin/store/categories/add',
 						   'class'	=> 'add'
 						)
 					)
 				),
 			    'products' => array(
-				    'name'		=> 'store_menu_products',
+				    'name'		=> 'store:products:menu',
 				    'uri'		=> 'admin/store/products',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_products_list',
+					 	   'name'	=> 'store:products:shortcut:list',
 						   'uri'	=> 'admin/store/products',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_product_add',
+					 	   'name'	=> 'store:products:shortcut:add',
 						   'uri'	=> 'admin/store/products/add',
 						   'class'	=> 'add'
 						)
 					)
 				),
 			    'auctions' => array(
-						'name'		=> 'store_menu_auctions',
+						'name'		=> 'store:auctions:menu',
 						'uri'		=> 'admin/store/auctions',
 						'shortcuts'	=> array(
 									 array(
-									       'name'	=> 'store_shortcut_auctions_list',
+									       'name'	=> 'store:auctions:shortcut:list',
 									       'uri'	=> 'admin/store/auctions',
 									       'class'	=> 'list'
 									       ),
 									 array(
-									       'name'	=> 'store_shortcut_auction_add',
+									       'name'	=> 'store:auctions:shortcut:add',
 									       'uri'	=> 'admin/store/auctions/add',
 									       'class'	=> 'add'
 									       )
 									 )
 						),
 			    'tags' => array(
-				    'name'		=> 'store_menu_tags',
+				    'name'		=> 'store:tags:menu',
 				    'uri'		=> 'admin/store/tags',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_tags_list',
+					 	   'name'	=> 'store:tags:shortcut:list',
 						   'uri'	=> 'admin/store/tags',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_tag_add',
+					 	   'name'	=> 'store:tags:shortcut:add',
 						   'uri'	=> 'admin/store/tags/add',
 						   'class'	=> 'add'
 						)
 					)
 				),
 			    'attributes' => array(
-				    'name'		=> 'store_menu_attributes',
+				    'name'		=> 'store:attributes:menu',
 				    'uri'		=> 'admin/store/attributes',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_attributes_list',
+					 	   'name'	=> 'store:attributes:shortcut:list',
 						   'uri'	=> 'admin/store/attributes',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_attribute_add',
+					 	   'name'	=> 'store:attributes:shortcut:add',
 						   'uri'	=> 'admin/store/attributes/add',
 						   'class'	=> 'add'
 						)

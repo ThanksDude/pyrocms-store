@@ -49,12 +49,12 @@ class Admin_products extends Admin_Controller
 		$this->item_validation_rules = array(
 			array(
 				'field' => 'name',
-				'label' => 'name',
+				'label' => 'store:products:label:name',
 				'rules' => 'trim|max_length[255]|required'
 			),
 			array(
 				'field' => 'html',
-				'label' => 'html',
+				'label' => 'store:products:label:html',
 				'rules' => 'trim|max_length[1000]|required'
 			)
 		);
@@ -93,6 +93,7 @@ class Admin_products extends Admin_Controller
 				$output .= '" alt="' . $image->name;
 				$output .= '" /></a>';
 				$product->image = $output;
+				
 			endif;
 
 		endforeach;
@@ -100,6 +101,7 @@ class Admin_products extends Admin_Controller
 		$this->data->products	= $products;
 
 		$this->template
+			 ->title($this->module_details['name'], lang('store:products:title'))
 			 ->build('admin/products/index', $this->data);
 	}
 
@@ -127,12 +129,12 @@ class Admin_products extends Admin_Controller
 
 			if($this->products_m->add_product($new_image_id)):
 
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_product_success_create'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:products:messages:success:create'), $this->input->post('name')));
 				redirect('admin/store/products');
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_messages_product_error_create')));
+				$this->session->set_flashdata(array('error'=> lang('store:products:messages:error:create')));
 
 			endif;
 
@@ -155,6 +157,7 @@ class Admin_products extends Admin_Controller
 			$this->data->product->thumbnail_id		= NULL;
 
 			$this->template
+				 ->title($this->module_details['name'], lang('store:products:title') . " - " . lang('store:products:title:add'))
 				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
 				 ->build('admin/products/form', $this->data);
 
@@ -183,7 +186,7 @@ class Admin_products extends Admin_Controller
 
 			if($this->products_m->update_product($products_id, $new_image_id)):
 
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_product_success_edit'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:products:messages:success:edit'), $this->input->post('name')));
 				$product		= $this->products_m->get_product($products_id);
 				$category_name	= $this->categories_m->get_category($product->categories_id)->name;
 				$route			= 'admin/store/category/' . str_replace(' ', '-', $category_name);
@@ -191,7 +194,7 @@ class Admin_products extends Admin_Controller
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_messages_product_error_edit')));
+				$this->session->set_flashdata(array('error'=> lang('store:products:messages:error:edit')));
 
 			endif;
 
@@ -214,6 +217,7 @@ class Admin_products extends Admin_Controller
 			if(!$ajax):
 
 				$this->template
+				 	 ->title($this->module_details['name'], lang('store:products:title') . " - " . lang('store:products:title:edit'))
 					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
 					 ->build('admin/products/form', $this->data);
 
@@ -257,7 +261,7 @@ class Admin_products extends Admin_Controller
 			endforeach;
 			
 			$this->data->category		= $category;
-			$this->data->section_title	= lang('store_title_product_list') . '&nbsp&nbsp-&nbsp&nbsp' . ucfirst($category->name);
+			$this->data->section_title	= lang('store:products:title:list') . '&nbsp&nbsp-&nbsp&nbsp' . ucfirst($category->name);
 			$this->data->products		= $products;
 			
 			$this->template

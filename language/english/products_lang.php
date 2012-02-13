@@ -23,11 +23,15 @@ $lang['store:products:shortcut:add']					= 'Add Product';
 // TITLES ----------------------------------------------------------------------------------------
 
 
+$lang['store:products:title']							= 'Products';
+$lang['store:products:title:add']						= 'Add';
+$lang['store:products:title:edit']						= 'Edit';
+$lang['store:products:title:list']						= 'List Products';
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store:products:label:store:id']					= 'Store ID';
-$lang['store:products:label:product:id']				= 'Product ID';
+$lang['store:products:label:store_id']					= 'Store ID';
+$lang['store:products:label:product_id']				= 'Product ID';
 $lang['store:products:label:category']					= 'Category';
 $lang['store:products:label:name']						= 'Name';
 $lang['store:products:label:html']						= 'Description';
@@ -47,19 +51,25 @@ $lang['store:products:label:actions']					= 'Actions';
 // MESSAGES --------------------------------------------------------------------------------------
 
 $lang['store:products:messages:information:no_items']	= 'No Products created';
-$lang['store:products:messages:success_create']			= 'Product sucessfully created';
-$lang['store:products:messages:success_edit']			= 'Product sucessfully edited';
-$lang['store:products:messages:success_delete']			= 'Product sucessfully deleted';
-$lang['store:products:messages:error_create']			= 'Product creation failed';
-$lang['store:products:messages:error_edit']				= 'Product editing failed';
-$lang['store:products:messages:error_delete']			= 'Product deletion failed';
+$lang['store:products:messages:success:create']			= 'Product sucessfully created';
+$lang['store:products:messages:success:edit']			= 'Product sucessfully edited';
+$lang['store:products:messages:success:delete']			= 'Product sucessfully deleted';
+$lang['store:products:messages:error:create']			= 'Product creation failed';
+$lang['store:products:messages:error:edit']				= 'Product editing failed';
+$lang['store:products:messages:error:delete']			= 'Product deletion failed';
 
-// TABS   ----------------------------------------------------------------------------------------
+// TABS ------------------------------------------------------------------------------------------
 
-$lang['store:products:tabs:general_tab']				= 'General';
-$lang['store:products:tabs:attributes_tab']				= 'Attributes';
-$lang['store:products:tabs:images_tab']					= 'Images';
-$lang['store:products:tabs:categories_tab']				= 'Category';
-$lang['store:products:tabs:tags_tab']					= 'Tags';
+$lang['store:products:tabs:general']					= 'General';
+$lang['store:products:tabs:attributes']					= 'Attributes';
+$lang['store:products:tabs:images']						= 'Images';
+$lang['store:products:tabs:categories']					= 'Category';
+$lang['store:products:tabs:tags']						= 'Tags';
+
+// BUTTONS ---------------------------------------------------------------------------------------
+
+$lang['store:products:buttons:edit']					= 'Edit';
+$lang['store:products:buttons:delete']					= 'Delete';
+$lang['store:products:buttons:preview']					= 'Preview';
 
 /* End of file products_lang.php */

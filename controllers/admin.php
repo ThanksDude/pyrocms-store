@@ -74,7 +74,7 @@ class Admin extends Admin_Controller
 		
 		$this->template
 			 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-			 ->title($this->module_details['name'], lang('store_title_store_dashboard'))
+			 ->title($this->module_details['name'], lang('store:dashboard:title'))
 			 ->build('admin/store/dashboard',$this->data);
 	}
 	
@@ -84,7 +84,7 @@ class Admin extends Admin_Controller
 		
 		$this->template
 			 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-			 ->title($this->module_details['name'], lang('store_title_store_statistics'))
+			 ->title($this->module_details['name'], lang('store:statistics:title'))
 			 ->build('admin/store/statistics',$this->data);
 	}
 	
@@ -103,18 +103,18 @@ class Admin extends Admin_Controller
 			
 			$this->template
 				 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-				 ->title($this->module_details['name'], lang('store_title_store_settings'))
+				 ->title($this->module_details['name'], lang('store:settings:title'))
 				 ->build('admin/store/settings',$this->data);
 
 		else:
 			
 			if ( ! $this->store_settings->settings_manager_store() ):
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_edit_success'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:settings:messages:success:edit'), $this->input->post('name')));
 				redirect('admin/store/settings');
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_messages_edit_error')));
+				$this->session->set_flashdata(array('error'=> lang('store:settings:messages:error:edit')));
 		
 			endif;
 			

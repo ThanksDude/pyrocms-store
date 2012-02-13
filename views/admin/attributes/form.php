@@ -9,7 +9,7 @@
 **/
 ?>
 <section class="title">
-    <h4><?php echo lang('store_title_attribute_'.$this->method);?></h4>
+    <h4><?php echo lang('store:attributes:title:'.$this->method);?></h4>
 </section>
 
 <section class="item">
@@ -20,12 +20,12 @@
 	
 		<ul>
 			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_attribute_name','name'); ?> <span><?php echo lang('required_label');?></span></label>
+				<label for="name"><?php echo lang('store:attributes:label:name','name'); ?> <span><?php echo lang('required_label');?></span></label>
 				<div class="input"><?php echo form_input('name', set_value('name',$attribute->name), 'class="width-15 text" maxlength="50"'); ?></div>
             </li>
             
 			<li class="<?php echo alternator('', 'even'); ?>">
-                <label for="name"><?php echo lang('store_attribute_html','html'); ?> <span><?php echo lang('required_label');?></span></label>
+                <label for="html"><?php echo lang('store:attributes:label:html','html'); ?> <span><?php echo lang('required_label');?></span></label>
                 <div class="input"><?php echo form_textarea('html', set_value('html',$attribute->html), 'class="wysiwyg-simple" maxlength="1000"'); ?></div>
             </li>
         </ul>

@@ -24,12 +24,12 @@
 		<thead>
 			<tr>
 				<th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-				<th><?php echo lang('store_product_thumbnail'); ?></th>
-				<th><?php echo lang('store_product_name'); ?></th>
-				<th><?php echo lang('store_product_price'); ?></th>
-				<th><?php echo lang('store_product_stock'); ?></th>				
-				<th><?php echo lang('store_product_discount'); ?></th>
-				<th width="320" class="align-center"><span><?php echo lang('store_product_actions'); ?></span></th>
+				<th><?php echo lang('store:products:label:thumbnail'); ?></th>
+				<th><?php echo lang('store:products:label:name'); ?></th>
+				<th><?php echo lang('store:products:label:price'); ?></th>
+				<th><?php echo lang('store:products:label:stock'); ?></th>				
+				<th><?php echo lang('store:products:label:discount'); ?></th>
+				<th width="320" class="align-center"><span><?php echo lang('store:products:label:actions'); ?></span></th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -51,9 +51,9 @@
 					<td><?php echo $product->discount; ?></td>
 					<td class="align-center buttons buttons-small">
 						<?php $title = 'title="'. ucfirst($product->category->name) . ' - ' . ucfirst($product->name) . '" '; ?>
-						<?php echo anchor('admin/store/preview/' . $product->category->slug . '/' . $product->slug, lang('store_button_view'), $title . 'rel="preview" class="button preview" target="_blank"'); ?>
-						<?php echo anchor('admin/store/edit_product/' . $product->products_id . '/true', lang('store_button_edit'), 'class="edit_product button edit"'); ?>
-						<?php echo anchor('admin/store/delete_product/' . $product->products_id, lang('store_button_delete'), array('class'=>'confirm button delete')); ?>
+						<?php echo anchor('admin/store/preview/' . $product->category->slug . '/' . $product->slug, lang('store:products:buttons:preview'), $title . 'rel="preview" class="button preview" target="_blank"'); ?>
+						<?php echo anchor('admin/store/edit_product/' . $product->products_id . '/true', lang('store:products:buttons:edit'), 'class="edit_product button edit"'); ?>
+						<?php echo anchor('admin/store/delete_product/' . $product->products_id, lang('store:products:buttons:delete'), array('class'=>'confirm button delete')); ?>
 					</td>
 				</tr>
 			<?php } ?>
@@ -68,7 +68,7 @@
 
 <?php else: ?>
 	<div class="blank-slate">
-		<h2><?php echo lang('store_messages_product_no_items'); ?></h2>
+		<h2><?php echo lang('store:products:messages:information:no_items'); ?></h2>
 	</div>
 <?php endif; ?>
 </section>

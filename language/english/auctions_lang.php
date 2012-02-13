@@ -22,7 +22,9 @@ $lang['store:auctions:shortcut:add']				= 'Add Auction';
 
 // TITLES ----------------------------------------------------------------------------------------
 
-
+$lang['store:auctions:title']						= 'Auctions';
+$lang['store:auctions:title:add']					= 'Add';
+$lang['store:auctions:title:edit']					= 'Edit';
 
 // LABELS ----------------------------------------------------------------------------------------
 
@@ -45,5 +47,20 @@ $lang['store:auctions:label:images']				= 'Images';
 $lang['store:auctions:label:thumbnail']				= 'Thumbnail';
 $lang['store:auctions:label:allow_comments']		= 'Allow Comments';
 $lang['store:auctions:label:actions']				= 'Actions';
+
+// MESSAGES --------------------------------------------------------------------------------------
+
+$lang['store:auctions:messages:information:no_items']	= 'No Auctions created';
+$lang['store:auctions:messages:success:add']			= 'Auction sucessfully created';
+$lang['store:auctions:messages:success:edit']			= 'Auction sucessfully edited';
+$lang['store:auctions:messages:success:delete']			= 'Auction sucessfully deleted';
+$lang['store:auctions:messages:error:add']				= 'Auction creation failed';
+$lang['store:auctions:messages:error:edit']				= 'Auction editing failed';
+$lang['store:auctions:messages:error:delete']			= 'Auction deletion failed';
+
+// BUTTONS ---------------------------------------------------------------------------------------
+
+$lang['store:auctions:buttons:edit']				= 'Edit';
+$lang['store:auctions:buttons:delete']				= 'Delete';
 
 /* End of file auctions_lang.php */

@@ -29,6 +29,7 @@ $lang['store:tags:title:edit']						= 'Edit';
 // LABELS ----------------------------------------------------------------------------------------
 
 $lang['store:tags:label:name']						= 'Name';
+$lang['store:tags:label:actions']					= 'Actions';
 
 // MESSAGES --------------------------------------------------------------------------------------
 
@@ -39,5 +40,10 @@ $lang['store:tags:messages:success:delete']			= 'Tag sucessfully deleted';
 $lang['store:tags:messages:error:create']			= 'Tag creation failed';
 $lang['store:tags:messages:error:edit']				= 'Tag editing failed';
 $lang['store:tags:messages:error:delete']			= 'Tag deletion failed';
+
+// BUTTONS ---------------------------------------------------------------------------------------
+
+$lang['store:tags:buttons:edit']					= 'Edit';
+$lang['store:tags:buttons:delete']					= 'Delete';
 
 /* End of file tags_lang.php */

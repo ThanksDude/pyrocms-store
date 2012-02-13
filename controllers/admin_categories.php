@@ -47,12 +47,12 @@ class Admin_categories extends Admin_Controller
 		$this->item_validation_rules = array(
 			array(
 				'field' => 'name',
-				'label' => 'name',
+				'label' => 'store:category:label:name',
 				'rules' => 'trim|max_length[255]|required'
 			),
 			array(
 				'field' => 'html',
-				'label' => 'html',
+				'label' => 'store:category:label:html',
 				'rules' => 'trim|max_length[1000]|required'
 			)
 		);
@@ -82,6 +82,7 @@ class Admin_categories extends Admin_Controller
 
 		$this->data->categories	= $categories;
 		$this->template
+			 ->title($this->module_details['name'], lang('store:category:title'))
 			 ->build('admin/categories/index', $this->data);
 	}
 
@@ -109,12 +110,12 @@ class Admin_categories extends Admin_Controller
 
 			if($this->categories_m->add_category($new_image_id)):
 
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_category_success_create'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:category:messages:success:create'), $this->input->post('name')));
 				redirect('admin/store/categories');
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_messages_category_error_create')));
+				$this->session->set_flashdata(array('error'=> lang('store:category:messages:error:create')));
 
 			endif;
 
@@ -136,7 +137,7 @@ class Admin_categories extends Admin_Controller
 			else:
 				
 				$this->template
-				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->title($this->module_details['name'], lang('store:category:title') . " - " . lang('store:category:title:add'))
 				 	 ->build('admin/categories/form', $this->data);
 				 	 
 			endif;
@@ -166,12 +167,12 @@ class Admin_categories extends Admin_Controller
 	
 			if($this->categories_m->update_category($categories_id, $new_image_id)):
 
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_category_success_edit'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:category:messages:success:edit'), $this->input->post('name')));
 				redirect('admin/store/categories');
 
 			else:
 
-				$this->session->set_flashdata(array('error'=> lang('store_messages_category_error_edit')));
+				$this->session->set_flashdata(array('error'=> lang('store:category:messages:error:edit')));
 
 			endif;
 
@@ -200,7 +201,7 @@ class Admin_categories extends Admin_Controller
 			else:
 			
 				$this->template
-				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->title($this->module_details['name'], lang('store:category:title') . " - " . lang('store:category:title:edit'))
 				 	 ->build('admin/categories/form', $this->data);
 
 			endif;
