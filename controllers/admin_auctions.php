@@ -22,11 +22,17 @@ class Admin_auctions extends Admin_Controller
     $this->load->library('unit_test');
 
     $this->unit->active(TRUE);
-
-    $this->load->language('general');
-    $this->load->language('messages');
-    $this->load->language('auctions');
-    $this->load->language('settings');
+		
+		$this->load->language('general');
+		$this->load->language('messages');
+		$this->load->language('dashboard');
+		$this->load->language('statistics');
+		$this->load->language('settings');
+		$this->load->language('categories');
+		$this->load->language('products');
+    	$this->load->language('auctions');
+		$this->load->language('tags');
+		$this->load->language('attributes');
 
     $this->load->model('categories_m');
     $this->load->model('products_m');

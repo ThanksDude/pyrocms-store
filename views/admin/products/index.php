@@ -59,8 +59,8 @@
 					<td class="align-center buttons buttons-small">
 					   <?php $title = 'title="'. ucfirst($product->category->name) . ' - ' . ucfirst($product->name) . '" '; ?>
 						<?php echo anchor('admin/store/preview/' . $product->category->slug . '/' . $product->slug, lang('store:products:buttons:preview'), $title . 'rel="preview" class="iframe btn green" target="_blank"'); ?>
-						<?php echo anchor('admin/store/edit_product/' . $product->products_id, lang('store:products:buttons:edit'), 'class="btn orange edit"'); ?>
-						<?php echo anchor('admin/store/delete_product/' . $product->products_id, lang('store:products:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
+						<?php echo anchor('admin/store/products/edit/' . $product->products_id, lang('store:products:buttons:edit'), 'class="btn orange edit"'); ?>
+						<?php echo anchor('admin/store/products/delete/' . $product->products_id, lang('store:products:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
 					</td>
 				</tr>
 			<?php } ?>

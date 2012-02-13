@@ -25,6 +25,11 @@ class Admin extends Admin_Controller
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');
+		$this->load->language('categories');
+		$this->load->language('products');
+    	$this->load->language('auctions');
+		$this->load->language('tags');
+		$this->load->language('attributes');
 
 		$this->load->model('store_m');
 		$this->load->model('categories_m');

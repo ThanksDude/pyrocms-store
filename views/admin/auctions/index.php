@@ -57,8 +57,8 @@
 					<td class="align-center buttons buttons-small">
 					   <?php $title = 'title="'. ucfirst($auction->category->name) . ' - ' . ucfirst($auction->name) . '" '; ?>
 						<?php echo anchor('admin/store/preview/' . $auction->category->slug . '/' . $auction->slug, lang('store_button_view'), $title . 'rel="preview" class="button preview" target="_blank"'); ?>
-						<?php echo anchor('admin/store/edit_auction/' . $auction->auctions_id, lang('store:auctions:buttons:edit'), 'class="edit_auction button"'); ?>
-						<?php echo anchor('admin/store/delete_auction/' . $auction->auctions_id, lang('store:auctions:buttons:delete'), array('class'=>'confirm button delete')); ?>
+						<?php echo anchor('admin/store/auctions/edit' . $auction->auctions_id, lang('store:auctions:buttons:edit'), 'class="edit_auction button"'); ?>
+						<?php echo anchor('admin/store/auctions/delete/' . $auction->auctions_id, lang('store:auctions:buttons:delete'), array('class'=>'confirm button delete')); ?>
 					</td>
 				</tr>
 			<?php } ?>
