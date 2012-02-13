@@ -194,7 +194,7 @@ class Admin_attributes extends Admin_Controller
 		redirect('admin/store/attributes');
 	}
 	
-	
+	//add attribute category
 	public function add_category($ajax = FALSE)
 	{
 		$this->form_validation->set_rules($this->item_validation_rules);
