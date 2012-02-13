@@ -13,18 +13,18 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_label_cart_qty']				= 'QTY';
-$lang['store_label_cart_name']				= 'Name';
-$lang['store_label_cart_description']		= 'Item Description';
-$lang['store_label_cart_price']				= 'Item Price';
-$lang['store_label_cart_subtotal']			= 'Sub-Total';
-$lang['store_label_cart_total']				= 'Total';
-$lang['store_label_cart_empty']				= 'Empty';
+$lang['store:cart:label:qty']				= 'QTY';
+$lang['store:cart:label:name']				= 'Name';
+$lang['store:cart:label:description']		= 'Item Description';
+$lang['store:cart:label:price']				= 'Item Price';
+$lang['store:cart:label:subtotal']			= 'Sub-Total';
+$lang['store:cart:label:total']				= 'Total';
+$lang['store:cart:label:empty']				= 'Empty';
 
 // BUTTONS ---------------------------------------------------------------------------------------
 
-$lang['store_button_cart_details']			= 'Details';
-$lang['store_button_cart_update_long']		= 'Update your Cart';
-$lang['store_button_cart_update_short']		= 'Update';
-$lang['store_button_cart_checkout_long']  = 'Proceed to Checkout';
-$lang['store_button_cart_checkout_short']	= 'Checkout';
+$lang['store:cart:button:details']			= 'Details';
+$lang['store:cart:button:update_long']		= 'Update your Cart';
+$lang['store:cart:button:update_short']		= 'Update';
+$lang['store:cart:button:checkout_long']	= 'Proceed to Checkout';
+$lang['store:cart:button:checkout_short']	= 'Checkout';

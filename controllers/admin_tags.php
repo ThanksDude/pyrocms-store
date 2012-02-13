@@ -47,7 +47,7 @@ class Admin_tags extends Admin_Controller
 		$this->item_validation_rules = array(
 			array(
 				'field' => 'name',
-				'label' => 'name',
+				'label' => 'store:tags:label:name',
 				'rules' => 'trim|max_length[255]|required'
 			)
 		);
@@ -71,7 +71,7 @@ class Admin_tags extends Admin_Controller
 		else:
 
 			$this->template
-				 ->title($this->module_details['name'], lang(''))
+				 ->title($this->module_details['name'], lang('store:tags:title'))
 				 ->build('admin/tags/index', $this->data);
 				 
 		endif;
@@ -86,13 +86,13 @@ class Admin_tags extends Admin_Controller
 			if($this->tags_m->create($this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_tags_success_create'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:add'), $this->input->post('name')));
 				redirect('admin/store/tags');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store_messages_tags_error_create')));
+				$this->session->set_flashdata(array('error'=> lang('store:tags:messages:error:add')));
 				redirect('admin/store/tags/add');
 
 			endif;
@@ -115,7 +115,7 @@ class Admin_tags extends Admin_Controller
 			else:
 				
 				$this->template
-				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->title($this->module_details['name'], lang('store:tags:title') . " - " . lang('store:tags:title:add'))
 				 	 ->build('admin/tags/form', $this->data);
 				 	 
 			endif;
@@ -135,13 +135,13 @@ class Admin_tags extends Admin_Controller
 			if($this->tags_m->update($tags_id, $this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_tags_success_edit'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:edit'), $this->input->post('name')));
 				redirect('admin/store/tags');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store_messages_tags_error_edit')));
+				$this->session->set_flashdata(array('error'=> lang('store:tags:messages:error:edit')));
 				redirect('admin/store/tags/edit' . $tags_id);
 
 			endif;
@@ -158,7 +158,7 @@ class Admin_tags extends Admin_Controller
 			else:
 			
 				$this->template
-				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->title($this->module_details['name'], lang('store:tags:title') . " - " . lang('store:tags:title:edit'))
 				 	 ->build('admin/tags/form', $this->data);
 
 			endif;

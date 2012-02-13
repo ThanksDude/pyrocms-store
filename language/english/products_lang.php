@@ -11,29 +11,53 @@
 
 /* =========================================== STORE =========================================== */
 
+// MENU ------------------------------------------------------------------------------------------
+
+$lang['store:menu:products']					= 'Products';
+
+// SHORTCUTS -------------------------------------------------------------------------------------
+
+$lang['store:shortcut:products_list']			= 'List Products';
+$lang['store:shortcut:product_add']				= 'Add Product';
+
+// TITLES ----------------------------------------------------------------------------------------
+
+
+
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_product_store_id']					= 'Store ID';
-$lang['store_product_product_id']				= 'Product ID';
-$lang['store_product_category']					= 'Category';
-$lang['store_product_name']						= 'Name';
-$lang['store_product_html']						= 'Description';
-$lang['store_product_meta_description']			= 'Meta Description';
-$lang['store_product_meta_keywords']			= 'Meta Keywords';
-$lang['store_product_attributes']				= 'Attributes';
-$lang['store_product_price']					= 'Price';
-$lang['store_product_discount']					= 'Discount';
-$lang['store_product_stock']					= 'Stock';
-$lang['store_product_limited']					= 'Limited Quantity';
-$lang['store_product_limited_used']				= 'Limited Used';
-$lang['store_product_images']					= 'Images';
-$lang['store_product_thumbnail']				= 'Thumbnail';
-$lang['store_product_allow_comments']			= 'Allow Comments';
-$lang['store_product_actions']					= 'Actions';
+$lang['store:product:label:store:id']					= 'Store ID';
+$lang['store:product:label:product:id']					= 'Product ID';
+$lang['store:product:label:category']					= 'Category';
+$lang['store:product:label:name']						= 'Name';
+$lang['store:product:label:html']						= 'Description';
+$lang['store:product:label:meta_description']			= 'Meta Description';
+$lang['store:product:label:meta_keywords']				= 'Meta Keywords';
+$lang['store:product:label:attributes']					= 'Attributes';
+$lang['store:product:label:price']						= 'Price';
+$lang['store:product:label:discount']					= 'Discount';
+$lang['store:product:label:stock']						= 'Stock';
+$lang['store:product:label:limited']					= 'Limited Quantity';
+$lang['store:product:label:limited_used']				= 'Limited Used';
+$lang['store:product:label:images']						= 'Images';
+$lang['store:product:label:thumbnail']					= 'Thumbnail';
+$lang['store:product:label:allow_comments']				= 'Allow Comments';
+$lang['store:product:label:actions']					= 'Actions';
+
+// MESSAGES --------------------------------------------------------------------------------------
+
+$lang['store:product:messages:information:no_items']	= 'No Products created';
+$lang['store:product:messages:success_create']			= 'Product sucessfully created';
+$lang['store:product:messages:success_edit']			= 'Product sucessfully edited';
+$lang['store:product:messages:success_delete']			= 'Product sucessfully deleted';
+$lang['store:product:messages:error_create']			= 'Product creation failed';
+$lang['store:product:messages:error_edit']				= 'Product editing failed';
+$lang['store:product:messages:error_delete']			= 'Product deletion failed';
 
 // TABS   ----------------------------------------------------------------------------------------
-$lang['store_product_general_tab']				= 'General';
-$lang['store_product_attributes_tab']			= 'Attributes';
-$lang['store_product_images_tab']				= 'Images';
-$lang['store_product_categories_tab']			= 'Category';
-$lang['store_product_tags_tab']					= 'Tags';
+
+$lang['store:product:tabs:general_tab']					= 'General';
+$lang['store:product:tabs:attributes_tab']				= 'Attributes';
+$lang['store:product:tabs:images_tab']					= 'Images';
+$lang['store:product:tabs:categories_tab']				= 'Category';
+$lang['store:product:tabs:tags_tab']					= 'Tags';

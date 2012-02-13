@@ -11,24 +11,37 @@
 
 /* =========================================== STORE =========================================== */
 
+// MENU ------------------------------------------------------------------------------------------
+
+$lang['store:menu:auctions']					= 'Auctions';
+
+// SHORTCUTS -------------------------------------------------------------------------------------
+
+$lang['store:shortcut:auctions_list']			= 'List Auctions';
+$lang['store:shortcut:auction_add']				= 'Add Auction';
+
+// TITLES ----------------------------------------------------------------------------------------
+
+
+
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_auction_store_id']					= 'Store ID';
-$lang['store_auction_auction_id']				= 'Auction ID';
-$lang['store_auction_category']					= 'Category';
-$lang['store_auction_name']						= 'Name';
-$lang['store_auction_html']						= 'Description';
-$lang['store_auction_meta_description']			= 'Meta Description';
-$lang['store_auction_meta_keywords']			= 'Meta Keywords';
-$lang['store_auction_attributes']				= 'Attributes';
-$lang['store_auction_price']					= 'Price';
-$lang['store_auction_start_at']					= 'Start time';
-$lang['store_auction_end_at']					= 'End time';
-$lang['store_auction_discount']					= 'Discount';
-$lang['store_auction_stock']					= 'Stock';
-$lang['store_auction_limited']					= 'Limited Quantity';
-$lang['store_auction_limited_used']				= 'Limited Used';
-$lang['store_auction_images']					= 'Images';
-$lang['store_auction_thumbnail']				= 'Thumbnail';
-$lang['store_auction_allow_comments']			= 'Allow Comments';
-$lang['store_auction_actions']					= 'Actions';
+$lang['store:auction:label:store_id']				= 'Store ID';
+$lang['store:auction:label:auction_id']				= 'Auction ID';
+$lang['store:auction:label:category']				= 'Category';
+$lang['store:auction:label:name']					= 'Name';
+$lang['store:auction:label:html']					= 'Description';
+$lang['store:auction:label:meta_description']		= 'Meta Description';
+$lang['store:auction:label:meta_keywords']			= 'Meta Keywords';
+$lang['store:auction:label:attributes']				= 'Attributes';
+$lang['store:auction:label:price']					= 'Price';
+$lang['store:auction:label:start_at']				= 'Start time';
+$lang['store:auction:label:end_at']					= 'End time';
+$lang['store:auction:label:discount']				= 'Discount';
+$lang['store:auction:label:stock']					= 'Stock';
+$lang['store:auction:label:limited']				= 'Limited Quantity';
+$lang['store:auction:label:limited_used']			= 'Limited Used';
+$lang['store:auction:label:images']					= 'Images';
+$lang['store:auction:label:thumbnail']				= 'Thumbnail';
+$lang['store:auction:label:allow_comments']			= 'Allow Comments';
+$lang['store:auction:label:actions']				= 'Actions';
