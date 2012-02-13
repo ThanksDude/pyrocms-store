@@ -34,7 +34,6 @@ class Customer_Place_bid extends Public_Controller
 			'user_id' => $this->current_user->id,
 			'auction_id' => $this->input->post('id'),
 			'price' => $this->input->post('price'),
-			'slug' => $this->input->post('slug'),
 			'date' => now()
 			);
 
@@ -60,13 +59,14 @@ class Customer_Place_bid extends Public_Controller
     $valid     	= $this->form_validation->run();
 
     if ( $valid ) {
-      echo true;
+      $this->bid_m->insert($post);
+      $this->session->set_flashdata('success', "success");
     }
     else {
-      echo false;
+      $this->session->set_flashdata(array('error'=> "error")); 
     }
 
-    redirect('store/auction/view/'.$post['slug']);
+    redirect('store/auction/view/'.$this->input->post('slug'));
   }
 }
 /* End of file customer_place_bid.php */

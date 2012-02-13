@@ -49,6 +49,8 @@ class Auctions_m extends MY_Model
 		array_pop($this->data);
 		unset($this->data['userfile']);
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
+		$this->data['start_at'] = strtotime($this->data['start_at']);
+		$this->data['end_at'] = strtotime($this->data['end_at']);
 		$this->data['images_id'] = $new_image_id;
 
 		return $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;

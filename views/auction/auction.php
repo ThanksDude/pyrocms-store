@@ -27,11 +27,20 @@
       <div><p><?php echo lang('store_auction_html'). " : ";?></p>
 	<?php echo $auction->html; ?>
       </div>
-      <div><p>
+      <div>
+<p>
 	  <span><?php echo lang('store_auction_price'). " : ";?>
 	    <?php echo $this->cart->format_number($auction->price); ?>
           </span>
       </p></div>
+
+      <div>
+<p>
+	  <span>Time
+	<?php echo standard_date('DATE_RSS', round(abs($auction->end_at - $auction->start_at))); ?>
+          </span>
+      </p></div>
+
       <div><p><?php echo lang('store_auction_stock'). " : " . $auction->stock ;?></p></div>
       
     </li>

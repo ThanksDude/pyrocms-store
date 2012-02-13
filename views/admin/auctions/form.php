@@ -60,13 +60,13 @@
 
       <li class="<?php echo alternator('even', ''); ?>">
 	<?php echo lang('store_auction_start_at','start_at'); ?>
-	<?php echo form_input('start_at',set_value('start_at',$auction->start_at),'class="text" maxlength="10" id="start_at"'); ?>
+   <?php echo form_input('start_at',set_value('start_at', date('d-m-Y', $auction->start_at)),'class="text" maxlength="10" id="start_at"'); ?>
 	<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
       </li>
 
       <li class="<?php echo alternator('even', ''); ?>">
 	<?php echo lang('store_auction_end_at','end_at'); ?>
-	<?php echo form_input('end_at',set_value('end_at',$auction->end_at),'class="text" maxlength="10" id="end_at"'); ?>
+   <?php echo form_input('end_at',set_value('end_at', date('d-m-Y', $auction->end_at)),'class="text" maxlength="10" id="end_at"'); ?>
 	<span class="required-icon tooltip"><?php echo lang('required_label');?></span>
       </li>
 

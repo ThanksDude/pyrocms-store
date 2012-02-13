@@ -2,8 +2,8 @@
 {
     $(document).ready(function(){
 
-	$('#begin_at').datepicker({  });
-	$('#end_at').datepicker({ dateFormat: 'dd/mm/YY' });
+	$('#start_at').datepicker({ dateFormat: 'dd-mm-yy' });
+	$('#end_at').datepicker({ dateFormat: 'dd-mm-yy' });
 
     });
 
