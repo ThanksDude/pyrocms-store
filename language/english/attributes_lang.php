@@ -13,12 +13,13 @@
 
 // MENU ------------------------------------------------------------------------------------------
 
-$lang['store:attributes:menu:attributes']				= 'Attributes';
+$lang['store:attributes:menu']							= 'Attributes';
 
 // SHORTCUTS -------------------------------------------------------------------------------------
 
 $lang['store:attributes:shortcut:list']					= 'List Attributes';
 $lang['store:attributes:shortcut:add']					= 'Add Attributes';
+
 // TITLES ----------------------------------------------------------------------------------------
 
 
@@ -36,3 +37,5 @@ $lang['store:attributes:messages:success:delete']		= 'Attribute sucessfully dele
 $lang['store:attributes:messages:error:create']			= 'Attribute creation failed';
 $lang['store:attributes:messages:error:edit']			= 'Attribute editing failed';
 $lang['store:attributes:messages:error:delete']			= 'Attribute deletion failed';
+
+/* End of file attributes_lang.php */

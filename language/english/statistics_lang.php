@@ -13,11 +13,14 @@
 
 // SHORTCUTS -------------------------------------------------------------------------------------
 
-$lang['store:shortcut:statistics']				= 'Statistics';
+$lang['store:statistics:shortcut']	= 'Statistics';
 
 // TITLES ----------------------------------------------------------------------------------------
 
-$lang['store:title:statistics']     	   		= 'Statistics';
+$lang['store:statistics:title']		= 'Statistics';
 
 // LABELS ----------------------------------------------------------------------------------------
+
 $lang[''] = '';
+
+/* End of file statistics_lang.php */

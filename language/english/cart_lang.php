@@ -28,3 +28,5 @@ $lang['store:cart:button:update_long']		= 'Update your Cart';
 $lang['store:cart:button:update_short']		= 'Update';
 $lang['store:cart:button:checkout_long']	= 'Proceed to Checkout';
 $lang['store:cart:button:checkout_short']	= 'Checkout';
+
+/* End of file cart_lang.php */

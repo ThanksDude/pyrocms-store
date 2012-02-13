@@ -2,4 +2,4 @@
 
 $lang['store.role_admin_store']	=	'Manage Online Store';
 
-/* End of file robots_lang.php */
+/* End of file permission_lang.php */

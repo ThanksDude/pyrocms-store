@@ -13,7 +13,7 @@
 
 // MENU ------------------------------------------------------------------------------------------
 
-$lang['store:tags:menu:tags']						= 'Tags';
+$lang['store:tags:menu']							= 'Tags';
 
 // SHORTCUTS -------------------------------------------------------------------------------------
 
@@ -39,3 +39,5 @@ $lang['store:tags:messages:success:delete']			= 'Tag sucessfully deleted';
 $lang['store:tags:messages:error:create']			= 'Tag creation failed';
 $lang['store:tags:messages:error:edit']				= 'Tag editing failed';
 $lang['store:tags:messages:error:delete']			= 'Tag deletion failed';
+
+/* End of file tags_lang.php */

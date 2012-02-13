@@ -50,3 +50,5 @@ $lang['store:category:messages:error:delete']			= 'Category deletion failed';
 // BUTTONS --------------------------------------------------------------------------------------
 
 $lang['store:category:button:add']						= 'Add category';
+
+/* End of file categories_lang.php */

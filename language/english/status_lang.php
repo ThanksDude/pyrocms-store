@@ -18,3 +18,5 @@ $lang['store:status:orders:cancel']				= 'Cancel';
 $lang['store:status:orders:awaiting_payment']	= 'Awaiting Payment';
 $lang['store:status:orders:payment_recieved']	= 'Payment Recieved';
 $lang['store:status:orders:order_complete']		= 'Order Complete';
+
+/* End of file status_lang.php */
