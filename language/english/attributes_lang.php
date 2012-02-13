@@ -19,6 +19,8 @@ $lang['store:attributes:menu']							= 'Attributes';
 
 $lang['store:attributes:shortcut:list']					= 'List Attributes';
 $lang['store:attributes:shortcut:add']					= 'Add Attributes';
+$lang['store:attributes:shortcut:list:category']		= 'List Category';
+$lang['store:attributes:shortcut:add:category']			= 'Add Category';
 
 // TITLES ----------------------------------------------------------------------------------------
 

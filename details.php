@@ -31,7 +31,7 @@ class Module_Store extends Module {
 			'backend'	=> TRUE,
 			'skip_xss'	=> TRUE,
 			'menu'		=> 'content',
-			'author'	=> 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey',
+			'author'	=> 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey - Marijan Greguric',
 		
 			'roles'		=> array(
 				'admin_store'
@@ -136,6 +136,17 @@ class Module_Store extends Module {
 					 	   'name'	=> 'store:attributes:shortcut:add',
 						   'uri'	=> 'admin/store/attributes/add',
 						   'class'	=> 'add'
+						)
+				    	,
+				    	array(
+				    			'name'	=> 'store:attributes:shortcut:add:category',
+				    			'uri'	=> 'admin/store/attributes/add_category',
+				    			'class'	=> 'add'
+				    	),
+						array(
+					 	   'name'	=> 'store:attributes:shortcut:list:category',
+						   'uri'	=> 'admin/store/attributes/category',
+						   'class'	=> 'list'
 						)
 					)
 				)
