@@ -11,6 +11,7 @@
 // admin
 $route['store/admin/categories(/:any)?']				= 'admin_categories$1';
 $route['store/admin/products(/:any)?']					= 'admin_products$1';
+$route['store/admin/orders(/:any)?']					= 'admin_orders$1';
 $route['store/admin/auctions(/:any)?']					= 'admin_auctions$1';
 $route['store/admin/attributes/categories(/:any)?']		= 'admin_attributes_categories$1';
 $route['store/admin/attributes(/:any)?']				= 'admin_attributes$1';
