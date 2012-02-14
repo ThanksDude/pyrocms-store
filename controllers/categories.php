@@ -34,9 +34,9 @@ class Categories extends Public_Controller
 			 ->append_metadata(js('store.js', 'store'));
 	}
 
-	public function index()
+	public function index($autions = FALSE)
 	{
-	  if (false):
+	  if($autions):
 	    redirect('store/categories/browse/top/tiles');
 	  else:
 	    redirect('store/categories/explore/top/tiles');
