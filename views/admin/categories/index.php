@@ -16,7 +16,7 @@
 	
 	<?php if ($categories): ?>
 
-		<?php echo form_open('admin/store/categories'); ?>
+		<?php echo form_open('admin/store/categories/delete'); ?>
     
         <table border="0" class="table-list">
             <thead>

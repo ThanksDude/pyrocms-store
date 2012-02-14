@@ -9,21 +9,21 @@
 **/
 ?>
 <section class="title">
-	<h4><?php echo lang('store:tags:title')?></h4>
+	<h4><?php echo lang('store:orders:title')?></h4>
 </section>
 
 <section class="item">
 	
-	<?php if ($tags): ?>
+	<?php if ($orders): ?>
 
-		<?php echo form_open('/admin/store/tags/delete'); ?>
+		<?php echo form_open('/admin/store/orders/delete'); ?>
     
         <table border="0" class="table-list">
             <thead>
                 <tr>
                     <th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-                    <th><?php echo lang('store:tags:label:name'); ?></th>
-                    <th width="320" class="align-center"><span><?php echo lang('store:tags:label:actions'); ?></span></th>
+                    <th><?php echo lang('store:orders:label:name'); ?></th>
+                    <th width="320" class="align-center"><span><?php echo lang('store:orders:label:actions'); ?></span></th>
                 </tr>
             </thead>
             <tfoot>
@@ -34,13 +34,13 @@
                 </tr>
             </tfoot>
             <tbody>
-                <?php foreach($tags as $tag) { ?>
+                <?php foreach($orders as $tag) { ?>
                     <tr>
-                        <td><?php echo form_checkbox('action_to[]', $tag->tags_id); ?></td>
+                        <td><?php echo form_checkbox('action_to[]', $tag->orders_id); ?></td>
                         <td><?php echo $tag->name; ?></td>
                         <td class="align-center buttons buttons-small">
-                            <?php echo anchor('/admin/store/tags/edit/' . $tag->tags_id, lang('store:tags:buttons:edit'), 'class="button edit"'); ?>
-                            <?php echo anchor('/admin/store/tags/delete/' . $tag->tags_id, lang('store:tags:buttons:delete'), array('class'=>'confirm button delete')); ?>
+                            <?php echo anchor('/admin/store/orders/edit/' . $tag->orders_id, lang('store:orders:buttons:edit'), 'class="button edit"'); ?>
+                            <?php echo anchor('/admin/store/orders/delete/' . $tag->orders_id, lang('store:orders:buttons:delete'), array('class'=>'confirm button delete')); ?>
                         </td>
                     </tr>
                 <?php } ?>
@@ -54,6 +54,6 @@
 		<?php echo form_close(); ?>
 
 	<?php else: ?>
-		<div class="no_data"><?php echo lang('store:tags:messages:information:no_items'); ?></div>
+		<div class="no_data"><?php echo lang('store:orders:messages:information:no_items'); ?></div>
 	<?php endif; ?>
 </section>

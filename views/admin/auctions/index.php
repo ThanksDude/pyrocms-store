@@ -15,7 +15,7 @@
 <section class="item">
 <?php if ($auctions): ?>
 
-	<?php echo form_open('admin/store/list_auctions'); ?>
+	<?php echo form_open('admin/store/auctions/delete'); ?>
 
 	<table border="0" class="table-list">
 		<thead>

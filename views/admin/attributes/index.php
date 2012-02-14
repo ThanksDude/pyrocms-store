@@ -16,7 +16,7 @@
 	
 	<?php if ($attributes): ?>
 
-		<?php echo form_open('/admin/store/attributes'); ?>
+		<?php echo form_open('/admin/store/attributes/delete'); ?>
     
         <table border="0" class="table-list">
             <thead>
