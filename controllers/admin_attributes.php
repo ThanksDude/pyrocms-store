@@ -33,6 +33,7 @@ class Admin_attributes extends Admin_Controller
     	$this->load->language('auctions');
 		$this->load->language('tags');
 		$this->load->language('attributes');
+		$this->load->language('attributes_categories');
 
 		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
 
