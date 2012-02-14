@@ -24,7 +24,6 @@ class Admin_auctions extends Admin_Controller
     $this->unit->active(TRUE);
 		
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');
