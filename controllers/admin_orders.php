@@ -9,7 +9,7 @@
 **/
 class Admin_orders extends Admin_Controller
 {
-	protected $section			= 'tags';
+	protected $section			= 'orders';
 	protected $upload_config;
 	protected $upload_path		= 'uploads/store/orders/';
 
