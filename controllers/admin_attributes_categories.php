@@ -83,14 +83,14 @@ class Admin_attributes_categories extends Admin_Controller
 			if($this->attributes_m->add_attribute($this->input->post())):
 		
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store:attributes:messages:success:add'), $this->input->post('name')));
-				redirect('admin/store/attributes');
+				$this->session->set_flashdata('success', sprintf(lang('store:attributes_categories:messages:success:add'), $this->input->post('name')));
+				redirect('admin/store/attributes/categories');
 			
 			else:
 		
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store:attributes:messages:error:add')));
-				redirect('admin/store/attributes/add');
+				$this->session->set_flashdata(array('error'=> lang('store:attributes_categories:messages:error:add')));
+				redirect('admin/store/attributes/categories/add');
 			
 			endif;
 	
@@ -105,16 +105,16 @@ class Admin_attributes_categories extends Admin_Controller
 			if($ajax):
 		
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/attributes/categories/form', $this->data, TRUE);
 			
 				echo $wysiwyg . $form;
 	
 			else:
 		
 				$this->template
-					 ->title($this->module_details['name'], lang('store:attributes:title') . " - " . lang('store:attributes:title:add'))
+					 ->title($this->module_details['name'], lang('store:attributes_categories:title') . " - " . lang('store:attributes_categories:title:add'))
 					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-					 ->build('admin/attributes/form', $this->data);
+					 ->build('admin/attributes/categories/form', $this->data);
 		
 			endif;
 	
@@ -133,14 +133,14 @@ class Admin_attributes_categories extends Admin_Controller
 			if($this->attributes_m->update($attributes_id, $this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store:attributes:messages:success:edit'), $this->input->post('name')));
-				redirect('admin/store/attributes');
+				$this->session->set_flashdata('success', sprintf(lang('store:attributes_categories:messages:success:edit'), $this->input->post('name')));
+				redirect('admin/store/attributes/categories');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store:attributes:messages:error:edit')));
-				redirect('admin/store/attributes/edit/'.$attributes_id);
+				$this->session->set_flashdata(array('error'=> lang('store:attributes_categories:messages:error:edit')));
+				redirect('admin/store/attributes/categories/edit/'.$attributes_id);
 				
 			endif;
 
@@ -149,16 +149,16 @@ class Admin_attributes_categories extends Admin_Controller
 			if($ajax):
 	
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/attributes/categories/form', $this->data, TRUE);
 			
 				echo $wysiwyg . $form;
 				
 			else:
 			
 				$this->template
-				 	 ->title($this->module_details['name'], lang('store:attributes:title') . " - " . lang('store:attributes:title:edit'))
+				 	 ->title($this->module_details['name'], lang('store:attributes_categories:title') . " - " . lang('store:attributes_categories:title:edit'))
 					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-					 ->build('admin/attributes/form', $this->data);
+					 ->build('admin/attributes/categories/form', $this->data);
 
 			endif;
 		
@@ -176,7 +176,7 @@ class Admin_attributes_categories extends Admin_Controller
 			$this->attributes_m->delete($attributes_id);
 
 		endif;
-		redirect('admin/store/attributes');
+		redirect('admin/store/attributes/categories');
 	}
 }
 /* End of file admin_attributes.php */
