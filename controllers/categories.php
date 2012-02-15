@@ -273,7 +273,7 @@ class Categories extends Public_Controller
    }// end build_sub_types
 	
 	
-	
+	//hello
 	public function explore($types = 'top', $views = 'tiles', $name = NULL)
 	{
 	  switch($types)
