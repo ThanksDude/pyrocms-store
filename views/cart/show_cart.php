@@ -22,7 +22,8 @@
 		<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
 		<div class="cart_items">
 			<div class="cart_item_qty"><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></div>
-			<div class="cart_item_name"><?php echo $items['name']; ?>
+			<div class="cart_item_name"><a href="<?php echo site_url(); ?>store/product/view/<?php echo str_replace(' ', '-', $items['name']); ?>/" 
+			 title="<?php echo $items['name']; ?>"><?php echo $items['name']; ?></a>
 				<div class="cart_item_name_options">
 					<?php if ($this->cart->has_options($items['rowid']) == TRUE) { ?>
 					<ul class="options_list">
