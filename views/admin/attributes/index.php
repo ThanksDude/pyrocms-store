@@ -39,8 +39,8 @@
                         <td><?php echo form_checkbox('action_to[]', $attribute->attributes_id); ?></td>
                         <td><?php echo $attribute->name; ?></td>
                         <td class="align-center buttons buttons-small">
-                            <?php echo anchor('/admin/store/attributes/edit/' . $attribute->attributes_id, lang('store:attributes:buttons:edit'), 'class="button edit"'); ?>
-                            <?php echo anchor('/admin/store/attributes/delete/' . $attribute->attributes_id, lang('store:attributes:buttons:delete'), array('class'=>'confirm button delete')); ?>
+                            <?php echo anchor('/admin/store/attributes/edit/' . $attribute->attributes_id, lang('store:attributes:buttons:edit'), 'class="btn orange edit"'); ?>
+                            <?php echo anchor('/admin/store/attributes/delete/' . $attribute->attributes_id, lang('store:attributes:buttons:delete'), array('class'=>'confirm red btn delete')); ?>
                         </td>
                     </tr>
                 <?php } ?>
