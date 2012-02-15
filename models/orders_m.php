@@ -7,10 +7,10 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Products_m extends MY_Model
+class Orders_m extends MY_Model
 {
-	protected $_table		= 'store_products';
-	protected $images_path	= 'uploads/store/products/';
+	protected $_table		= 'store_orders';
+	protected $images_path	= 'uploads/store/orders/';
 
 	public function __construct()
 	{
@@ -175,10 +175,10 @@ class Products_m extends MY_Model
 		endforeach;
 	}
 
-	public function build_order($gateway)
+	public function build_order()
 	{
 		$this->data = array(
-			'users_id'			=>	$this->current_user->id,
+			'users_id'			=>	$this->user->id,
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
 			'status'			=>	'0',
@@ -186,11 +186,8 @@ class Products_m extends MY_Model
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'payment_method'	=>	'0',
-			'payment_address'	=>	'0',
 			'shipping_method'	=>	'0',
-			'shipping_address'	=>	'0',
 			'shipping_cost'		=>	'0',
-			'amount'			=>	$this->cart->total(),
 		);
 
 		$this->db->insert('store_orders',$this->data);
@@ -200,7 +197,7 @@ class Products_m extends MY_Model
 
 			$this->data = array(
 				'orders_id'		=>	$this->order_id,
-				'users_id'		=>	$this->current_user->id,
+				'users_id'		=>	$this->user->id,
 				'products_id'	=>	$items['id'],
 				'number'		=>	$items['qty']
 			);
@@ -209,19 +206,19 @@ class Products_m extends MY_Model
 
 		endforeach;
 
-		redirect('/store/checkout/process/' . $gateway . '/' . $this->order_id . '/');
+		redirect('/store/checkout/process/' . $this->input->post('gateway') . '/' . $this->order_id . '/');
 	}
 
 	public function get_order($orders_id)
 	{
 		return $this->db
 					->where('orders_id',$orders_id)
-					->get('store_orders');
+					->get('store_orders_has_store_products');
 	}
 
 	public function get_orders_product_name($orders_id)
 	{
-		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_products')->result() as $this->order):
+		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_store_products')->result() as $this->order):
 
 			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $this->product):
 
@@ -234,7 +231,7 @@ class Products_m extends MY_Model
 
 	public function get_orders_product_price($orders_id)
 	{
-		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_products')->result() as $this->order):
+		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_store_products')->result() as $this->order):
 
 			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $this->product):
 

@@ -21,15 +21,16 @@ class Admin_products extends Admin_Controller
 		$this->load->library('store_settings');
 		
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');
 		$this->load->language('categories');
 		$this->load->language('products');
+		$this->load->language('orders');
     	$this->load->language('auctions');
 		$this->load->language('tags');
 		$this->load->language('attributes');
+		$this->load->language('attributes_categories');
 
 		$this->load->model('categories_m');
 		$this->load->model('products_m');

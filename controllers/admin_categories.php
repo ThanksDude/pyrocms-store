@@ -25,15 +25,16 @@ class Admin_categories extends Admin_Controller
 		$this->load->helper('date');
 		
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');
 		$this->load->language('categories');
 		$this->load->language('products');
+		$this->load->language('orders');
     	$this->load->language('auctions');
 		$this->load->language('tags');
 		$this->load->language('attributes');
+		$this->load->language('attributes_categories');
 
 		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
 

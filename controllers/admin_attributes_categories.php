@@ -7,9 +7,9 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Admin_tags extends Admin_Controller
+class Admin_attributes_categories extends Admin_Controller
 {
-	protected $section			= 'tags';
+	protected $section			= 'attributes';
 	protected $upload_config;
 	protected $upload_path		= 'uploads/store/categories/';
 
@@ -17,7 +17,7 @@ class Admin_tags extends Admin_Controller
 	{
 		parent::__construct();
 
-		$this->load->model('tags_m');
+		$this->load->model('attributes_m');
 		$this->load->model('products_m');
 		$this->load->model('images_m');
 		$this->load->library('form_validation');
@@ -25,7 +25,6 @@ class Admin_tags extends Admin_Controller
 		$this->load->helper('date');
 		
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');
@@ -55,8 +54,13 @@ class Admin_tags extends Admin_Controller
 		$this->item_validation_rules = array(
 			array(
 				'field' => 'name',
-				'label' => 'store:tags:label:name',
+				'label' => 'store:attributes:label:name',
 				'rules' => 'trim|max_length[255]|required'
+			),
+			array(
+				'field' => 'html',
+				'label' => 'store:attributes:label:html',
+				'rules' => 'trim|max_length[1000]|required'
 			)
 		);
 
@@ -68,90 +72,78 @@ class Admin_tags extends Admin_Controller
 
 	public function index($ajax = FALSE)
 	{
-		$tags = $this->tags_m->get_all();
-
-		$this->data->tags =& $tags;
-		if($ajax):
-
-			$list = $this->load->view('admin/tags/index', $this->data, TRUE);
-			echo $list;
-			
-		else:
-
-			$this->template
-				 ->title($this->module_details['name'], lang('store:tags:title'))
-				 ->build('admin/tags/index', $this->data);
-				 
-		endif;
+		
 	}
 
 	public function add($ajax = FALSE)
 	{
 		$this->form_validation->set_rules($this->item_validation_rules);
-
+	
 		if($this->form_validation->run()):
-
-			if($this->tags_m->create($this->input->post())):
-
-				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:add'), $this->input->post('name')));
-				redirect('admin/store/tags');
-
-			else:
-
-				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store:tags:messages:error:add')));
-				redirect('admin/store/tags/add');
-
-			endif;
-
-		else:
+			
+			unset($_POST['btnAction']);
+			if($this->attributes_m->add_attribute($this->input->post())):
 		
+				// ON SUCCESS
+				$this->session->set_flashdata('success', sprintf(lang('store:attributes_categories:messages:success:add'), $this->input->post('name')));
+				redirect('admin/store/attributes/categories');
+			
+			else:
+		
+				// ON ERROR
+				$this->session->set_flashdata(array('error'=> lang('store:attributes_categories:messages:error:add')));
+				redirect('admin/store/attributes/categories/add');
+			
+			endif;
+	
+		else:
+	
 			foreach ($this->item_validation_rules AS $rule):
 			
 				$this->data->{$rule['field']} = $this->input->post($rule['field']);
 			
 			endforeach;
-
-			if($ajax):
 	
+			if($ajax):
+		
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/tags/form', $this->data, TRUE);
-
+				$form		= $this->load->view('admin/attributes/categories/form', $this->data, TRUE);
+			
 				echo $wysiwyg . $form;
-				
+	
 			else:
-				
+		
 				$this->template
-				 	 ->title($this->module_details['name'], lang('store:tags:title') . " - " . lang('store:tags:title:add'))
-				 	 ->build('admin/tags/form', $this->data);
-				 	 
+					 ->title($this->module_details['name'], lang('store:attributes_categories:title') . " - " . lang('store:attributes_categories:title:add'))
+					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+					 ->build('admin/attributes/categories/form', $this->data);
+		
 			endif;
 	
 		endif;
 	}
 
-	public function edit($tags_id, $ajax = FALSE)
+	public function edit($attributes_id = 0, $ajax = FALSE)
 	{
-		$this->data = $this->tags_m->get($tags_id);
+		$this->data = $this->attributes_m->get($attributes_id);
 
 		$this->form_validation->set_rules($this->item_validation_rules);
-		
+
 		if($this->form_validation->run()):
 	
 			unset($_POST['btnAction']);
-			if($this->tags_m->update($tags_id, $this->input->post())):
+			if($this->attributes_m->update($attributes_id, $this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:edit'), $this->input->post('name')));
-				redirect('admin/store/tags');
+				$this->session->set_flashdata('success', sprintf(lang('store:attributes_categories:messages:success:edit'), $this->input->post('name')));
+				redirect('admin/store/attributes/categories');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store:tags:messages:error:edit')));
-				redirect('admin/store/tags/edit' . $tags_id);
-
+				$this->session->set_flashdata(array('error'=> lang('store:attributes_categories:messages:error:edit')));
+				redirect('admin/store/attributes/categories/edit/'.$attributes_id);
+				
 			endif;
 
 		else:
@@ -159,34 +151,35 @@ class Admin_tags extends Admin_Controller
 			if($ajax):
 	
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/tags/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/attributes/categories/form', $this->data, TRUE);
 			
 				echo $wysiwyg . $form;
 				
 			else:
 			
 				$this->template
-				 	 ->title($this->module_details['name'], lang('store:tags:title') . " - " . lang('store:tags:title:edit'))
-				 	 ->build('admin/tags/form', $this->data);
+				 	 ->title($this->module_details['name'], lang('store:attributes_categories:title') . " - " . lang('store:attributes_categories:title:edit'))
+					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
+					 ->build('admin/attributes/categories/form', $this->data);
 
 			endif;
-				 	 
+		
 		endif;
 	}
 
-	public function delete($tags_id)
+	public function delete($attributes_id)
 	{
 		if(isset($_POST['btnAction']) AND is_array($_POST['action_to'])):
 
-			$this->tags_m->delete_many($this->input->post('action_to'));
+			$this->attributes_m->delete_many($this->input->post('action_to'));
 
-		elseif(is_numeric($tags_id)):
+		elseif(is_numeric($attributes_id)):
 
-			$this->tags_m->delete($tags_id);
+			$this->attributes_m->delete($attributes_id);
 
 		endif;
-		redirect('admin/store/tags');
+		redirect('admin/store/attributes/categories');
 	}
 }
-/* End of file admin_tags.php */
-/* Location: ./store/controllers/admin_tags.php */
+/* End of file admin_attributes.php */
+/* Location: ./store/controllers/admin_attributes.php */

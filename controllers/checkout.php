@@ -41,7 +41,7 @@ class Checkout extends Public_Controller
 
 	public function purchase()
 	{
-		
+		$this->products_m->build_order('paypal');
 	}
 
 	public function review()

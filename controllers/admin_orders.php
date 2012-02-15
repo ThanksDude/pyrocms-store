@@ -7,11 +7,11 @@
  * @package 	pyrocms-store
  * @subpackage 	Store Module
 **/
-class Admin_tags extends Admin_Controller
+class Admin_orders extends Admin_Controller
 {
-	protected $section			= 'tags';
+	protected $section			= 'orders';
 	protected $upload_config;
-	protected $upload_path		= 'uploads/store/categories/';
+	protected $upload_path		= 'uploads/store/orders/';
 
 	public function __construct()
 	{
@@ -19,6 +19,7 @@ class Admin_tags extends Admin_Controller
 
 		$this->load->model('tags_m');
 		$this->load->model('products_m');
+		$this->load->model('orders_m');
 		$this->load->model('images_m');
 		$this->load->library('form_validation');
 		$this->load->library('store_settings');
@@ -73,14 +74,14 @@ class Admin_tags extends Admin_Controller
 		$this->data->tags =& $tags;
 		if($ajax):
 
-			$list = $this->load->view('admin/tags/index', $this->data, TRUE);
+			$list = $this->load->view('admin/orders/index', $this->data, TRUE);
 			echo $list;
 			
 		else:
 
 			$this->template
-				 ->title($this->module_details['name'], lang('store:tags:title'))
-				 ->build('admin/tags/index', $this->data);
+				 ->title($this->module_details['name'], lang('store:orders:title'))
+				 ->build('admin/orders/index', $this->data);
 				 
 		endif;
 	}
@@ -94,14 +95,14 @@ class Admin_tags extends Admin_Controller
 			if($this->tags_m->create($this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:add'), $this->input->post('name')));
-				redirect('admin/store/tags');
+				$this->session->set_flashdata('success', sprintf(lang('store:orders:messages:success:add'), $this->input->post('name')));
+				redirect('admin/store/orders');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store:tags:messages:error:add')));
-				redirect('admin/store/tags/add');
+				$this->session->set_flashdata(array('error'=> lang('store:orders:messages:error:add')));
+				redirect('admin/store/orders/add');
 
 			endif;
 
@@ -116,15 +117,15 @@ class Admin_tags extends Admin_Controller
 			if($ajax):
 	
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/tags/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/orders/form', $this->data, TRUE);
 
 				echo $wysiwyg . $form;
 				
 			else:
 				
 				$this->template
-				 	 ->title($this->module_details['name'], lang('store:tags:title') . " - " . lang('store:tags:title:add'))
-				 	 ->build('admin/tags/form', $this->data);
+				 	 ->title($this->module_details['name'], lang('store:orders:title') . " - " . lang('store:orders:title:add'))
+				 	 ->build('admin/orders/form', $this->data);
 				 	 
 			endif;
 	
@@ -143,14 +144,14 @@ class Admin_tags extends Admin_Controller
 			if($this->tags_m->update($tags_id, $this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:edit'), $this->input->post('name')));
-				redirect('admin/store/tags');
+				$this->session->set_flashdata('success', sprintf(lang('store:orders:messages:success:edit'), $this->input->post('name')));
+				redirect('admin/store/orders');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store:tags:messages:error:edit')));
-				redirect('admin/store/tags/edit' . $tags_id);
+				$this->session->set_flashdata(array('error'=> lang('store:orders:messages:error:edit')));
+				redirect('admin/store/orders/edit' . $tags_id);
 
 			endif;
 
@@ -159,15 +160,15 @@ class Admin_tags extends Admin_Controller
 			if($ajax):
 	
 				$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-				$form		= $this->load->view('admin/tags/form', $this->data, TRUE);
+				$form		= $this->load->view('admin/orders/form', $this->data, TRUE);
 			
 				echo $wysiwyg . $form;
 				
 			else:
 			
 				$this->template
-				 	 ->title($this->module_details['name'], lang('store:tags:title') . " - " . lang('store:tags:title:edit'))
-				 	 ->build('admin/tags/form', $this->data);
+				 	 ->title($this->module_details['name'], lang('store:orders:title') . " - " . lang('store:orders:title:edit'))
+				 	 ->build('admin/orders/form', $this->data);
 
 			endif;
 				 	 
@@ -185,8 +186,8 @@ class Admin_tags extends Admin_Controller
 			$this->tags_m->delete($tags_id);
 
 		endif;
-		redirect('admin/store/tags');
+		redirect('admin/store/orders');
 	}
 }
-/* End of file admin_tags.php */
-/* Location: ./store/controllers/admin_tags.php */
+/* End of file admin_orders.php */
+/* Location: ./store/controllers/admin_orders.php */

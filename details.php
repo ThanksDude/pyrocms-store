@@ -92,21 +92,32 @@ class Module_Store extends Module {
 					)
 				),
 			    'auctions' => array(
-						'name'		=> 'store:auctions:menu',
-						'uri'		=> 'admin/store/auctions',
-						'shortcuts'	=> array(
-									 array(
-									       'name'	=> 'store:auctions:shortcut:list',
-									       'uri'	=> 'admin/store/auctions',
-									       'class'	=> 'list'
-									       ),
-									 array(
-									       'name'	=> 'store:auctions:shortcut:add',
-									       'uri'	=> 'admin/store/auctions/add',
-									       'class'	=> 'add'
-									       )
-									 )
+					'name'		=> 'store:auctions:menu',
+					'uri'		=> 'admin/store/auctions',
+					'shortcuts'	=> array(
+						array(
+						'name'	=> 'store:auctions:shortcut:list',
+						'uri'	=> 'admin/store/auctions',
+						'class'	=> 'list'
 						),
+						array(
+						'name'	=> 'store:auctions:shortcut:add',
+						'uri'	=> 'admin/store/auctions/add',
+						'class'	=> 'add'
+						)
+					)
+				),
+			    'orders' => array(
+				    'name'		=> 'store:orders:menu',
+				    'uri'		=> 'admin/store/orders',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store:orders:shortcut:list',
+						   'uri'	=> 'admin/store/orders',
+						   'class'	=> 'list'
+						)
+					)
+				),
 			    'tags' => array(
 				    'name'		=> 'store:tags:menu',
 				    'uri'		=> 'admin/store/tags',
@@ -270,7 +281,7 @@ class Module_Store extends Module {
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 
-$this->db->query("
+		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_auctions') . "` (
 				`auctions_id` INT NOT NULL AUTO_INCREMENT ,
 				`categories_id` INT NOT NULL ,
@@ -368,17 +379,17 @@ $this->db->query("
 				`shipping_method` VARCHAR(45) NULL ,
 				`tax` FLOAT NULL ,
 				`shipping_cost` FLOAT NULL ,
+				`amount` FLOAT NULL ,
 				PRIMARY KEY (`orders_id`, `users_id`, `payment_address`, `shipping_address`) )
 			ENGINE = InnoDB;");
 
 		$this->db->query("
-			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_orders_has_store_products') . "` (
+			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_orders_has_products') . "` (
 				`orders_id` INT NOT NULL ,
 				`users_id` SMALLINT(5) UNSIGNED NOT NULL ,
 				`products_id` INT NOT NULL ,
-				`categories_id` INT NOT NULL ,
 				`number` INT NULL ,
-				PRIMARY KEY (`orders_id`, `users_id`, `products_id`, `categories_id`) )
+				PRIMARY KEY (`orders_id`, `users_id`, `products_id`) )
 			ENGINE = InnoDB;");
 		
 		$this->db->query("

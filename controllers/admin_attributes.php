@@ -25,15 +25,16 @@ class Admin_attributes extends Admin_Controller
 		$this->load->helper('date');
 		
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');
 		$this->load->language('categories');
 		$this->load->language('products');
+		$this->load->language('orders');
     	$this->load->language('auctions');
 		$this->load->language('tags');
 		$this->load->language('attributes');
+		$this->load->language('attributes_categories');
 
 		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
 
@@ -193,59 +194,6 @@ class Admin_attributes extends Admin_Controller
 		endif;
 		redirect('admin/store/attributes');
 	}
-	
-	//add attribute category
-	public function add_category($ajax = FALSE)
-	{
-		$this->form_validation->set_rules($this->item_validation_rules);
-	
-		if($this->form_validation->run()):
-	
-		if($this->attributes_m->add_attribute($this->input->post())):
-	
-		// ON SUCCESS
-		$this->session->set_flashdata('success', sprintf(lang('store:attributes:messages:success:add'), $this->input->post('name')));
-		redirect('admin/store/attributes');
-	
-		else:
-	
-		// ON ERROR
-		$this->session->set_flashdata(array('error'=> lang('store:attributes:messages:error:add')));
-		redirect('admin/store/attributes/add');
-	
-		endif;
-	
-		else:
-	
-		foreach ($this->item_validation_rules AS $rule):
-	
-		//$this->data->{$rule['field']} = $this->input->post($rule['field']);
-		$this->data->attribute->{$rule['field']} = $this->input->post($rule['field']);
-	
-		endforeach;
-	
-		if($ajax):
-	
-		$wysiwyg	= $this->load->view('fragments/wysiwyg', $this->data, TRUE);
-		$form		= $this->load->view('admin/attributes/form', $this->data, TRUE);
-	
-		echo $wysiwyg . $form;
-	
-		else:
-	
-		$this->template
-		->title($this->module_details['name'], lang('store:attributes:title') . " - " . lang('store:attributes:title:add'))
-		->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
-		->build('admin/attributes/form', $this->data);
-	
-		endif;
-	
-		endif;
-	}
-	
-	
-	
-	
 }
 /* End of file admin_attributes.php */
 /* Location: ./store/controllers/admin_attributes.php */
