@@ -11,7 +11,7 @@
 <div id="categories">
 	<ul>
 		<?php foreach($categories as $category) { ?>
-		<li><a href="<?php echo site_url('store/categories/browse/sub/tiles/'.str_replace(' ', '-', $category->name)); ?>/" 
+		<li><a href="<?php echo base_url('store/categories/browse/sub/tiles/'.str_replace(' ', '-', $category->name)); ?>/" 
 					title="<?php echo $category->name; ?>">	
 			<div>
 			<h4 class="category_title"><?php echo ucfirst($category->name); ?></h4>
@@ -20,7 +20,7 @@
 			<?php if(isset($category->image)) : ?>
 				<?php $name = $category->image->name; $id = $category->image->id; 
 						$extension = $category->image->extension; ?>					
-				<img src="<?php echo site_url('/uploads/store/categories/' . $name . $id . $extension);?>" alt="<?php echo $category->name; ?>" />
+				<img src="<?php echo base_url('/uploads/store/categories/' . $name . $id . $extension);?>" alt="<?php echo $category->name; ?>" />
 			<?php else : ?>
 				<?php echo ucfirst($category->name); ?>			
 			<?php endif; ?>
