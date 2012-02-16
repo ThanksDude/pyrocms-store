@@ -19,4 +19,14 @@ class Tags_m extends MY_Model
 		$this->load->library('store_settings');
 		$this->_store = $this->store_settings->item('store_id');
 	}
+	/**  
+	* Add Tag
+	* @param array of input
+	* @return true or false
+	*/	
+		public function add_tag($input)
+		{
+		   $insert_data['name'] =  $input['name'];
+		   return $this->db->insert($this->_table, $insert_data) ? $this->db->insert_id() : FALSE;
+		}
 }

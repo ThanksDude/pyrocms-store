@@ -26,7 +26,6 @@ class Admin_orders extends Admin_Controller
 		$this->load->helper('date');
 		
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('dashboard');
 		$this->load->language('statistics');
 		$this->load->language('settings');

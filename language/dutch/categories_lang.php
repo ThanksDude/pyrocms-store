@@ -13,13 +13,13 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_category_store_id']		= 'Winkel ID';
-$lang['store_category_category_id']		= 'Categorie';
-$lang['store_category_name']			= 'Naam';
-$lang['store_category_html']			= 'Omschrijving';
-$lang['store_category_items']			= 'Artikellen';
-$lang['store_category_price']			= 'Prijs';
-$lang['store_category_parent']			= 'Ouder';
-$lang['store_category_thumbnail']		= 'Thumbnail';
-$lang['store_category_images_id']		= 'Afbeeldingen';
-$lang['store_category_actions']			= 'Acties';
+$lang['store:category:label:store_id']		= 'Winkel ID';
+$lang['store:category:label:category_id']		= 'Categorie';
+$lang['store:category:label:name']			= 'Naam';
+$lang['store:category:label:html']			= 'Omschrijving';
+$lang['store:category:label:items']			= 'Artikellen';
+$lang['store:category:label:price']			= 'Prijs';
+$lang['store:category:label:parent']			= 'Ouder';
+$lang['store:category:label:thumbnail']		= 'Thumbnail';
+$lang['store:category:label:images_id']		= 'Afbeeldingen';
+$lang['store:category:label:actions']			= 'Acties';

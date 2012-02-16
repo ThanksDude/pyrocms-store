@@ -13,8 +13,8 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_status_new']					= 'Nieuw';
-$lang['store_status_cancel']				= 'Geannuleerd';
-$lang['store_status_awaiting_payment']		= 'Afwachtende Betaling';
-$lang['store_status_payment_recieved']		= 'Betaling Ontvangen';
-$lang['store_status_order_complete']		= 'Bestelling Afgerond';
+$lang['store:status:orders:new']				= 'Nieuw';
+$lang['store:status:orders:cancel']				= 'Geannuleerd';
+$lang['store:status:orders:awaiting_payment']	= 'Afwachtende Betaling';
+$lang['store:status:orders:payment_recieved']	= 'Betaling Ontvangen';
+$lang['store:status:orders:order_complete']		= 'Bestelling Afgerond';

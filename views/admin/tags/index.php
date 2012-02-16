@@ -39,8 +39,8 @@
                         <td><?php echo form_checkbox('action_to[]', $tag->tags_id); ?></td>
                         <td><?php echo $tag->name; ?></td>
                         <td class="align-center buttons buttons-small">
-                            <?php echo anchor('/admin/store/tags/edit/' . $tag->tags_id, lang('store:tags:buttons:edit'), 'class="button edit"'); ?>
-                            <?php echo anchor('/admin/store/tags/delete/' . $tag->tags_id, lang('store:tags:buttons:delete'), array('class'=>'confirm button delete')); ?>
+                            <?php echo anchor('/admin/store/tags/edit/' . $tag->tags_id, lang('store:tags:buttons:edit'), 'class="btn orange edit"'); ?>
+                            <?php echo anchor('/admin/store/tags/delete/' . $tag->tags_id, lang('store:tags:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
                         </td>
                     </tr>
                 <?php } ?>
