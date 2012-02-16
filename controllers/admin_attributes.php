@@ -139,7 +139,7 @@ class Admin_attributes extends Admin_Controller
 
 	public function edit($attributes_id = 0, $ajax = FALSE)
 	{
-		$this->data = $this->attributes_m->get($attributes_id);
+		$this->data->attribute = $this->attributes_m->get($attributes_id);
 
 		$this->form_validation->set_rules($this->item_validation_rules);
 

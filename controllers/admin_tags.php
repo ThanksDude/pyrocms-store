@@ -90,7 +90,7 @@ class Admin_tags extends Admin_Controller
 
 		if($this->form_validation->run()):
 
-			if($this->tags_m->create($this->input->post())):
+			if($this->tags_m->add_tag($this->input->post())):
 
 				// ON SUCCESS
 				$this->session->set_flashdata('success', sprintf(lang('store:tags:messages:success:add'), $this->input->post('name')));
@@ -108,7 +108,7 @@ class Admin_tags extends Admin_Controller
 		
 			foreach ($this->item_validation_rules AS $rule):
 			
-				$this->data->{$rule['field']} = $this->input->post($rule['field']);
+				$this->data->tag->{$rule['field']} = $this->input->post($rule['field']);
 			
 			endforeach;
 
@@ -132,7 +132,7 @@ class Admin_tags extends Admin_Controller
 
 	public function edit($tags_id, $ajax = FALSE)
 	{
-		$this->data = $this->tags_m->get($tags_id);
+		$this->data->tag = $this->tags_m->get($tags_id);
 
 		$this->form_validation->set_rules($this->item_validation_rules);
 		

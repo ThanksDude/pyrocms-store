@@ -10,7 +10,7 @@
 ?>
 
 <section class="title">
-  <h4><?php echo lang('store:auctions:title:'.$action);?></h4>
+  <h4><?php echo lang('store:auctions:title:'.$this->method);?></h4>
 </section>
 
 <section class="item">
