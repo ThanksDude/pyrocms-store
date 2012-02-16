@@ -18,7 +18,6 @@ class Categories extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
 
@@ -47,63 +46,18 @@ class Categories extends Public_Controller
 		endif;
 	}
 	
+
+
 	public function browse($types = 'top', $views = 'tiles', $name = NULL)
 	{
 		switch($types):
 		
 			case 'top':
 			
-				switch($views):
-				
-					case 'tiles':
-						
-						$categories = $this->categories_m->get_all();
-						foreach ($categories as $category):
-				
-							$image = $this->images_m->get_image($category->images_id);
-							
-							if($image):
-							 
-								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
-								$category->image = $image;
-							
-							endif;
-								
-						endforeach;
-				
-						$this->data->categories =	$categories;
-				
-						$this->template
-							 ->build('categories/index/tiles', $this->data);
+					$this->build_top_types("index", $views);
 
 					break;
 
-					case 'list':
-
-						$categories = $this->categories_m->get_all();
-						foreach ($categories as $category):
-
-							$image = $this->images_m->get_image($category->images_id);
-
-							if($image):
-
-								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
-								$category->image = $image;
-
-							endif;
-
-						endforeach;
-
-						$this->data->categories = $categories;	
-
-						$this->template
-							 ->build('categories/index/list', $this->data);
-
-					break;
-
-				endswitch;
-
-			break;
 
 			case 'sub':
 
@@ -113,95 +67,7 @@ class Categories extends Public_Controller
 
 				else:
 
-					switch($views):
-
-						case 'tiles':
-
-							$name = str_replace('-', ' ', $name);
-							$category = $this->categories_m->get_category_by_name($name);
-
-							if($category):
-
-								$products = $this->products_m->get_products($category->categories_id);
-
-								if($products):
-
-									foreach ($products as $product):
-
-										$image = $this->images_m->get_image($product->images_id);
-										if($image):
-										 
-											$this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
-											$product->image = $image;
-										
-										endif;
-
-									endforeach;
-
-									$this->data->products		= $products;
-									$this->data->category_name	= $category->name;
-						
-									$this->template
-										 ->build('categories/tiles', $this->data);
-						
-									else:
-									
-										redirect('store/categories/browse/top/tiles/'.$category->name);
-										
-									endif;
-								
-							else:
-							
-								redirect('store/categories/browse/top/tiles');
-							
-							endif;
-							
-						break;
-					
-						case 'list':
-							
-							$name = str_replace('-', ' ', $name);
-							$category = $this->categories_m->get_category_by_name($name);
-							
-							if($category):
-								
-								$products = $this->products_m->get_products($category->categories_id);
-								
-								if($products):
-								
-									foreach ($products as $product):
-										
-										$image = $this->images_m->get_image($product->images_id);
-										if($image):
-										 
-											$this->images_m->front_image_resize('uploads/store/products/', $image, "", 150, 120);	
-											$product->image = $image;
-										
-										endif;		
-									
-									endforeach;
-									
-									$this->data->products		= $products;
-									$this->data->category_name	= $category->name;
-						
-									$this->template
-										 ->build('categories/list', $this->data);
-						
-									else:
-									
-										redirect('store/categories/browse/top/list/'.$category->name);
-										
-									endif;
-								
-							else:
-							
-								redirect('store/categories/browse/top/list');
-							
-							endif;
-							
-						break;
-					
-					endswitch;
+					$this->build_sub_types($name, $views, 'browse');
 				
 				endif;
 			
@@ -212,147 +78,71 @@ class Categories extends Public_Controller
 
 	public function explore($types = 'top', $views = 'tiles', $name = NULL)
 	{
-		switch($types):
-		
-			case 'top':
-		
-				switch($views):
-		
-					case 'tiles':
-		
-						$categories = $this->categories_m->get_all();
-						foreach($categories as $category):
-		
-							$image = $this->images_m->get_image($category->images_id);
-		
-							if($image):
-		
-								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);
-								$category->image = $image;
-		
-							endif;
-		
-						endforeach;
-						
-						$this->data->categories =	$categories;
-		
-						$this->template
-							 ->build('categories/auction/tiles', $this->data);
-					break;
-		
-					case 'list':
-		
-						$categories = $this->categories_m->get_all();
-						foreach($categories as $category):
-		
-							$image = $this->images_m->get_image($category->images_id);
-							if($image):
-		
-								$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);	
-								$category->image = $image;
-		
-							endif;
-		
-						endforeach;
-		
-						$this->data->categories = $categories;	
-		
-						$this->template
-							 ->build('categories/auction/list', $this->data);
-					break;
-		
-				endswitch;
+	  switch($types)
+	  {
+	    case 'top':
+	    {
+		    $this->build_top_types("auction", $views);
+		    
+		    break;
+		    
+	    } /* top */
+
+	    case 'sub':
+	    {  
+			 if ( !$name )
+		    {
+		    	redirect('store/categories/explore/top/tiles');
+		  	 }
+			 else
+		  	 {
+				$this->build_sub_types($name, $views, 'explore');
+				
+				break;
+	       }
+
+	    }/* sub */
+
+	  }// end switch $types
+	  
+	}// end explore function
 	
-			case 'sub':
 
-				if(!$name):
 
-					redirect('store/categories/explore/top/tiles');
-
-				else:
-
-					switch($views):
-
-						case 'tiles':
-
-							$name = str_replace('-', ' ', $name);
-							$category = $this->categories_m->get_category_by_name($name);
-							
-							if($category):
-
-								$auctions = $this->auctions_m->get_auctions($category->categories_id);
-								if($auctions):
-
-									foreach($auctions as $auction):
-
-										$image = $this->images_m->get_image($auction->images_id);
-										if($image):
-
-											$this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);	
-											$auction->image = $image;
-
-										endif;
-
-									endforeach;
-									
-									$this->data->auctions		= $auctions;
-									$this->data->category_name	= $category->name;
-									$this->template
-										 ->build('categories/auction_tiles', $this->data);
-
-								else:
-
-									redirect('store/categories/explore/top/tiles/'.$category->name);
-									
-								endif;
-
-							else:
-
-								redirect('store/categories/explore/top/tiles');
-
-							endif;
-						
-						break;
-
-						case 'list':
-
-							$name = str_replace('-', ' ', $name);
-							$category = $this->categories_m->get_category_by_name($name);
+/////
+	private function build_top_types($directory, $view)
+	{
+		
+		$categories = $this->categories_m->get_all();
+		foreach ( $categories as $category )
+		{
+		  $image = $this->images_m->get_image($category->images_id);
+		  
+		  if ( $image )
+		  {
+			 $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);
+			 $category->image = $image;
+		  }
+		}
+		$this->data->categories =	$categories;
+		
+		$this->template->build('categories/'.$directory.'/'.$view, $this->data);	
+			
+	}// end build_top_types
 	
-							if($category):
-								
-								$auctions = $this->auctions_m->get_auctions($category->categories_id);
-								
-								if($auctions):
-									
-									foreach($auctions as $auction):
-										
-										$image = $this->images_m->get_image($auction->images_id);
-										if($image):
 	
-										$this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);	
-										$auction->image = $image;
+	private function build_sub_types($name, $view, $mode='explore')
+	{
+		
+	  $name = str_replace('-', ' ', $name);
+	  $category = $this->categories_m->get_category_by_name($name);
+	  
+	  if ( $category )
+	  {
 	
-										endif;
+		 $auctions = $this->auctions_m->get_auctions($category->categories_id);
 	
-									endforeach;
-	
-									$this->data->auctions      	= $auctions;
-									$this->data->category_name	= $category->name;
-	
-									$this->template
-					 					 ->build('categories/auction_list', $this->data);
-	
-								else:
-	
-									redirect('store/categories/explore/top/list/'.$category->name);
-	
-								endif;
-	
-							else:
-	
-								redirect('store/categories/explore/top/list');
-	
+<<<<<<< HEAD
 							endif;
 							
 						break;
@@ -365,6 +155,49 @@ class Categories extends Public_Controller
 		
 		endswitch;
 	}
+=======
+		 if ( $auctions )
+		 {	    
+	  		foreach ( $auctions as $auction )
+	 		{
+	   		$image = $this->images_m->get_image($auction->images_id);
+	   
+	   		if ( $image )
+				{
+	  				$this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);	
+	  				$auction->image = $image;
+				}
+	 		}
+	  
+	  		$this->data->auctions		= $auctions;
+	  		$this->data->category_name	= $category->name;
+	  
+	  		if($mode == 'explore')
+	  		{
+	  			$this->template->build('categories/auction_'.$view, $this->data);
+	  		}
+	  		else 
+	  		{
+	  			$this->template->build('categories/'.$view, $this->data);
+	  		}
+		 
+		 }
+		
+		else
+		 {
+			redirect('store/categories/'.$mode.'/top/'.$view.'/'.$category->name);
+		 }
+	  }
+	 	  
+	  else
+	  {
+		 redirect('store/categories/'.$mode.'/top/'.$view);
+	  }	 		
+		
+   }// end build_sub_types
+
+
+>>>>>>> a6c584c885b3ca3b60ee6d2ed25c631133cfa9cf
 }
 /* End of file categories.php */
 /* Location: ./store/controllers/categories.php */

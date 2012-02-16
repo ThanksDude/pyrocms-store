@@ -19,7 +19,6 @@ class Checkout extends Public_Controller
 		$this->load->library('merchant');
 
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
 

@@ -26,7 +26,7 @@
 	</div>
 	<div>
 	  <h5><?php $num_products = $this->auctions_m->count_auctions($category->categories_id); 
-	    if ($num_products == 0) { $output = "no items"; }
+	    if ($num_products == 0) { $output = "no auctions"; }
 	    else if($num_products == 1) { $output = $num_products . " item"; }
 	    else { $output = $num_products . " items"; } 
 	    echo $output; 

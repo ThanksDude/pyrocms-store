@@ -13,16 +13,16 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_label_cart_qty']				= 'Aantal';
-$lang['store_label_cart_name']				= 'Naam';
-$lang['store_label_cart_description']		= 'Artikel omschrijving';
-$lang['store_label_cart_price']				= 'Artikel Prijs';
-$lang['store_label_cart_subtotal']			= 'Sub-Total';
-$lang['store_label_cart_total']				= 'Total';
-$lang['store_label_cart_empty']				= 'Leeg';
+$lang['store:cart:label:qty']				= 'Aantal';
+$lang['store:cart:label:name']				= 'Naam';
+$lang['store:cart:label:description']		= 'Artikel omschrijving';
+$lang['store:cart:label:price']				= 'Artikel Prijs';
+$lang['store:cart:label:subtotal']			= 'Sub-Total';
+$lang['store:cart:label:total']				= 'Total';
+$lang['store:cart:label:empty']				= 'Leeg';
 
 // BUTTONS ---------------------------------------------------------------------------------------
 
-$lang['store_button_cart_details']			= 'Details';
-$lang['store_button_cart_update_long']		= 'Update uw winkelmand';
-$lang['store_button_cart_update_short']		= 'Update';
+$lang['store:cart:button:details']			= 'Details';
+$lang['store:cart:button:update_long']		= 'Update uw winkelmand';
+$lang['store:cart:button:update_short']		= 'Update';

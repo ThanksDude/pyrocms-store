@@ -13,10 +13,10 @@
 	<?php echo form_open('/store/cart/update_cart/'); ?>
 	<?php echo form_hidden('redirect', current_url()); ?>
 	<div id="cart_header">
-		<div id="cart_header_qty"><?php echo $this->lang->line('store_label_cart_qty'); ?></div>
-		<div id="cart_header_name"><?php echo $this->lang->line('store_label_cart_name'); ?></div>
-		<div id="cart_header_price"><?php echo $this->lang->line('store_label_cart_price'); ?></div>
-		<div id="cart_header_subtotal"><?php echo $this->lang->line('store_label_cart_subtotal'); ?></div>
+		<div id="cart_header_qty"><?php echo $this->lang->line('store:cart:label:qty'); ?></div>
+		<div id="cart_header_name"><?php echo $this->lang->line('store:cart:label:name'); ?></div>
+		<div id="cart_header_price"><?php echo $this->lang->line('store:cart:label:price'); ?></div>
+		<div id="cart_header_subtotal"><?php echo $this->lang->line('store:cart:label:subtotal'); ?></div>
 	</div>
 	<?php $i=1; foreach($this->cart->contents() as $items) { ?>
 		<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
@@ -43,21 +43,21 @@
 		<div id="cart_footer">
 			<div id="cart_footer">&nbsp;</div>
 			<div id="cart_footer_">&nbsp;</div>
-			<div id="cart_footer_label_total"><?php echo $this->lang->line('store_label_cart_total'); ?></div>
+			<div id="cart_footer_label_total"><?php echo $this->lang->line('store:cart:label:total'); ?></div>
 			<div id="cart_footer_text_total"><?php echo $this->cart->format_number($this->cart->total()); ?></div>
 		</div>
 		
 		<div id="cart_controls_update">
-			<?php echo form_submit('update', $this->lang->line('store_button_cart_update'),'id="cart_control_update"'); ?>
+			<?php echo form_submit('update', $this->lang->line('store:cart:button:update_short'),'id="cart_control_update"'); ?>
 		</div>
 	<?php echo form_close(); ?>
 		<div id="cart_controls_checkout">
 			<?php echo form_open('/store/checkout/purchase/'); ?>
-				<?php echo form_submit('checkout', $this->lang->line('store_button_cart_checkout'),'id="cart_control_checkout"'); ?>
+				<?php echo form_submit('checkout', $this->lang->line('store:cart:button:checkout_short'),'id="cart_control_checkout"'); ?>
 			<?php echo form_close(); ?>
 		</div>
         <div class="divider"></div>
 	<?php } else { ?>
-		<?php echo $this->lang->line('store_label_cart_empty'); ?>
+		<?php echo $this->lang->line('store:cart:label:empty'); ?>
 	<?php } ?>
 </div>
