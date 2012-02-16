@@ -34,12 +34,17 @@ class Store extends Public_Controller
 			 ->append_metadata(js('store.js', 'store'));
 	}
 
-	public function index()
+	public function index($autions = FALSE)
 	{
-	  if (false):
-	    redirect('store/categories/browse/top/tiles');
-	  else:
-	    redirect('store/categories/explore/top/tiles');
-	  endif;
+
+		if($autions):
+
+			redirect('store/categories/explore/top/tiles');
+
+		else:
+
+			redirect('store/categories/browse/top/tiles');
+
+		endif;
 	}
 }

@@ -210,7 +210,6 @@ class Categories extends Public_Controller
 		endswitch;
 	}
 
-
 	public function explore($types = 'top', $views = 'tiles', $name = NULL)
 	{
 		switch($types):
@@ -355,15 +354,15 @@ class Categories extends Public_Controller
 								redirect('store/categories/explore/top/list');
 	
 							endif;
-
+							
 						break;
-						
-					endswitch;
 					
-				endif;
+					endswitch;
 				
-			break;
+				endif;
 			
+			break;
+		
 		endswitch;
 	}
 }
