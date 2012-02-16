@@ -13,5 +13,5 @@
 
 // Attributes ----------------------------------------------------------------------------------------
 
-$lang['store_attribute_name']	= 'Naam';
-$lang['store_attribute_html']	= 'Omschrijving';
+$lang['store:attributes:label:name']	= 'Naam';
+$lang['store:attributes:label:html']	= 'Omschrijving';

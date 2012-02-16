@@ -63,14 +63,14 @@ $lang['store_title_tag_edit']						= 'Tag Bewerken';
 
 // CHOICES --------------------------------------------------------------------------------------
 
-$lang['store_choice_yes']							= 'Ja';
-$lang['store_choice_no']							= 'Nee';
+$lang['store:forms:choice:yes']							= 'Ja';
+$lang['store:forms:choice:no']							= 'Nee';
 
 // BUTTONS --------------------------------------------------------------------------------------
-$lang['store_button_add_category']					= 'Categorie Toevoegen';
-$lang['store_button_add_product']					= 'Product Toevoegen';
-$lang['store_button_edit']							= 'Bewerken';
-$lang['store_button_view']							= 'Voorbeeld';
-$lang['store_button_delete']						= 'Verwijderen';
-$lang['store_button_backup_data']					= 'Data Backuppen';
-$lang['store_button_restore_data']					= 'Data Herstellen';
+$lang['store:button:add_category']					= 'Categorie Toevoegen';
+$lang['store:button:add_product']					= 'Product Toevoegen';
+$lang['store:button:edit']							= 'Bewerken';
+$lang['store:button:view']							= 'Voorbeeld';
+$lang['store:button:delete']						= 'Verwijderen';
+$lang['store:button:backup_data']					= 'Data Backuppen';
+$lang['store:button:restore_data']					= 'Data Herstellen';

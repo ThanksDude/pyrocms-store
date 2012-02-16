@@ -13,10 +13,10 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_label_store_name']				= 'Naam';
-$lang['store_label_active']					= 'Actief';
-$lang['store_label_allow_comments']			= 'Commentaar Toestaan';
-$lang['store_label_currency']				= 'Valuta';
-$lang['store_label_item_per_page']			= 'Artikelen per Pagina';
-$lang['store_label_display_tax']			= 'Toon BTW';
-$lang['store_label_display_stock']			= 'Toon voorraad';
+$lang['store:dashboard:label:store_name']				= 'Naam';
+$lang['store:dashboard:label:active']					= 'Actief';
+$lang['store:dashboard:label:allow_comments']			= 'Commentaar Toestaan';
+$lang['store:dashboard:label:currency']				= 'Valuta';
+$lang['store:dashboard:label:item_per_page']			= 'Artikelen per Pagina';
+$lang['store:dashboard:label:display_tax']			= 'Toon BTW';
+$lang['store:dashboard:label:display_stock']			= 'Toon voorraad';
