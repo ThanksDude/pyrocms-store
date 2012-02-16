@@ -11,7 +11,7 @@
 <div id="categories">
   <ul>
     <?php foreach($categories as $category) { ?>
-    <li><a href="<?php echo site_url('store/categories/explore/sub/tiles/'.str_replace(' ', '-', $category->name)); ?>/" 
+    <li><a href="<?php echo base_url('store/categories/explore/sub/tiles/'.str_replace(' ', '-', $category->name)); ?>/" 
 	   title="<?php echo $category->name; ?>">	
 	<div>
 	  <h4 class="category_title"><?php echo ucfirst($category->name); ?></h4>
