@@ -24,15 +24,31 @@
 	<img src="<?php echo base_url();?>uploads/store/auctions/<?php echo $name . $id. '_large' . $extension;?>" alt="<?php echo $auction->name; ?>" />
 	<?php endif; ?>				
       </div>
-      <div><p><?php echo lang('store_auction_html'). " : ";?></p>
+      <div><p><?php echo lang('store:auctions:label:html'). " : ";?></p>
 	<?php echo $auction->html; ?>
       </div>
       <div><p>
-	  <span><?php echo lang('store_auction_price'). " : ";?>
+	  <span><?php echo lang('store:auctions:label:price'). " : ";?>
 	    <?php echo $this->cart->format_number($auction->price); ?>
           </span>
       </p></div>
-      <div><p><?php echo lang('store_auction_stock'). " : " . $auction->stock ;?></p></div>
+      <div><p>
+      	  <span><?php echo lang('store:auctions:label:end_at'). " : ";?>
+      		<?php echo unix_to_human($auction->end_at, TRUE, 'us'); ?>
+      		 </span>
+     </p></div>
+      	  
+    <div><p>
+    	<span><?php echo lang('store:auctions:label:remaining'). " : ";?>
+      		<?php 
+      		$now = time();
+      		echo timespan($now, $auction->end_at);?>
+      	</span>
+    </p></div>
+      	  
+      	 
+      
+      <div><p><?php echo lang('store:auctions:label:stock'). " : " . $auction->stock ;?></p></div>
       
     </li>
   </ul>
