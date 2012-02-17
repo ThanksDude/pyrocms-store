@@ -102,8 +102,8 @@
       
       <li class="<?php echo alternator('', 'even'); ?>">
 		<label for="allow_comments"><?php echo lang('store:auctions:label:allow_comments','allow_comments'); ?></label>
-        <div class="input"><?php echo form_radio('allow_comments','1',TRUE).$this->lang->line('store:forms:choice:yes'); ?></div>
-        <div class="input"><?php echo form_radio('allow_comments','0',FALSE).$this->lang->line('store:forms:choice:no'); ?></div>
+        <div class="input"><?php echo form_radio('allow_comments','1',($auction->allow_comments == 1)).' '.$this->lang->line('store:forms:choice:yes'); ?></div>
+        <div class="input"><?php echo form_radio('allow_comments','0',($auction->allow_comments == 0)).' '.$this->lang->line('store:forms:choice:no'); ?></div>
       </li>
 
     </ul>

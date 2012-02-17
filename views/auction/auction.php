@@ -67,5 +67,9 @@
     </li>
     <?php echo form_close(); ?>
   </ul>
-	<?php echo display_comments($auction->auctions_id, 'store_auction'); ?>
+	<?php 
+		if($auction->allow_comments) {
+			echo display_comments($auction->auctions_id, 'store_auction'); 
+		}
+	?>
 </div>
