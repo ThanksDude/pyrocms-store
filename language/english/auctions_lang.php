@@ -48,6 +48,8 @@ $lang['store:auctions:label:thumbnail']				= 'Thumbnail';
 $lang['store:auctions:label:allow_comments']		= 'Allow Comments';
 $lang['store:auctions:label:actions']				= 'Actions';
 $lang['store:auctions:label:remaining']				= 'Time Remaining';
+$lang['store:auctions:label:ended']				    = 'This Auction has Ended';
+
 
 
 // MESSAGES --------------------------------------------------------------------------------------

@@ -10,6 +10,9 @@
 ?>
 <div id="auction">
   <ul>
+  
+  <?php echo form_open('/store/customer_place_bid/' . $auction->auctions_id . '/'); ?>
+  <?php echo form_hidden('redirect', current_url()); ?>
     <li>
       <div>
 	<h2><?php echo $auction->name; ?></h2>
@@ -33,16 +36,27 @@
           </span>
       </p></div>
       <div><p>
+       <span>
+      <?php echo form_input('bid',$this->cart->format_number($auction->price)) . form_submit('','Place Bid'); ?>
+      </span>
+      </p></div>
+      <div><p>
       	  <span><?php echo lang('store:auctions:label:end_at'). " : ";?>
       		<?php echo unix_to_human($auction->end_at, TRUE, 'us'); ?>
       		 </span>
      </p></div>
       	  
     <div><p>
-    	<span><?php echo lang('store:auctions:label:remaining'). " : ";?>
-      		<?php 
-      		$now = time();
-      		echo timespan($now, $auction->end_at);?>
+    	<span>
+    	<?php 
+    		$now = time();
+    		if($auction->end_at>$now) {
+    			echo lang('store:auctions:label:remaining'). " : "; 
+      			echo timespan($now, $auction->end_at);
+      		} else {
+	      		echo lang('store:auctions:label:ended');
+      		}
+      	?>
       	</span>
     </p></div>
       	  
@@ -51,6 +65,7 @@
       <div><p><?php echo lang('store:auctions:label:stock'). " : " . $auction->stock ;?></p></div>
       
     </li>
+    <?php echo form_close(); ?>
   </ul>
 	<?php echo display_comments($auction->auctions_id, 'store_auction'); ?>
 </div>

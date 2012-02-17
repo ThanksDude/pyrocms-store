@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * Comments model
+ * Bid model
  *
  * @package	PyroCMS
  * @subpackage	Comments Module
  * @category	Models
  * @author	Phil Sturgeon - PyroCMS Dev Team
  */
-class Comments_m extends MY_Model
+class Bid_m extends MY_Model
 {
     /**
      * Get a comment based on the ID
