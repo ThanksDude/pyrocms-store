@@ -48,6 +48,11 @@ margin: 2px 0px 0px 0px;
 float: left; }
 
 
+/* auction view */
+#auction li { list-style: none; }
+#auction li h2 { padding: 0px; }
+
+#auction form div { padding: 5px; clear: both; }
 
 
 /* **************************************************** */
