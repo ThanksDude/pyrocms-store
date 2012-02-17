@@ -67,7 +67,7 @@
 					</td>
 					<td class="align-center buttons buttons-small">
 					   <?php $title = 'title="'. ucfirst($auction->category->name) . ' - ' . ucfirst($auction->name) . '" '; ?>
-						<?php echo anchor('admin/store/preview/' . $auction->category->slug . '/' . $auction->slug, lang('store:auctions:buttons:preview'), $title . 'rel="preview" class="btn green preview" target="_blank"'); ?>
+						<?php echo anchor('store/auction/view/' . $auction->slug, lang('store:auctions:buttons:preview'), $title . 'rel="preview" class="btn green preview" target="_blank"'); ?>
 						<?php echo anchor('admin/store/auctions/edit/' . $auction->auctions_id, lang('store:auctions:buttons:edit'), 'class="edit_auction btn orange"'); ?>
 						<?php echo anchor('admin/store/auctions/delete/' . $auction->auctions_id, lang('store:auctions:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
 					</td>
