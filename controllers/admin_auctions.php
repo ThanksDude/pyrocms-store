@@ -148,13 +148,13 @@ class Admin_auctions extends Admin_Controller
 			
 			if($this->auctions_m->add_auction($new_image_id)):
 	
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_auction_success_create'),
+				$this->session->set_flashdata('success', sprintf(lang('store:messages:auction:success:create'),
 				$this->input->post('name')));
 				redirect('admin/store/auctions');
 	
 			else:
 	
-				$this->session->set_flashdata(array('error'=> lang('store_messages_auction_error_create')));
+				$this->session->set_flashdata(array('error'=> lang('store:messages:auction:error:create')));
 				
 			endif;
 			
@@ -178,7 +178,7 @@ class Admin_auctions extends Admin_Controller
 		$this->data->auction->thumbnail_id		= NULL;
 		
 		// Error report
-		echo $this->unit->report();
+		// echo $this->unit->report();
 		
 		$this->template
 		->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
@@ -207,7 +207,7 @@ class Admin_auctions extends Admin_Controller
 			
 				if($this->auctions_m->update_auction($auctions_id, $new_image_id)):
 					
-					$this->session->set_flashdata('success', sprintf(lang('store_messages_auction_success_edit'), $this->input->post('name')));
+					$this->session->set_flashdata('success', sprintf(lang('store:messages:auction:success:edit'), $this->input->post('name')));
 					$auction		= $this->auctions_m->get_auction($auctions_id);
 					$category_name	= $this->categories_m->get_category($auction->categories_id)->name;
 					$route			= 'admin/store/category/' . str_replace(' ', '-', $category_name);
@@ -215,7 +215,7 @@ class Admin_auctions extends Admin_Controller
 		
 				else:
 		
-					$this->session->set_flashdata(array('error'=> lang('store_messages_auction_error_edit')));
+					$this->session->set_flashdata(array('error'=> lang('store:messages:auction:error:edit')));
 				
 				endif;
 				
@@ -233,7 +233,7 @@ class Admin_auctions extends Admin_Controller
 			endif;
 		
 			$this->data->categories		= $this->products_m->make_categories_dropdown($auction->categories_id);
-			$this->data->action		= 'edit';
+			$this->data->action			= 'edit';
 			$this->data->auction		= $auction;
 			$this->data->auction_image	= $auction_image;
 		

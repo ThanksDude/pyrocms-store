@@ -81,8 +81,8 @@
 			
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="allow_comments"><?php echo lang('store:products:label:allow_comments','allow_comments'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_radio('allow_comments','1',TRUE).$this->lang->line('store_choice_yes'); ?></div>
-				<div class="input"><?php echo form_radio('allow_comments','0',FALSE).$this->lang->line('store_choice_no'); ?></div>
+				<div class="input"><?php echo form_radio('allow_comments','1',TRUE).$this->lang->line('store:forms:choice:yes'); ?></div>
+				<div class="input"><?php echo form_radio('allow_comments','0',FALSE).$this->lang->line('store:forms:choice:no'); ?></div>
 			</li>
 		</ul>
 		</fieldset>
