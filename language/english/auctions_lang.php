@@ -62,5 +62,7 @@ $lang['store:auctions:messages:error:delete']			= 'Auction deletion failed';
 
 $lang['store:auctions:buttons:edit']				= 'Edit';
 $lang['store:auctions:buttons:delete']				= 'Delete';
+$lang['store:auctions:buttons:preview']					= 'Preview';
+
 
 /* End of file auctions_lang.php */
