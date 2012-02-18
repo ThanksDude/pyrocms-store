@@ -24,6 +24,7 @@ $lang['store:orders:shortcut:list']					= 'List Orders';
 $lang['store:orders:title']							= 'Orders';
 $lang['store:orders:title:add']						= 'Add';
 $lang['store:orders:title:edit']					= 'Edit';
+$lang['store:orders:title:view']					= 'View';
 
 // LABELS ----------------------------------------------------------------------------------------
 
@@ -33,7 +34,13 @@ $lang['store:orders:label:actions']					= 'Actions';
 $lang['store:orders:label:invoice_nr']				= 'Invoice Number';
 $lang['store:orders:label:amount']				    = 'Amount';
 $lang['store:orders:label:status']				    = 'Status';
-$lang['store:orders:label:user']				    = 'User';
+$lang['store:orders:label:user']				    = 'Users Name';
+$lang['store:orders:label:items']				    = 'Items';
+$lang['store:orders:label:shipping_address']	    = 'Shipping Address';
+$lang['store:orders:label:shipping_method']	        = 'Shipping Method';
+$lang['store:orders:label:shipping_cost']	        = 'Shipping Cost';
+
+
 
 
 // MESSAGES --------------------------------------------------------------------------------------

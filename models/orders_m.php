@@ -213,34 +213,79 @@ class Orders_m extends MY_Model
 	{
 		return $this->db
 					->where('orders_id',$orders_id)
-					->get('store_orders_has_store_products');
+					->limit(1)
+					->get('store_orders')
+					->row();
+
 	}
 
 	public function get_orders_product_name($orders_id)
 	{
-		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_store_products')->result() as $this->order):
+		$this->products = array();
+		foreach($this->db->where('orders_id',$orders_id)->get('store_orders_has_products')->result() as $this->order):
 
-			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $this->product):
-
-				return $this->product->name;
-
+			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $product):
+				$this->products[]=$product->name;
+			
 			endforeach;
 
 		endforeach;
+		
+		return $this->products;
+
 	}
 
 	public function get_orders_product_price($orders_id)
 	{
-		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_store_products')->result() as $this->order):
+		$this->prices = array();
+		foreach($this->db->where('orders_id',$orders_id)->get('store_orders_has_products')->result() as $this->order):
 
-			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $this->product):
+			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $product):
 
-				return $this->product->price;
+				$this->prices[]=$product->price;
 
 			endforeach;
 
 		endforeach;
+		
+		return $this->prices;
+
 	}
+	
+	public function get_orders_product_quantities($orders_id)
+	{
+		$this->quantities = array();
+		foreach($this->db->where('orders_id',$orders_id)->get('store_orders_has_products')->result() as $this->order):
+	
+			$this->quantities[]=$this->order->number;
+		
+		endforeach;
+		
+		return $this->quantities;
+	
+	}
+	
+	public function get_orders_product_all($orders_id)
+	{
+		$this->products = array();
+		foreach($this->db->where('orders_id',$orders_id)->get('store_orders_has_products')->result() as $this->order):
+			$item = array();
+			$item['quantities'] = $this->order->number;
+			
+			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $product):
+				
+				$item['name']=$product->name;
+				$item['price']=$product->price;
+	
+			endforeach;
+			$this->products[] = $item;
+		endforeach;
+		
+		return $this->products;
+	
+	}
+	
+	
 
 	public function get_orders_users($users_id)
 	{
