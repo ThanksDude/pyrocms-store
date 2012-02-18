@@ -165,6 +165,7 @@ class Admin_products extends Admin_Controller
 			$this->data->product->limited_used		= 0;
 			$this->data->product->images_id			= NULL;
 			$this->data->product->thumbnail_id		= NULL;
+			$this->data->product->allow_comments	= 1;
 
 			$this->template
 				 ->title($this->module_details['name'], lang('store:products:title') . " - " . lang('store:products:title:add'))
