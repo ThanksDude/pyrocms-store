@@ -28,6 +28,7 @@ class Products_m extends MY_Model
 		$this->data = $this->input->post();
 		array_pop($this->data);
 		unset($this->data['userfile']);
+		unset($this->data['tags_id']); //still need to add the tags to database on save
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
 		
 		if(!($new_image_id == 0)):
@@ -48,6 +49,7 @@ class Products_m extends MY_Model
 		$this->data = $this->input->post();
 		array_pop($this->data);
 		unset($this->data['userfile']);
+		unset($this->data['tags_id']); //still need to add the tags to database on save
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
 		$this->data['images_id'] = $new_image_id;
 
