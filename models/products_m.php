@@ -21,6 +21,8 @@ class Products_m extends MY_Model
 		
 		$this->load->model('images_m');
 		$this->load->model('files/file_m');
+		$this->load->model('tags_m');
+
 	}
 
 	public function update_product($products_id, $new_image_id=0)
@@ -28,8 +30,14 @@ class Products_m extends MY_Model
 		$this->data = $this->input->post();
 		array_pop($this->data);
 		unset($this->data['userfile']);
-		unset($this->data['tags_id']); //still need to add the tags to database on save
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
+		
+		if(isset($this->data['tags_id'])):
+			$this->tags_m->update_products_tags($products_id, $this->data['tags_id']);
+			unset($this->data['tags_id']);
+		else:
+			$this->tags_m->delete_products_tags($products_id);
+		endif;
 		
 		if(!($new_image_id == 0)):
 
@@ -49,11 +57,20 @@ class Products_m extends MY_Model
 		$this->data = $this->input->post();
 		array_pop($this->data);
 		unset($this->data['userfile']);
-		unset($this->data['tags_id']); //still need to add the tags to database on save
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
 		$this->data['images_id'] = $new_image_id;
-
-		return $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
+		
+		
+		if(isset($this->data['tags_id'])):
+			$products_tags = $this->data['tags_id'];
+			unset($this->data['tags_id']);
+			$products_id = $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
+			$this->tags_m->add_products_tags($products_id, $products_tags);
+		else:
+			$products_id = $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
+		endif;
+		
+		return $products_id;
 	}
 
 	public function delete_product($products_id)

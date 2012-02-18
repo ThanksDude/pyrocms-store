@@ -150,7 +150,7 @@ class Admin_products extends Admin_Controller
 
 			$this->data->categories					= $this->products_m->make_categories_dropdown(0);
 			$this->data->tags						= $this->tags_m->make_tags_list();
-			$this->data->selected_tags				= $this->tags_m->get_selected_tags(0);
+			$this->data->selected_tags				= $this->tags_m->get_products_tags(0);
 			$this->data->action						= 'add';
 			$this->data->product->categories_id		= NULL;
 			$this->data->product->name				= NULL;
@@ -221,7 +221,7 @@ class Admin_products extends Admin_Controller
 
 			$this->data->categories		= $this->products_m->make_categories_dropdown($product->categories_id);
 			$this->data->tags			= $this->tags_m->make_tags_list();
-			$this->data->selected_tags	= $this->tags_m->get_selected_tags($products_id);
+			$this->data->selected_tags	= $this->tags_m->get_products_tags($products_id);
 			$this->data->action			= 'edit';
 			$this->data->product		= $product;
 			$this->data->product_image	= $product_image;

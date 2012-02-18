@@ -148,7 +148,7 @@
 			</li>
 			<li class="<?php echo alternator('', 'even'); ?>">
 					<label for="tags_id"><?php echo lang('store:products:label:tags'); ?></label>
-					<div class="input"><?php echo form_multiselect('tags_id', $tags, set_value('tags_id', $selected_tags), 'class="width-15 text" maxlength="50"'); ?></div>
+					<div class="input"><?php echo form_multiselect('tags_id[]', $tags, set_value('tags_id', $selected_tags), 'class="width-15 text" maxlength="50"'); ?></div>
 				</li>
 			
 	       </ul>
