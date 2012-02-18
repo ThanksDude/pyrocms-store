@@ -190,7 +190,6 @@ class Admin_auctions extends Admin_Controller
 		$this->load->library('upload', $this->upload_config);
 		
 		if($this->form_validation->run('edit_auction')):
-
 			if($this->upload->do_upload('userfile')):
 	
 				$image_file = $this->upload->data();
@@ -198,28 +197,27 @@ class Admin_auctions extends Admin_Controller
 				if($image_file):
 		
 					$new_image_id = $this->images_m->add_image($image_file, 'auction');
-	
-				else:
-		
+				endif;
+			else:
 					$new_image_id = 0;
-		
-				endif;
-			
-				if($this->auctions_m->update_auction($auctions_id, $new_image_id)):
-					
-					$this->session->set_flashdata('success', sprintf(lang('store:messages:auction:success:edit'), $this->input->post('name')));
-					$auction		= $this->auctions_m->get_auction($auctions_id);
-					$category_name	= $this->categories_m->get_category($auction->categories_id)->name;
-					$route			= 'admin/store/category/' . str_replace(' ', '-', $category_name);
-					redirect($route);
-		
-				else:
-		
-					$this->session->set_flashdata(array('error'=> lang('store:messages:auction:error:edit')));
-				
-				endif;
-				
 			endif;
+			
+			if($this->auctions_m->update_auction($auctions_id, $new_image_id)):
+				
+				$this->session->set_flashdata('success', sprintf(lang('store:messages:auction:success:edit'), $this->input->post('name')));
+				$auction		= $this->auctions_m->get_auction($auctions_id);
+				$category_name	= $this->categories_m->get_category($auction->categories_id)->name;
+				//$route			= 'admin/store/category/' . str_replace(' ', '-', $category_name); 
+				//untill Categories lists both auctions and products
+				$route 			='admin/store/auctions/';
+				redirect($route);
+	
+			else:
+	
+				$this->session->set_flashdata(array('error'=> lang('store:messages:auction:error:edit')));
+			
+			endif;
+				
 			
 		else:
 
