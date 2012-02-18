@@ -30,6 +30,11 @@ $lang['store:orders:title:edit']					= 'Edit';
 $lang['store:orders:label:store_id']				= 'Store ID';
 $lang['store:orders:label:name']					= 'Name';
 $lang['store:orders:label:actions']					= 'Actions';
+$lang['store:orders:label:invoice_nr']				= 'Invoice Number';
+$lang['store:orders:label:amount']				    = 'Amount';
+$lang['store:orders:label:status']				    = 'Status';
+$lang['store:orders:label:user']				    = 'User';
+
 
 // MESSAGES --------------------------------------------------------------------------------------
 
@@ -43,6 +48,7 @@ $lang['store:orders:messages:error:delete']			= 'Order deletion failed';
 
 // BUTTONS --------------------------------------------------------------------------------------
 
+$lang['store:orders:buttons:view']					= 'View';
 $lang['store:orders:buttons:edit']					= 'Edit';
 $lang['store:orders:buttons:delete']				= 'Delete';
 

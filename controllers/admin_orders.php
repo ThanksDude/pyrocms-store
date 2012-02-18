@@ -68,9 +68,9 @@ class Admin_orders extends Admin_Controller
 
 	public function index($ajax = FALSE)
 	{
-		$tags = $this->tags_m->get_all();
+		$orders = $this->orders_m->get_all();
 
-		$this->data->tags =& $tags;
+		$this->data->orders =& $orders;
 		if($ajax):
 
 			$list = $this->load->view('admin/orders/index', $this->data, TRUE);
