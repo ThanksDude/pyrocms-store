@@ -47,6 +47,8 @@ $lang['store:products:label:images']					= 'Images';
 $lang['store:products:label:thumbnail']					= 'Thumbnail';
 $lang['store:products:label:allow_comments']			= 'Allow Comments';
 $lang['store:products:label:actions']					= 'Actions';
+$lang['store:products:label:tags']					    = 'Tags';
+
 
 // MESSAGES --------------------------------------------------------------------------------------
 
