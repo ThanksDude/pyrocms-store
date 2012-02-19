@@ -25,6 +25,7 @@
                     <th><?php echo lang('store:orders:label:invoice_nr'); ?></th>
                     <th><?php echo lang('store:orders:label:user'); ?></th>
                     <th><?php echo lang('store:orders:label:amount'); ?></th>
+                    <th><?php echo lang('store:orders:label:shipping_cost'); ?></th>
                     <th><?php echo lang('store:orders:label:status'); ?></th>
                     <th width="320" class="align-center"><span><?php echo lang('store:orders:label:actions'); ?></span></th>
                 </tr>
@@ -41,8 +42,12 @@
                     <tr>
                         <td><?php echo form_checkbox('action_to[]', $order->orders_id); ?></td>
                         <td><?php echo $order->invoice_nr; ?></td>
-                        <td><?php echo $order->users_id; ?></td>
-                        <td><?php echo $order->amount; ?></td>
+                        <td>
+                        <?php $users_name = $this->orders_m->get_orders_users($order->users_id);
+                                echo $users_name;?>
+                        </td>
+                        <td>$<?php echo $order->amount; ?></td>
+                        <td>$<?php echo $order->shipping_cost; ?></td>
                         <td>
                         <?php  $status = $this->orders_m->get_orders_status($order->orders_id);                        
                                 echo lang('store:status:orders:'.$status->status_name); ?>
