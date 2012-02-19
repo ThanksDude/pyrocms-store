@@ -31,5 +31,25 @@ class Attributes_m extends MY_Model
 	   return $this->db->insert($this->_table, $insert_data) ? $this->db->insert_id() : FALSE;
 	}
 	
+	public function make_attributes_list()
+		{
+			$attributes = $this->db->get('store_attributes');
+		
+			if($attributes->num_rows() == 0):
+		
+				return array();
+		
+			else:
+				$this->data  = array();
+				foreach($attributes->result() as $attribute):
+					$this->data[$attribute->attributes_id] = $attribute->name;
+				endforeach;
+		
+				return $this->data;
+		
+			endif;
+		
+		
+		}
 	
 }

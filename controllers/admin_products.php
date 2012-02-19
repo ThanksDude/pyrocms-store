@@ -36,6 +36,7 @@ class Admin_products extends Admin_Controller
 		$this->load->model('products_m');
 		$this->load->model('images_m');
 		$this->load->model('tags_m');
+		$this->load->model('attributes_m');
 
 		$this->load->helper('date');
 
@@ -150,6 +151,7 @@ class Admin_products extends Admin_Controller
 
 			$this->data->categories					= $this->products_m->make_categories_dropdown(0);
 			$this->data->tags						= $this->tags_m->make_tags_list();
+			$this->data->attributes		= $this->attributes_m->make_attributes_list();
 			$this->data->selected_tags				= $this->tags_m->get_products_tags(0);
 			$this->data->action						= 'add';
 			$this->data->product->categories_id		= NULL;
@@ -221,7 +223,7 @@ class Admin_products extends Admin_Controller
 			endif;
 
 			$this->data->categories		= $this->products_m->make_categories_dropdown($product->categories_id);
-			$this->data->attributes		= $this->products_m->make_attributes_dropdown($product->attributes_id);
+			$this->data->attributes		= $this->attributes_m->make_attributes_list();
 			$this->data->tags			= $this->tags_m->make_tags_list();
 			$this->data->selected_tags	= $this->tags_m->get_products_tags($products_id);
 			$this->data->action			= 'edit';
