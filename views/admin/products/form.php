@@ -105,9 +105,10 @@
 		<div class="form_inputs" id="store-attribute-tab">
 		<fieldset>
 	       <ul>
+	       <li>This will have to be changed to multiselect</li>
 	       	<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="attributes_id"><?php echo lang('store:products:label:attributes','attributes_id'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_input('attributes_id',set_value('attributes_id',$product->attributes_id),'class="width-15 text" maxlength="50"'); ?></div>
+				<div class="input"><?php echo form_dropdown('attributes_id', $attributes , set_value('attributes_id', $product->attributes_id), 'class="width-15 text" maxlength="50"'); ?></div>
 			</li>
 	       </ul>
 	    </fieldset>

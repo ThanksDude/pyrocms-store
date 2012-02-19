@@ -221,6 +221,7 @@ class Admin_products extends Admin_Controller
 			endif;
 
 			$this->data->categories		= $this->products_m->make_categories_dropdown($product->categories_id);
+			$this->data->attributes		= $this->products_m->make_attributes_dropdown($product->attributes_id);
 			$this->data->tags			= $this->tags_m->make_tags_list();
 			$this->data->selected_tags	= $this->tags_m->get_products_tags($products_id);
 			$this->data->action			= 'edit';

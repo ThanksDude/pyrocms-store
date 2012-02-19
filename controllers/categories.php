@@ -141,28 +141,10 @@ class Categories extends Public_Controller
 	  {
 	
 		 $auctions = $this->auctions_m->get_auctions($category->categories_id);
-<<<<<<< HEAD
-	
-<<<<<<< HEAD
-							endif;
-							
-						break;
-					
-					endswitch;
-				
-				endif;
-			
-			break;
-		
-		endswitch;
-	}
-=======
-		 if ( $auctions )
-=======
+
 		 $products = $this->products_m->get_products($category->categories_id);
 		
 		 if ( $auctions || $products )
->>>>>>> 872b87486af6e5d1766fb0ea62e39cf6ccc50c12
 		 {	    
 	  		foreach ( $auctions as $auction )
 	 		{
@@ -214,8 +196,6 @@ class Categories extends Public_Controller
 		
    }// end build_sub_types
 
-
->>>>>>> a6c584c885b3ca3b60ee6d2ed25c631133cfa9cf
 }
 /* End of file categories.php */
 /* Location: ./store/controllers/categories.php */

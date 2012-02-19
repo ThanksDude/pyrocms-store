@@ -133,6 +133,55 @@ class Products_m extends MY_Model
 		return $data;
 	}
 
+	public function make_attributes_dropdown($selected_id=0)
+	{
+		$this->load->model('attributes_m');
+		$attributes = $this->db->get('store_attributes');
+		if($selected_id):
+
+			$selected_cat = $this->attributes_m->get($selected_id);
+
+		endif;
+
+		if($attributes->num_rows() == 0):
+
+		  	return array();
+
+		else:
+
+			if(isset($selected_cat)):
+
+				$data  = array( $selected_cat->attributes_id => $selected_cat->name);
+
+			else:
+
+				$data  = array('0'=>'Select');
+
+			endif;
+
+			foreach($attributes->result() as $attribute):
+
+				if(isset($selected_cat)):
+
+					if(!($selected_cat->name == $attribute->name)):
+
+						$data[$attribute->attributes_id] = $attribute->name;
+
+					endif;
+
+				else:
+
+					$data[$attribute->attributes_id] = $attribute->name;
+
+				endif;
+
+			endforeach;
+
+		endif;
+
+		return $data;
+	}
+
 	public function count_products($categories_id)
 	{
 		return $this->count_by('categories_id', $categories_id);
