@@ -53,13 +53,25 @@
 										else { $output = "-------"; }
 										echo $output;  
 							?></td>
-								<td><?php echo $this->products_m->count_products($category->categories_id); ?></td>
+						<td>
+                            <?php 
+                                $count = $this->products_m->count_products($category->categories_id); 
+                                if ($count == 0)
+                                {
+                                   echo lang('store:category:label:none'); 
+                                }
+                                else
+                                {
+                                    echo $count;
+                                }
+                            ?>
+                        </td>
                         <td><?php echo $category->categories_id; ?></td>
                         <td>
                             <?php 
                                 if($category->parent_id==0)
                                 {
-                                    echo lang('store:category:label:no_parent');
+                                    echo lang('store:category:label:none');
                                 } 
                                 else 
                                 {
