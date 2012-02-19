@@ -25,6 +25,7 @@
 				<th><?php echo lang('store:auctions:label:name'); ?></th>
 				<th><?php echo lang('store:auctions:label:category'); ?></th>
 				<th><?php echo lang('store:auctions:label:price'); ?></th>
+				<th><?php echo lang('store:auctions:label:remaining'); ?></th>
 				<th width="320" class="align-center"><span><?php echo lang('store:auctions:label:actions'); ?></span></th>
 			</tr>
 		</thead>
@@ -54,9 +55,19 @@
 							echo $output;  
 					?></td>
 					<td><?php echo $auction->price; ?></td>
+					<td>
+					<?php 
+						$now = time();
+						if($auction->end_at>$now) {
+				  			echo timespan($now, $auction->end_at);
+				  		} else {
+					  		echo lang('store:auctions:label:ended_short');
+				  		}
+					?>
+					</td>
 					<td class="align-center buttons buttons-small">
 					   <?php $title = 'title="'. ucfirst($auction->category->name) . ' - ' . ucfirst($auction->name) . '" '; ?>
-						<?php echo anchor('admin/store/preview/' . $auction->category->slug . '/' . $auction->slug, lang('store:auctions:buttons:preview'), $title . 'rel="preview" class="btn green preview" target="_blank"'); ?>
+						<?php echo anchor('store/auction/view/' . $auction->slug, lang('store:auctions:buttons:preview'), $title . 'rel="preview" class="btn green preview" target="_blank"'); ?>
 						<?php echo anchor('admin/store/auctions/edit/' . $auction->auctions_id, lang('store:auctions:buttons:edit'), 'class="edit_auction btn orange"'); ?>
 						<?php echo anchor('admin/store/auctions/delete/' . $auction->auctions_id, lang('store:auctions:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
 					</td>

@@ -37,4 +37,9 @@
 		</li>
 		<?php echo form_close(); ?>
 	</ul>
+	<?php 
+		if($product->allow_comments) {
+			echo display_comments($product->products_id, 'store_product'); 
+		}
+	?>
 </div>

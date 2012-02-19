@@ -22,7 +22,11 @@
             <thead>
                 <tr>
                     <th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-                    <th><?php echo lang('store:orders:label:name'); ?></th>
+                    <th><?php echo lang('store:orders:label:invoice_nr'); ?></th>
+                    <th><?php echo lang('store:orders:label:user'); ?></th>
+                    <th><?php echo lang('store:orders:label:amount'); ?></th>
+                    <th><?php echo lang('store:orders:label:shipping_cost'); ?></th>
+                    <th><?php echo lang('store:orders:label:status'); ?></th>
                     <th width="320" class="align-center"><span><?php echo lang('store:orders:label:actions'); ?></span></th>
                 </tr>
             </thead>
@@ -34,13 +38,24 @@
                 </tr>
             </tfoot>
             <tbody>
-                <?php foreach($orders as $tag) { ?>
+                <?php foreach($orders as $order) { ?>
                     <tr>
-                        <td><?php echo form_checkbox('action_to[]', $tag->orders_id); ?></td>
-                        <td><?php echo $tag->name; ?></td>
+                        <td><?php echo form_checkbox('action_to[]', $order->orders_id); ?></td>
+                        <td><?php echo $order->invoice_nr; ?></td>
+                        <td>
+                        <?php $users_name = $this->orders_m->get_orders_users($order->users_id);
+                                echo $users_name;?>
+                        </td>
+                        <td>$<?php echo $order->amount; ?></td>
+                        <td>$<?php echo $order->shipping_cost; ?></td>
+                        <td>
+                        <?php  $status = $this->orders_m->get_orders_status($order->orders_id);                        
+                                echo lang('store:status:orders:'.$status->status_name); ?>
+                        </td>
                         <td class="align-center buttons buttons-small">
-                            <?php echo anchor('/admin/store/orders/edit/' . $tag->orders_id, lang('store:orders:buttons:edit'), 'class="button edit"'); ?>
-                            <?php echo anchor('/admin/store/orders/delete/' . $tag->orders_id, lang('store:orders:buttons:delete'), array('class'=>'confirm button delete')); ?>
+                        <?php echo anchor('/admin/store/orders/view/' . $order->orders_id, lang('store:orders:buttons:view'), 'class="btn green view"'); ?>
+                            <?php echo anchor('/admin/store/orders/edit/' . $order->orders_id, lang('store:orders:buttons:edit'), 'class="btn orange edit"'); ?>
+                            <?php echo anchor('/admin/store/orders/delete/' . $order->orders_id, lang('store:orders:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
                         </td>
                     </tr>
                 <?php } ?>

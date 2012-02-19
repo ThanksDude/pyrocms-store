@@ -51,9 +51,9 @@
 					<td><?php echo $product->discount; ?></td>
 					<td class="align-center buttons buttons-small">
 						<?php $title = 'title="'. ucfirst($product->category->name) . ' - ' . ucfirst($product->name) . '" '; ?>
-						<?php echo anchor('admin/store/preview/' . $product->category->slug . '/' . $product->slug, lang('store:products:buttons:preview'), $title . 'rel="preview" class="button preview" target="_blank"'); ?>
-						<?php echo anchor('admin/store/products/edit/' . $product->products_id . '/true', lang('store:products:buttons:edit'), 'class="edit_product button edit"'); ?>
-						<?php echo anchor('admin/store/products/delete/' . $product->products_id, lang('store:products:buttons:delete'), array('class'=>'confirm button delete')); ?>
+						<?php echo anchor('store/product/view/' . $product->slug, lang('store:products:buttons:preview'), $title . 'rel="preview" class="preview btn green" target="_blank"'); ?>
+						<?php echo anchor('admin/store/products/edit/' . $product->products_id, lang('store:products:buttons:edit'), 'class="btn orange edit"'); ?>
+						<?php echo anchor('admin/store/products/delete/' . $product->products_id, lang('store:products:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
 					</td>
 				</tr>
 			<?php } ?>

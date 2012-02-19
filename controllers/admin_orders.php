@@ -36,6 +36,8 @@ class Admin_orders extends Admin_Controller
 		$this->load->language('tags');
 		$this->load->language('attributes');
 		$this->load->language('attributes_categories');
+		$this->load->language('status');
+
 
 		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
 
@@ -68,9 +70,9 @@ class Admin_orders extends Admin_Controller
 
 	public function index($ajax = FALSE)
 	{
-		$tags = $this->tags_m->get_all();
+		$orders = $this->orders_m->get_all();
 
-		$this->data->tags =& $tags;
+		$this->data->orders =& $orders;
 		if($ajax):
 
 			$list = $this->load->view('admin/orders/index', $this->data, TRUE);
@@ -84,6 +86,36 @@ class Admin_orders extends Admin_Controller
 				 
 		endif;
 	}
+	
+	public function view($orders_id, $ajax = FALSE)
+	{
+		$order 				= $this->orders_m->get_order($orders_id);
+		$users_name 		= $this->orders_m->get_orders_users($order->users_id);
+		$items				= $this->orders_m->get_orders_product_all($orders_id);
+		//$items_prices		= $this->orders_m->get_orders_product_price($orders_id);
+		//$items_quantities	= $this->orders_m->get_orders_product_quantities($orders_id);
+		$status				= $this->orders_m->get_orders_status($orders_id);
+		
+		$this->data->order				= $order;
+		$this->data->users_name			= $users_name;
+		$this->data->items				= $items;
+		//$this->data->items_prices		= $items_prices;
+		//$this->data->items_quantities	= $items_quantities;
+		$this->data->status				= $status;
+			
+		if($ajax):
+	
+			$list = $this->load->view('admin/orders/view', $this->data, TRUE);
+			echo $list;
+			
+		else:
+	
+			$this->template
+				 ->title($this->module_details['name'], lang('store:orders:title'))
+				 ->build('admin/orders/view', $this->data);
+				 
+		endif;
+	}	
 
 	public function add($ajax = FALSE)
 	{

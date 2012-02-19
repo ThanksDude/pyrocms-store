@@ -141,6 +141,7 @@ class Categories extends Public_Controller
 	  {
 	
 		 $auctions = $this->auctions_m->get_auctions($category->categories_id);
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
 							endif;
@@ -157,6 +158,11 @@ class Categories extends Public_Controller
 	}
 =======
 		 if ( $auctions )
+=======
+		 $products = $this->products_m->get_products($category->categories_id);
+		
+		 if ( $auctions || $products )
+>>>>>>> 872b87486af6e5d1766fb0ea62e39cf6ccc50c12
 		 {	    
 	  		foreach ( $auctions as $auction )
 	 		{
@@ -168,8 +174,20 @@ class Categories extends Public_Controller
 	  				$auction->image = $image;
 				}
 	 		}
+	 		
+	 		foreach ( $products as $product )
+	 		{
+	 		$image = $this->images_m->get_image($product->images_id);
+	   
+	 		if ( $image )
+	 			{
+	 		  		$this->images_m->front_image_resize('uploads/store/product/', $image, "", 150, 120);	
+	 		  		$product->image = $image;
+	 			}
+	 		}
 	  
 	  		$this->data->auctions		= $auctions;
+	  		$this->data->products		= $products;
 	  		$this->data->category_name	= $category->name;
 	  
 	  		if($mode == 'explore')

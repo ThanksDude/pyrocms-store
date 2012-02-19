@@ -81,8 +81,8 @@
 			
 			<li class="<?php echo alternator('', 'even'); ?>">
 				<label for="allow_comments"><?php echo lang('store:products:label:allow_comments','allow_comments'); ?> <span><?php echo lang('required_label');?></span></label>
-				<div class="input"><?php echo form_radio('allow_comments','1',TRUE).$this->lang->line('store_choice_yes'); ?></div>
-				<div class="input"><?php echo form_radio('allow_comments','0',FALSE).$this->lang->line('store_choice_no'); ?></div>
+				<div class="input"><?php echo form_radio('allow_comments','1',($product->allow_comments == 1)).' '.$this->lang->line('store:forms:choice:yes'); ?></div>
+				<div class="input"><?php echo form_radio('allow_comments','0',($product->allow_comments == 0)).' '.$this->lang->line('store:forms:choice:no'); ?></div>
 			</li>
 		</ul>
 		</fieldset>
@@ -146,6 +146,10 @@
 	       	<li class="<?php echo alternator('', 'even'); ?>">
 				Tab for product tags
 			</li>
+			<li class="<?php echo alternator('', 'even'); ?>">
+					<label for="tags_id"><?php echo lang('store:products:label:tags'); ?></label>
+					<div class="input"><?php echo form_multiselect('tags_id[]', $tags, set_value('tags_id', $selected_tags), 'class="width-15 text" maxlength="50"'); ?></div>
+				</li>
 			
 	       </ul>
 	    </fieldset>
