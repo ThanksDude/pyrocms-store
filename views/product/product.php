@@ -26,11 +26,15 @@
 			<div><p><?php echo lang('store:products:label:html'). " : ";?></p>
 						<?php echo $product->html; ?>
 			</div>
-			<?php if(isset($product->attribute)) {?>
+			<?php if(isset($product->attributes)) {
+				foreach ($product->attributes as $attribute) {
+
+			 ?>
 				<div>
-				<span><?php echo $product->attribute['name'];?> : <?php echo form_dropdown('attributes_option', $product->attribute['options'], 'class="width-15 text" maxlength="50"'); ?></span>
+				<span><?php echo $attribute['name'];?> : <?php echo form_dropdown('attributes_option', $attribute['options'], 'class="width-15 text" maxlength="50"'); ?></span>
 				</div>
-			<? }?>
+			<? }
+			}?>
 			<div><p>
 				<span><?php echo lang('store:products:label:price'). " : ";?>
 						<?php echo $this->cart->format_number($product->price); ?>

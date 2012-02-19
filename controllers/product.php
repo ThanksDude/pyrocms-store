@@ -55,7 +55,9 @@ class product extends Public_Controller
 				if(isset($product->attributes_id))
 				{
 					$attribute=$this->products_m->get_product_attributes($product->attributes_id);
-					$product->attribute = $attribute;
+					$product->attributes = array();
+					$product->attributes[] = $attribute;
+					$product->attributes[] = $attribute;
 				}
 				
 				$this->data->product = $product;
