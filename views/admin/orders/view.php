@@ -20,12 +20,12 @@
 		<ul>
 			<li class="<?php echo alternator('even', ''); ?>">
 				<label for="name"><?php echo lang('store:orders:label:invoice_nr'); ?></label>
-				<div><?php echo $order->invoice_nr ?></div>
+				<div><?php echo $order->invoice_nr; ?></div>
 			</li>
 			
 			<li class="<?php echo alternator('even', ''); ?>">
 				<label for="name"><?php echo lang('store:orders:label:status'); ?></label>
-				<div><?php echo $order->status ?></div>
+				<div><?php echo lang('store:status:orders:'.$status->status_name); ?></div>
 			</li>
 			
 			<li class="<?php echo alternator('even', ''); ?>">
@@ -35,12 +35,12 @@
 			
 			<li class="<?php echo alternator('even', ''); ?>">
 				<label for="name"><?php echo lang('store:orders:label:shipping_address'); ?></label>
-				<div><?php echo $order->shipping_address ?></div>
+				<div><?php echo $order->shipping_address; ?></div>
 			</li>
 
 			<li class="<?php echo alternator('even', ''); ?>">
 				<label for="name"><?php echo lang('store:orders:label:shipping_method'); ?></label>
-				<div><?php echo $order->shipping_method ?></div>
+				<div><?php echo $order->shipping_method; ?></div>
 			</li>
             
             <li class="<?php echo alternator('even', ''); ?>">

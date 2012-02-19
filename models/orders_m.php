@@ -181,7 +181,7 @@ class Orders_m extends MY_Model
 			'users_id'			=>	$this->user->id,
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
-			'status'			=>	'0',
+			'status'			=>	'1',
 			'comments'			=>	'0',
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
@@ -217,6 +217,22 @@ class Orders_m extends MY_Model
 					->get('store_orders')
 					->row();
 
+	}
+	
+	public function get_orders_status($orders_id)
+	{
+		$order = $this->db
+							->where('orders_id',$orders_id)
+							->limit(1)
+							->get('store_orders')
+							->row();
+		$status = $this->db
+							->where('status_id',$order->status)
+							->limit(1)
+							->get('store_status')
+							->row();
+		return $status;
+	
 	}
 
 	public function get_orders_product_name($orders_id)

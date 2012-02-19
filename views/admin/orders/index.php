@@ -43,7 +43,10 @@
                         <td><?php echo $order->invoice_nr; ?></td>
                         <td><?php echo $order->users_id; ?></td>
                         <td><?php echo $order->amount; ?></td>
-                        <td><?php echo $order->status; ?></td>
+                        <td>
+                        <?php  $status = $this->orders_m->get_orders_status($order->orders_id);                        
+                                echo lang('store:status:orders:'.$status->status_name); ?>
+                        </td>
                         <td class="align-center buttons buttons-small">
                         <?php echo anchor('/admin/store/orders/view/' . $order->orders_id, lang('store:orders:buttons:view'), 'class="btn green view"'); ?>
                             <?php echo anchor('/admin/store/orders/edit/' . $order->orders_id, lang('store:orders:buttons:edit'), 'class="btn orange edit"'); ?>
