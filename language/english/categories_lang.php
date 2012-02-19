@@ -38,6 +38,7 @@ $lang['store:category:label:parent']					= 'Parent';
 $lang['store:category:label:thumbnail']					= 'Thumbnail';
 $lang['store:category:label:images_id']					= 'Images';
 $lang['store:category:label:actions']					= 'Actions';
+$lang['store:category:label:none']						= 'None';
 
 // MESSAGES --------------------------------------------------------------------------------------
 

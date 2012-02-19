@@ -154,6 +154,7 @@ class Categories_m extends MY_Model
 	public function get_category_name($categories_id)
 	{
 		return $this->db
+					->select('name')
 					->where('categories_id', $categories_id)
 					->limit(1)
 					->get($this->_table)

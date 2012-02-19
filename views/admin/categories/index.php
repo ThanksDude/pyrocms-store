@@ -53,9 +53,33 @@
 										else { $output = "-------"; }
 										echo $output;  
 							?></td>
-								<td><?php echo $this->products_m->count_products($category->categories_id); ?></td>
+						<td>
+                            <?php 
+                                $count = $this->products_m->count_products($category->categories_id); 
+                                if ($count == 0)
+                                {
+                                   echo lang('store:category:label:none'); 
+                                }
+                                else
+                                {
+                                    echo $count;
+                                }
+                            ?>
+                        </td>
                         <td><?php echo $category->categories_id; ?></td>
-                        <td><?php echo $category->parent_id; ?></td>
+                        <td>
+                            <?php 
+                                if($category->parent_id==0)
+                                {
+                                    echo lang('store:category:label:none');
+                                } 
+                                else 
+                                {
+                                    $parent = $this->categories_m->get_category_name($category->parent_id);
+                                    echo $parent->name; 
+                                }
+                            ?>
+                        </td>
                         <td class="align-center buttons buttons-small">
                             <?php echo anchor('admin/store/categories/edit/' . $category->categories_id, lang('store:category:buttons:edit'), 'class="btn orange edit"'); ?>
                             <?php echo anchor('admin/store/categories/delete/' . $category->categories_id, lang('store:category:buttons:delete'), array('class'=>'confirm btn red delete')); ?>

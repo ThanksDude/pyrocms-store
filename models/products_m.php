@@ -178,18 +178,19 @@ class Products_m extends MY_Model
 		$this->query = $this->db->get('store_attributes');
 		
 		foreach($this->query->result() as $this->attribute):
-
-			$this->result = array();
+			$this->data = array();
+			$this->data['name'] = $this->attribute->name;
+			$this->data['options'] = array();
 			$this->items = explode("|", $this->attribute->html);
 			
 			foreach($this->items as $this->item):
 
 				$this->temp = explode("=", $this->item);
-				$this->result[$this->temp[0]] = $this->temp[1];
+				$this->data['options'][$this->temp[0]] = $this->temp[1];
 
 			endforeach;
 
-			return $this->result;
+			return $this->data;
 
 		endforeach;
 	}
