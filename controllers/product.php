@@ -52,6 +52,11 @@ class product extends Public_Controller
 					$product->image = $image;
 					
 				endif;
+				if(isset($product->attributes_id))
+				{
+					$attribute=$this->products_m->get_product_attributes($product->attributes_id);
+					$product->attribute = $attribute;
+				}
 				
 				$this->data->product = $product;
 				$this->template
