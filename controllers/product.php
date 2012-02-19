@@ -54,10 +54,13 @@ class product extends Public_Controller
 				endif;
 				if(isset($product->attributes_id))
 				{
-					$attribute=$this->products_m->get_product_attributes($product->attributes_id);
 					$product->attributes = array();
+					//should be some time of for each statement
+					$attribute=$this->products_m->get_product_attributes($product->attributes_id);
 					$product->attributes[] = $attribute;
-					$product->attributes[] = $attribute;
+					//end foreach
+
+					
 				}
 				
 				$this->data->product = $product;
