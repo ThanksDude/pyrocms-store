@@ -31,7 +31,7 @@
 
 			 ?>
 				<div>
-				<span><?php echo $attribute['name'];?> : <?php echo form_dropdown('attributes_option', $attribute['options'], 'class="width-15 text" maxlength="50"'); ?></span>
+				<span><?php echo $attribute['name'];?> : <?php echo form_dropdown($attribute['name'], $attribute['options'], 'class="width-15 text" maxlength="50"'); ?></span>
 				</div>
 			<? }
 			}?>

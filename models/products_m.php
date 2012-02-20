@@ -203,7 +203,7 @@ class Products_m extends MY_Model
 					->row();
 	}
 
-	public function get_product_in_cart($products_id)
+	public function get_product_in_cart($products_id,$options)
 	{
 		$product = $this->db
 						->where('products_id', $products_id)
@@ -215,7 +215,7 @@ class Products_m extends MY_Model
 				'qty'     => $this->input->post('qty'),
 				'price'   => $product->price,
 				'name'    => $product->name,
-				'options' => $this->get_product_attributes($product->attributes_id)
+				'options' => $options
 		);
 
 		return $this->items;
