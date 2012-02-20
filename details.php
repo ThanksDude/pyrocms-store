@@ -393,14 +393,14 @@ class Module_Store extends Module {
 			ENGINE = InnoDB;");
 		
 		$this->db->query("
-		CREATE TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_product_attributes'). "` (
-				`id` int(11) NOT NULL AUTO_INCREMENT,
+		CREATE TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_product_has_attributes'). "` (
 				`product_id` int(11) NOT NULL,
-				`value` varchar(200) NOT NULL,
-				PRIMARY KEY (`id`,`product_id`)
+				`attributes_id` int(11) NOT NULL,
+				PRIMARY KEY (`product_id`,`attributes_id`)
 		) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1") ;
+		
 		$this->db->query("
-				ALTER TABLE  `" . $this->db->dbprefix('store_product_attributes'). "` 
+				ALTER TABLE  `" . $this->db->dbprefix('store_product_has_attributes'). "` 
 				ADD FOREIGN KEY (  `product_id` ) REFERENCES `".$this->db->dbprefix('store_products')."`  (
 				`products_id`
 		) ON DELETE CASCADE ON UPDATE RESTRICT ");

@@ -38,6 +38,13 @@ class Products_m extends MY_Model
 		else:
 			$this->tags_m->delete_products_tags($products_id);
 		endif;
+
+		if(isset($this->data['attributes_id'])):
+			$this->attributes_m->update_products_attributes($products_id, $this->data['attributes_id']);
+			unset($this->data['attributes_id']);
+		else:
+			$this->attributes_m->delete_products_attributes($products_id);
+		endif;
 		
 		if(!($new_image_id == 0)):
 
