@@ -257,7 +257,7 @@ class Products_m extends MY_Model
 			'users_id'			=>	$this->current_user->id,
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
-			'status'			=>	'0',
+			'status'			=>	'1',
 			'comments'			=>	'0',
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
