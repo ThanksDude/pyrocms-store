@@ -59,8 +59,13 @@ class Cart extends Public_Controller
 	
 	public function insert_cart($product)
 	{
-		$this->redirect	= $this->input->post('redirect');
-		$this->data		= $this->products_m->get_product_in_cart($product);
+		$this->redirect	= $this->input->post('redirect');	
+		$options 		= $this->input->post();
+		unset($options['redirect']);
+		unset($options['qty']);
+		$this->data		= $this->products_m->get_product_in_cart($product,$options);
+		
+		//print_r($this->data);
 		$this->cart->insert($this->data);
 		
 		redirect($this->redirect);

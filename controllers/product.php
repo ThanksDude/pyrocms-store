@@ -25,6 +25,8 @@ class product extends Public_Controller
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
 		$this->load->model('products_m');
+		$this->load->model('attributes_m');
+
 
 		$this->load->helper('date');
 		
@@ -52,16 +54,16 @@ class product extends Public_Controller
 					$product->image = $image;
 					
 				endif;
-				if(isset($product->attributes_id))
-				{
-					$product->attributes = array();
-					//should be some time of for each statement
-					$attribute=$this->products_m->get_product_attributes($product->attributes_id);
-					$product->attributes[] = $attribute;
-					//end foreach
+				$attributes = $this->attributes_m->get_products_attributes($product->products_id);
+				if(isset($attributes)):
 
-					
-				}
+					$product->attributes = array();
+					foreach ($attributes as $attribute_id):
+						$attribute=$this->products_m->get_product_attributes($attribute_id);
+						$product->attributes[] = $attribute;
+					endforeach;
+
+				endif;
 				
 				$this->data->product = $product;
 				$this->template

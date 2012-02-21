@@ -130,10 +130,6 @@ $config = array(
 					'label' => 'store_product_product_id',
 					'rules' => 'trim|max_length[10]|'),
 					
-			array('field' => 'attributes_id',
-					'label' => 'store_product_attributes',
-					'rules' => 'trim|max_length[10]|'),
-					
 			array('field' => 'meta_description',
 					'label' => 'store_product_meta_description',
 					'rules' => 'trim|max_length[1000]|'),
@@ -195,10 +191,6 @@ $config = array(
 					
 			array('field' => 'products_id',
 					'label' => 'store_product_product_id',
-					'rules' => 'trim|max_length[10]|'),
-					
-			array('field' => 'attributes_id',
-					'label' => 'store_product_attributes',
 					'rules' => 'trim|max_length[10]|'),
 					
 			array('field' => 'meta_description',

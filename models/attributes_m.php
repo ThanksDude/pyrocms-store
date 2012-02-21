@@ -31,5 +31,75 @@ class Attributes_m extends MY_Model
 	   return $this->db->insert($this->_table, $insert_data) ? $this->db->insert_id() : FALSE;
 	}
 	
+	public function make_attributes_list()
+	{
+		$attributes = $this->db->get('store_attributes');
+	
+		if($attributes->num_rows() == 0):
+	
+			return array();
+	
+		else:
+			$this->data  = array();
+			foreach($attributes->result() as $attribute):
+				$this->data[$attribute->attributes_id] = $attribute->name;
+			endforeach;
+	
+			return $this->data;
+		endif;
+	}
+
+	public function get_products_attributes($product_id = 0)
+	{
+		$attributes = $this->db
+					 ->select('attributes_id')
+					 ->where('product_id', $product_id)
+					 ->get('store_product_has_attributes');
+		if($attributes->num_rows() == 0):
+			return array();
+		else:
+			$this->data = array();
+			foreach($attributes->result() as $attribute):
+				$this->data[] = $attribute->attributes_id;
+			endforeach;
+			return $this->data;
+		endif;
+	}
+
+
+	public function update_products_attributes($product_id = 0, $attributes)
+	{
+		$this->delete_products_attributes($product_id);
+		if($attributes):
+			foreach($attributes as $attribute):
+				$this->data = array('product_id' =>$product_id,'attributes_id'=>$attribute);
+				$this->db->insert('store_product_has_attributes', $this->data); 
+			endforeach;
+		endif;
+		return TRUE;
+		
+	}
+	
+	public function add_products_attributes($product_id = 0, $attributes)
+	{
+		if($attributes):
+			foreach($attributes as $attribute):
+				$this->data = array('product_id' =>$product_id,'attributes_id'=>$attribute);
+				$this->db->insert('store_product_has_attributes', $this->data); 
+			endforeach;
+		endif;
+		return TRUE;
+		
+	}
+	
+	
+	
+	public function delete_products_attributes($product_id = 0)
+	{
+				
+		return $this->db
+					->where('product_id', $product_id)
+					->delete('store_product_has_attributes');
+	}
 	
 }

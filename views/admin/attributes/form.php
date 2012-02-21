@@ -26,7 +26,8 @@
             
 			<li class="<?php echo alternator('', 'even'); ?>">
                 <label for="html"><?php echo lang('store:attributes:label:html','html'); ?> <span><?php echo lang('required_label');?></span></label>
-                <div class="input"><?php echo form_textarea('html', set_value('html',$attribute->html), 'class="wysiwyg-simple" maxlength="1000"'); ?></div>
+                <div class="input">format is option=Label|option=Label and so on</div>
+                <div class="input"><?php echo form_textarea('html', set_value('html',$attribute->html), 'class="wysiwyg" maxlength="1000"'); ?></div>
             </li>
         </ul>
 		

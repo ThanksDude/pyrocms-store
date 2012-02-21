@@ -38,6 +38,13 @@ class Products_m extends MY_Model
 		else:
 			$this->tags_m->delete_products_tags($products_id);
 		endif;
+
+		if(isset($this->data['attributes_id'])):
+			$this->attributes_m->update_products_attributes($products_id, $this->data['attributes_id']);
+			unset($this->data['attributes_id']);
+		else:
+			$this->attributes_m->delete_products_attributes($products_id);
+		endif;
 		
 		if(!($new_image_id == 0)):
 
@@ -133,6 +140,55 @@ class Products_m extends MY_Model
 		return $data;
 	}
 
+	public function make_attributes_dropdown($selected_id=0)
+	{
+		$this->load->model('attributes_m');
+		$attributes = $this->db->get('store_attributes');
+		if($selected_id):
+
+			$selected_cat = $this->attributes_m->get($selected_id);
+
+		endif;
+
+		if($attributes->num_rows() == 0):
+
+		  	return array();
+
+		else:
+
+			if(isset($selected_cat)):
+
+				$data  = array( $selected_cat->attributes_id => $selected_cat->name);
+
+			else:
+
+				$data  = array('0'=>'Select');
+
+			endif;
+
+			foreach($attributes->result() as $attribute):
+
+				if(isset($selected_cat)):
+
+					if(!($selected_cat->name == $attribute->name)):
+
+						$data[$attribute->attributes_id] = $attribute->name;
+
+					endif;
+
+				else:
+
+					$data[$attribute->attributes_id] = $attribute->name;
+
+				endif;
+
+			endforeach;
+
+		endif;
+
+		return $data;
+	}
+
 	public function count_products($categories_id)
 	{
 		return $this->count_by('categories_id', $categories_id);
@@ -154,7 +210,7 @@ class Products_m extends MY_Model
 					->row();
 	}
 
-	public function get_product_in_cart($products_id)
+	public function get_product_in_cart($products_id,$options)
 	{
 		$product = $this->db
 						->where('products_id', $products_id)
@@ -166,7 +222,7 @@ class Products_m extends MY_Model
 				'qty'     => $this->input->post('qty'),
 				'price'   => $product->price,
 				'name'    => $product->name,
-				'options' => $this->get_product_attributes($product->attributes_id)
+				'options' => $options
 		);
 
 		return $this->items;
@@ -201,7 +257,7 @@ class Products_m extends MY_Model
 			'users_id'			=>	$this->current_user->id,
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
-			'status'			=>	'0',
+			'status'			=>	'1',
 			'comments'			=>	'0',
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),

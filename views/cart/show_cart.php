@@ -28,7 +28,7 @@
 					<?php if ($this->cart->has_options($items['rowid']) == TRUE) { ?>
 					<ul class="options_list">
 						<?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) { ?>
-						<li class="options_item">';
+						<li class="options_item">
 							<div class="options_item_name"><?php echo $option_name; ?>:&nbsp;&nbsp;</div>
 							<div class="options_item_value"><?php echo $option_value; ?></div>
 						</li>
