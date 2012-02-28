@@ -1,4 +1,6 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+if(!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * This is a store module for PyroCMS
  *
@@ -6,9 +8,8 @@
  * @website		http://www.odin-ict.nl/
  * @package 	pyrocms-store
  * @subpackage 	Store Module
-**/
-class Categories extends Public_Controller
-{
+ **/
+class Categories extends Public_Controller {
 
 	public function __construct()
 	{
@@ -27,7 +28,7 @@ class Categories extends Public_Controller
 		$this->load->model('auctions_m');
 
 		$this->load->helper('date');
-		
+
 		$this->template
 			 ->append_metadata(css('store.css', 'store'))
 			 ->append_metadata(js('store.js', 'store'));
@@ -38,164 +39,148 @@ class Categories extends Public_Controller
 		if($autions):
 
 			redirect('store/categories/explore/top/tiles');
-
 		else:
 
 			redirect('store/categories/browse/top/tiles');
 
 		endif;
 	}
-	
-
 
 	public function browse($types = 'top', $views = 'tiles', $name = NULL)
 	{
 		switch($types):
-		
+
 			case 'top':
-			
-					$this->build_top_types("index", $views);
+				$this->build_top_types("index", $views);
 
-					break;
-
+				break;
 
 			case 'sub':
-
 				if(!$name):
 
 					redirect('store/categories/browse/top/tiles');
-
 				else:
 
 					$this->build_sub_types($name, $views, 'browse');
-				
+
 				endif;
-			
-			break;
-		
+
+				break;
 		endswitch;
 	}
 
 	public function explore($types = 'top', $views = 'tiles', $name = NULL)
 	{
-	  switch($types)
-	  {
-	    case 'top':
-	    {
-		    $this->build_top_types("auction", $views);
-		    
-		    break;
-		    
-	    } /* top */
+		switch($types):
 
-	    case 'sub':
-	    {  
-			 if ( !$name )
-		    {
-		    	redirect('store/categories/explore/top/tiles');
-		  	 }
-			 else
-		  	 {
-				$this->build_sub_types($name, $views, 'explore');
-				
+			case 'top':
+				$this->build_top_types("auction", $views);
+
 				break;
-	       }
 
-	    }/* sub */
+			case 'sub':
+				if(!$name):
 
-	  }// end switch $types
-	  
-	}// end explore function
-	
+					redirect('store/categories/explore/top/tiles');
+				else:
 
+					$this->build_sub_types($name, $views, 'explore');
 
-/////
+				endif;
+
+				break;
+		endswitch;
+	}
+
 	private function build_top_types($directory, $view)
 	{
-		
 		$categories = $this->categories_m->get_all();
-		foreach ( $categories as $category )
-		{
-		  $image = $this->images_m->get_image($category->images_id);
-		  
-		  if ( $image )
-		  {
-			 $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);
-			 $category->image = $image;
-		  }
-		}
-		$this->data->categories =	$categories;
-		
-		$this->template->build('categories/'.$directory.'/'.$view, $this->data);	
-			
-	}// end build_top_types
-	
-	
-	private function build_sub_types($name, $view, $mode='explore')
-	{
-		
-	  $name = str_replace('-', ' ', $name);
-	  $category = $this->categories_m->get_category_by_name($name);
-	  
-	  if ( $category )
-	  {
-	
-		 $auctions = $this->auctions_m->get_auctions($category->categories_id);
+		foreach($categories as $category):
 
-		 $products = $this->products_m->get_products($category->categories_id);
+			$image = $this->images_m->get_image($category->images_id);
+			if($image):
+
+				$this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);
+				$category->image = $image;
+
+			endif;
+
+		endforeach;
 		
-		 if ( $auctions || $products )
-		 {	    
-	  		foreach ( $auctions as $auction )
-	 		{
-	   		$image = $this->images_m->get_image($auction->images_id);
-	   
-	   		if ( $image )
-				{
-	  				$this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);	
-	  				$auction->image = $image;
-				}
-	 		}
-	 		
-	 		foreach ( $products as $product )
-	 		{
-	 		$image = $this->images_m->get_image($product->images_id);
-	   
-	 		if ( $image )
-	 			{
-	 		  		$this->images_m->front_image_resize('uploads/store/product/', $image, "", 150, 120);	
-	 		  		$product->image = $image;
-	 			}
-	 		}
-	  
-	  		$this->data->auctions		= $auctions;
-	  		$this->data->products		= $products;
-	  		$this->data->category_name	= $category->name;
-	  
-	  		if($mode == 'explore')
-	  		{
-	  			$this->template->build('categories/auction_'.$view, $this->data);
-	  		}
-	  		else 
-	  		{
-	  			$this->template->build('categories/'.$view, $this->data);
-	  		}
-		 
-		 }
-		
-		else
-		 {
-			redirect('store/categories/'.$mode.'/top/'.$view.'/'.$category->name);
-		 }
-	  }
-	 	  
-	  else
-	  {
-		 redirect('store/categories/'.$mode.'/top/'.$view);
-	  }	 		
-		
-   }// end build_sub_types
+		$this->data->categories = $categories;
+
+		$this->template->build('categories/' . $directory . '/' . $view, $this->data);
+	}
+
+	private function build_sub_types($name, $view, $mode = 'explore')
+	{
+		$name = str_replace('-', ' ', $name);
+		$category = $this->categories_m->get_category_by_name($name);
+
+		if($category):
+
+			$auctions = $this->auctions_m->get_auctions($category->categories_id);
+			$products = $this->products_m->get_products($category->categories_id);
+
+			if($auctions || $products):
+
+				foreach($auctions as $auction):
+
+					$image = $this->images_m->get_image($auction->images_id);
+
+					if($image):
+
+						$this->images_m->front_image_resize('uploads/store/auctions/', $image, "", 150, 120);
+						$auction->image = $image;
+
+					endif;
+
+				endforeach;
+
+				foreach($products as $product):
+
+					$image = $this->images_m->get_image($product->images_id);
+
+					if($image):
+
+						$this->images_m->front_image_resize('uploads/store/product/', $image, "", 150, 120);
+						$product->image = $image;
+
+					endif;
+
+				endforeach;
+
+				$this->data->auctions = $auctions;
+				$this->data->products = $products;
+				$this->data->category_name = $category->name;
+
+				if($mode == 'explore'):
+
+					$this->template
+						 ->build('categories/auction_' . $view, $this->data);
+						 
+				else:
+
+					$this->template
+						 ->build('categories/' . $view, $this->data);
+
+				endif;
+				
+			else:
+
+				redirect('store/categories/' . $mode . '/top/' . $view . '/' . $category->name);
+
+			endif;
+			
+		else:
+
+			redirect('store/categories/' . $mode . '/top/' . $view);
+
+		endif;
+
+	}
 
 }
+
 /* End of file categories.php */
 /* Location: ./store/controllers/categories.php */
