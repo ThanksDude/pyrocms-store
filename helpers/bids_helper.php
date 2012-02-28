@@ -11,8 +11,7 @@ function display_bids($auction)
   $ci->load->model('store/auctions_m');
 
   $data['id']	= $auction->auctions_id;
-  $data['user_id'] = $ci->current_user->id;
-  $data['slug']	= $di->auction_m->get_auction($data['id']);
+  $data['slug']	= $ci->auctions_m->get_auction($data['id'])->slug;
   $data['bids']	= $ci->bid_m->get_by_auction_id($data['id']);
   
   
