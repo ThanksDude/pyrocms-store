@@ -9,25 +9,25 @@
 **/
 ?>
 <section class="title">
-	<h4><?php echo lang('store_title_category_list')?></h4>
+	<h4><?php echo lang('store:category:title')?></h4>
 </section>
 
 <section class="item">
 	
 	<?php if ($categories): ?>
 
-		<?php echo form_open('admin/store/categories'); ?>
+		<?php echo form_open('admin/store/categories/delete'); ?>
     
         <table border="0" class="table-list">
             <thead>
                 <tr>
                     <th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')); ?></th>
-                    <th><?php echo lang('store_category_thumbnail'); ?></th>
-                    <th><?php echo lang('store_category_name'); ?></th>
-                    <th><?php echo lang('store_category_items'); ?></th>
-                    <th><?php echo lang('store_category_category_id'); ?></th>
-                    <th><?php echo lang('store_category_parent'); ?></th>
-                    <th width="320" class="align-center"><span><?php echo lang('store_category_actions'); ?></span></th>
+                    <th><?php echo lang('store:category:label:thumbnail'); ?></th>
+                    <th><?php echo lang('store:category:label:name'); ?></th>
+                    <th><?php echo lang('store:category:label:items'); ?></th>
+                    <th><?php echo lang('store:category:label:category_id'); ?></th>
+                    <th><?php echo lang('store:category:label:parent'); ?></th>
+                    <th width="320" class="align-center"><span><?php echo lang('store:category:label:actions'); ?></span></th>
                 </tr>
             </thead>
             <tfoot>
@@ -53,12 +53,36 @@
 										else { $output = "-------"; }
 										echo $output;  
 							?></td>
-								<td><?php echo $this->products_m->count_products($category->categories_id); ?></td>
+						<td>
+                            <?php 
+                                $count = $this->products_m->count_products($category->categories_id); 
+                                if ($count == 0)
+                                {
+                                   echo lang('store:category:label:none'); 
+                                }
+                                else
+                                {
+                                    echo $count;
+                                }
+                            ?>
+                        </td>
                         <td><?php echo $category->categories_id; ?></td>
-                        <td><?php echo $category->parent_id; ?></td>
+                        <td>
+                            <?php 
+                                if($category->parent_id==0)
+                                {
+                                    echo lang('store:category:label:none');
+                                } 
+                                else 
+                                {
+                                    $parent = $this->categories_m->get_category_name($category->parent_id);
+                                    echo $parent->name; 
+                                }
+                            ?>
+                        </td>
                         <td class="align-center buttons buttons-small">
-                            <?php echo anchor('admin/store/categories/edit/' . $category->categories_id, lang('store_button_edit'), 'class="btn orange edit"'); ?>
-                            <?php echo anchor('admin/store/categories/delete/' . $category->categories_id, lang('store_button_delete'), array('class'=>'confirm btn red delete')); ?>
+                            <?php echo anchor('admin/store/categories/edit/' . $category->categories_id, lang('store:category:buttons:edit'), 'class="btn orange edit"'); ?>
+                            <?php echo anchor('admin/store/categories/delete/' . $category->categories_id, lang('store:category:buttons:delete'), array('class'=>'confirm btn red delete')); ?>
                         </td>
                     </tr>
                 <?php } ?>
@@ -72,6 +96,6 @@
 		<?php echo form_close(); ?>
 
 	<?php else: ?>
-		<div class="no_data"><?php echo lang('store_messages_category_no_items'); ?></div>
+		<div class="no_data"><?php echo lang('store:category:messages:information:no_items'); ?></div>
 	<?php endif; ?>
 </section>

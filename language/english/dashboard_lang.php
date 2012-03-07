@@ -11,12 +11,22 @@
 
 /* =========================================== STORE =========================================== */
 
+// SHORTCUTS -------------------------------------------------------------------------------------
+
+$lang['store:dashboard:shortcut']						= 'Dashboard';
+
+// TITLES ----------------------------------------------------------------------------------------
+
+$lang['store:dashboard:title']     	    				= 'Dashboard';
+
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_label_store_name']				= 'Store Name';
-$lang['store_label_active']					= 'Active';
-$lang['store_label_allow_comments']			= 'Allow comments';
-$lang['store_label_currency']				= 'Currency';
-$lang['store_label_item_per_page']			= 'Items per Page';
-$lang['store_label_display_tax']			= 'Display TAX';
-$lang['store_label_display_stock']			= 'Display stock';
+$lang['store:dashboard:label:store_name']				= 'Store Name';
+$lang['store:dashboard:label:active']					= 'Active';
+$lang['store:dashboard:label:allow_comments']			= 'Allow comments';
+$lang['store:dashboard:label:currency']					= 'Currency';
+$lang['store:dashboard:label:item_per_page']			= 'Items per Page';
+$lang['store:dashboard:label:display_tax']				= 'Display TAX';
+$lang['store:dashboard:label:display_stock']			= 'Display stock';
+
+/* End of file dashboard_lang.php */

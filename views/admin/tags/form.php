@@ -9,7 +9,7 @@
 **/
 ?>
 <section class="title">
-    <h4><?php echo lang('store_title_tag_'.$this->method);?></h4>
+    <h4><?php echo lang('store:tags:title:'.$this->method);?></h4>
 </section>
 
 <section class="item">
@@ -20,7 +20,7 @@
 	
 		<ul>
 			<li class="<?php echo alternator('even', ''); ?>">
-				<label for="name"><?php echo lang('store_tag_name','name'); ?> <span><?php echo lang('required_label');?></span></label>
+				<label for="name"><?php echo lang('store:tags:label:name','name'); ?> <span><?php echo lang('required_label');?></span></label>
 				<div class="input"><?php echo form_input('name', set_value('name',$tag->name), 'class="width-15 text" maxlength="50"'); ?></div>
             </li>
         </ul>

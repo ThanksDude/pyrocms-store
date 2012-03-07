@@ -13,8 +13,10 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_status_new']					= 'New';
-$lang['store_status_cancel']				= 'Cancel';
-$lang['store_status_awaiting_payment']		= 'Awaiting Payment';
-$lang['store_status_payment_recieved']		= 'Payment Recieved';
-$lang['store_status_order_complete']		= 'Order Complete';
+$lang['store:status:orders:new']				= 'New';
+$lang['store:status:orders:cancel']				= 'Cancel';
+$lang['store:status:orders:awaiting_payment']	= 'Awaiting Payment';
+$lang['store:status:orders:payment_recieved']	= 'Payment Recieved';
+$lang['store:status:orders:order_complete']		= 'Order Complete';
+
+/* End of file status_lang.php */

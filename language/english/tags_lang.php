@@ -11,6 +11,39 @@
 
 /* =========================================== STORE =========================================== */
 
-//  ----------------------------------------------------------------------------------------
+// MENU ------------------------------------------------------------------------------------------
 
-$lang['']				= '';
+$lang['store:tags:menu']							= 'Tags';
+
+// SHORTCUTS -------------------------------------------------------------------------------------
+
+$lang['store:tags:shortcut:list']  					= 'List Tags';
+$lang['store:tags:shortcut:add']					= 'Add Tag';
+
+// TITLES ----------------------------------------------------------------------------------------
+
+$lang['store:tags:title']							= 'Tags';
+$lang['store:tags:title:add']						= 'Add';
+$lang['store:tags:title:edit']						= 'Edit';
+
+// LABELS ----------------------------------------------------------------------------------------
+
+$lang['store:tags:label:name']						= 'Name';
+$lang['store:tags:label:actions']					= 'Actions';
+
+// MESSAGES --------------------------------------------------------------------------------------
+
+$lang['store:tags:messages:information:no_items']	= 'No Tags created';
+$lang['store:tags:messages:success:create']			= 'Tag sucessfully created';
+$lang['store:tags:messages:success:edit']			= 'Tag sucessfully edited';
+$lang['store:tags:messages:success:delete']			= 'Tag sucessfully deleted';
+$lang['store:tags:messages:error:create']			= 'Tag creation failed';
+$lang['store:tags:messages:error:edit']				= 'Tag editing failed';
+$lang['store:tags:messages:error:delete']			= 'Tag deletion failed';
+
+// BUTTONS ---------------------------------------------------------------------------------------
+
+$lang['store:tags:buttons:edit']					= 'Edit';
+$lang['store:tags:buttons:delete']					= 'Delete';
+
+/* End of file tags_lang.php */

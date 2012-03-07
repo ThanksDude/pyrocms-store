@@ -9,7 +9,7 @@
 **/
 class Module_Store extends Module {
 
-	public $version = '0.1';
+	public $version = '0.2';
 
 	public function info()
 	{
@@ -18,124 +18,146 @@ class Module_Store extends Module {
 				'en' => 'Online Store',
 				'nl' => 'Online Webwinkel',
 				'de' => 'Online Store',
-				'zh' => '線上商店'
+				'zh' => 'ç·šä¸Šĺ•†ĺş—'
 			),
 			'description' => array(
 				'en' => 'This is a PyroCMS Store module.',
 				'nl' => 'Dit is een webwinkel module voor PyroCMS',
 				'de' => 'Dies ist ein Online-Shop fur PyroCMS',
-				'zh' => '這是一個 PyroCMS 商店模組'
+				'zh' => 'é€™ć�Żä¸€ĺ€‹ PyroCMS ĺ•†ĺş—ć¨ˇçµ„'
 
 			),
 			'frontend'	=> TRUE,
 			'backend'	=> TRUE,
 			'skip_xss'	=> TRUE,
 			'menu'		=> 'content',
-			'author'	=> 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey',
+			'author'	=> 'Jaap Jolman - Kevin Meier - Rudolph Arthur Hernandez - Gary Hussey - Marijan Greguric',
 		
 			'roles'		=> array(
-				'admin_module'
+				'admin_store'
 			),
 			
 			'sections' => array(
 			    'store' => array(
-				    'name'		=> 'store_menu_store',
+				    'name'		=> 'store:menu',
 				    'uri'		=> 'admin/store',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_store_dashboard',
+					 	   'name'	=> 'store:dashboard:shortcut',
 						   'uri'	=> 'admin/store',
 						   'class'	=> 'dashboard'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_store_statistics',
+					 	   'name'	=> 'store:statistics:shortcut',
 						   'uri'	=> 'admin/store/statistics',
 						   'class'	=> 'statistics'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_store_settings',
+					 	   'name'	=> 'store:settings:shortcut',
 						   'uri'	=> 'admin/store/settings',
 						   'class'	=> 'settings'
 						)
 					)
 				),
 			    'categories' => array(
-				    'name'		=> 'store_menu_categories',
+				    'name'		=> 'store:category:menu',
 				    'uri'		=> 'admin/store/categories',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_categories_list',
+					 	   'name'	=> 'store:category:shortcut:list',
 						   'uri'	=> 'admin/store/categories',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_category_add',
+					 	   'name'	=> 'store:category:shortcut:add',
 						   'uri'	=> 'admin/store/categories/add',
 						   'class'	=> 'add'
 						)
 					)
 				),
 			    'products' => array(
-				    'name'		=> 'store_menu_products',
+				    'name'		=> 'store:products:menu',
 				    'uri'		=> 'admin/store/products',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_products_list',
+					 	   'name'	=> 'store:products:shortcut:list',
 						   'uri'	=> 'admin/store/products',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_product_add',
+					 	   'name'	=> 'store:products:shortcut:add',
 						   'uri'	=> 'admin/store/products/add',
 						   'class'	=> 'add'
 						)
 					)
 				),
 			    'auctions' => array(
-						'name'		=> 'store_menu_auctions',
-						'uri'		=> 'admin/store/auctions',
-						'shortcuts'	=> array(
-									 array(
-									       'name'	=> 'store_shortcut_auctions_list',
-									       'uri'	=> 'admin/store/auctions',
-									       'class'	=> 'list'
-									       ),
-									 array(
-									       'name'	=> 'store_shortcut_auction_add',
-									       'uri'	=> 'admin/store/auctions/add',
-									       'class'	=> 'add'
-									       )
-									 )
+					'name'		=> 'store:auctions:menu',
+					'uri'		=> 'admin/store/auctions',
+					'shortcuts'	=> array(
+						array(
+						'name'	=> 'store:auctions:shortcut:list',
+						'uri'	=> 'admin/store/auctions',
+						'class'	=> 'list'
 						),
+						array(
+						'name'	=> 'store:auctions:shortcut:add',
+						'uri'	=> 'admin/store/auctions/add',
+						'class'	=> 'add'
+						)
+					)
+				),
+			    'orders' => array(
+				    'name'		=> 'store:orders:menu',
+				    'uri'		=> 'admin/store/orders',
+				    'shortcuts'	=> array(
+						array(
+					 	   'name'	=> 'store:orders:shortcut:list',
+						   'uri'	=> 'admin/store/orders',
+						   'class'	=> 'list'
+						)
+					)
+				),
 			    'tags' => array(
-				    'name'		=> 'store_menu_tags',
+				    'name'		=> 'store:tags:menu',
 				    'uri'		=> 'admin/store/tags',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_tags_list',
+					 	   'name'	=> 'store:tags:shortcut:list',
 						   'uri'	=> 'admin/store/tags',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_tag_add',
+					 	   'name'	=> 'store:tags:shortcut:add',
 						   'uri'	=> 'admin/store/tags/add',
 						   'class'	=> 'add'
 						)
 					)
 				),
 			    'attributes' => array(
-				    'name'		=> 'store_menu_attributes',
+				    'name'		=> 'store:attributes:menu',
 				    'uri'		=> 'admin/store/attributes',
 				    'shortcuts'	=> array(
 						array(
-					 	   'name'	=> 'store_shortcut_attributes_list',
+					 	   'name'	=> 'store:attributes:shortcut:list',
 						   'uri'	=> 'admin/store/attributes',
 						   'class'	=> 'list'
 						),
 						array(
-					 	   'name'	=> 'store_shortcut_attribute_add',
+					 	   'name'	=> 'store:attributes:shortcut:add',
 						   'uri'	=> 'admin/store/attributes/add',
 						   'class'	=> 'add'
+						)
+				    	,
+				    	array(
+				    			'name'	=> 'store:attributes:shortcut:add:category',
+				    			'uri'	=> 'admin/store/attributes/add_category',
+				    			'class'	=> 'add'
+				    	),
+						array(
+					 	   'name'	=> 'store:attributes:shortcut:list:category',
+						   'uri'	=> 'admin/store/attributes/category',
+						   'class'	=> 'list'
 						)
 					)
 				)
@@ -260,7 +282,7 @@ class Module_Store extends Module {
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 
-$this->db->query("
+		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_auctions') . "` (
 				`auctions_id` INT NOT NULL AUTO_INCREMENT ,
 				`categories_id` INT NOT NULL ,
@@ -283,7 +305,7 @@ $this->db->query("
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 
-$this->db->query("
+		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_bids') . "` (
 				`bid_id` INT NOT NULL AUTO_INCREMENT ,
 				`auction_id` INT NOT NULL ,
@@ -292,8 +314,7 @@ $this->db->query("
 				`devise` VARCHAR(255) NULL ,
 				`date` VARCHAR(255) NULL ,
 				PRIMARY KEY (`bid_id`) )
-		       	ENGINE = InnoDB;");
-
+			ENGINE = InnoDB;");
 
 		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_categories') . "` (
@@ -369,18 +390,31 @@ $this->db->query("
 				`shipping_method` VARCHAR(45) NULL ,
 				`tax` FLOAT NULL ,
 				`shipping_cost` FLOAT NULL ,
+				`amount` FLOAT NULL ,
 				PRIMARY KEY (`orders_id`, `users_id`, `payment_address`, `shipping_address`) )
 			ENGINE = InnoDB;");
 
 		$this->db->query("
-			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_orders_has_store_products') . "` (
+			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_orders_has_products') . "` (
 				`orders_id` INT NOT NULL ,
 				`users_id` SMALLINT(5) UNSIGNED NOT NULL ,
 				`products_id` INT NOT NULL ,
-				`categories_id` INT NOT NULL ,
 				`number` INT NULL ,
-				PRIMARY KEY (`orders_id`, `users_id`, `products_id`, `categories_id`) )
+				PRIMARY KEY (`orders_id`, `users_id`, `products_id`) )
 			ENGINE = InnoDB;");
+		
+		$this->db->query("
+		CREATE TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_product_has_attributes'). "` (
+				`product_id` int(11) NOT NULL,
+				`attributes_id` int(11) NOT NULL,
+				PRIMARY KEY (`product_id`,`attributes_id`)
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1") ;
+		
+		$this->db->query("
+				ALTER TABLE  `" . $this->db->dbprefix('store_product_has_attributes'). "` 
+				ADD FOREIGN KEY (  `product_id` ) REFERENCES `".$this->db->dbprefix('store_products')."`  (
+				`products_id`
+		) ON DELETE CASCADE ON UPDATE RESTRICT ");
 
 		if(is_dir('uploads/store') OR @mkdir('uploads/store',0777,TRUE))
 		{
@@ -399,6 +433,7 @@ $this->db->query("
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_currency') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_status') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_users_addresses') . "`;");
+		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_bids') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_categories') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_attributes') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_products') . "`;");
@@ -409,7 +444,7 @@ $this->db->query("
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_order_addresses') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders_has_store_products') . "`;");
-
+		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_product_attributes') . "`;");
 		$this->db->delete('settings', array('module' => 'store'));
 		{
 			return TRUE;

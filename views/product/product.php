@@ -23,18 +23,32 @@
 				<img src="<?php echo site_url('uploads/store/products/' . $name . $id. '_large' . $extension);?>" alt="<?php echo $product->name; ?>" />
 			<?php endif; ?>
 			</div>
-			<div><p><?php echo lang('store_product_html'). " : ";?></p>
+			<div><p><?php echo lang('store:products:label:html'). " : ";?></p>
 						<?php echo $product->html; ?>
 			</div>
+			<?php if(isset($product->attributes)) {
+				foreach ($product->attributes as $attribute) {
+
+			 ?>
+				<div>
+				<span><?php echo $attribute['name'];?> : <?php echo form_dropdown($attribute['name'], $attribute['options'], 'class="width-15 text" maxlength="50"'); ?></span>
+				</div>
+			<? }
+			}?>
 			<div><p>
-				<span><?php echo lang('store_product_price'). " : ";?>
+				<span><?php echo lang('store:products:label:price'). " : ";?>
 						<?php echo $this->cart->format_number($product->price); ?>
                 </span>
 				<?php echo form_input('qty','1') . form_submit('','Add to Cart'); ?>
 			</p></div>
-			<div><p><?php echo lang('store_product_stock'). " : " . $product->stock ;?></p></div>
+			<div><p><?php echo lang('store:products:label:stock'). " : " . $product->stock ;?></p></div>
 
 		</li>
 		<?php echo form_close(); ?>
 	</ul>
+	<?php 
+		if($product->allow_comments) {
+			echo display_comments($product->products_id, 'store_product'); 
+		}
+	?>
 </div>

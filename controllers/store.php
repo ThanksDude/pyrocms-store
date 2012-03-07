@@ -19,7 +19,6 @@ class Store extends Public_Controller
 
 		$this->load->language('general');
 		$this->load->language('products');
-		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
 
@@ -34,14 +33,16 @@ class Store extends Public_Controller
 			 ->append_metadata(js('store.js', 'store'));
 	}
 
-	public function index()
+	public function index($autions = FALSE)
 	{
-	  $i = $this->store_settings->item('sell_method');
+		if($autions):
 
-	  if ( isset($i) && (strcmp($i, "1") == 0) ):
-	    redirect('store/categories/explore/top/tiles');
-	  else:
-	    redirect('store/categories/browse/top/tiles');
-	  endif;
+			redirect('store/categories/explore/top/tiles');
+
+		else:
+
+			redirect('store/categories/browse/top/tiles');
+
+		endif;
 	}
 }

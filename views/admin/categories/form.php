@@ -10,7 +10,7 @@
 ?>
 
 <section class="title">
-    <h4><?php echo lang('store_title_category_'.$this->method);?></h4>
+    <h4><?php echo lang('store:category:title:'.$this->method);?></h4>
 </section>
 
 <section class="item">
@@ -21,22 +21,22 @@
 	
 		<ul>
 			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="name"><?php echo lang('store_category_name','name'); ?><span>*</span></label>
+				<label for="name"><?php echo lang('store:category:label:name','name'); ?><span>*</span></label>
 				<div class="input"><?php echo form_input('name', set_value('name',(isset($category)) ? $category->name : ''), 'maxlength="100" id="name"'); ?></div>
             </li>
             
             <li class="<?php echo alternator('', 'even'); ?> editor">
-                <label for="name"><?php echo lang('store_category_html','html'); ?><span>*</span></label>
+                <label for="html"><?php echo lang('store:category:label:html','html'); ?><span>*</span></label>
                 <div class="input"><?php echo form_textarea(array('id' => 'html', 'name' => 'html', 'value' => (isset($category)) ? $category->html : '', 'rows' => 3, 'class' => 'wysiwyg-simple')); ?></div>
             </li>
             
 			<li class="<?php echo alternator('', 'even'); ?>">
-				<label for="parent_id"><?php echo lang('store_category_parent','parent_id'); ?></label>
+				<label for="parent_id"><?php echo lang('store:category:label:parent','parent_id'); ?></label>
 				<div class="input"><?php echo form_dropdown('parent_id', isset($dropdown) ? $dropdown : array( '0' => 'None') , '0') ?></div>
             </li>
             
 			<li class="<?php echo alternator('', 'even'); ?>">
-                <label for="images_id"><?php echo lang('store_category_images_id','images_id'); ?></label>
+                <label for="images_id"><?php echo lang('store:category:label:images_id','images_id'); ?></label>
 				 <div class="input"><?php if(isset($category->image)){ echo $category->image . '&nbsp;';} ?><?php echo form_upload('userfile'); ?></div>
 				
             </li>

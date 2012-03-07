@@ -21,6 +21,8 @@ class Products_m extends MY_Model
 		
 		$this->load->model('images_m');
 		$this->load->model('files/file_m');
+		$this->load->model('tags_m');
+
 	}
 
 	public function update_product($products_id, $new_image_id=0)
@@ -29,6 +31,20 @@ class Products_m extends MY_Model
 		array_pop($this->data);
 		unset($this->data['userfile']);
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
+		
+		if(isset($this->data['tags_id'])):
+			$this->tags_m->update_products_tags($products_id, $this->data['tags_id']);
+			unset($this->data['tags_id']);
+		else:
+			$this->tags_m->delete_products_tags($products_id);
+		endif;
+
+		if(isset($this->data['attributes_id'])):
+			$this->attributes_m->update_products_attributes($products_id, $this->data['attributes_id']);
+			unset($this->data['attributes_id']);
+		else:
+			$this->attributes_m->delete_products_attributes($products_id);
+		endif;
 		
 		if(!($new_image_id == 0)):
 
@@ -50,8 +66,18 @@ class Products_m extends MY_Model
 		unset($this->data['userfile']);
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
 		$this->data['images_id'] = $new_image_id;
-
-		return $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
+		
+		
+		if(isset($this->data['tags_id'])):
+			$products_tags = $this->data['tags_id'];
+			unset($this->data['tags_id']);
+			$products_id = $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
+			$this->tags_m->add_products_tags($products_id, $products_tags);
+		else:
+			$products_id = $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
+		endif;
+		
+		return $products_id;
 	}
 
 	public function delete_product($products_id)
@@ -114,6 +140,55 @@ class Products_m extends MY_Model
 		return $data;
 	}
 
+	public function make_attributes_dropdown($selected_id=0)
+	{
+		$this->load->model('attributes_m');
+		$attributes = $this->db->get('store_attributes');
+		if($selected_id):
+
+			$selected_cat = $this->attributes_m->get($selected_id);
+
+		endif;
+
+		if($attributes->num_rows() == 0):
+
+		  	return array();
+
+		else:
+
+			if(isset($selected_cat)):
+
+				$data  = array( $selected_cat->attributes_id => $selected_cat->name);
+
+			else:
+
+				$data  = array('0'=>'Select');
+
+			endif;
+
+			foreach($attributes->result() as $attribute):
+
+				if(isset($selected_cat)):
+
+					if(!($selected_cat->name == $attribute->name)):
+
+						$data[$attribute->attributes_id] = $attribute->name;
+
+					endif;
+
+				else:
+
+					$data[$attribute->attributes_id] = $attribute->name;
+
+				endif;
+
+			endforeach;
+
+		endif;
+
+		return $data;
+	}
+
 	public function count_products($categories_id)
 	{
 		return $this->count_by('categories_id', $categories_id);
@@ -135,7 +210,7 @@ class Products_m extends MY_Model
 					->row();
 	}
 
-	public function get_product_in_cart($products_id)
+	public function get_product_in_cart($products_id,$options)
 	{
 		$product = $this->db
 						->where('products_id', $products_id)
@@ -147,7 +222,7 @@ class Products_m extends MY_Model
 				'qty'     => $this->input->post('qty'),
 				'price'   => $product->price,
 				'name'    => $product->name,
-				'options' => $this->get_product_attributes($product->attributes_id)
+				'options' => $options
 		);
 
 		return $this->items;
@@ -159,35 +234,39 @@ class Products_m extends MY_Model
 		$this->query = $this->db->get('store_attributes');
 		
 		foreach($this->query->result() as $this->attribute):
-
-			$this->result = array();
+			$this->data = array();
+			$this->data['name'] = $this->attribute->name;
+			$this->data['options'] = array();
 			$this->items = explode("|", $this->attribute->html);
 			
 			foreach($this->items as $this->item):
 
 				$this->temp = explode("=", $this->item);
-				$this->result[$this->temp[0]] = $this->temp[1];
+				$this->data['options'][$this->temp[0]] = $this->temp[1];
 
 			endforeach;
 
-			return $this->result;
+			return $this->data;
 
 		endforeach;
 	}
 
-	public function build_order()
+	public function build_order($gateway)
 	{
 		$this->data = array(
-			'users_id'			=>	$this->user->id,
+			'users_id'			=>	$this->current_user->id,
 			'invoice_nr'		=>	rand(1, 100),
 			'ip_address'		=>	$this->input->ip_address(),
-			'status'			=>	'0',
+			'status'			=>	'1',
 			'comments'			=>	'0',
 			'date_added'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'date_modified'		=>	mdate("%Y-%m-%d %H:%i:%s",time()),
 			'payment_method'	=>	'0',
+			'payment_address'	=>	'0',
 			'shipping_method'	=>	'0',
+			'shipping_address'	=>	'0',
 			'shipping_cost'		=>	'0',
+			'amount'			=>	$this->cart->total(),
 		);
 
 		$this->db->insert('store_orders',$this->data);
@@ -197,7 +276,7 @@ class Products_m extends MY_Model
 
 			$this->data = array(
 				'orders_id'		=>	$this->order_id,
-				'users_id'		=>	$this->user->id,
+				'users_id'		=>	$this->current_user->id,
 				'products_id'	=>	$items['id'],
 				'number'		=>	$items['qty']
 			);
@@ -206,19 +285,19 @@ class Products_m extends MY_Model
 
 		endforeach;
 
-		redirect('/store/checkout/process/' . $this->input->post('gateway') . '/' . $this->order_id . '/');
+		redirect('/store/checkout/process/' . $gateway . '/' . $this->order_id . '/');
 	}
 
 	public function get_order($orders_id)
 	{
 		return $this->db
 					->where('orders_id',$orders_id)
-					->get('store_orders_has_store_products');
+					->get('store_orders');
 	}
 
 	public function get_orders_product_name($orders_id)
 	{
-		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_store_products')->result() as $this->order):
+		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_products')->result() as $this->order):
 
 			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $this->product):
 
@@ -231,7 +310,7 @@ class Products_m extends MY_Model
 
 	public function get_orders_product_price($orders_id)
 	{
-		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_store_products')->result() as $this->order):
+		foreach($this->db->where('orders_id',$orders_id)->limit(1)->get('store_orders_has_products')->result() as $this->order):
 
 			foreach($this->db->where('products_id',$this->order->products_id)->get('store_products')->result() as $this->product):
 

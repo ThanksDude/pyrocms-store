@@ -11,6 +11,42 @@
 
 /* =========================================== STORE =========================================== */
 
-//  ----------------------------------------------------------------------------------------
+// MENU ------------------------------------------------------------------------------------------
 
-$lang['']				= '';
+$lang['store:attributes:menu']							= 'Attributes';
+
+// SHORTCUTS -------------------------------------------------------------------------------------
+
+$lang['store:attributes:shortcut:list']					= 'List Attributes';
+$lang['store:attributes:shortcut:add']					= 'Add Attributes';
+$lang['store:attributes:shortcut:list:category']		= 'List Category';
+$lang['store:attributes:shortcut:add:category']			= 'Add Category';
+
+// TITLES ----------------------------------------------------------------------------------------
+
+$lang['store:attributes:title']							= 'Attributes';
+$lang['store:attributes:title:add']						= 'Add';
+$lang['store:attributes:title:edit']					= 'Edit';
+
+// LABELS ----------------------------------------------------------------------------------------
+
+$lang['store:attributes:label:name']					= 'Name';
+$lang['store:attributes:label:html']					= 'Description';
+$lang['store:attributes:label:actions']					= 'Actions';
+
+// MESSAGES --------------------------------------------------------------------------------------
+
+$lang['store:attributes:messages:information:no_items']	= 'No Attributes created';
+$lang['store:attributes:messages:success:add']			= 'Attribute sucessfully created';
+$lang['store:attributes:messages:success:edit']			= 'Attribute sucessfully edited';
+$lang['store:attributes:messages:success:delete']		= 'Attribute sucessfully deleted';
+$lang['store:attributes:messages:error:add']			= 'Attribute creation failed';
+$lang['store:attributes:messages:error:edit']			= 'Attribute editing failed';
+$lang['store:attributes:messages:error:delete']			= 'Attribute deletion failed';
+
+// BUTTONS ---------------------------------------------------------------------------------------
+
+$lang['store:attributes:buttons:edit']					= 'Edit';
+$lang['store:attributes:buttons:delete']				= 'Delete';
+
+/* End of file attributes_lang.php */

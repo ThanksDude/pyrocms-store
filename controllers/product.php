@@ -18,7 +18,6 @@ class product extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
 		$this->load->language('products');
@@ -26,6 +25,8 @@ class product extends Public_Controller
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
 		$this->load->model('products_m');
+		$this->load->model('attributes_m');
+
 
 		$this->load->helper('date');
 		
@@ -58,6 +59,16 @@ class product extends Public_Controller
 					$this->images_m->front_image_resize('uploads/store/products/', $image, "_large", 400, 300);
 					$product->image = $image;
 					
+				endif;
+				$attributes = $this->attributes_m->get_products_attributes($product->products_id);
+				if(isset($attributes)):
+
+					$product->attributes = array();
+					foreach ($attributes as $attribute_id):
+						$attribute=$this->products_m->get_product_attributes($attribute_id);
+						$product->attributes[] = $attribute;
+					endforeach;
+
 				endif;
 				
 				$this->data->product = $product;

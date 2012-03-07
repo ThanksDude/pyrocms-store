@@ -10,6 +10,8 @@
 ?>
 <div id="auction">
   <ul>
+  <?php echo form_open('/store/customer_place_bid/' . $auction->auctions_id . '/'); ?>
+  <?php echo form_hidden('redirect', current_url()); ?>
     <li>
       <div>
 	<h2><?php echo $auction->name; ?></h2>
@@ -24,27 +26,48 @@
 	<img src="<?php echo base_url();?>uploads/store/auctions/<?php echo $name . $id. '_large' . $extension;?>" alt="<?php echo $auction->name; ?>" />
 	<?php endif; ?>				
       </div>
-      <div><p><?php echo lang('store_auction_html'). " : ";?></p>
+      <div><p><?php echo lang('store:auctions:label:html'). " : ";?></p>
 	<?php echo $auction->html; ?>
       </div>
-      <div>
-<p>
-	  <span><?php echo lang('store_auction_price'). " : ";?>
+      <div><p>
+	  <span><?php echo lang('store:auctions:label:price'). " : ";?>
 	    <?php echo $this->cart->format_number($auction->price); ?>
           </span>
       </p></div>
-
-      <div>
-<p>
-	  <span>Time
-	<?php echo time_diff_conv($auction->start_at, $auction->end_at); ?>
-          </span>
+      <div><p>
+       <span>
+      <?php echo form_input('bid',$this->cart->format_number($auction->price)) . form_submit('','Place Bid'); ?>
+      </span>
       </p></div>
-
-      <div><p><?php echo lang('store_auction_stock'). " : " . $auction->stock ;?></p></div>
+      <div><p>
+      	  <span><?php echo lang('store:auctions:label:end_at'). " : ";?>
+      		<?php echo unix_to_human($auction->end_at, TRUE, 'us'); ?>
+      		 </span>
+     </p></div>
+      	  
+    <div><p>
+    	<span>
+    	<?php 
+    		$now = time();
+    		if($auction->end_at>$now) {
+    			echo lang('store:auctions:label:remaining'). " : "; 
+      			echo timespan($now, $auction->end_at);
+      		} else {
+	      		echo lang('store:auctions:label:ended');
+      		}
+      	?>
+      	</span>
+    </p></div>
+      	  
+      	 
+      
+      <div><p><?php echo lang('store:auctions:label:stock'). " : " . $auction->stock ;?></p></div>
       
     </li>
   </ul>
-	<?php echo display_bids($auction); ?>
-	<?php echo display_comments($auction->auctions_id, 'store_auction'); ?>
+	<?php 
+		if($auction->allow_comments) {
+			echo display_comments($auction->auctions_id, 'store_auction'); 
+		}
+	?>
 </div>

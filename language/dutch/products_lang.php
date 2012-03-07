@@ -13,20 +13,20 @@
 
 // LABELS ----------------------------------------------------------------------------------------
 
-$lang['store_product_store_id']					= 'Winkel ID';
-$lang['store_product_product_id']				= 'Product ID';
-$lang['store_product_category']					= 'Categorie';
-$lang['store_product_name']						= 'Naam';
-$lang['store_product_html']						= 'Omschrijving';
-$lang['store_product_meta_description']			= 'Meta Omschrijving';
-$lang['store_product_meta_keywords']			= 'Meta Sleutelwoorden';
-$lang['store_product_attributes']				= 'Attributen';
-$lang['store_product_price']					= 'Prijs';
-$lang['store_product_discount']					= 'Korting';
-$lang['store_product_stock']					= 'Voorraad';
-$lang['store_product_limited']					= 'Gelimiteerde hoeveelheid';
-$lang['store_product_limited_used']				= 'Gelimiteerde hoeveelheid gebruikt';
-$lang['store_product_images']					= 'Afbeeldingen';
-$lang['store_product_thumbnail']				= 'Thumbnail';
-$lang['store_product_allow_comments']			= 'Commentaar Toestaan';
-$lang['store_product_actions']					= 'Acties';
+$lang['store:products:label:store_id']					= 'Winkel ID';
+$lang['store:products:label:product_id']				= 'Product ID';
+$lang['store:products:label:category']					= 'Categorie';
+$lang['store:products:label:name']						= 'Naam';
+$lang['store:products:label:html']						= 'Omschrijving';
+$lang['store:products:label:meta_description']			= 'Meta Omschrijving';
+$lang['store:products:label:meta_keywords']		    	= 'Meta Sleutelwoorden';
+$lang['store:products:label:attributes']				= 'Attributen';
+$lang['store:products:label:price']				    	= 'Prijs';
+$lang['store:products:label:discount']					= 'Korting';
+$lang['store:products:label:stock']					    = 'Voorraad';
+$lang['store:products:label:limited']					= 'Gelimiteerde hoeveelheid';
+$lang['store:products:label:limited_used']				= 'Gelimiteerde hoeveelheid gebruikt';
+$lang['store:products:label:images']					= 'Afbeeldingen';
+$lang['store:products:label:thumbnail']				    = 'Thumbnail';
+$lang['store:products:label:allow_comments']			= 'Commentaar Toestaan';
+$lang['store:products:label:actions']					= 'Acties';

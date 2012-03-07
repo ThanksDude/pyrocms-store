@@ -25,9 +25,16 @@ class Admin_attributes extends Admin_Controller
 		$this->load->helper('date');
 		
 		$this->load->language('general');
-		$this->load->language('messages');
-		$this->load->language('attributes');
+		$this->load->language('dashboard');
+		$this->load->language('statistics');
 		$this->load->language('settings');
+		$this->load->language('categories');
+		$this->load->language('products');
+		$this->load->language('orders');
+    	$this->load->language('auctions');
+		$this->load->language('tags');
+		$this->load->language('attributes');
+		$this->load->language('attributes_categories');
 
 		if(is_dir($this->upload_path) OR @mkdir($this->upload_path,0777,TRUE)):
 
@@ -47,12 +54,12 @@ class Admin_attributes extends Admin_Controller
 		$this->item_validation_rules = array(
 			array(
 				'field' => 'name',
-				'label' => 'name',
+				'label' => 'store:attributes:label:name',
 				'rules' => 'trim|max_length[255]|required'
 			),
 			array(
 				'field' => 'html',
-				'label' => 'html',
+				'label' => 'store:attributes:label:html',
 				'rules' => 'trim|max_length[1000]|required'
 			)
 		);
@@ -76,7 +83,7 @@ class Admin_attributes extends Admin_Controller
 		else:
 			
 			$this->template
-				 ->title($this->module_details['name'], lang(''))
+				 ->title($this->module_details['name'], lang('store:attributes:title'))
 				 ->build('admin/attributes/index', $this->data);
 				 
 		endif;
@@ -91,13 +98,13 @@ class Admin_attributes extends Admin_Controller
 			if($this->attributes_m->add_attribute($this->input->post())):
 				
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_attributes_success_create'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:attributes:messages:success:add'), $this->input->post('name')));
 				redirect('admin/store/attributes');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store_messages_attributes_error_create')));
+				$this->session->set_flashdata(array('error'=> lang('store:attributes:messages:error:add')));
 				redirect('admin/store/attributes/add');
 				
 			endif;
@@ -107,7 +114,7 @@ class Admin_attributes extends Admin_Controller
 			foreach ($this->item_validation_rules AS $rule):
 			
 				//$this->data->{$rule['field']} = $this->input->post($rule['field']);
-				$this->data->attributes->{$rule['field']} = $this->input->post($rule['field']);
+				$this->data->attribute->{$rule['field']} = $this->input->post($rule['field']);
 			
 			endforeach;
 
@@ -121,7 +128,7 @@ class Admin_attributes extends Admin_Controller
 			else:
 				
 				$this->template
-				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->title($this->module_details['name'], lang('store:attributes:title') . " - " . lang('store:attributes:title:add'))
 					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
 					 ->build('admin/attributes/form', $this->data);
 	
@@ -132,7 +139,7 @@ class Admin_attributes extends Admin_Controller
 
 	public function edit($attributes_id = 0, $ajax = FALSE)
 	{
-		$this->data = $this->attributes_m->get($attributes_id);
+		$this->data->attribute = $this->attributes_m->get($attributes_id);
 
 		$this->form_validation->set_rules($this->item_validation_rules);
 
@@ -142,13 +149,13 @@ class Admin_attributes extends Admin_Controller
 			if($this->attributes_m->update($attributes_id, $this->input->post())):
 
 				// ON SUCCESS
-				$this->session->set_flashdata('success', sprintf(lang('store_messages_attributes_success_edit'), $this->input->post('name')));
+				$this->session->set_flashdata('success', sprintf(lang('store:attributes:messages:success:edit'), $this->input->post('name')));
 				redirect('admin/store/attributes');
 
 			else:
 
 				// ON ERROR
-				$this->session->set_flashdata(array('error'=> lang('store_messages_attributes_error_edit')));
+				$this->session->set_flashdata(array('error'=> lang('store:attributes:messages:error:edit')));
 				redirect('admin/store/attributes/edit/'.$attributes_id);
 				
 			endif;
@@ -165,7 +172,7 @@ class Admin_attributes extends Admin_Controller
 			else:
 			
 				$this->template
-				 	 ->title($this->module_details['name'], lang(''))
+				 	 ->title($this->module_details['name'], lang('store:attributes:title') . " - " . lang('store:attributes:title:edit'))
 					 ->append_metadata($this->load->view('fragments/wysiwyg', $this->data, TRUE))
 					 ->build('admin/attributes/form', $this->data);
 
