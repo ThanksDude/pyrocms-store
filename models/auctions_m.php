@@ -16,10 +16,10 @@ class Auctions_m extends MY_Model
 	{
 		parent::__construct();
 
-		$this->load->library('store_settings');
+		$this->load->library('store/store_settings');
 		$this->_store = $this->store_settings->item('store_id');
 		
-		$this->load->model('images_m');
+		$this->load->model('store/images_m');
 		$this->load->model('files/file_m');
 	}
 

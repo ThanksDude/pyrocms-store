@@ -35,7 +35,10 @@ class Store extends Public_Controller
 
 	public function index($autions = FALSE)
 	{
-		if($autions):
+		$i = $this->store_settings->item('sell_method');
+
+	  	if ( isset($i) && (strcmp($i, "1") == 0) ):
+		//if($autions):
 
 			redirect('store/categories/explore/top/tiles');
 
