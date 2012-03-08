@@ -18,13 +18,13 @@ class Module_Store extends Module {
 				'en' => 'Online Store',
 				'nl' => 'Online Webwinkel',
 				'de' => 'Online Store',
-				'zh' => 'ç·šä¸Šĺ•†ĺş—'
+				'zh' => '線上商店'
 			),
 			'description' => array(
 				'en' => 'This is a PyroCMS Store module.',
 				'nl' => 'Dit is een webwinkel module voor PyroCMS',
 				'de' => 'Dies ist ein Online-Shop fur PyroCMS',
-				'zh' => 'é€™ć�Żä¸€ĺ€‹ PyroCMS ĺ•†ĺş—ć¨ˇçµ„'
+				'zh' => '這是一個 PyroCMS 商店模組'
 
 			),
 			'frontend'	=> TRUE,
