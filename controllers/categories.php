@@ -49,15 +49,10 @@ class Categories extends Public_Controller {
 		endif;
 	}
 
-	public function json_auction($category_id = NULL)
+	public function json($category_id = NULL)
 	{
-	  $this->template
-	    ->title( "auctions list for category" )
-	    ->set_metadata('description', "meta description")
-	    ->set_metadata('keywords', "meta keywords");
-	  
-	  if ($cat_id != NULL) {
-	    $auctions = $this->auctions_m->get_auctions($cat_id);
+	  if ($category_id != NULL) {
+	    $auctions = $this->auctions_m->get_auctions($category_id);
 	  
 	    $auctions = $auctions ? $auctions : array('error'=>'id not found');
 	    $this->template->build_json($auctions);

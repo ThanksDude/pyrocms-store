@@ -24,6 +24,8 @@ class Customer extends Public_Controller
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
 		$this->load->model('products_m');
+		$this->load->model('auctions_m');
+		$this->load->model('bid_m');
 
 		$this->load->helper('date');
 		
@@ -47,7 +49,7 @@ class Customer extends Public_Controller
 	public function place_bid($auction_id = null)
 	{
 	  if ( !isset($this->current_user) ):
-	    redirect('register');
+	    redirect('users/login');
 	  endif;
 
 	  $this->data['auction'] = $this->auctions_m->get_auction($auction_id);
@@ -110,11 +112,15 @@ class Customer extends Public_Controller
 
 	public function bid_history()
 	{
+	  if ( !isset($this->current_user) && empty($this->current_user->id) ):
+	    redirect('users/login');
+	  endif;
+
 		$this->load->library('unit_test');
 		$this->unit->active(FALSE);
 		
 		$this->data['current_bid'] = null;
-		foreach ($this->auctions_m->get_all_active() as $auction) {
+		foreach ($this->auctions_m->get_by('is_active', 1) as $auction) {
 		  $this->data['current_bid'][]	= array('auction'=>$auction, 'bid'=>$this->bid_m->limit(1)
 							->get_latest_auction_bids_by_user_id($this->current_user->id, $auction->auctions_id)
 							);
@@ -122,7 +128,7 @@ class Customer extends Public_Controller
 
 
 		$this->data['won_bid'] = null;
-		foreach ($this->auctions_m->get_all_inactive() as $auction) {
+		foreach ($this->auctions_m->get_by('is_active', 0) as $auction) {
 		  $bids = $this->bid_m->limit(1)
 		    ->get_latest_auction_inactive_bids_by_user_id($this->current_user->id, $auction->auctions_id);
 

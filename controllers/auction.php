@@ -19,7 +19,7 @@ class auction extends Public_Controller
 		$this->load->library('store_settings');
 
 		$this->load->language('general');
-		$this->load->language('messages');
+		//		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
 
@@ -96,32 +96,40 @@ class auction extends Public_Controller
 	 */
 	public function declare_winner()
 	{
-	  foreach ($this->auctions_m->get_all_active() as $auction) {
-	    echo $auction->auctions_id."<br/>";
-	    echo $auction->start_at."<br/>";
-	    echo $auction->end_at."<br/>";
+	  foreach ( $this->auctions_m->get_by('is_active', 1) as $auction ) {
+
+	    /* => log msg
+	      echo $auction->auctions_id."<br/>";
+	      echo $auction->start_at."<br/>";
+	      echo $auction->end_at."<br/>";
+	    */
 
 	    $now = time();
 
-	    if ( $auction->end_at > $now ) {
-	      echo timespan($now, $auction->end_at).'<br/>';
-	      echo 'end at '.date('d-m-Y', $auction->end_at).'<br/>';
+	    if ( $auction->end_at > $now ) { // NOT FINISH YET
+
+	      /* => log msg
+		 echo timespan($now, $auction->end_at).'<br/>';
+		 echo 'end at '.date('d-m-Y', $auction->end_at).'<br/>';
+	      */
+
 	    }
-	    else {
+	    else { // ENDING PROCESS
 
-	      echo lang('store:auctions:label:ended_short');
+	      // => log
+	      // echo lang('store:auctions:label:ended_short');
 
-		$this->auctions_m->end_auction($auction->auctions_id);
-		// declare bid winner
+	      // First stop auction, change is_active to false
+	      $this->auctions_m->end_auction($auction->auctions_id);
 
-		$winner = $this->bid_m->get_by_auction_id($auction->auctions_id, 1);
+	      // Second get winning bid, get the latest bid.
+	      $winner = $this->bid_m->get_by_auction_id($auction->auctions_id, 1);
 
-		
-		var_dump($winner);
-		
-		$this->auctions_m->set_auction_winner($auction->auctions_id, $winner[0]->bid_id);
+	      //var_dump($winner);
+
+	      // Third set to auction information the winning bid id.
+	      $this->auctions_m->set_auction_winner($auction->auctions_id, $winner[0]->bid_id);
 	    }
-	    echo "<br/><br/>";
 	  }
 	}
 }
