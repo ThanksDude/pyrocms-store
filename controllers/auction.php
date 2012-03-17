@@ -36,11 +36,24 @@ class auction extends Public_Controller
 			 ->append_metadata(js('store.js', 'store'));
 	}
 
+	/**
+	 * Redirect to products or auctions categories list,
+	 * allowed by store_setting 'sell_method'.
+	 */
 	public function index()
 	{
+		$i = $this->store_settings->item('sell_method');
 
+		if ( isset($i) && (strcmp($i, "1") == 0) ):
+			redirect('store/categories/explore/top/tiles');
+		else:
+			redirect('store/categories/browse/top/tiles');
+		endif;
 	}
 
+	/**
+	 * Display auction description
+	 */
 	public function view($auction_slug = NULL)
 	{
 		if ($auction_slug != NULL):
@@ -60,6 +73,56 @@ class auction extends Public_Controller
 		else:
 			redirect('store/categories/browse/top/tiles');
 		endif;
+	}
+
+	/**
+	 * Display auction description
+	 */
+	public function json($auctions_id = NULL)
+	{
+	  if ($auctions_id != NULL) {
+	    $auction = $this->auctions_m->get_auction($auctions_id);
+	  
+	    $auction = $auction ? $auction : array('error' => 'id not found');
+	    $this->template->build_json($auction);
+	  }
+	  else {
+	    $this->template->build_json(array('error' => 'precise auction id'));
+	  }
+	}
+
+	/**
+	 * Method called by CRON
+	 */
+	public function declare_winner()
+	{
+	  foreach ($this->auctions_m->get_all_active() as $auction) {
+	    echo $auction->auctions_id."<br/>";
+	    echo $auction->start_at."<br/>";
+	    echo $auction->end_at."<br/>";
+
+	    $now = time();
+
+	    if ( $auction->end_at > $now ) {
+	      echo timespan($now, $auction->end_at).'<br/>';
+	      echo 'end at '.date('d-m-Y', $auction->end_at).'<br/>';
+	    }
+	    else {
+
+	      echo lang('store:auctions:label:ended_short');
+
+		$this->auctions_m->end_auction($auction->auctions_id);
+		// declare bid winner
+
+		$winner = $this->bid_m->get_by_auction_id($auction->auctions_id, 1);
+
+		
+		var_dump($winner);
+		
+		$this->auctions_m->set_auction_winner($auction->auctions_id, $winner[0]->bid_id);
+	    }
+	    echo "<br/><br/>";
+	  }
 	}
 }
 

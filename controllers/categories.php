@@ -49,6 +49,24 @@ class Categories extends Public_Controller {
 		endif;
 	}
 
+	public function json_auction($category_id = NULL)
+	{
+	  $this->template
+	    ->title( "auctions list for category" )
+	    ->set_metadata('description', "meta description")
+	    ->set_metadata('keywords', "meta keywords");
+	  
+	  if ($cat_id != NULL) {
+	    $auctions = $this->auctions_m->get_auctions($cat_id);
+	  
+	    $auctions = $auctions ? $auctions : array('error'=>'id not found');
+	    $this->template->build_json($auctions);
+	  }
+	  else {
+	    $this->template->build_json(array('error'=>'precise cat id'));
+	  }
+	}
+
 	public function browse($types = 'top', $views = 'tiles', $name = NULL)
 	{
 		switch($types):
@@ -182,7 +200,6 @@ class Categories extends Public_Controller {
 		endif;
 
 	}
-
 }
 
 /* End of file categories.php */

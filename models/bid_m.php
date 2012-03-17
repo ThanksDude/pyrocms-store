@@ -52,4 +52,66 @@ class Bid_m extends MY_Model
     
     return parent::insert($input);
   }
+
+  public function get_bid_by_user_id($id)
+  {
+  	$this->db->select('bid.*')
+      ->from($this->_table.' bid')
+      ->join('users prf', 'bid.user_id = prf.id', 'left')
+      ->where('user_id', $id)
+      ->order_by('bid.bid_id DESC');
+    
+    return $this->db->get()->result();
+  }
+  
+  /**
+   * Get bid for user id
+   *
+   */
+  public function get_bid_won_by_user($id)
+  {
+    $this->db->select('bid.*')
+      ->from($this->_table.' bid')
+      ->join('users prf', 'bid.user_id = prf.id', 'left')
+      ->where('user_id', $id)
+      ->order_by('bid.bid_id DESC');
+    
+    return $this->db->get()->result();
+  }
+
+ /**
+   * Get lastest bid for an auction for user id
+   *
+   */
+  public function get_latest_auction_bids_by_user_id($user_id, $auction_id)
+  {
+    $this->db->select('bid.*')
+      ->from($this->_table.' bid')
+      ->join('users prf', 'bid.user_id = prf.id', 'left')
+      ->join('store_auctions auct', 'bid.auction_id = auct.auctions_id', 'left')
+      ->where('is_active', 1)
+      ->where('user_id', $user_id)
+      ->where('auction_id', $auction_id)
+      ->order_by('bid.bid_id DESC');
+    
+    return $this->db->get()->result();
+  }
+
+ /**
+   * Get lastest bid for an auction for user id
+   *
+   */
+  public function get_latest_auction_inactive_bids_by_user_id($user_id, $auction_id)
+  {
+    $this->db->select('bid.*')
+      ->from($this->_table.' bid')
+      ->join('users prf', 'bid.user_id = prf.id', 'left')
+      ->join('store_auctions auct', 'bid.auction_id = auct.auctions_id', 'left')
+      ->where('is_active', 0)
+      ->where('user_id', $user_id)
+      ->where('auction_id', $auction_id)
+      ->order_by('bid.bid_id DESC');
+    
+    return $this->db->get()->result();
+  }
 }

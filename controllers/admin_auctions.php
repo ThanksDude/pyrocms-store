@@ -36,7 +36,7 @@ class Admin_auctions extends Admin_Controller
 		$this->load->language('settings');
 		$this->load->language('categories');
 		$this->load->language('products');
-    	$this->load->language('auctions');
+		$this->load->language('auctions');
 		$this->load->language('tags');
 		$this->load->language('attributes');
 		$this->load->language('orders');
