@@ -288,6 +288,7 @@ class Module_Store extends Module {
 				`categories_id` INT NOT NULL ,
 				`attributes_id` INT NOT NULL ,
 				`status`  tinyint(4) NOT NULL DEFAULT '1' ,
+				`winning_bid_id`  INT NOT NULL DEFAULT '0' ,
 				`name` VARCHAR(100) NOT NULL ,
 				`slug` VARCHAR(100) NOT NULL ,
 				`meta_description` TEXT NULL ,

@@ -26,7 +26,6 @@ class Categories extends Public_Controller {
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
 		$this->load->model('products_m');
-		$this->load->model('auctions_m');
 
 		$this->load->helper('date');
 
@@ -50,17 +49,15 @@ class Categories extends Public_Controller {
 		endif;
 	}
 
+	/**
+	 * json
+	 *
+	 * return information about all active auctions.
+	 */
 	public function json($category_id = NULL)
 	{
-	  if ($category_id != NULL) {
-	    $auctions = $this->auctions_m->get_auctions($category_id);
-	  
-	    $auctions = $auctions ? $auctions : array('error'=>'id not found');
-	    $this->template->build_json($auctions);
-	  }
-	  else {
-	    $this->template->build_json(array('error'=>'precise cat id'));
-	  }
+	  $auctions =  $this->auctions_management->get_active_auctions($category_id);
+	  $this->template->build_json($auctions);
 	}
 
 	public function browse($types = 'top', $views = 'tiles', $name = NULL)
@@ -111,16 +108,19 @@ class Categories extends Public_Controller {
 
 	private function build_top_types($directory, $view)
 	{
-	  switch ($directory) {
- 
-	  case "auction":
-	    $categories = $this->auctions_management->get_categories();
-	    break;
 
-	  default:
-	    $categories = $this->categories_m->get_all();
-	    break;
-	  }
+	  switch ($directory)
+	    {
+ 
+	    case "auction":
+	      $categories = $this->auctions_management->get_categories();
+	      break;
+
+	    default:
+	      $categories = $this->categories_m->get_all();
+	      break;
+	    }
+
 
 		foreach($categories as $category):
 

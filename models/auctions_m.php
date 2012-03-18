@@ -104,15 +104,6 @@ class Auctions_m extends MY_Model
 	    ->row();
 	}
 
-	public function end_auction($auctions_id)
-	{
-	  $this->data = array('is_active'=>0);
-	  
-	  return $this->db
-	    ->where('id', $auctions_id)
-	    ->update($this->_table, $this->data);
-	}
-
 	public function set_auction_winner($auctions_id, $bid_id)
 	{
 	  $this->data = array('winning_bid_id' => $bid_id);

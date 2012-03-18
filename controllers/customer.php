@@ -63,7 +63,7 @@ class Customer extends Public_Controller
 	    redirect('users/login');
 	  endif;
 
-	  $this->data['auction'] = $this->auctions_m->get_auction($auction_id);
+	  $this->data['auction'] = $this->auctions_management->get_auction($auction_id);
 	  
 	  if ( $auction_id && isset($this->data['auction']) && !empty($this->data['auction']) ) {
 

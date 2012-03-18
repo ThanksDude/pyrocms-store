@@ -20,8 +20,10 @@ class Admin_categories extends Admin_Controller
 		$this->load->model('categories_m');
 		$this->load->model('products_m');
 		$this->load->model('images_m');
+
 		$this->load->library('form_validation');
 		$this->load->library('store_settings');
+
 		$this->load->helper('date');
 		
 		$this->load->language('general');
@@ -31,7 +33,7 @@ class Admin_categories extends Admin_Controller
 		$this->load->language('categories');
 		$this->load->language('products');
 		$this->load->language('orders');
-    	$this->load->language('auctions');
+		$this->load->language('auctions');
 		$this->load->language('tags');
 		$this->load->language('attributes');
 		$this->load->language('attributes_categories');

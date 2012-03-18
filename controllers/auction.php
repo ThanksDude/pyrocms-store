@@ -94,42 +94,16 @@ class auction extends Public_Controller
 
 	/**
 	 * Method called by CRON
+	 *
+	 * Change status to auctions:
+	 * not-started => started
+	 * started => ended
+	 *
 	 */
-	public function declare_winner()
+	public function cron_status()
 	{
 	  foreach ( $this->auctions_management->get_active_auctions() as $auction ) {
-
-	    /* => log msg
-	      echo $auction->auctions_id."<br/>";
-	      echo $auction->start_at."<br/>";
-	      echo $auction->end_at."<br/>";
-	    */
-
-	    $now = time();
-
-	    if ( $auction->end_at > $now ) { // NOT FINISH YET
-
-	      /* => log msg
-		 echo timespan($now, $auction->end_at).'<br/>';
-		 echo 'end at '.date('d-m-Y', $auction->end_at).'<br/>';
-	      */
-
-	    }
-	    else { // ENDING PROCESS
-
-	      // => log
-	      // echo lang('store:auctions:label:ended_short');
-
-	      // First stop auction, change status => end
-	      $this->auctions_management->status_manager($auction);
-
-	      // Second get winning bid, get the latest bid.
-	      $winner = $this->bid_m->get_by_auction_id($auction->auctions_id, 1);
-
-	      var_dump($winner);
-
-	      
-	    }
+	    $this->auctions_management->status_manager($auction);
 	  }
 	}
 }
