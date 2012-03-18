@@ -11,7 +11,6 @@
 <div id="auction">
   <ul>
    <?php echo form_open('/store/customer/place_bid/' . $auction->id . '/'); ?>
-  <?php echo form_hidden('redirect', current_url()); ?>
     <li>
       <div>
 	<h2><?php echo $auction->name; ?></h2>

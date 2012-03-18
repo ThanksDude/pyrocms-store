@@ -45,7 +45,7 @@
 					<td><?php echo $auction->name; ?></td>
 					<td><?php 
 							if (isset($auction->category->name)) { 
-								$output = '<a href="admin/store/category/';
+							  $output = '<a href="'.site_url().'/admin/store/category/';
 								$output .= str_replace(' ', '-', $auction->category->name) . '" ';
 								$output .= ' >';						
 								$output .= $auction->category->name; 

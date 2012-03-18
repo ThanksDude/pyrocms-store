@@ -17,6 +17,7 @@ class auction extends Public_Controller
 
 		$this->load->library('cart');
 		$this->load->library('store_settings');
+		$this->load->library('auctions_management');
 
 		$this->load->language('general');
 		//		$this->load->language('messages');
@@ -96,7 +97,7 @@ class auction extends Public_Controller
 	 */
 	public function declare_winner()
 	{
-	  foreach ( $this->auctions_m->get_by('is_active', 1) as $auction ) {
+	  foreach ( $this->auctions_management->get_active_auctions() as $auction ) {
 
 	    /* => log msg
 	      echo $auction->auctions_id."<br/>";
@@ -119,16 +120,15 @@ class auction extends Public_Controller
 	      // => log
 	      // echo lang('store:auctions:label:ended_short');
 
-	      // First stop auction, change is_active to false
-	      $this->auctions_m->end_auction($auction->auctions_id);
+	      // First stop auction, change status => end
+	      $this->auctions_management->status_manager($auction);
 
 	      // Second get winning bid, get the latest bid.
 	      $winner = $this->bid_m->get_by_auction_id($auction->auctions_id, 1);
 
-	      //var_dump($winner);
+	      var_dump($winner);
 
-	      // Third set to auction information the winning bid id.
-	      $this->auctions_m->set_auction_winner($auction->auctions_id, $winner[0]->bid_id);
+	      
 	    }
 	  }
 	}

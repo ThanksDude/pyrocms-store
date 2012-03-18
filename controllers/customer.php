@@ -14,12 +14,15 @@ class Customer extends Public_Controller
 	{
 		parent::__construct();
 
+		$this->load->library('form_validation');
 		$this->load->library('cart');
 		$this->load->library('store_settings');
+		$this->load->library('auctions_management');
 
 		$this->load->language('general');
 		$this->load->language('cart');
 		$this->load->language('settings');
+		$this->load->language('customer');
 
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
@@ -36,19 +39,27 @@ class Customer extends Public_Controller
 
 	public function index()
 	{
+	  if ( !isset($this->current_user->id) ):
+	    redirect('users/login');
+	  endif;
+
 		$this->template
 			 ->build('customer/index', $this->data);
 	}
 
 	public function purchase_history()
 	{
+	  if ( !isset($this->current_user->id) ):
+	    redirect('users/login');
+	  endif;
+
 		$this->template
 			 ->build('customer/purchase_history', $this->data);
 	}
 
 	public function place_bid($auction_id = null)
 	{
-	  if ( !isset($this->current_user) ):
+	  if ( !isset($this->current_user->id) || !$auction_id ):
 	    redirect('users/login');
 	  endif;
 
@@ -59,18 +70,20 @@ class Customer extends Public_Controller
 	    $this->data['last_bid'] = $this->bid_m->get_by_auction_id($auction_id, 1);
 	    
 	    if ( ($this->data['img_auction'] = $this->images_m->get_image($this->data['auction']->images_id)) ) {
-	      $this->images_m->front_image_resize('uploads/store/categories/', $this->data['img_auction'], 1024, 768);
+	      $this->images_m->front_image_resize('uploads/store/auctions/', $this->data['img_auction'], 150, 150);
 	    }
 
-	    /* if ( ($this->data['img_auction'] = $this->images_m->get_image($this->data['auction'])) ) { */
-	    /*   $this->images_m->front_image_resize('uploads/store/categories/', $this->data['img_auction'], 1024, 768); */
-	    /* } */
+	    $category = $this->categories_m->get_category($this->data['auction']->categories_id);
+
+	    if ( ($this->data['img_cat_auction'] = $this->images_m->get_image($category->images_id)) ) {
+	      $this->images_m->front_image_resize('uploads/store/categories/', $this->data['img_cat_auction'], 150, 150);
+	    }
 
 	    $post = array(
 			  'user_id'    	=> $this->current_user->id,
 			  'auction_id'	=> $this->input->post('id'),
 			  'price'      	=> $this->input->post('price'),
-			  'date'       	=> now()
+			  'date'       	=> time()
 			  );
 
 	    $validation = array(
@@ -112,7 +125,7 @@ class Customer extends Public_Controller
 
 	public function bid_history()
 	{
-	  if ( !isset($this->current_user) && empty($this->current_user->id) ):
+	  if ( !isset($this->current_user->id) ):
 	    redirect('users/login');
 	  endif;
 
@@ -120,21 +133,25 @@ class Customer extends Public_Controller
 		$this->unit->active(FALSE);
 		
 		$this->data['current_bid'] = null;
-		foreach ($this->auctions_m->get_by('is_active', 1) as $auction) {
-		  $bid_tmp = $this->bid_m->limit(1)
-		    ->get_latest_auction_bids_by_user_id($this->current_user->id, $auction->auctions_id);
+		foreach ($this->auctions_management->get_active_auctions() as $auction) {
 
-		  $this->data['current_bid'][]	= array(
-							'auction'=>$auction,
-							'bid'=>($bid_tmp?$bid_tmp:null)
-							);
+		  $bid_tmp = $this->bid_m->get_latest_auction_bids_by_user_id($this->current_user->id,
+									      $auction->id);
+
+		  if ($bid_tmp) {
+		    $this->data['current_bid'][]	= array(
+								'auction'	=> $auction,
+								'bid'		=> $bid_tmp
+								);
+		  }
+
 		}
 
 
 		$this->data['won_bid'] = null;
-		foreach ($this->auctions_m->get_by('is_active', 0) as $auction) {
+		foreach ($this->auctions_management->get_ended_auctions() as $auction) {
 		  $bids = $this->bid_m->limit(1)
-		    ->get_latest_auction_inactive_bids_by_user_id($this->current_user->id, $auction->auctions_id);
+		    ->get_latest_auction_inactive_bids_by_user_id($this->current_user->id, $auction->id);
 
 		  if ( !empty($bids) && ($bids[0]->bid_id == $auction->winning_bid_id) ) {
 		    $this->data['won_bid'][] = array('auction'=>$auction, 'bid'=>$bids[0]);
@@ -153,18 +170,30 @@ class Customer extends Public_Controller
 
 	public function order_status()
 	{
+	  if ( !isset($this->current_user->id) ):
+	    redirect('users/login');
+	  endif;
+
 		$this->template
 			 ->build('customer/order_status', $this->data);
 	}
 
 	public function my_downloads()
 	{
+	  if ( !isset($this->current_user->id) ):
+	    redirect('users/login');
+	  endif;
+
 		$this->template
 			 ->build('customer/my_downloads', $this->data);
 	}
 
 	public function profile()
 	{
+	  if ( !isset($this->current_user->id) ):
+	    redirect('users/login');
+	  endif;
+
 		$this->template
 			 ->build('customer/profile', $this->data);
 	}

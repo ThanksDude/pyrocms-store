@@ -2,8 +2,8 @@
 {
     $(document).ready(function(){
 
-	$('#start_at').datetimepicker({ ampm: true });
-	$('#end_at').datetimepicker({ampm: true});
+	$('#start_at').datetimepicker();
+	$('#end_at').datetimepicker();
 
     });
 

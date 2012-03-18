@@ -40,22 +40,6 @@ $(document).ready(function() {
  });// end document ready
 </script>
 
-<!-- #blank_container : container full width -->
-<div id="blank_container" class="top"></div>
-
-<div id="blank_container" class="content">
-  
-
-<div id="blank_container" class="sidebar">
-  <div id="blank_container" class="sidebar top"></div>
-  <div id="blank_container" class="sidebar content">
-    <ul>
-    {{ navigation:links group="users-edit_profile" }}
-    </ul>
-  </div>
-  <div id="blank_container" class="sidebar bottom"></div>
-</div>
-
 <section class="title">
 	<h4>Bid management</h4>
 </section>
@@ -64,8 +48,8 @@ $(document).ready(function() {
 
 <div id="vtab">
 	<ul id="menu">
-		<li style="display:inline;list-style:none;" class="bid_cur"><a>My current bids</a></li>
-		<li class="bid_won" style="display:inline;list-style:none;margin-left:15px;"><a>My won bids</a></li>
+		<li style="border:1px solid gray;display:inline;list-style:none;" class="bid_cur"><a>My current bids</a></li>
+		<li class="bid_won" style="border: 1px solid gray;display:inline;list-style:none;margin-left:15px;"><a>My won bids</a></li>
 	</ul>
 		<!-- index tab -->
 	<div>
@@ -74,20 +58,24 @@ $(document).ready(function() {
 		<fieldset>
 		<ul>
     <?php if (isset($current_bid) && !empty($current_bid)): ?>
-    <table border="0" style="width:250px;text-align:center;">
+    <table border="0" style="width:100%;margin-top:20px;text-align:center;">
     <tr>
-    <th>Auction</th>
-    <th>Price</th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:auction'); ?></th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:date'); ?></th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:price'); ?></th>
     </tr>
     <?php foreach ($current_bid as $bid_info): ?>
     <tr>
     <td><a href="<?php echo site_url(); ?>/store/auction/view/<?php echo $bid_info['auction']->slug; ?>/" title="<?php echo $bid_info['auction']->name; ?>"><?php echo $bid_info['auction']->name; ?></a></td>
-    <td><?php echo $bid_info['bid'][0]->price; ?></td>
+    <td><?php echo unix_to_human($bid_info['bid'][0]->date, TRUE, 'us'); ?></td>
+    <td><?php echo $this->cart->format_number($bid_info['bid'][0]->price); ?></td>
     </tr>
  <?php endforeach; ?>
     </table>
  <?php else: ?>
-    Vous n'avez pas encore encheris !
+    <div style="margin-top:20px;">
+        <?php echo lang('store:customer:message:no-current_bid'); ?>
+</div>
  <?php endif; ?>
     
     </ul>
@@ -105,18 +93,21 @@ $(document).ready(function() {
     <?php if (isset($won_bid) && !empty($won_bid)): ?>
        <table border="0" style="width:250px;text-align:center;">
     <tr>
-    <th>Auction</th>
-    <th>Price</th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:auction'); ?></th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:date'); ?></th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:price'); ?></th>
     </tr>
     <?php foreach ($won_bid as $bid_info): ?>
     <tr>
     <td><a href="<?php echo site_url(); ?>/store/auction/view/<?php echo $bid_info['auction']->slug; ?>/" title="<?php echo $bid_info['auction']->name; ?>"><?php echo $bid_info['auction']->name; ?></a></td>
-    <td><?php echo $bid_info['bid']->price; ?></td>
+    <td><?php echo $this->cart->format_number($bid_info['bid']->price); ?></td>
     </tr>
  <?php endforeach; ?>
     </table>
  <?php else: ?>
-    Vous n'avez pas encore gagner d'enchere !
+    <div style="margin-top:20px;">
+   <?php echo lang('store:customer:message:no-won_bid'); ?>
+</div>
  <?php endif; ?>
 		</ul>
 		</fieldset>
@@ -126,8 +117,3 @@ $(document).ready(function() {
 </div>
 
 </section>
-
-</div>
-
-<div id="blank_container" class="bottom"></div>
-<!-- #blank_container : end -->

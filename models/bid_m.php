@@ -88,10 +88,10 @@ class Bid_m extends MY_Model
     $this->db->select('bid.*')
       ->from($this->_table.' bid')
       ->join('users prf', 'bid.user_id = prf.id', 'left')
-      ->join('store_auctions auct', 'bid.auction_id = auct.auctions_id', 'left')
-      ->where('is_active', 1)
+      ->join('store_auctions auct', 'bid.auction_id = auct.id', 'left')
+      ->where('status', 1)
       ->where('user_id', $user_id)
-      ->where('auction_id', $auction_id)
+      ->where('auct.id', $auction_id)
       ->order_by('bid.bid_id DESC');
     
     return $this->db->get()->result();
@@ -106,10 +106,10 @@ class Bid_m extends MY_Model
     $this->db->select('bid.*')
       ->from($this->_table.' bid')
       ->join('users prf', 'bid.user_id = prf.id', 'left')
-      ->join('store_auctions auct', 'bid.auction_id = auct.auctions_id', 'left')
-      ->where('is_active', 0)
+      ->join('store_auctions auct', 'bid.auction_id = auct.id', 'left')
+      ->where('status', 2)
       ->where('user_id', $user_id)
-      ->where('auction_id', $auction_id)
+      ->where('auct.id', $auction_id)
       ->order_by('bid.bid_id DESC');
     
     return $this->db->get()->result();
