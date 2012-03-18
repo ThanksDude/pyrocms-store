@@ -11,7 +11,7 @@
 <div id="categories">
   <ul>
     <?php foreach($categories as $category) { ?>
-    <li><a href="<?php echo base_url('store/categories/explore/sub/tiles/'.str_replace(' ', '-', $category->name)); ?>/" 
+    <li><a href="<?php echo site_url('store/categories/explore/sub/tiles/'.str_replace(' ', '-', $category->name)); ?>/" 
 	   title="<?php echo $category->name; ?>">	
 	<div>
 	  <h4 class="category_title"><?php echo ucfirst($category->name); ?></h4>
@@ -25,10 +25,10 @@
 	  
 	</div>
 	<div>
-	  <h5><?php $num_products = $this->auctions_m->count_auctions($category->categories_id); 
-	    if ($num_products == 0) { $output = "no auctions"; }
-	    else if($num_products == 1) { $output = $num_products . " item"; }
-	    else { $output = $num_products . " items"; } 
+       <h5><?php
+	    if ($category->items_number == 0) { $output = "no auctions"; }
+	    else if($category->items_number == 1) { $output = "1 item"; }
+	    else { $output = $category->items_number . " items"; } 
 	    echo $output; 
 	    ?></h5>			
 	</div>

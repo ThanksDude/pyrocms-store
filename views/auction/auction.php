@@ -10,12 +10,12 @@
 ?>
 <div id="auction">
   <ul>
-  <?php echo form_open('/store/customer_place_bid/' . $auction->auctions_id . '/'); ?>
+   <?php echo form_open('/store/customer/place_bid/' . $auction->id . '/'); ?>
   <?php echo form_hidden('redirect', current_url()); ?>
     <li>
       <div>
 	<h2><?php echo $auction->name; ?></h2>
-	{{ ratings:vote steps="5" module="store_auction" item-id="<?php echo $auction->auctions_id; ?>" }}
+	{{ ratings:vote steps="5" module="store_auction" item-id="<?php echo $auction->id; ?>" }}
 	<a href="{{ url }}">{{ theme:image file="<?php echo base_url(); ?>uploads/default/{{ status }}.gif" alt="vote {{item}}" }}</a>
 	{{ /ratings:vote }}
       </div>
@@ -36,7 +36,9 @@
       </p></div>
       <div><p>
        <span>
-      <?php echo form_input('bid',$this->cart->format_number($auction->price)) . form_submit('','Place Bid'); ?>
+	<?php if ($auction->status === '1') : ?>
+      <?php echo form_input('price',$this->cart->format_number($auction->price)).form_hidden('id', $auction->id, 'class="maxlength="100""').form_hidden('slug', $auction->slug, 'class="maxlength="100""').form_submit('','Place Bid'); ?>
+	<?php endif; ?>
       </span>
       </p></div>
       <div><p>
@@ -67,7 +69,7 @@
   </ul>
 	<?php 
 		if($auction->allow_comments) {
-			echo display_comments($auction->auctions_id, 'store_auction'); 
+			echo display_comments($auction->id, 'store_auction'); 
 		}
 	?>
 </div>

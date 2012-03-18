@@ -17,6 +17,7 @@ class Categories extends Public_Controller {
 
 		$this->load->library('cart');
 		$this->load->library('store_settings');
+		$this->load->library('auctions_management');
 
 		$this->load->language('general');
 		$this->load->language('cart');
@@ -110,7 +111,17 @@ class Categories extends Public_Controller {
 
 	private function build_top_types($directory, $view)
 	{
-		$categories = $this->categories_m->get_all();
+	  switch ($directory) {
+ 
+	  case "auction":
+	    $categories = $this->auctions_management->get_categories();
+	    break;
+
+	  default:
+	    $categories = $this->categories_m->get_all();
+	    break;
+	  }
+
 		foreach($categories as $category):
 
 			$image = $this->images_m->get_image($category->images_id);
@@ -135,11 +146,12 @@ class Categories extends Public_Controller {
 
 		if($category):
 
-			$auctions = $this->auctions_m->get_auctions($category->categories_id);
-			$products = $this->products_m->get_products($category->categories_id);
+		  switch ($mode) {
 
-			if($auctions || $products):
-
+		  case "explore":
+		    $auctions = $this->auctions_management->get_active_auctions($category->categories_id);
+		    
+		    if ($auctions) {
 				foreach($auctions as $auction):
 
 					$image = $this->images_m->get_image($auction->images_id);
@@ -153,6 +165,14 @@ class Categories extends Public_Controller {
 
 				endforeach;
 
+				$this->data->auctions = $auctions;
+		    }    
+		    break;
+		    
+		  default:
+		    $products = $this->products_m->get_products($category->categories_id);
+		    
+		    if ($products) {
 				foreach($products as $product):
 
 					$image = $this->images_m->get_image($product->images_id);
@@ -166,8 +186,15 @@ class Categories extends Public_Controller {
 
 				endforeach;
 
-				$this->data->auctions = $auctions;
 				$this->data->products = $products;
+		    }
+		    break;
+		  }
+
+
+
+			if($auctions || $products):
+
 				$this->data->category_name = $category->name;
 
 				if($mode == 'explore'):

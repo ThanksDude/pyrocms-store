@@ -121,8 +121,12 @@ class Customer extends Public_Controller
 		
 		$this->data['current_bid'] = null;
 		foreach ($this->auctions_m->get_by('is_active', 1) as $auction) {
-		  $this->data['current_bid'][]	= array('auction'=>$auction, 'bid'=>$this->bid_m->limit(1)
-							->get_latest_auction_bids_by_user_id($this->current_user->id, $auction->auctions_id)
+		  $bid_tmp = $this->bid_m->limit(1)
+		    ->get_latest_auction_bids_by_user_id($this->current_user->id, $auction->auctions_id);
+
+		  $this->data['current_bid'][]	= array(
+							'auction'=>$auction,
+							'bid'=>($bid_tmp?$bid_tmp:null)
 							);
 		}
 

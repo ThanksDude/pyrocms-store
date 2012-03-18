@@ -2,8 +2,8 @@
 {
     $(document).ready(function(){
 
-	$('#start_at').datepicker({ dateFormat: 'dd-mm-yy' });
-	$('#end_at').datepicker({ dateFormat: 'dd-mm-yy' });
+	$('#start_at').datetimepicker({ ampm: true });
+	$('#end_at').datetimepicker({ampm: true});
 
     });
 

@@ -20,8 +20,8 @@ function display_bids($auction)
    * without breaking theme overloading
    **/
   $view		= array(
-			'path' => 'modules/store/auction/',
-			'view' => 'bid'
+			'path' => 'modules/store/bid/',
+			'view' => 'bid_helper'
 			);
   
   if (file_exists($ci->template->get_views_path().$view['path'].$view['view'].(pathinfo($view['view'], PATHINFO_EXTENSION) ? '' : EXT)))

@@ -11,7 +11,7 @@
   <?php endforeach; ?>
 </div>
 
-<?php echo form_open('store/customer_place_bid/create'); ?>
+<?php echo form_open('store/customer/place_bid/'); ?>
 <ul>
   <li>
     <label for="email">Your price</label>

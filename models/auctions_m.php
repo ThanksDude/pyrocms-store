@@ -29,6 +29,10 @@ class Auctions_m extends MY_Model
 		array_pop($this->data);
 		unset($this->data['userfile']);
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
+
+		$this->data['start_at'] = strtotime($this->data['start_at']);
+		$this->data['end_at'] = strtotime($this->data['end_at']);
+		$this->data['is_active'] = now() < $this->data['start_at'] ? 0 : 1;
 		
 		if(!($new_image_id == 0)):
 
@@ -43,14 +47,32 @@ class Auctions_m extends MY_Model
 					->update($this->_table, $this->data);
 	}
 
+	public function update_auction_status($auction)
+	{
+	  return $this->db
+	    ->where('id', $auction->id)
+	    ->update($this->_table, array('status'=>$auction->status));
+	}
+
 	public function add_auction($new_image_id=0)
 	{
+	  $this->load->library('auctions_management');
+
 		$this->data = $this->input->post();
 		array_pop($this->data);
 		unset($this->data['userfile']);
+
 		$this->data['slug'] = str_replace(' ', '-', $this->data['name']);
 		$this->data['start_at'] = strtotime($this->data['start_at']);
 		$this->data['end_at'] = strtotime($this->data['end_at']);
+
+		// if auction is time possible
+		if (! ($this->data['start_at'] < $this->data['end_at'])) {
+		  return FALSE;
+		}
+
+		$this->data['status'] = $this->auctions_management->status_checker($this->data['start_at'], $this->data['end_at']);
+
 		$this->data['images_id'] = $new_image_id;
 
 		return $this->db->insert($this->_table, $this->data) ? $this->db->insert_id() : FALSE;
@@ -63,7 +85,7 @@ class Auctions_m extends MY_Model
 		$this->images_m->delete_image($auction->images_id, $this->images_path);
 
 		return $this->db
-					->where('auctions_id', $auctions_id)
+					->where('id', $auctions_id)
 					->delete($this->_table);
 	}
 
@@ -72,12 +94,22 @@ class Auctions_m extends MY_Model
 		return $this->count_by('categories_id', $categories_id);
 	}
 
+	public function count_started_auctions($categories_id)
+	{
+	  return $this->db
+	    ->select('COUNT(*) as count')
+	    ->where('status', 1)
+	    ->where('categories_id', $categories_id)
+	    ->get($this->_table)
+	    ->row();
+	}
+
 	public function end_auction($auctions_id)
 	{
 	  $this->data = array('is_active'=>0);
 	  
 	  return $this->db
-	    ->where('auctions_id', $auctions_id)
+	    ->where('id', $auctions_id)
 	    ->update($this->_table, $this->data);
 	}
 
@@ -86,7 +118,7 @@ class Auctions_m extends MY_Model
 	  $this->data = array('winning_bid_id' => $bid_id);
 	  
 	  return $this->db
-	    ->where('auctions_id', $auctions_id)
+	    ->where('id', $auctions_id)
 	    ->update($this->_table, $this->data);
 	}
 
@@ -101,7 +133,7 @@ class Auctions_m extends MY_Model
 	public function get_auction($auctions_id)
 	{
 		return $this->db
-					->where('auctions_id', $auctions_id)
+					->where('id', $auctions_id)
 					->limit(1)
 					->get($this->_table)
 					->row();

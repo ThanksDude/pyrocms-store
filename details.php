@@ -284,11 +284,10 @@ class Module_Store extends Module {
 
 		$this->db->query("
 			CREATE  TABLE IF NOT EXISTS `" . $this->db->dbprefix('store_auctions') . "` (
-				`auctions_id` INT NOT NULL AUTO_INCREMENT ,
+				`id` INT NOT NULL AUTO_INCREMENT ,
 				`categories_id` INT NOT NULL ,
 				`attributes_id` INT NOT NULL ,
-				`winning_bid_id` INT NOT NULL ,
-				`is_active`  tinyint(4) NOT NULL DEFAULT '1' ,
+				`status`  tinyint(4) NOT NULL DEFAULT '1' ,
 				`name` VARCHAR(100) NOT NULL ,
 				`slug` VARCHAR(100) NOT NULL ,
 				`meta_description` TEXT NULL ,

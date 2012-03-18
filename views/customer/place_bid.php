@@ -2,17 +2,6 @@
 /**
  * This is a store module for PyroCMS
  *
- * @author 	Antoine Benevaut
- * @website	http://www.ThanksDu.de
- * @package 	pyrocms-store
- * @subpackage 	Store Module
-**/
-?>
-
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * This is a store module for PyroCMS
- *
  * @author 		Antoine Benevaut
  * @website		http://www.ThanksDu.de
  * @package 	pyrocms-store
@@ -49,7 +38,7 @@
 <li></li>
 </ul>
 
-   <?php echo form_open('store/customer_place_bid/create'); ?>
+   <?php echo form_open('store/customer/place_bid/'.$auction->auctions_id); ?>
 <ul>
   <li>
     <label for="email">Your price</label>

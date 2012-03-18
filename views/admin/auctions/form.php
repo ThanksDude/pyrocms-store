@@ -52,13 +52,18 @@
                         </li>
 
                         <li class="<?php echo alternator('', 'even'); ?>">
+                    	   <label for="status"><?php echo lang('store:auctions:label:status','status'); ?></label>
+                    	   <div class="input"><?php echo form_input('status',$auction->status,'class="text" maxlength="10" id="status"'); ?></div>
+                        </li>
+
+                        <li class="<?php echo alternator('', 'even'); ?>">
                     	   <label for="start_at"><?php echo lang('store:auctions:label:start_at','start_at'); ?> <span><?php echo lang('required_label');?></span></label>
-                    	   <div class="input"><?php echo form_input('start_at',set_value('start_at',$auction->start_at),'class="text" maxlength="10" id="start_at"'); ?></div>
+                    	   <div class="input"><?php echo form_input('start_at',set_value('start_at',date('d-m-Y', $auction->start_at)),'class="text" maxlength="10" id="start_at"'); ?></div>
                         </li>
 
                         <li class="<?php echo alternator('', 'even'); ?>">
                             <label for="end_at"><?php echo lang('store:auctions:label:end_at','end_at'); ?> <span><?php echo lang('required_label');?></span></label>
-                          	<div class="input"><?php echo form_input('end_at',set_value('end_at',$auction->end_at),'class="text" maxlength="10" id="end_at"'); ?></div>
+			    <div class="input"><?php echo form_input('end_at',set_value('end_at',date('d-m-Y', $auction->end_at)),'class="text" maxlength="10" id="end_at"'); ?></div>
                         </li>
 
                         <li class="<?php echo alternator('', 'even'); ?>">
