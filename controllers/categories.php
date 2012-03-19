@@ -154,6 +154,8 @@ class Categories extends Public_Controller {
 		    if ($auctions) {
 				foreach($auctions as $auction):
 
+					$this->auctions_management->status_manager($auction);
+
 					$image = $this->images_m->get_image($auction->images_id);
 
 					if($image):
