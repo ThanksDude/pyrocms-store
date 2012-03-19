@@ -35,7 +35,7 @@
       </p></div>
       <div><p>
 	  <span><?php echo lang('store:auctions:label:last_bid'). " : ";?>
-      {{ store:last_bid id="<?php echo $auction->id; ?>" price="<?php echo $auction->price; ?>" }}
+      {{ store:last_bid id="<?php echo $auction->id; ?>" price="<?php echo $auction->price; ?>" }} x{{ store:count_bid id="<?php echo $auction->id ?>"}}
           </span>
       </p></div>
       <div><p>
@@ -62,6 +62,9 @@
 	      		echo lang('store:auctions:label:ended');
       		}
       	?>
+<br/>
+<br/>
+	  {{ store:shortRemain_time end="<?php echo $auction->end_at ?>"}}
       	</span>
     </p></div>
       	  

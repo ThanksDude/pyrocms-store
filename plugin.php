@@ -15,13 +15,40 @@ class Plugin_Store extends Plugin
     $this->load->library('auctions_management');
   }
 
+  public function count_bid() {
+    $id		= $this->attribute('id');
+
+    return $this->auctions_management->get_count_bids_auction($id);
+  }
+
   public function last_bid() {
     $id		= $this->attribute('id');
-    $price		= $this->attribute('price', 0);
+    $price     	= $this->attribute('price', 0);
     
     $last_bid = $this->auctions_management->get_last_bid($id);
 
     return $this->cart->format_number($last_bid ? $last_bid->price : $price);
+  }
+
+  public function shortRemain_time() {
+    $s    	= $this->attribute('end');
+
+    $end = time();
+    $string = null;
+
+  $t = array( //suffixes
+	     'd' => 86400,
+	     'h' => 3600,
+	     'm' => 60,
+	      );
+
+  $s = abs($s - $end);
+  foreach($t as $key => &$val) {
+    $$key = floor($s / $val);
+    $s -= ($$key * $val);
+    $string .= ($$key == 0) ? '' : $$key . "$key ";
+  }
+  return $string.$s.'s';
   }
 }
 

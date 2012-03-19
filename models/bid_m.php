@@ -40,6 +40,23 @@ class Bid_m extends MY_Model
   }
 
   /**
+   * Get a bid based on the auction ID
+   * @access public
+   * @param int $id The ID of the auction
+   * @return array
+   */
+  public function get_bids_auction($id)
+  {
+    $this->db->select('bid.*, prf.username')
+      ->from($this->_table.' bid')
+      ->join('users prf', 'bid.user_id = prf.id', 'left')
+      ->where('auction_id', $id)
+      ->order_by('bid.bid_id DESC');
+    
+    return $this->db->get()->result();
+  }
+
+  /**
    * Insert a new comment
    *
    * @access public

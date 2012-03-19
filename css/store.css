@@ -55,6 +55,25 @@ float: left; }
 #auction form div { padding: 5px; clear: both; }
 
 
+/* customer view */
+#auction_information { 
+                       width: 80%;
+                       }
+
+#auction_information img { 
+                       float:left;
+                           margin-right:5%;
+                       }
+
+#auction_information ul { 
+                          list-style: none;
+                          float:left;
+                       }
+
+#auction_information ul li , .nostyle { 
+                          list-style: none;
+                       }
+
 /* **************************************************** */
 
 

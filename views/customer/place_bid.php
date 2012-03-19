@@ -14,12 +14,15 @@
 </section>
 
 <section class="item">
+
+<div id="auction_information">
+<img src="uploads/store/categories/<?php echo $img_cat_auction->filename; ?>" width="150" height="150" />
+<img src="uploads/store/auctions/<?php echo $img_auction->filename; ?>" width="150" height="150" />
 <ul>
-   <li><?php echo $auction->name; ?></li>
-   <li><?php echo $auction->html; ?></li>
-<li><img src="uploads/store/categories/<?php echo $img_cat_auction->filename; ?>" width="150" height="150" /></li>
-<li><img src="uploads/store/auctions/<?php echo $img_auction->filename; ?>" width="150" height="150" /></li>
+   <li class="nostyle"><h3><?php echo $auction->name; ?></h3></li>
+   <li class="nostyle"><p><?php echo $auction->html; ?></p></li>
 </ul>
+</div>
 
    <?php echo form_open('store/customer/place_bid/'.$auction->id); ?>
 <ul>
