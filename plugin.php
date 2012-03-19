@@ -50,6 +50,23 @@ class Plugin_Store extends Plugin
   }
   return $string.$s.'s';
   }
+
+  function category_information()
+  {
+    $id = $this->attribute('id');
+    $this->load->model('store/categories_m');
+    $this->load->model('store/images_m');
+
+    if (($cat = $this->categories_m->get_category($id))) {
+	$image = $this->images_m->get_image($cat->images_id);
+    
+	if ( $image ) {
+	  $this->images_m->front_image_resize('uploads/store/categories/', $image, 175, 140);
+	  return '<img src="'.base_url().'uploads/store/categories/'.$image->filename.'" width="120" height="75" /><br/><h3>'.$cat->name.'</h3><p>'.$cat->html.'</p>';
+	}
+      }
+      return "";
+  }
 }
 
 /* End of file plugin.php */
