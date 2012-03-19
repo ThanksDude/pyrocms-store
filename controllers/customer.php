@@ -155,6 +155,14 @@ class Customer extends Public_Controller
 
 		  if ( !empty($bids) && ($bids[0]->bid_id == $auction->winning_bid_id) ) {
 		    $this->data['won_bid'][] = array('auction'=>$auction, 'bid'=>$bids[0]);
+
+		    //
+		    // check if auction was  ordered/paid (button/link to contruct a cart order);
+		    // send user to cart/buy process.
+		    //
+		    // bild link
+		    //
+
 		  }
 		}
 

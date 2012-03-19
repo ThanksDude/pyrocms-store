@@ -32,7 +32,6 @@ class Auctions_m extends MY_Model
 
 		$this->data['start_at'] = strtotime($this->data['start_at']);
 		$this->data['end_at'] = strtotime($this->data['end_at']);
-		$this->data['is_active'] = now() < $this->data['start_at'] ? 0 : 1;
 		
 		if(!($new_image_id == 0)):
 
@@ -43,7 +42,7 @@ class Auctions_m extends MY_Model
 		endif;
 
 		return $this->db
-					->where('auctions_id', $auctions_id)
+					->where('id', $auctions_id)
 					->update($this->_table, $this->data);
 	}
 

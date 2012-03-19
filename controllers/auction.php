@@ -23,6 +23,7 @@ class auction extends Public_Controller
 		//		$this->load->language('messages');
 		$this->load->language('cart');
 		$this->load->language('settings');
+		$this->load->language('auctions');
 
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
@@ -59,7 +60,9 @@ class auction extends Public_Controller
 	{
 		if ($auction_slug != NULL):
 			$auction = $this->auctions_m->get_by('slug', $auction_slug);
-
+			
+			$auction->last_bid = $this->auctions_management->get_last_bid($auction->id);
+		
 			if ($auction):
 				$image = $this->images_m->get_image($auction->images_id);
 

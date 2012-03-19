@@ -14,6 +14,21 @@
 function end_date_cmp($a, $b){ 
     return strcmp($b['end_at'], $a['end_at']); 
 }
+
+class event {
+
+  $name;
+  $sleepTime;
+  
+  /**
+   * name	= string
+   * eventDate	= timestamp
+   */
+  public function __construct($name, $eventDate) {
+    $this->name = $name;
+    $sleepTime = strtotime(timespan(time(), $eventDate));
+  }
+}
  
 class cron_like
 {
@@ -28,7 +43,7 @@ class cron_like
 	} 
 
 	private function manage_clock($event) {
-		if ($event === "awake") {
+		if ($event-> === "awake") {
 			usort($this->event_stock, 'end_date_cmp');
 			$this->manage_clock( (now() - $this->event_stock[0]['end_at']), $this->event_stock[0]['id']);
 		}

@@ -37,6 +37,7 @@ $lang['store:auctions:label:meta_description']		= 'Meta Description';
 $lang['store:auctions:label:meta_keywords']			= 'Meta Keywords';
 $lang['store:auctions:label:attributes']			= 'Attributes';
 $lang['store:auctions:label:price']					= 'Price';
+$lang['store:auctions:label:last_bid']					= 'Last bid';
 $lang['store:auctions:label:status']					= 'Status';
 $lang['store:auctions:label:status:not-started']					= 'Not started';
 $lang['store:auctions:label:status:started']					= 'Started';

@@ -9,6 +9,20 @@
 **/
 class Plugin_Store extends Plugin
 {
+  public function __construct() {
+    $this->load->library('cart');
+
+    $this->load->library('auctions_management');
+  }
+
+  public function last_bid() {
+    $id		= $this->attribute('id');
+    $price		= $this->attribute('price', 0);
+    
+    $last_bid = $this->auctions_management->get_last_bid($id);
+
+    return $this->cart->format_number($last_bid ? $last_bid->price : $price);
+  }
 }
 
 /* End of file plugin.php */

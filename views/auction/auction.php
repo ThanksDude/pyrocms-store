@@ -34,9 +34,14 @@
           </span>
       </p></div>
       <div><p>
+	  <span><?php echo lang('store:auctions:label:last_bid'). " : ";?>
+      {{ store:last_bid id="<?php echo $auction->id; ?>" price="<?php echo $auction->price; ?>" }}
+          </span>
+      </p></div>
+      <div><p>
        <span>
 	<?php if ($auction->status === '1') : ?>
-      <?php echo form_input('price',$this->cart->format_number($auction->price)).form_hidden('id', $auction->id, 'class="maxlength="100""').form_hidden('slug', $auction->slug, 'class="maxlength="100""').form_submit('','Place Bid'); ?>
+      <?php echo form_input('price',$this->cart->format_number($auction->last_bid ? $auction->last_bid->price : $auction->price)).form_hidden('id', $auction->id, 'class="maxlength="100""').form_hidden('slug', $auction->slug, 'class="maxlength="100""').form_submit('','Place Bid'); ?>
 	<?php endif; ?>
       </span>
       </p></div>

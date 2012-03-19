@@ -244,6 +244,9 @@ class Admin_auctions extends Admin_Controller
        				$auction		= $this->auctions_m->get_auction($auctions_id);
 	       			$category_name	= $this->categories_m->get_category($auction->categories_id)->name;
 
+				// Update status
+				$this->auctions_management->status_manager($auction);
+
        				redirect('admin/store/auctions');
 
        			else:
