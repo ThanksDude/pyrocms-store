@@ -61,12 +61,24 @@ $(document).ready(function() {
     <table border="0" style="width:100%;margin-top:20px;text-align:center;">
     <tr>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:auction'); ?></th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:auctions:label:remaining'); ?></th>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:date'); ?></th>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:price'); ?></th>
     </tr>
     <?php foreach ($current_bid as $bid_info): ?>
     <tr>
     <td><a href="<?php echo site_url(); ?>/store/auction/view/<?php echo $bid_info['auction']->slug; ?>/" title="<?php echo $bid_info['auction']->name; ?>"><?php echo $bid_info['auction']->name; ?></a></td>
+					<td>
+					<?php 
+						$now = time();
+						if($bid_info['auction']->end_at>$now) {
+				  			echo timespan($now, $bid_info['auction']->end_at);
+       				  		} else {
+					  		echo lang('store:auctions:label:ended_short');
+				  		}
+					?>
+					</td>
+
     <td><?php echo unix_to_human($bid_info['bid'][0]->date, TRUE, 'us'); ?></td>
     <td><?php echo $this->cart->format_number($bid_info['bid'][0]->price); ?></td>
     </tr>
@@ -94,6 +106,7 @@ $(document).ready(function() {
        <table border="0" style="width:250px;text-align:center;">
     <tr>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:auction'); ?></th>
+    <th style="border-bottom:2px solid gray"><?php echo lang('store:auctions:label:remaining'); ?></th>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:date'); ?></th>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:price'); ?></th>
     </tr>

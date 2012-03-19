@@ -23,6 +23,7 @@ class Customer extends Public_Controller
 		$this->load->language('cart');
 		$this->load->language('settings');
 		$this->load->language('customer');
+		$this->load->language('auctions');
 
 		$this->load->model('store_m');
 		$this->load->model('categories_m');
