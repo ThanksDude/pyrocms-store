@@ -105,7 +105,7 @@ class auction extends Public_Controller
 	 */
 	public function cron_status()
 	{
-	  foreach ( $this->auctions_management->get_active_auctions() as $auction ) {
+	  foreach ( $this->auctions_management->get_auctions() as $auction ) {
 	    $this->auctions_management->status_manager($auction);
 	  }
 	}

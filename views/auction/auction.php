@@ -38,6 +38,10 @@
       {{ store:last_bid id="<?php echo $auction->id; ?>" price="<?php echo $auction->price; ?>" }} x{{ store:count_bid id="<?php echo $auction->id ?>"}}
           </span>
       </p></div>
+      <?php
+	  $now = time();
+	  if($auction->end_at>$now) {
+      ?>
       <div><p>
        <span>
 	<?php if ($auction->status === '1') : ?>
@@ -45,6 +49,7 @@
 	<?php endif; ?>
       </span>
       </p></div>
+
       <div><p>
       	  <span><?php echo lang('store:auctions:label:end_at'). " : ";?>
       		<?php echo unix_to_human($auction->end_at, TRUE, 'us'); ?>
@@ -54,7 +59,6 @@
     <div><p>
     	<span>
     	<?php 
-    		$now = time();
     		if($auction->end_at>$now) {
     			echo lang('store:auctions:label:remaining'). " : "; 
       			echo timespan($now, $auction->end_at);
@@ -68,9 +72,8 @@
       	</span>
     </p></div>
       	  
+	      <?php } ?>
       	 
-      
-      <div><p><?php echo lang('store:auctions:label:stock'). " : " . $auction->stock ;?></p></div>
       
     </li>
   </ul>

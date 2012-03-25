@@ -23,6 +23,24 @@ class auctions_management
     $this->ci->load->model('store/bid_m'); 
     $this->ci->load->model('store/categories_m');
     $this->ci->load->model('store/images_m');
+
+    $this->ci->load->library('users/Ion_auth');
+    $this->ci->load->library('store_settings');
+  }
+
+  /*
+  **
+  ** AUCTIONS
+  **
+  */
+
+  /**
+   * get_auctions
+   *
+   * @return all auctions
+   */
+  public function get_auctions() {
+    return $this->ci->auctions_m->get_all();
   }
 
   /**
@@ -32,12 +50,6 @@ class auctions_management
    */
   public function get_auction($auction_id) {
     return $this->ci->auctions_m->get_auction($auction_id);
-  }
-
-  public function get_count_bids_auction($auction_id) {
-    $num = $this->ci->bid_m->get_bids_auction($auction_id);
-    $num = !empty($num[0]) ? count($num) : '0';
-    return $num;
   }
 
   /**
@@ -51,9 +63,9 @@ class auctions_management
   public function get_auction_picture($auction, $width = 175, $height = 150) {
     $auction->image_path = $this->ci->config->item('upload_path');
 
-    if (($auction->image = $this->images_m->get_image($auction->images_id))) {
-	$this->images_m->front_image_resize($this->config->item('upload_path'), $auction->image, $width, $height);
-      }
+    if (($auction->image = $this->ci->images_m->get_image($auction->images_id))) {
+      $this->ci->images_m->front_image_resize($this->config->item('upload_path'), $auction->image, $width, $height);
+    }
     return $auction;
   }
 
@@ -75,7 +87,6 @@ class auctions_management
 	unset($auctions[$key]);
       }
     }
-
     return $auctions;
   }
 
@@ -109,31 +120,7 @@ class auctions_management
 	unset($auctions[$key]);
       }
     }
-
     return $auctions;
-  }
-
-  public function get_last_bid($auction_id) {
-    $last_bid = $this->ci->bid_m->get_by_auction_id($auction_id, 1);
-
-    return isset($last_bid[0]) ? $last_bid[0] : NULL;
-  }
-
-  /**
-   * get_categories
-   *
-   * @return array, that store only category with started auction(s).
-   */
-  public function get_categories() {
-    $categories = $this->ci->categories_m->get_all();
-
-    foreach ($categories as $key => $category) {
-      if (! ($category->items_number = $this->ci->auctions_m->count_started_auctions($category->categories_id)->count)) {
-	unset($categories[$key]);	
-      }
-    }
-
-    return $categories;
   }
 
   /**
@@ -172,18 +159,88 @@ class auctions_management
     if ($mark != $auction->status) {
       $this->ci->auctions_m->update_auction_status($auction);
 
-      if ($auction->status === '2') {
+      if ($auction->status === 2) {
 	$bid = $this->ci->bid_m->get_by_auction_id($auction->id, 1);
-	$this->auctions_m->set_auction_winner($auction->id, $bid->bid_id);
+
 
 	//
-	// send win email to user (profile_id) !!
-	// prepare order?
+	// Control bid date
 	//
 
+
+	if (isset($bid) && !empty($bid)) {
+	  $this->ci->auctions_m->set_auction_winner($auction->id, $bid[0]->bid_id);
+
+	  $winner = $this->ci->ion_auth->get_user($bid[0]->user_id);
+
+
+	  //
+	  // TEMPORARY
+	  // => will create order to have auction as product on cart
+	  //
+
+	  $this->load->library('user_agent');
+    
+	  // to winner
+	  Events::trigger('email', array(
+					 'title' => "You win an auction !",
+					 'content' => "You win an auction !",
+					 'slug' => 'customer-won-auction',
+					 'email' => $winner->email,
+					 ), 'array');
+	  
+	  // to seller
+	  Events::trigger('email', array(
+					 'title' => "SOMEONE won an auction !",
+					 'content' => "It's amazing ! SOMEONE won the AUCTION_ID!",
+					 'slug' => 'customer-won-auction-seller',
+					 'email' => $this->store_settings->item('email'),
+					 ), 'array');
+	}
       }
     }
   }
-}
 
+  /*
+  **
+  ** BIDS
+  **
+  */
+
+  //
+  // need optimisation
+  // Thaht never return 0 :-(
+  //
+  public function get_count_bids_auction($auction_id) {
+    return $len = count($this->ci->bid_m->get_bids_auction($auction_id)) > 0 ? $len : 0;
+  }
+
+  public function get_last_bid($auction_id) {
+    $last_bid = $this->ci->bid_m->get_by_auction_id($auction_id, 1);
+
+    return isset($last_bid[0]) ? $last_bid[0] : NULL;
+  }
+
+  /*
+  **
+  ** CATEGORIES
+  **
+  */
+
+  /**
+   * get_categories
+   *
+   * @return array, that store only category with started auction(s).
+   */
+  public function get_categories() {
+    $categories = $this->ci->categories_m->get_all();
+
+    foreach ($categories as $key => $category) {
+      if (! ($category->items_number = $this->ci->auctions_m->count_started_auctions($category->categories_id)->count)) {
+	unset($categories[$key]);	
+      }
+    }
+    return $categories;
+  }
+}
 /* End of file auctions_management.php */

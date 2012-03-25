@@ -103,16 +103,16 @@ $(document).ready(function() {
 		<ul>
 
     <?php if (isset($won_bid) && !empty($won_bid)): ?>
-       <table border="0" style="width:250px;text-align:center;">
+    <table border="0" style="width:100%;margin-top:20px;text-align:center;">
     <tr>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:auction'); ?></th>
-    <th style="border-bottom:2px solid gray"><?php echo lang('store:auctions:label:remaining'); ?></th>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:date'); ?></th>
     <th style="border-bottom:2px solid gray"><?php echo lang('store:customer:label:price'); ?></th>
     </tr>
     <?php foreach ($won_bid as $bid_info): ?>
     <tr>
     <td><a href="<?php echo site_url(); ?>/store/auction/view/<?php echo $bid_info['auction']->slug; ?>/" title="<?php echo $bid_info['auction']->name; ?>"><?php echo $bid_info['auction']->name; ?></a></td>
+    <td><?php echo unix_to_human($bid_info['bid']->date, TRUE, 'us'); ?></td>
     <td><?php echo $this->cart->format_number($bid_info['bid']->price); ?></td>
     </tr>
  <?php endforeach; ?>

@@ -9,7 +9,7 @@
 **/
 class Module_Store extends Module {
 
-	public $version = '0.2';
+	public $version = '0.3';
 
 	public function info()
 	{
@@ -418,6 +418,30 @@ class Module_Store extends Module {
 				`products_id`
 		) ON DELETE CASCADE ON UPDATE RESTRICT ");
 
+		$customer_win_auction = array(
+					      'name'		=> 'Customer won auction',
+					      'slug'	       	=> 'customer-won-auction',
+					      'lang'	       	=> 'en',
+					      'description'	=> 'Winning email',
+					      'subject'     	=> '{{ title }}',
+					      'body'	       	=> '<p>{{ content }}</p>',
+					      'is_default'	=> false
+					      );
+		
+		$seller_win_auction = array(
+					    'name'		=> 'Customer won auction (to seller)',
+					    'slug'	       	=> 'customer-won-auction-seller',
+					    'lang'	       	=> 'en',
+					    'description'	=> 'Winning email (to seller)',
+					    'subject'     	=> '{{ title }}',
+					    'body'	       	=> '<p>{{ content }}</p>',
+					    'is_default'	=> false
+					    );
+
+		/* Emails templates */
+		$this->db->insert('email_templates', $customer_win_auction);
+		$this->db->insert('email_templates', $seller_win_auction);
+
 		if(is_dir('uploads/store') OR @mkdir('uploads/store',0777,TRUE))
 		{
 			// make upload folders for admin images and stuff
@@ -447,6 +471,8 @@ class Module_Store extends Module {
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_order_addresses') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_orders_has_store_products') . "`;");
 		$this->db->query("DROP TABLE IF EXISTS `" . $this->db->dbprefix('store_product_attributes') . "`;");
+		$this->db->delete('email_templates', array('slug' => 'customer-won-auction'));;
+		$this->db->delete('email_templates', array('slug' => 'customer-won-auction-seller'));;
 		$this->db->delete('settings', array('module' => 'store'));
 		{
 			return TRUE;
@@ -482,6 +508,32 @@ class Module_Store extends Module {
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 			}
+		case '0.2':
+		  {
+		    $customer_win_auction = array(
+						  'name'		=> 'Customer won auction',
+						  'slug'	       	=> 'customer-won-auction',
+						  'lang'	       	=> 'en',
+						  'description'	=> 'Winning email',
+						  'subject'     	=> '{{ title }}',
+						  'body'	       	=> '<p>{{ content }}</p>',
+						  'is_default'	=> false
+						  );
+		    
+		    $seller_win_auction = array(
+						'name'		=> 'Customer won auction (to seller)',
+						'slug'	       	=> 'customer-won-auction-seller',
+						'lang'	       	=> 'en',
+						'description'	=> 'Winning email (to seller)',
+						'subject'     	=> '{{ title }}',
+						'body'	       	=> '<p>{{ content }}</p>',
+						'is_default'	=> false
+						);
+		    
+		    /* Emails templates */
+		    $this->db->insert('email_templates', $customer_win_auction);
+		    $this->db->insert('email_templates', $seller_win_auction);
+		  }
 		}
 		return TRUE;
 	}
