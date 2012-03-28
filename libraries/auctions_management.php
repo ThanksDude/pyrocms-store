@@ -212,7 +212,7 @@ class auctions_management
   // Thaht never return 0 :-(
   //
   public function get_count_bids_auction($auction_id) {
-    return $len = count($this->ci->bid_m->get_bids_auction($auction_id)) > 0 ? $len : 0;
+    return ($len = count($this->ci->bid_m->get_bids_auction($auction_id))) > 0 ? $len : 0;
   }
 
   public function get_last_bid($auction_id) {
