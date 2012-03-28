@@ -179,7 +179,7 @@ class auctions_management
 	  // => will create order to have auction as product on cart
 	  //
 
-	  $this->load->library('user_agent');
+	  $this->ci->load->library('user_agent');
     
 	  // to winner
 	  Events::trigger('email', array(

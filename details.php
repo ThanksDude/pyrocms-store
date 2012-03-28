@@ -303,7 +303,7 @@ class Module_Store extends Module {
 				`images_id` VARCHAR(50) NULL ,
 				`thumbnail_id` VARCHAR(50) NULL ,
 				`allow_comments` ENUM('1','0') NULL ,
-				PRIMARY KEY (`auctions_id`, `categories_id`) ,
+				PRIMARY KEY (`id`, `categories_id`) ,
 				UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
 			ENGINE = InnoDB;");
 
