@@ -54,10 +54,16 @@ class Categories extends Public_Controller {
 	 *
 	 * return information about all active auctions.
 	 */
-	public function json($category_id = NULL)
+	public function json($category_id = 0)
 	{
 	  $auctions =  $this->auctions_management->get_active_auctions($category_id);
 	  $this->template->build_json($auctions);
+	}
+
+	public function view($category_id = 0) {
+	  $this->data->category =  $this->auctions_management->get_category($category_id);
+	  $this->template
+	    ->build('categories/view', $this->data);
 	}
 
 	public function browse($types = 'top', $views = 'tiles', $name = NULL)

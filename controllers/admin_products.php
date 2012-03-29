@@ -27,7 +27,8 @@ class Admin_products extends Admin_Controller
 		$this->load->language('categories');
 		$this->load->language('products');
 		$this->load->language('orders');
-    	$this->load->language('auctions');
+		$this->load->language('auctions');
+		$this->load->language('donations');
 		$this->load->language('tags');
 		$this->load->language('attributes');
 		$this->load->language('attributes_categories');

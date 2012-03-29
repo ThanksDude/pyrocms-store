@@ -227,6 +227,10 @@ class auctions_management
   **
   */
 
+  public function get_category($category_id = 0) {
+    return $this->ci->categories_m->get_category($category_id);
+  }
+
   /**
    * get_categories
    *

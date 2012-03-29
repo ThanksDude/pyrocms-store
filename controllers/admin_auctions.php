@@ -39,6 +39,7 @@ class Admin_auctions extends Admin_Controller
 		$this->load->language('general');
 		// $this->load->language('messages');
 		$this->load->language('auctions');
+		$this->load->language('donations');
 		$this->load->language('settings');
 		$this->load->language('general');
 		$this->load->language('dashboard');

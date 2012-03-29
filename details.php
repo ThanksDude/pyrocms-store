@@ -107,6 +107,10 @@ class Module_Store extends Module {
 						)
 					)
 				),
+			    'donations' => array(
+						 'name'		=> 'store:donations:menu',
+						 'uri'		=> 'admin/store/donations',
+						 ),
 			    'orders' => array(
 				    'name'		=> 'store:orders:menu',
 				    'uri'		=> 'admin/store/orders',
